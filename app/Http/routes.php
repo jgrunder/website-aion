@@ -11,6 +11,11 @@
 |
 */
 
-$app->get('/', function() use ($app) {
-    return $app->welcome();
-});
+$app->get('/', [
+    'as' => 'home', 'uses' => 'App\Http\Controllers\HomeController@index'
+]);
+
+// USER
+$app->get('user/subscribe', [
+    'as' => 'subscribe', 'uses' => 'App\Http\Controllers\UserController@subscribe'
+]);
