@@ -11,11 +11,25 @@
 |
 */
 
+// HOME
 $app->get('/', [
-    'as' => 'home', 'uses' => 'App\Http\Controllers\HomeController@index'
+    'as'    => 'home',
+    'uses'  => 'App\Http\Controllers\HomeController@index'
 ]);
 
 // USER
 $app->get('user/subscribe', [
-    'as' => 'subscribe', 'uses' => 'App\Http\Controllers\UserController@subscribe'
+    'as'    => 'subscribe',
+    'uses'  => 'App\Http\Controllers\UserController@subscribe'
+]);
+
+$app->get('user/login', [
+    'as'    => 'login',
+    'uses'  => 'App\Http\Controllers\UserController@login'
+]);
+
+// SHOP
+$app->get('/shop', [
+    'as'    => 'shop',
+    'uses'  => 'App\Http\Controllers\ShopController@index'
 ]);

@@ -14,4 +14,14 @@ class UserController extends BaseController
     {
         return view('user.subscribe');
     }
+
+    /**
+     * ROUTE : GET /user/login
+     * Login Page
+     */
+    public function login()
+    {
+        return view('user.login');
+    }
+
 }
