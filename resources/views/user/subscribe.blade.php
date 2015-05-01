@@ -1,5 +1,7 @@
-@extends('/layouts.master')
+@extends('layouts.master')
+
+@section('title', 'Subscribe')
 
 @section('content')
-    <p>Subscribe page</p>
+    <p>Subscribe Page</p>
 @stop

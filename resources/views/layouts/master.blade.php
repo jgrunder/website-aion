@@ -6,7 +6,7 @@
     <link rel="icon" href="">
 
     <!-- SEO -->
-    <title>RealAion</title>
+    <title>RealAion - @yield('title')</title>
     <meta name="description" content=""/>
     <meta name="keywords" content="">
     <meta name="author" content=""/>
@@ -37,8 +37,6 @@
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 </body>
 </html>

@@ -11,25 +11,15 @@
 |
 */
 
-// HOME
-$app->get('/', [
-    'as'    => 'home',
-    'uses'  => 'App\Http\Controllers\HomeController@index'
-]);
+Route::get('/', 'HomeController@index');
 
 // USER
-$app->get('user/subscribe', [
-    'as'    => 'subscribe',
-    'uses'  => 'App\Http\Controllers\UserController@subscribe'
-]);
-
-$app->get('user/login', [
-    'as'    => 'login',
-    'uses'  => 'App\Http\Controllers\UserController@login'
-]);
-
-// SHOP
-$app->get('/shop', [
-    'as'    => 'shop',
-    'uses'  => 'App\Http\Controllers\ShopController@index'
-]);
+Route::group(['prefix' => 'user'], function()
+{
+    // SUBSCRIBE
+    Route::get('subscribe', [
+        'as'    => 'subscribe',
+        'uses'  => 'UserController@subscribe'
+    ]);
+    
+});

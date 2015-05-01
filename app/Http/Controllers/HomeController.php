@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Models\AccountData;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
-    /**
-     * ROUTE : GET /
-     * Home page
-     */
-    public function index()
-    {
-        return view('home');
-    }
+
+	public function index()
+	{
+		return view('home.index', [
+            'users' => AccountData::all()
+        ]);
+	}
+
 }
