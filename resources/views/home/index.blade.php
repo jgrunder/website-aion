@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <p>Home Page</p>
+    <h1>Home page</h1>
     @foreach ($users as $user)
         <p>This is user {{ $user->name }}</p>
     @endforeach

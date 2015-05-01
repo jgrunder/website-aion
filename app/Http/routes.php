@@ -16,10 +16,13 @@ Route::get('/', 'HomeController@index');
 // USER
 Route::group(['prefix' => 'user'], function()
 {
-    // SUBSCRIBE
+    // GET SUBSCRIBE
     Route::get('subscribe', [
         'as'    => 'subscribe',
         'uses'  => 'UserController@subscribe'
     ]);
+
+    // POST SUBSCRIBE
+    Route::post('subscribe', 'UserController@createAccount');
     
 });
