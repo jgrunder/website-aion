@@ -23,4 +23,20 @@ class UserController extends Controller
     	dd($request->all());
     }
 
+    /**
+     * GET /user/login
+     */
+    public function login()
+    {
+        return view('user.login');
+    }
+
+    /**
+     * POST /user/login
+     */
+    public function connect(Request $request)
+    {
+        dd($request->all());
+    }
+
 }

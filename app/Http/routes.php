@@ -24,5 +24,14 @@ Route::group(['prefix' => 'user'], function()
 
     // POST SUBSCRIBE
     Route::post('subscribe', 'UserController@createAccount');
+
+    // GET LOGIN
+    Route::get('login', [
+        'as'    => 'login',
+        'uses'  => 'UserController@login'
+    ]);
+
+    // POST SUBSCRIBE
+    Route::post('login', 'UserController@connect');
     
 });
