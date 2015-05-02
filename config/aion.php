@@ -2,6 +2,22 @@
 
 return [
 
+    'website_name'  => 'RealAion',
+    'aion_version'  => '4.7',
+    'link_facebook' => '#',
+    'link_twitter'  => '#',
+
+    'servers'        => [
+        'loginserver' => [
+            'ip'    => '127.0.0.1',
+            'port'  => 7000
+        ],
+        'gameserver'  => [
+            'ip'    => '127.0.0.1',
+            'port'  => 8000
+        ]
+    ],
+
     'vote' => [
         'activated'         => true,
         'boost'             => false,

@@ -6,8 +6,8 @@
     <link rel="icon" href="">
 
     <!-- SEO -->
-    <title>RealAion - @yield('title')</title>
-    <meta name="description" content="@yield('description')"/>
+    <title>{{Config::get('aion.website_name')}} - @yield('title')</title>
+    <meta name="description" content=""/>
     <meta name="keywords" content="">
     <meta name="author" content="Mathieu Le Tyrant"/>
     <meta name="copyright" content="RealAion.com © Copyright 2015"/>

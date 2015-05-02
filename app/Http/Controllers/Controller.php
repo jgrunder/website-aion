@@ -18,11 +18,8 @@ abstract class Controller extends BaseController {
      */
     public function __construct()
     {
-
-        if(Session::has('connected')){
-            $this->accountVotes();
-        }
-
+        $this->serversTest();
+        $this->accountVotes();
     }
 
     /**
@@ -30,37 +27,58 @@ abstract class Controller extends BaseController {
      */
     private function accountVotes()
     {
-        $accountId      = Session::get('user.id');
-        $votesInConfig  = Config::get('aion.vote.links');
-        $votesAvailable = [];
+        if(Session::has('connected')) {
+            $accountId = Session::get('user.id');
+            $votesInConfig = Config::get('aion.vote.links');
+            $votesAvailable = [];
 
-        foreach($votesInConfig as $key => $value){
-            $vote = AccountVote::where('account_id', $accountId)->where('site', $key)->first();
-            $date = Carbon::parse($vote->date);
+            foreach ($votesInConfig as $key => $value) {
+                $vote = AccountVote::where('account_id', $accountId)->where('site', $key)->first();
+                $date = Carbon::parse($vote->date);
 
-            if($vote === null){
-                $votesAvailable[] = [
-                    'id'      => $key,
-                    'status'  => true
-                ];
-            } else {
-
-                if($date->diffInHours(Carbon::now()) >= 2){
+                if ($vote === null) {
                     $votesAvailable[] = [
-                        'id'      => $key,
-                        'status'  => true
+                        'id'     => $key,
+                        'status' => true
                     ];
                 } else {
-                    $votesAvailable[] = [
-                        'id'      => $key,
-                        'status'  => false
-                    ];
+
+                    if ($date->diffInHours(Carbon::now()) >= 2) {
+                        $votesAvailable[] = [
+                            'id'     => $key,
+                            'status' => true
+                        ];
+                    } else {
+                        $votesAvailable[] = [
+                            'id'     => $key,
+                            'status' => false
+                        ];
+                    }
                 }
+
             }
 
+            View::share('accountVotes', $votesAvailable);
+        }
+    }
+
+    /**
+     * Set Variables $serversStatus
+     */
+    private function serversTest()
+    {
+        $servers        = Config::get('aion.servers');
+        $serversStatus  = [];
+
+        foreach ($servers as $key => $server) {
+            $check = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
+
+            $serversStatus[$key] = ($check) ? true : false;
+
+            @fclose($check);
         }
 
-        View::share('accountVotes', $votesAvailable);
+        View::share('serversStatus', $serversStatus);
     }
 
 }
