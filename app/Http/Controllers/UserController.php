@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ConnectUserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -34,9 +35,11 @@ class UserController extends Controller
     /**
      * POST /user/login
      */
-    public function connect(Request $request)
+    public function connect(ConnectUserRequest $request)
     {
-        dd($request->all());
+        Session::put('connected', true);
+        Session::put('user', $request->except('_token'));
+        return redirect(Route('home'))->with('success', 'Your are now connected');
     }
 
 }
