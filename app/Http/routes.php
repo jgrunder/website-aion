@@ -18,7 +18,7 @@ Route::group(['prefix' => 'user'], function()
 {
     // GET SUBSCRIBE
     Route::get('subscribe', [
-        'as'    => 'subscribe',
+        'as'    => 'user.subscribe',
         'uses'  => 'UserController@subscribe'
     ]);
 
@@ -27,11 +27,22 @@ Route::group(['prefix' => 'user'], function()
 
     // GET LOGIN
     Route::get('login', [
-        'as'    => 'login',
+        'as'    => 'user.login',
         'uses'  => 'UserController@login'
     ]);
 
     // POST SUBSCRIBE
     Route::post('login', 'UserController@connect');
     
+});
+
+// STATS
+Route::group(['prefix' => 'stats'], function()
+{
+    // GET SUBSCRIBE
+    Route::get('online', [
+        'as'    => 'stats.online',
+        'uses'  => 'StatsController@online'
+    ]);
+
 });
