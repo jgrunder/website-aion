@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         AccountData::create([
             'name'      => $request->input('username'),
-            'password'  => $request->input('password'),
+            'password'  => base64_encode(sha1($request->input('password'), true)),
             'email'     => $request->input('email')
         ]);
 

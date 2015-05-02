@@ -14,7 +14,7 @@ class SubscribeUserRequest extends Request {
 	{
 
         $email      = AccountData::where('email', $this->email)->first();
-        $account    = AccountData::where('name', $this->email)->first();
+        $account    = AccountData::where('name', $this->username)->first();
 
         if($account === null) {
             if($email === null) {
