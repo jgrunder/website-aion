@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <h1>Home page</h1>
+    <h1>{{Lang::get('home.test')}} page</h1>
 
     @include('_modules.vote')
 

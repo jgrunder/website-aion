@@ -7,12 +7,12 @@
 
     <!-- SEO -->
     <title>RealAion - @yield('title')</title>
-    <meta name="description" content=""/>
+    <meta name="description" content="@yield('description')"/>
     <meta name="keywords" content="">
-    <meta name="author" content=""/>
-    <meta name="copyright" content=""/>
+    <meta name="author" content="Mathieu Le Tyrant"/>
+    <meta name="copyright" content="RealAion.com © Copyright 2015"/>
     <meta name="robots" content="index,follow"/>
-    <meta name="location" content=""/>
+    <meta name="location" content="Paris, France"/>
 
     <!-- FB Share -->
     <meta property="og:title" content=""/>

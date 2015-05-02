@@ -36,6 +36,14 @@ Route::get('/vote/{id}', [
 ]);
 
 /**
+ * LANGUAGE
+ */
+Route::get('/language/{language}', [
+    'as'         => 'language',
+    'uses'       => 'LanguageController@change'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()
