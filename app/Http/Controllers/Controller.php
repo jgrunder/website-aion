@@ -73,7 +73,10 @@ abstract class Controller extends BaseController {
         foreach ($servers as $key => $server) {
             $check = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
 
-            $serversStatus[$key] = ($check) ? true : false;
+            $serversStatus[] = [
+                'name'   => $key,
+                'status' => ($check) ? true : false
+            ];
 
             @fclose($check);
         }
