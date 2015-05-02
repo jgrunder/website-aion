@@ -24,11 +24,13 @@ class UserController extends Controller
 	 */
     public function createAccount(SubscribeUserRequest $request)
     {
-        AccountData::create([
+        $user = AccountData::create([
             'name'      => $request->input('username'),
             'password'  => base64_encode(sha1($request->input('password'), true)),
             'email'     => $request->input('email')
         ]);
+
+        $this->createSession($user);
 
         return redirect()->route('home')->with('success', 'Your are now subscribe');
     }
@@ -52,12 +54,7 @@ class UserController extends Controller
             ->where('password', base64_encode(sha1($request->get('password'), true)))
             ->first();
 
-        Session::put('connected', true);
-        Session::put('user.id', $user->id);
-        Session::put('user.name', $user->name);
-        Session::put('user.email', $user->email);
-        Session::put('user.toll', $user->toll);
-        Session::put('user.access_level', $user->access_level);
+        $this->createSession($user);
 
         return redirect(route('home'))->with('success', 'Your are now login');
     }
@@ -70,6 +67,19 @@ class UserController extends Controller
         Session::flush();
 
         return redirect(route('home'))->with('success', 'Your are now logout');
+    }
+
+    /**
+     * Create Session with information
+     */
+    private function createSession($user)
+    {
+        Session::put('connected', true);
+        Session::put('user.id', $user->id);
+        Session::put('user.name', $user->name);
+        Session::put('user.email', $user->email);
+        Session::put('user.toll', $user->toll);
+        Session::put('user.access_level', $user->access_level);
     }
 
 }
