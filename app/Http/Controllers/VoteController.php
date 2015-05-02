@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 class VoteController extends Controller {
 
     /**
-     * GET /stats/online
+     * GET /vote/{id}
      *
      * @param $id
      *
@@ -21,7 +21,7 @@ class VoteController extends Controller {
     public function index($id)
     {
 
-        $accountId     = Session::get('user.id');
+        $accountId      = Session::get('user.id');
         $tollPerVote    = Config::get('aion.vote.toll_per_vote');
         $accountVote    = AccountVote::where('account_id', $accountId)
                                      ->where('site', $id)
