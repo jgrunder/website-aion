@@ -12,7 +12,7 @@ class ConnectUserRequest extends Request {
 	 */
 	public function authorize()
 	{
-        $user = AccountData::acivated()
+        $user = AccountData::activated()
                     ->where('name', $this->username)
                     ->where('password', base64_encode(sha1($this->password, true)))
                     ->first();

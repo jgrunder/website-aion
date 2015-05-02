@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ConnectUserRequest;
+use App\Http\Requests\SubscribeUserRequest;
+use App\Models\AccountData;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,9 +21,15 @@ class UserController extends Controller
     /**
 	 * POST /user/subscribe
 	 */
-    public function createAccount(Request $request)
+    public function createAccount(SubscribeUserRequest $request)
     {
-    	dd($request->all());
+        AccountData::create([
+            'name'      => $request->input('username'),
+            'password'  => $request->input('password'),
+            'email'     => $request->input('email')
+        ]);
+
+        return redirect()->route('home')->with('success', 'Your are now subscribe');
     }
 
     /**
@@ -39,7 +47,8 @@ class UserController extends Controller
     {
         Session::put('connected', true);
         Session::put('user', $request->except('_token'));
-        return redirect(Route('home'))->with('success', 'Your are now connected');
+
+        return redirect()->route('home')-with('success', 'Your are now login');
     }
 
 }

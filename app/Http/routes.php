@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index', ['as' => 'home']);
 
 // USER
 Route::group(['prefix' => 'user'], function()
