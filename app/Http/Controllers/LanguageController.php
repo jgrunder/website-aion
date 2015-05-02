@@ -6,7 +6,11 @@ class LanguageController extends Controller
 {
 
     /**
-     * GET /language
+     * GET /language/{language}
+     *
+     * @param $language
+     *
+     * @return $this
      */
     public function change($language)
     {
