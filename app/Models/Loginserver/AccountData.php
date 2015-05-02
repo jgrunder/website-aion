@@ -19,4 +19,12 @@ class AccountData extends Model {
         return $query->where('activated', 1);
     }
 
+    /**
+     * Add in Scope function for vote
+     */
+    public function scopeVote($query, $accountId, $tollPerVote)
+    {
+        return $query->where('id', $accountId)->increment('vote', 1)->increment('toll', $tollPerVote);
+    }
+
 }
