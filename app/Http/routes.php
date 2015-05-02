@@ -11,17 +11,33 @@
 |
 */
 
-// PATERN PARAMS
+/**
+ * PATTERNS
+ *
+ * ALL id params must be integer
+ */
 Route::pattern('id', '[0-9]+');
 
-Route::get('/', 'HomeController@index', ['as' => 'home']);
-
-Route::get('/vote/{id}', [
-    'as'    => 'vote',
-    'uses'  => 'VoteController@index'
+/**
+ * HOME
+ */
+Route::get('/', [
+    'as'     => 'home',
+    'uses'   => 'HomeController@index'
 ]);
 
-// USER
+/**
+ * VOTE
+ */
+Route::get('/vote/{id}', [
+    'as'         => 'vote',
+    'middleware' => 'connected',
+    'uses'       => 'VoteController@index'
+]);
+
+/**
+ * GROUP - USER
+ */
 Route::group(['prefix' => 'user'], function()
 {
     // GET SUBSCRIBE
@@ -44,7 +60,9 @@ Route::group(['prefix' => 'user'], function()
     
 });
 
-// STATS
+/**
+ * GROUP STATS
+ */
 Route::group(['prefix' => 'stats'], function()
 {
     // GET SUBSCRIBE

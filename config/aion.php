@@ -3,7 +3,9 @@
 return [
 
     'vote' => [
-        'activated'  => true,
+        'activated'         => true,
+        'boost'             => false,
+        'toll_per_vote'     => 10,
         'links'      => [
             [
                 'name' => 'RPG',

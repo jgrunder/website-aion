@@ -14,7 +14,7 @@ class Player extends Model {
      */
     public function scopeOnline($query)
     {
-        return $query->where('online', 0);
+        return $query->where('online', 1);
     }
 
 }
