@@ -8,7 +8,6 @@
                     @else
                         <a href="{{$vote['link']}}">Voter sur {{$vote['name']}}</a>
                     @endif
-
                 </li>
             @endforeach
         </ul>

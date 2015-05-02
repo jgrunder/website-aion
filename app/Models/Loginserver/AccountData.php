@@ -14,7 +14,7 @@ class AccountData extends Model {
     /**
      * Add in Scope function for select account acivated
      */
-    public function scopeAcivated($query)
+    public function scopeActivated($query)
     {
         return $query->where('activated', 1);
     }

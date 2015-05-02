@@ -32,7 +32,7 @@ class ConnectUserRequest extends Request {
 	public function rules()
 	{
 		return [
-			'username' => 'required|unique',
+			'username' => 'required',
             'password' => 'required'
 		];
 	}

@@ -57,6 +57,12 @@ Route::group(['prefix' => 'user'], function()
 
     // POST SUBSCRIBE
     Route::post('login', 'UserController@connect');
+
+    // GET LOGOUT
+    Route::get('logout', [
+        'as'    => 'user.logout',
+        'uses'  => 'UserController@logout'
+    ]);
     
 });
 

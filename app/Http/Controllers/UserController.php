@@ -6,6 +6,7 @@ use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -45,10 +46,30 @@ class UserController extends Controller
      */
     public function connect(ConnectUserRequest $request)
     {
-        Session::put('connected', true);
-        Session::put('user', $request->except('_token'));
+        // TODO Use $request for have this information
+        $user = AccountData::activated()
+            ->where('name', $request->get('username'))
+            ->where('password', base64_encode(sha1($request->get('password'), true)))
+            ->first();
 
-        return redirect()->route('home')-with('success', 'Your are now login');
+        Session::put('connected', true);
+        Session::put('user.id', $user->id);
+        Session::put('user.name', $user->name);
+        Session::put('user.email', $user->email);
+        Session::put('user.toll', $user->toll);
+        Session::put('user.access_level', $user->access_level);
+
+        return redirect(route('home'))->with('success', 'Your are now login');
+    }
+
+    /**
+     * GET /user/logout
+     */
+    public function logout()
+    {
+        Session::flush();
+
+        return redirect(route('home'))->with('success', 'Your are now logout');
     }
 
 }
