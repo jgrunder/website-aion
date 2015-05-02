@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountData;
+use App\Models\Loginserver\AccountData;
 
 class HomeController extends Controller
 {

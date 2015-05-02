@@ -1,7 +1,7 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use App\Models\AccountData;
+use App\Models\Loginserver\AccountData;
 
 class SubscribeUserRequest extends Request {
 

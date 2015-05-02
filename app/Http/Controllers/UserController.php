@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
-use App\Models\AccountData;
+use App\Models\Loginserver\AccountData;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
