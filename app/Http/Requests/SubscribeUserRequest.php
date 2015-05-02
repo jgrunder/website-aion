@@ -43,7 +43,7 @@ class SubscribeUserRequest extends Request {
 	public function rules()
 	{
 		return [
-			'username'          => 'required|unique',
+			'username'          => 'required',
             'password'          => 'required',
             'repeat_password'   => 'required',
             'email'             => 'email'

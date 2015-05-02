@@ -11,7 +11,15 @@
 |
 */
 
+// PATERN PARAMS
+Route::pattern('id', '[0-9]+');
+
 Route::get('/', 'HomeController@index', ['as' => 'home']);
+
+Route::get('/vote/{id}', [
+    'as'    => 'vote',
+    'uses'  => 'VoteController@index'
+]);
 
 // USER
 Route::group(['prefix' => 'user'], function()
