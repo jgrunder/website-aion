@@ -9,6 +9,8 @@ class VoteController extends Controller {
 
     /**
      * GET /stats/online
+     *
+     * @param $id
      */
     public function index($id)
     {

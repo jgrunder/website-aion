@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -20,8 +19,12 @@ class UserController extends Controller
     }
 
     /**
-	 * POST /user/subscribe
-	 */
+     * POST /user/subscribe
+     *
+     * @param SubscribeUserRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createAccount(SubscribeUserRequest $request)
     {
         $user = AccountData::create([
@@ -45,6 +48,10 @@ class UserController extends Controller
 
     /**
      * POST /user/login
+     *
+     * @param ConnectUserRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function connect(ConnectUserRequest $request)
     {
@@ -71,6 +78,8 @@ class UserController extends Controller
 
     /**
      * Create Session with information
+     *
+     * @param $user
      */
     private function createSession($user)
     {
