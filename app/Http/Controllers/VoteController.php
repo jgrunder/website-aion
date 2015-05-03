@@ -23,13 +23,15 @@ class VoteController extends Controller {
 
         $accountId      = Session::get('user.id');
         $tollPerVote    = Config::get('aion.vote.toll_per_vote');
+        $votesLinks     = Config::get('aion.vote.links');
         $accountVote    = AccountVote::where('account_id', $accountId)
                                      ->where('site', $id)
                                      ->first();
 
         if($accountVote === null){
 
-            AccountData::Vote($accountId, $tollPerVote);
+            AccountData::AddNewVote($accountId);
+            AccountData::AddToll($accountId, $tollPerVote);
 
             AccountVote::create([
                 'account_id' => $accountId,
@@ -43,7 +45,8 @@ class VoteController extends Controller {
 
             if($oldDate->diffInHours(Carbon::now()) >= 2){
 
-                AccountData::Vote($accountId, $tollPerVote);
+                AccountData::AddNewVote($accountId);
+                AccountData::AddToll($accountId, $tollPerVote);
 
                 AccountVote::update('date', Carbon::now())->where('account_id', $accountId);
 
@@ -52,7 +55,7 @@ class VoteController extends Controller {
             }
         }
 
-        return redirect(route('home'))->with('success', 'You win '.$tollPerVote.' for the vote');
+        return redirect($votesLinks[$id]['link']);
 
     }
 

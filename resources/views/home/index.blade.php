@@ -26,7 +26,7 @@
         <li><a href="{{Route('language', 'fr')}}">Change to FR</a></li>
         <li><a href="{{Route('language', 'en')}}">Change to EN</a></li>
     </ul>
-    
+
     <!-- VOTES -->
     @include('_modules.vote')
 @stop

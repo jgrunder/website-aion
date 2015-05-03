@@ -8,11 +8,15 @@ class AccountData extends Model {
 
     protected $table        = 'account_data';
     protected $connection   = 'loginserver';
-    protected $fillable     = ['name', 'password', 'email', 'toll'];
+    protected $fillable     = ['id', 'name', 'password', 'email', 'toll', 'vote'];
     public $timestamps      = false;
 
     /**
      * Add in Scope function for select account acivated
+     *
+     * @param $query
+     *
+     * @return
      */
     public function scopeActivated($query)
     {
@@ -21,10 +25,30 @@ class AccountData extends Model {
 
     /**
      * Add in Scope function for vote
+     *
+     * @param $query
+     * @param $accountId
+     * @param $tollPerVote
+     *
+     * @return
      */
-    public function scopeVote($query, $accountId, $tollPerVote)
+    public function scopeAddToll($query, $accountId, $tollPerVote)
     {
-        return $query->where('id', $accountId)->increment('vote', 1)->increment('toll', $tollPerVote);
+        return $query->where('id', $accountId)->increment('toll', $tollPerVote);
+    }
+
+    /**
+     * Add in Scope function for vote
+     *
+     * @param $query
+     *
+     * @param $accountId
+     *
+     * @return
+     */
+    public function scopeAddNewVote($query, $accountId)
+    {
+        return $query->where('id', $accountId)->increment('vote');
     }
 
 }

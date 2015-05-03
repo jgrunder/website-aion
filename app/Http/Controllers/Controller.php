@@ -34,7 +34,6 @@ abstract class Controller extends BaseController {
 
             foreach ($votesInConfig as $key => $value) {
                 $vote = AccountVote::where('account_id', $accountId)->where('site', $key)->first();
-                $date = Carbon::parse($vote->date);
 
                 if ($vote === null) {
                     $votesAvailable[] = [
@@ -42,7 +41,7 @@ abstract class Controller extends BaseController {
                         'status' => true
                     ];
                 } else {
-
+                    $date = Carbon::parse($vote->date);
                     if ($date->diffInHours(Carbon::now()) >= 2) {
                         $votesAvailable[] = [
                             'id'     => $key,

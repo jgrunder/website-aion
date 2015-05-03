@@ -37,6 +37,7 @@
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
+    @include('_modules/flash')
     @yield('content')
 </body>
 </html>
