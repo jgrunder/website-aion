@@ -29,6 +29,7 @@ class UserController extends Controller
     {
         $user = AccountData::create([
             'name'      => $request->input('username'),
+            'pseudo'    => $request->input('pseudo'),
             'password'  => base64_encode(sha1($request->input('password'), true)),
             'email'     => $request->input('email')
         ]);
@@ -86,6 +87,7 @@ class UserController extends Controller
         Session::put('connected', true);
         Session::put('user.id', $user->id);
         Session::put('user.name', $user->name);
+        Session::put('user.name', $user->pseudo);
         Session::put('user.email', $user->email);
         Session::put('user.toll', $user->toll);
         Session::put('user.access_level', $user->access_level);

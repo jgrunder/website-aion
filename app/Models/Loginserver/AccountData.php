@@ -8,7 +8,7 @@ class AccountData extends Model {
 
     protected $table        = 'account_data';
     protected $connection   = 'loginserver';
-    protected $fillable     = ['id', 'name', 'password', 'email', 'toll', 'vote'];
+    protected $fillable     = ['id', 'name', 'password', 'email', 'toll', 'vote', 'pseudo'];
     public $timestamps      = false;
 
     /**

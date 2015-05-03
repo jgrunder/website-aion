@@ -4,17 +4,17 @@ return [
 
     'website_name'  => 'RealAion',
     'aion_version'  => '4.7',
-    'link_facebook' => '#',
-    'link_twitter'  => '#',
+    'link_facebook' => 'https://www.facebook.com/Realaion',
+    'link_twitter'  => 'https://twitter.com/Real_Aion',
 
     'servers'        => [
         'loginserver' => [
-            'ip'    => '127.0.0.1',
-            'port'  => 7000
+            'ip'    => '188.165.42.128',
+            'port'  => 7777
         ],
         'gameserver'  => [
-            'ip'    => '127.0.0.1',
-            'port'  => 8000
+            'ip'    => '188.165.42.128',
+            'port'  => 2106
         ]
     ],
 

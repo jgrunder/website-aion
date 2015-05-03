@@ -20,6 +20,7 @@
         <li><a href="{{Route('user.subscribe')}}">Inscription</a></li>
         <li><a href="{{Route('user.login')}}">Login</a></li>
     @endif
+        <li><a href="{{Route('stats.online')}}">Players Online</a></li>
     </ul>
 
     <ul>

@@ -10,6 +10,9 @@
     	{!! Form::label('username', 'Username') !!}
     	{!! Form::text('username', null, ['placeholder' => 'Username']) !!}
 
+        {!! Form::label('pseudo', 'Pseudo') !!}
+        {!! Form::text('pseudo', null, ['placeholder' => 'Pseudo']) !!}
+
     	{!! Form::label('password', 'Password') !!}
     	{!! Form::password('password', null, ['placeholder' => 'Password']) !!}
 
