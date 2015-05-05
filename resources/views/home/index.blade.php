@@ -10,10 +10,10 @@
     @foreach($news as $article)
         <h2>{{$article->title}}</h2>
         <p>{{$article->text}}</p>
-        <span>Published by{{$article->account_id}} il y a {{$article->updated_at}}</span>
+        <span>Published by {{$article->creator->pseudo}} il y a {{Carbon::parse($article->updated_at)->diffForHumans()}}</span>
     @endforeach
     </div>
-    
+
     <!-- Servers Status -->
     <ul>
     @foreach($serversStatus as $value)
