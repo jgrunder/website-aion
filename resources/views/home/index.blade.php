@@ -5,6 +5,15 @@
 @section('content')
     <h1>{{Lang::get('home.test')}} page</h1>
 
+    <!-- News -->
+    <div class="article">
+    @foreach($news as $article)
+        <h2>{{$article->title}}</h2>
+        <p>{{$article->text}}</p>
+        <span>Published by{{$article->account_id}} il y a {{$article->updated_at}}</span>
+    @endforeach
+    </div>
+    
     <!-- Servers Status -->
     <ul>
     @foreach($serversStatus as $value)
