@@ -13,6 +13,7 @@
     @foreach($serversStatus as $value)
         <li>{{$value['name']}} : {{($value['status']) ? 'ON' : 'OFF'}}</li>
     @endforeach
+        <li>There are {{$countPlayersOnline}} players online.</li>
     </ul>
 
     <!-- Menu -->

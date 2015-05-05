@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountVote;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesCommands;
@@ -20,8 +21,17 @@ abstract class Controller extends BaseController {
     {
         $this->serversTest();
         $this->accountVotes();
+        $this->countPlayersOnline();
     }
 
+    /**
+     * Set Variables $countPlayersOnline
+     */
+    private function countPlayersOnline()
+    {
+        $count = Player::online()->count();
+        View::share('countPlayersOnline', $count);
+    }
     /**
      * Set Variables $accountVotes
      */
