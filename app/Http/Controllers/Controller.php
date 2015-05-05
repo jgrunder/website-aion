@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -80,14 +81,27 @@ abstract class Controller extends BaseController {
         $serversStatus  = [];
 
         foreach ($servers as $key => $server) {
-            $check = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
 
-            $serversStatus[] = [
-                'name'   => $key,
-                'status' => ($check) ? true : false
-            ];
+            if(Cache::has('status.'.$key)){
+                $serversStatus[] = [
+                    'name'   => $key,
+                    'status' => Cache::get('status.'.$key)
+                ];
+            } else {
+                $check = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
 
-            @fclose($check);
+                $expiresAt = Carbon::now()->addMinutes(5);
+
+                Cache::put('status.'.$key, ($check) ? true : false, $expiresAt);
+
+                $serversStatus[] = [
+                    'name'   => $key,
+                    'status' => ($check) ? true : false
+                ];
+
+                @fclose($check);
+            }
+
         }
 
         View::share('serversStatus', $serversStatus);
