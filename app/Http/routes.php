@@ -88,10 +88,16 @@ Route::group(['prefix' => 'user'], function()
  */
 Route::group(['prefix' => 'stats'], function()
 {
-    // GET SUBSCRIBE
+    // GET ONLINE
     Route::get('online', [
         'as'    => 'stats.online',
         'uses'  => 'StatsController@online'
+    ]);
+
+    // GET ABYSS
+    Route::get('abyss', [
+        'as'    => 'stats.abyss',
+        'uses'  => 'StatsController@abyss'
     ]);
 
 });

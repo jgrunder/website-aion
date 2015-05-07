@@ -26,6 +26,7 @@
         <li><a href="{{Route('user.login')}}">Login</a></li>
     @endif
         <li><a href="{{Route('stats.online')}}">Players Online</a></li>
+        <li><a href="{{Route('stats.abyss')}}">Top Abyss</a></li>
     </ul>
 
     <ul>

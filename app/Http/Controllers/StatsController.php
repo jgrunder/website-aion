@@ -17,4 +17,9 @@ class StatsController extends Controller {
         ]);
     }
 
+    public function abyss()
+    {
+        return view('stats.abyss');
+    }
+
 }
