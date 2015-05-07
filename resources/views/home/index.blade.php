@@ -27,6 +27,7 @@
     @endif
         <li><a href="{{Route('stats.online')}}">Players Online</a></li>
         <li><a href="{{Route('stats.abyss')}}">Top Abyss</a></li>
+        <li><a href="{{Route('stats.bg')}}">Top BG</a></li>
     </ul>
 
     <ul>

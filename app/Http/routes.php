@@ -100,4 +100,10 @@ Route::group(['prefix' => 'stats'], function()
         'uses'  => 'StatsController@abyss'
     ]);
 
+    // GET BG
+    Route::get('bg', [
+        'as'    => 'stats.bg',
+        'uses'  => 'StatsController@bg'
+    ]);
+
 });

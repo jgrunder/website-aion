@@ -17,9 +17,20 @@ class StatsController extends Controller {
         ]);
     }
 
+    /**
+     * GET /stats/abyss
+     */
     public function abyss()
     {
         return view('stats.abyss');
+    }
+
+    /**
+     * GET /stats/bg
+     */
+    public function bg()
+    {
+        return view('stats.bg');
     }
 
 }
