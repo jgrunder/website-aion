@@ -48,7 +48,7 @@ class VoteController extends Controller {
                 AccountData::AddNewVote($accountId);
                 AccountData::AddToll($accountId, $tollPerVote);
 
-                AccountVote::update('date', Carbon::now())->where('account_id', $accountId);
+                AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now()]);
 
             } else {
                 return redirect(route('home'))->with('error', "You can't vote for this website, you must wait two hours");
