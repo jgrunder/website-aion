@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Gameserver\Ladder;
 use App\Models\Gameserver\Player;
 
 class StatsController extends Controller {
@@ -30,7 +31,9 @@ class StatsController extends Controller {
      */
     public function bg()
     {
-        return view('stats.bg');
+        return view('stats.bg', [
+            'top' => Ladder::orderBy('rank', 'DESC')->get()
+        ]);
     }
 
 }
