@@ -52,6 +52,19 @@ return [
         16	=> "Grand général d'armée",
         17	=> "Commandant d'armée",
         18	=> "Gouverneur d'armée",
+    ],
+
+    'roles' => [
+        9 => "Administrateur",
+        8 => "Développeur",
+        7 => "GM",
+        6 => "Animateur",
+        5 => "Support",
+        4 => "Représentant Elyséen",
+        3 => "Représentant Asmodien",
+        2 => "Community Manager",
+        1 => "Master Classe",
+        0 => "Joueur"
     ]
 
 ];

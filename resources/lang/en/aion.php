@@ -52,6 +52,19 @@ return [
         16 => "Army Great General",
         17 => "Army Commander",
         18 => "Army Governor",
+    ],
+
+    'roles' => [
+        9 => "Administrator",
+        8 => "Developer",
+        7 => "GM",
+        6 => "Animator",
+        5 => "Support",
+        4 => "Elyos representative",
+        3 => "Asmodian representative",
+        2 => "Community Manager",
+        1 => "Master Classe",
+        0 => "Player"
     ]
 
 ];
