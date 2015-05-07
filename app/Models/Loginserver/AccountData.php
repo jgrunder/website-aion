@@ -51,4 +51,17 @@ class AccountData extends Model {
         return $query->where('id', $accountId)->increment('vote');
     }
 
+    /**
+     * Add in Scope function for select Me account
+     *
+     * @param $query
+     * @param $accountId
+     *
+     * @return
+     */
+    public function scopeMe($query, $accountId)
+    {
+        return $query->where('id', $accountId);
+    }
+
 }

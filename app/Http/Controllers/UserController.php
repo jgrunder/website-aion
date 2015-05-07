@@ -78,6 +78,16 @@ class UserController extends Controller
     }
 
     /**
+     * GET /user/acount
+     */
+    public function account()
+    {
+        return view('user.account', [
+            'user'      => Session::get('user')
+        ]);
+    }
+
+    /**
      * Create Session with information
      *
      * @param $user

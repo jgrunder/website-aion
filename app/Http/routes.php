@@ -73,6 +73,13 @@ Route::group(['prefix' => 'user'], function()
         'as'    => 'user.logout',
         'uses'  => 'UserController@logout'
     ]);
+
+    // GET ACCOUNT
+    Route::get('account', [
+        'as'         => 'user.account',
+        'middleware' => 'connected',
+        'uses'       => 'UserController@account'
+    ]);
     
 });
 

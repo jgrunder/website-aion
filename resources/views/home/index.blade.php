@@ -19,6 +19,7 @@
     <!-- Menu -->
     <ul>
     @if(Session::has('connected'))
+        <li><a href="{{Route('user.account')}}">My account</a></li>
         <li><a href="{{Route('user.logout')}}">Logout</a></li>
     @else
         <li><a href="{{Route('user.subscribe')}}">Inscription</a></li>
