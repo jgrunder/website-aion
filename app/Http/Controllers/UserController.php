@@ -97,7 +97,7 @@ class UserController extends Controller
         Session::put('connected', true);
         Session::put('user.id', $user->id);
         Session::put('user.name', $user->name);
-        Session::put('user.name', $user->pseudo);
+        Session::put('user.pseudo', $user->pseudo);
         Session::put('user.email', $user->email);
         Session::put('user.toll', $user->toll);
         Session::put('user.access_level', $user->access_level);
