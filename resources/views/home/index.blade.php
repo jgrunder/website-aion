@@ -22,6 +22,9 @@
         <li><a href="{{Route('user.subscribe')}}">Inscription</a></li>
         <li><a href="{{Route('user.login')}}">Login</a></li>
     @endif
+    </ul>
+
+    <ul>
         <li><a href="{{Route('stats.online')}}">Players Online</a></li>
         <li><a href="{{Route('stats.abyss')}}">Top Abyss</a></li>
         <li><a href="{{Route('stats.bg')}}">Top BG</a></li>
