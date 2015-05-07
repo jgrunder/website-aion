@@ -36,7 +36,7 @@ class UserController extends Controller
 
         $this->createSession($user);
 
-        return redirect()->route('home')->with('success', 'Your are now subscribe');
+        return redirect()->route('user.account')->with('success', 'Your are now subscribe');
     }
 
     /**
@@ -64,7 +64,7 @@ class UserController extends Controller
 
         $this->createSession($user);
 
-        return redirect(route('home'))->with('success', 'Your are now login');
+        return redirect(route('user.account'))->with('success', 'Your are now login');
     }
 
     /**
