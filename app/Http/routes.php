@@ -107,3 +107,34 @@ Route::group(['prefix' => 'stats'], function()
     ]);
 
 });
+
+/**
+ * GROUP PAGE
+ */
+Route::group(['prefix' => 'page'], function()
+{
+    // GET contactus
+    Route::get('contactus', [
+        'as'    => 'page.contactus',
+        'uses'  => 'PageController@contactUs'
+    ]);
+
+    // GET teamspeak
+    Route::get('teamspeak', [
+        'as'    => 'page.teamspeak',
+        'uses'  => 'PageController@teamspeak'
+    ]);
+
+    // GET rules
+    Route::get('rules', [
+        'as'    => 'page.rules',
+        'uses'  => 'PageController@rules'
+    ]);
+
+    // GET team
+    Route::get('team', [
+        'as'    => 'page.team',
+        'uses'  => 'PageController@team'
+    ]);
+
+});
