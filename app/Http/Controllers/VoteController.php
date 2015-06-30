@@ -51,7 +51,7 @@ class VoteController extends Controller {
                 AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now()]);
 
             } else {
-                return redirect(route('home'))->with('error', "You can't vote for this website, you must wait two hours");
+                return redirect(route('page.error'))->with('error', "You can't vote for this website, you must wait two hours");
             }
         }
 
