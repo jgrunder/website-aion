@@ -44,6 +44,15 @@ Route::get('/language/{language}', [
 ]);
 
 /**
+ * SHOP
+ */
+Route::get('shop', [
+    'as'         => 'shop',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@index'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()

@@ -68,7 +68,7 @@ class UserController extends Controller
 
 	      return redirect(route('user.account'))->with('success', 'Vous êtes maintenant connecté');
 			} else {
-				return redirect(route('home'));
+				return redirect(route('home'))->with('error', 'Votre compte n\'existe pas')->withInput();
 			}
 
     }

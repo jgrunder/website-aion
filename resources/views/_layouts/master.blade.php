@@ -72,7 +72,7 @@
                 </ul>
             </li>
             <li><a href="http://realaion.com/forum/">Forum</a></li>
-            <li><a href="#">Boutique</a></li>
+            <li><a href="{{Route('shop')}}">Boutique</a></li>
         </ul>
     </nav>
 

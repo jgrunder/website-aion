@@ -4,5 +4,5 @@
     <span class="asmo_count">{{$countPlayersOnlineAsmodians}}</span>
   </a>
   <a href="#" class="donation"><span>Donation</span></a>
-  <a href="#" class="shop"><span>Shop</span></a>
+  <a href="{{Route('shop')}}" class="shop"><span>Shop</span></a>
 </div>
