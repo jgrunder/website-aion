@@ -15,6 +15,14 @@ class PageController extends Controller {
     }
 
     /**
+     * GET /page/join-us
+     */
+    public function joinUs()
+    {
+        return view('page.joinus');
+    }
+
+    /**
      * GET /page/teamspeak
      */
     public function teamspeak()

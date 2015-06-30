@@ -41,7 +41,7 @@
     <!-- NAV -->
     <nav class="nav">
         <ul class="menu">
-            <li><a href="{{Route('home')}}" alt="">Accueil</a></li>
+            <li><a href="{{Route('home')}}">Accueil</a></li>
             <li>
               <a href="#">A propos</a>
               <ul class="sub_menu">

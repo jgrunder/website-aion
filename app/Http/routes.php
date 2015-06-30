@@ -119,6 +119,12 @@ Route::group(['prefix' => 'page'], function()
         'uses'  => 'PageController@contactUs'
     ]);
 
+    // GET contactus
+    Route::get('joins-us', [
+        'as'    => 'page.joins-us',
+        'uses'  => 'PageController@joinUs'
+    ]);
+
     // GET teamspeak
     Route::get('teamspeak', [
         'as'    => 'page.teamspeak',
@@ -138,7 +144,7 @@ Route::group(['prefix' => 'page'], function()
     ]);
 
     // GET team
-    Route::get('rates-du-serveur', [
+    Route::get('rates-of-server', [
         'as'    => 'page.rates',
         'uses'  => 'PageController@rates'
     ]);
