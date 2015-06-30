@@ -1,21 +1,37 @@
 @extends('_layouts.master')
 
-@section('title', 'Players online')
+@section('title', 'Joueurs en lignes')
 
 @section('content')
-    <h1>Online Player page</h1>
-
-    @if(count($users) === 0)
-        No players online
-    @else
-        @foreach($users as $user)
-            <h2>{{$user->name}}</h2>
-            <p>
-                {{Lang::get('aion.race_name.'.$user->race)}}
-                /
-                {{Lang::get('aion.class_name.'.$user->player_class)}}
-            </p>
-        @endforeach
-    @endif
-
+  <div class="container_single">
+    <div class="container_single_top">
+      <h1>Joueurs en lignes</h1>
+    </div>
+    <div class="container_single_body">
+      @if(count($users) === 0)
+          <center>Aucun joueurs en lignes</center>
+      @else
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Faction</th>
+              <th>Classe</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($users as $user)
+              <tr>
+                <td class="strong">1</td>
+                <td>{{$user->name}}</td>
+                <td>{{Lang::get('aion.race_name.'.$user->race)}}</td>
+                <td>{{Lang::get('aion.class_name.'.$user->player_class)}}</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      @endif
+    </div>
+  </div>
 @stop

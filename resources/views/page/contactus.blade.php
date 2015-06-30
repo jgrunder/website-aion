@@ -1,7 +1,13 @@
 @extends('_layouts.master')
 
-@section('title', 'ContactUs')
+@section('title', 'Contactez-nous')
 
 @section('content')
-    <h1>Contact Us page</h1>
+<div class="container_single subscribe">
+  <div class="container_single_top">
+    <h1>Contactez-nous</h1>
+  </div>
+  <div class="container_single_body">
+  </div>
+</div>
 @stop

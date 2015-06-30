@@ -20,7 +20,7 @@ class ConnectUserRequest extends Request {
         if($user !== null){
             return true;
         } else {
-            return false;
+						return false;
         }
 	}
 
@@ -33,7 +33,7 @@ class ConnectUserRequest extends Request {
 	{
 		return [
 			'username' => 'required',
-            'password' => 'required'
+      'password' => 'required'
 		];
 	}
 

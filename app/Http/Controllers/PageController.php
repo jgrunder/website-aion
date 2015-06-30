@@ -38,4 +38,12 @@ class PageController extends Controller {
         return view('page.team');
     }
 
+    /**
+     * GET /page/error
+     */
+    public function error()
+    {
+        return view('page.error');
+    }
+
 }

@@ -6,16 +6,36 @@ return [
     'aion_version'  => '4.7',
     'link_facebook' => 'https://www.facebook.com/Realaion',
     'link_twitter'  => 'https://twitter.com/Real_Aion',
+    'link_youtube'  => 'https://youtube.com',
 
     'servers'        => [
-        'loginserver' => [
+        'Serveur'  => [
+            'ip'    => '188.165.42.128',
+            'port'  => 2106
+        ],
+        'Login' => [
             'ip'    => '188.165.42.128',
             'port'  => 7777
         ],
-        'gameserver'  => [
+        'TS'  => [
             'ip'    => '188.165.42.128',
-            'port'  => 2106
+            'port'  => 8888
         ]
+    ],
+
+    'slider' => [
+      [
+          'image' => '1.jpg',
+          'title' => 'Titre de l’article du slider 1'
+      ],
+      [
+          'image' => '2.jpg',
+          'title' => 'Titre de l’article du slider 2'
+      ],
+      [
+          'image' => '3.jpg',
+          'title' => 'Titre de l’article du slider 3'
+      ]
     ],
 
     'vote' => [

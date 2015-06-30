@@ -80,7 +80,7 @@ Route::group(['prefix' => 'user'], function()
         'middleware' => 'connected',
         'uses'       => 'UserController@account'
     ]);
-    
+
 });
 
 /**
@@ -135,6 +135,12 @@ Route::group(['prefix' => 'page'], function()
     Route::get('team', [
         'as'    => 'page.team',
         'uses'  => 'PageController@team'
+    ]);
+
+    // GET error
+    Route::get('error', [
+        'as'    => 'page.error',
+        'uses'  => 'PageController@error'
     ]);
 
 });

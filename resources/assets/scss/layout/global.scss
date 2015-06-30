@@ -1,0 +1,135 @@
+body {
+	width: 100%;
+	background: url('../images/body_background.jpg') no-repeat center top $bodyBackground;
+	font-family: "Arial";
+}
+
+a {
+	color: #198ade;
+	text-decoration: none !important;
+	transition: all 0.3s;
+	outline: 0 !important;
+	&:hover {
+		color: #0d6eb6;
+	}
+}
+
+.center {
+	text-align: center;
+}
+.strong {
+	font-weight: bold;
+}
+.clear {
+	clear: both;
+}
+.margin {
+	display: block;
+	margin: 15px 0px 15px 0px;
+}
+
+h2 {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/*
+ * FORM
+ */
+
+$input_color: #dedede;
+$input_color_hover: #8e8e8e;
+$input_color_text: #aeaeae;
+
+::-webkit-input-placeholder{
+	color: $input_color_text;
+}
+
+:-moz-input-placeholder{
+	color: $input_color_text;
+}
+
+input-placeholder{
+	color: $input_color_text;
+}
+
+.input {
+	width: 235px;
+	height: 45px;
+	border: 1px solid $input_color;
+	color: $input_color_text;
+	border-radius: 5px;
+	font-size: 16px;
+	padding-left: 10px;
+	transition: all 0.3s;
+	&:focus {
+		outline: 0;
+		border: 1px solid $input_color_hover;
+	}
+	&:hover {
+		border: 1px solid $input_color_hover;
+	}
+}
+.input_error {
+	&:focus, &:hover {
+		border: 1px solid #ff4c23;
+	}
+	border: 1px solid #ff4c23;
+}
+.error_form {
+	position: relative;
+	left: 5px;
+	top: -8px;
+	color: #fe3432;
+	font-size: 14px;
+	display: inline-block;
+}
+
+/*
+ * BTN
+ */
+.btn{
+	height: 45px;
+ 	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+ 	border: none;
+ 	border-radius: 5px;
+ 	padding: 10px 20px 10px 20px;
+	color: white;
+	background-color: #198ade;
+	border-bottom: 3px solid #1575bd;
+ 	text-decoration: none;
+	cursor: pointer;
+	outline: none !important;
+	transition: all 0.3s;
+	&:hover {
+		background-color: #53a248;
+		border-bottom: 3px solid #478a3d;
+	}
+	&:active {
+		border-bottom: 3px solid #53a248;
+		background-color: #4b9841;
+	}
+}
+
+/*
+ * TABLE
+ */
+table {
+	width: 100%;
+	text-align: center;
+	thead {
+		background-color: #e7e7e7;
+	}
+	td, th {
+		padding: 10px 0px 10px 0px;
+	}
+	tbody tr {
+		transition: all 0.2s;
+		border-bottom: 1px solid #e1e1e1;
+		&:hover {
+			background-color: #e7e7e7;
+		}
+	}
+}

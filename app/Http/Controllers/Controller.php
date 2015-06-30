@@ -30,8 +30,10 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-        $count = Player::online()->count();
-        View::share('countPlayersOnline', $count);
+			$count_asmodians = Player::online()->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		 = Player::online()->where('race', '=', 'ELYOS')->count();
+			View::share('countPlayersOnlineAsmodians', $count_asmodians);
+			View::share('countPlayersOnlineElyos', $count_elyos);
     }
     /**
      * Set Variables $accountVotes
@@ -39,8 +41,8 @@ abstract class Controller extends BaseController {
     private function accountVotes()
     {
         if(Session::has('connected')) {
-            $accountId = Session::get('user.id');
-            $votesInConfig = Config::get('aion.vote.links');
+            $accountId      = Session::get('user.id');
+            $votesInConfig  = Config ::get('aion.vote.links');
             $votesAvailable = [];
 
             foreach ($votesInConfig as $key => $value) {

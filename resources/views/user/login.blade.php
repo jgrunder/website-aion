@@ -1,19 +1,13 @@
 @extends('_layouts.master')
 
-@section('title', 'Login')
+@section('title', 'Connexion')
 
 @section('content')
-    <h1>Login page</h1>
-
-    {!! Form::open() !!}
-
-    {!! Form::label('username', 'Username') !!}
-    {!! Form::text('username', null, ['placeholder' => 'Username']) !!}
-
-    {!! Form::label('password', 'Password') !!}
-    {!! Form::password('password', null, ['placeholder' => 'Password']) !!}
-
-    <button>Login</button>
-
-    {!! Form::close() !!}
+  <div class="container_single subscribe">
+    <div class="container_single_top">
+      <h1>Connexion</h1>
+    </div>
+    <div class="container_single_body">
+    </div>
+  </div>
 @stop

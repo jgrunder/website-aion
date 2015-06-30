@@ -1,7 +1,13 @@
 @extends('_layouts.master')
 
-@section('title', 'Rules')
+@section('title', 'Règlement')
 
 @section('content')
-    <h1>Rules page</h1>
+<div class="container_single subscribe">
+  <div class="container_single_top">
+    <h1>Règlement</h1>
+  </div>
+  <div class="container_single_body">
+  </div>
+</div>
 @stop
