@@ -22,7 +22,6 @@
               <li>Pseudo d'affichage : {{$user['pseudo']}}</li>
               <li>Email : {{$user['email']}}</li>
               <li>Toll : {{$user['toll']}}</li>
-              <li>Rôle : {{Lang::get('aion.roles.'.$user['access_level'])}}</li>
             </ul>
             <br>
             <h2>Mes Personnages :</h2>

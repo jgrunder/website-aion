@@ -13,8 +13,8 @@ class HomeController extends Controller
 	public function index()
 	{
 		return view('home.index', [
-            'news' => News::all()
-        ]);
+        'news' => News::all()
+    ]);
 	}
 
 }

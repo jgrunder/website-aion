@@ -2,6 +2,7 @@
 
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountVote;
+use App\Models\Loginserver\AccountData;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
@@ -23,6 +24,7 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
+				$this->accountToll();
     }
 
     /**
@@ -35,6 +37,21 @@ abstract class Controller extends BaseController {
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
     }
+
+		/**
+     * Set Variables $accountVotes
+     */
+		private function accountToll()
+		{
+			if(Session::has('connected')) {
+				$user = AccountData::where('id', Session::get('user.id'))->first();
+				Session::put('user.toll', $user['toll']);
+			}
+			else {
+				Session::put('user.toll', 0);
+			}
+		}
+
     /**
      * Set Variables $accountVotes
      */
