@@ -133,3 +133,29 @@ table {
 		}
 	}
 }
+
+/*
+ * Flash Messages
+ */
+div.flash_messages {
+	width: 250px;
+	height: auto;
+	background-color: blue;
+	position: fixed;
+	z-index: 10;
+	top: 40px;
+	right: 20px;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+	line-height: 1.5;
+	font-weight: lighter;
+	display: none;
+	&.success {
+		background-color: #1fab3d;
+	}
+	&.error {
+		background-color: #ff4c23;
+	}
+}

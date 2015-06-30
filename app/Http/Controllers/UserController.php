@@ -37,7 +37,7 @@ class UserController extends Controller
 
 			$this->createSession($user);
 
-			return redirect()->route('user.account');
+			return redirect()->route('user.account')->with('success', 'Vous êtes maintenant inscrit et connecté');
 
     }
 
@@ -66,7 +66,7 @@ class UserController extends Controller
 			if($user !== null){
 				$this->createSession($user);
 
-	      return redirect(route('user.account'))->with('success', 'Your are now login');
+	      return redirect(route('user.account'))->with('success', 'Vous êtes maintenant connecté');
 			} else {
 				return redirect(route('home'));
 			}
@@ -80,7 +80,7 @@ class UserController extends Controller
     {
         Session::flush();
 
-        return redirect(route('home'));
+        return redirect(route('home'))->with('success', 'Vous êtes maintenant déconnecté');
     }
 
     /**

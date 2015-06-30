@@ -17,12 +17,22 @@ $(document).ready(function(){
    * BTN : CONNEXION
    */
   var btnConnexion = $('#btn_connexion');
-  
+
   if(btnConnexion.length > 0){
     btnConnexion.on('click', function(e){
       $('#user_panel').slideToggle();
       e.preventDefault();
     });
+  }
+
+  /*
+   * Flash Messages
+   */
+  if($('#flashMsg p').length > 0){
+    $('#flashMsg').show();
+    setTimeout(function(){
+      $('#flashMsg').fadeOut(500);
+    }, 2000);
   }
 
 });
