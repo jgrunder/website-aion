@@ -15,7 +15,7 @@ class UnConnected {
     public function handle($request, Closure $next)
     {
         if(Session::has('connected')){
-            return redirect(route('page.error'))->with('error', "You can't access to this page when you are connected");
+            return redirect(route('home'))->with('error', "Vous ne pouvez pas accéder à cette page en étant connecté");
         }
 
         return $next($request);
