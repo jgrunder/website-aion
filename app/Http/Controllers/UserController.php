@@ -27,16 +27,18 @@ class UserController extends Controller
      */
     public function createAccount(SubscribeUserRequest $request)
     {
-        $user = AccountData::create([
-            'name'      => $request->input('username'),
-            'pseudo'    => $request->input('pseudo'),
-            'password'  => base64_encode(sha1($request->input('password'), true)),
-            'email'     => $request->input('email')
-        ]);
 
-        $this->createSession($user);
+			$user = AccountData::create([
+					'name'      => $request->input('username'),
+					'pseudo'    => $request->input('pseudo'),
+					'password'  => base64_encode(sha1($request->input('password'), true)),
+					'email'     => $request->input('email')
+			]);
 
-        return redirect()->route('user.account')->with('success', 'Your are now subscribe');
+			$this->createSession($user);
+
+			return redirect()->route('user.account');
+
     }
 
     /**

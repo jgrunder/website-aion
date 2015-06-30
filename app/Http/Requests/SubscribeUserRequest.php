@@ -2,8 +2,39 @@
 
 use App\Http\Requests\Request;
 use App\Models\Loginserver\AccountData;
+use Illuminate\Validation\Factory;
 
 class SubscribeUserRequest extends Request {
+
+
+	public function __construct(Factory $factory)
+  {
+			// Rule for check Account usage
+      $factory->extend('notUseAccount', function ($attribute, $value, $parameters){
+
+				$account = AccountData::where('name', $value)->first();
+
+				if($account !== null) {
+					return false;
+				} else {
+					return true;
+				}
+
+      }, 'The account is already token');
+
+			// Rule for check Email usage
+			$factory->extend('notUseEmail', function ($attribute, $value, $parameters){
+
+				$email = AccountData::where('email', $value)->first();
+
+				if($email !== null) {
+					return false;
+				} else {
+					return true;
+				}
+
+      }, 'The email is already token');
+  }
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -12,27 +43,7 @@ class SubscribeUserRequest extends Request {
 	 */
 	public function authorize()
 	{
-
-        $email      = AccountData::where('email', $this->email)->first();
-        $account    = AccountData::where('name', $this->username)->first();
-
-        if($account === null) {
-            if($email === null) {
-                if($this->password === $this->repeat_password){
-                    return true;
-                } else {
-                    // TODO Send : Both password must be the same
-                    return false;
-                }
-            } else {
-                // TODO Send : There are a account with this email
-                return false;
-            }
-        } else {
-            // TODO Send : There are a account with this username
-            return false;
-        }
-
+		return true;
 	}
 
 	/**
@@ -43,11 +54,11 @@ class SubscribeUserRequest extends Request {
 	public function rules()
 	{
 		return [
-            'username'          => 'required',
-            'pseudo'            => 'required',
-            'password'          => 'required',
-            'repeat_password'   => 'required',
-            'email'             => 'email'
+      'username'              => 'required|notUseAccount',
+      'pseudo'                => 'required',
+      'password'              => 'required|confirmed',
+      'password_confirmation' => 'required',
+      'email'                 => 'email|notUseEmail'
 		];
 	}
 

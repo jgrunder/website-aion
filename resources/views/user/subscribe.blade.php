@@ -14,14 +14,49 @@
       {!! Form::open() !!}
 
         {!! Form::text('username', null, ['placeholder' => 'Identifiant', 'class' => 'input']) !!}
+          @if (count($errors->get('username')) > 0)
+            <span class="error_form">
+                @foreach ($errors->get('username') as $message)
+                  {{$message}}
+                @endforeach
+            </span>
+          @endif
 
         {!! Form::text('pseudo', null, ['placeholder' => "Pseudo d'affichage", 'class' => 'input']) !!}
+          @if (count($errors->get('pseudo')) > 0)
+            <span class="error_form">
+                @foreach ($errors->get('pseudo') as $message)
+                  {{$message}}
+                @endforeach
+            </span>
+          @endif
 
-        {!! Form::password('pseudo', ['placeholder' => "Mot de passe", 'class' => 'input']) !!}
+        {!! Form::password('password', ['placeholder' => "Mot de passe", 'class' => 'input']) !!}
+          @if (count($errors->get('password')) > 0)
+            <span class="error_form">
+                @foreach ($errors->get('password') as $message)
+                  {{$message}}
+                @endforeach
+            </span>
+          @endif
 
-        {!! Form::password('repeat_password', ['placeholder' => "Retapez le mot de passe", 'class' => 'input']) !!}
+        {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input']) !!}
+          @if (count($errors->get('password_confirmation')) > 0)
+            <span class="error_form">
+                @foreach ($errors->get('password_confirmation') as $message)
+                  {{$message}}
+                @endforeach
+            </span>
+          @endif
 
         {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input']) !!}
+          @if (count($errors->get('email')) > 0)
+            <span class="error_form">
+                @foreach ($errors->get('email') as $message)
+                  {{$message}}
+                @endforeach
+            </span>
+          @endif
 
         <input type="submit" class="btn btn-primary" value="Valider l'inscription">
 
