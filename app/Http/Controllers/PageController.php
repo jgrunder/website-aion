@@ -46,4 +46,12 @@ class PageController extends Controller {
         return view('page.error');
     }
 
+    /**
+     * GET /page/rates
+     */
+    public function rates()
+    {
+        return view('page.rates');
+    }
+
 }

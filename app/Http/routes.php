@@ -137,6 +137,12 @@ Route::group(['prefix' => 'page'], function()
         'uses'  => 'PageController@team'
     ]);
 
+    // GET team
+    Route::get('rates-du-serveur', [
+        'as'    => 'page.rates',
+        'uses'  => 'PageController@rates'
+    ]);
+
     // GET error
     Route::get('error', [
         'as'    => 'page.error',

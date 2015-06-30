@@ -49,7 +49,7 @@
               </ul>
             </li>
             <li><a href="{{Route('page.rules')}}">Règles</a></li>
-            <li><a href="#">Rates</a></li>
+            <li><a href="{{Route('page.rates')}}">Rates</a></li>
             <li>
                 <a href="#">Stats</a>
                 <ul class="sub_menu">
@@ -58,7 +58,7 @@
                     <li><a href="{{Route('stats.bg')}}">Classement des BG</a></li>
                 </ul>
             </li>
-            <li><a href="#">Forum</a></li>
+            <li><a href="http://realaion.com/forum/">Forum</a></li>
             <li><a href="#">Boutique</a></li>
         </ul>
     </nav>
