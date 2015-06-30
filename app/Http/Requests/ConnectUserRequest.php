@@ -4,7 +4,6 @@ use App\Http\Requests\Request;
 use App\Models\Loginserver\AccountData;
 
 class ConnectUserRequest extends Request {
-
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
@@ -12,16 +11,7 @@ class ConnectUserRequest extends Request {
 	 */
 	public function authorize()
 	{
-        $user = AccountData::activated()
-                    ->where('name', $this->username)
-                    ->where('password', base64_encode(sha1($this->password, true)))
-                    ->first();
-
-        if($user !== null){
-            return true;
-        } else {
-						return false;
-        }
+  	return true;
 	}
 
 	/**

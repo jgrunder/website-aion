@@ -58,15 +58,19 @@ class UserController extends Controller
      */
     public function connect(ConnectUserRequest $request)
     {
-        // TODO Use $request for have this information
-        $user = AccountData::activated()
-            ->where('name', $request->get('username'))
-            ->where('password', base64_encode(sha1($request->get('password'), true)))
-            ->first();
+      $user = AccountData::activated()
+          ->where('name', $request->get('username'))
+          ->where('password', base64_encode(sha1($request->get('password'), true)))
+          ->first();
 
-        $this->createSession($user);
+			if($user !== null){
+				$this->createSession($user);
 
-        return redirect(route('user.account'))->with('success', 'Your are now login');
+	      return redirect(route('user.account'))->with('success', 'Your are now login');
+			} else {
+				return redirect(route('home'));
+			}
+
     }
 
     /**
@@ -76,7 +80,7 @@ class UserController extends Controller
     {
         Session::flush();
 
-        return redirect(route('home'))->with('success', 'Your are now logout');
+        return redirect(route('home'));
     }
 
     /**
@@ -85,7 +89,7 @@ class UserController extends Controller
     public function account()
     {
         return view('user.account', [
-            'user'      => Session::get('user')
+            'user' => Session::get('user')
         ]);
     }
 
