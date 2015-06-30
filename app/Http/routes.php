@@ -118,6 +118,18 @@ Route::group(['prefix' => 'stats'], function()
 });
 
 /**
+ * GROUP DATABASE
+ */
+Route::group(['prefix' => 'database'], function()
+{
+    // GET ITEM
+    Route::get('item/{id}', [
+        'as'    => 'database.item',
+        'uses'  => 'DatabaseController@item'
+    ]);
+});
+
+/**
  * GROUP PAGE
  */
 Route::group(['prefix' => 'page'], function()
