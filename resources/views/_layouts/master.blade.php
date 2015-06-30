@@ -45,7 +45,9 @@
             <li>
               <a href="#">A propos</a>
               <ul class="sub_menu">
-                  <li><a href="{{Route('page.team')}}">Equipe</a></li>
+                <li><a href="{{Route('page.teamspeak')}}">Teamspeak</a></li>
+                <li><a href="{{Route('page.team')}}">Equipe</a></li>
+                <li><a href="{{Route('page.contactus')}}">Contact</a></li>
               </ul>
             </li>
             <li><a href="{{Route('page.rules')}}">Règles</a></li>

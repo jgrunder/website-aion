@@ -265,6 +265,8 @@ nav.nav {
     nav.nav .menu > li:nth-child(2) {
       position: absolute;
       right: 690px; }
+      nav.nav .menu > li:nth-child(2) .sub_menu {
+        left: -50px !important; }
     nav.nav .menu > li:nth-child(3) {
       position: absolute;
       right: 560px; }
