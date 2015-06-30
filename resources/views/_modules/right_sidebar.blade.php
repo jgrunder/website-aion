@@ -21,7 +21,7 @@
           @if(Session::has('connected') && $accountVotes[$key]['status'])
               <a href="{{ URL::route('vote', $key) }}">Voter sur {{$vote['name']}}</a>
           @elseif (Session::has('connected') && !$accountVotes[$key]['status'])
-              Wait 2h for vote for {{$vote['name']}}
+              <p>Merci d'attendre 2H pour {{$vote['name']}}</p>
           @else
               <a href="{{$vote['link']}}">Voter sur {{$vote['name']}}</a>
           @endif

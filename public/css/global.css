@@ -844,7 +844,7 @@ footer.footer {
   display: block;
   background: url("../images/btn_join_us.png") no-repeat; }
 
-.container_right .bloc_vote a:first-child {
+.container_right .bloc_vote a:first-child, .container_right .bloc_vote p:first-child {
   display: block;
   margin-bottom: 20px; }
 

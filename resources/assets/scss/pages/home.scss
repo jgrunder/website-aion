@@ -106,7 +106,7 @@
     background: url('../images/btn_join_us.png') no-repeat;
   }
   .bloc_vote {
-    a:first-child {
+    a:first-child, p:first-child {
       display: block;
       margin-bottom: 20px;
     }
