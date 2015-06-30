@@ -80,7 +80,8 @@ abstract class Controller extends BaseController {
                     } else {
                         $votesAvailable[] = [
                             'id'     => $key,
-                            'status' => false
+                            'status' => false,
+														'diff'	 => Carbon::now()->diffForHumans($date)// TODO : Not sure ...
                         ];
                     }
                 }
