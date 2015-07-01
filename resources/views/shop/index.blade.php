@@ -8,13 +8,13 @@
     <div class="container_left">
       <div class="news">
         <div class="news_top">
-          <h2>Boutique</h2>
+          <h2>Boutique @if(isset($top)) (Meilleurs ventes) @endif</h2>
         </div>
         <div class="news_body shop_container">
 
           @foreach($items as $item)
             <div class="item_shop">
-              <h3><a href="#">{{$item->name}}</a></h3>
+              <h3><a href="http://aiondatabase.net/fr/item/{{$item->id_item}}" target="_blank">{{$item->name}}</a></h3>
               <ul>
                 <li class="quantity">Quantity {{$item->quantity}}</li>
                 <li class="price">Price {{$item->price}}</li>

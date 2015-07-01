@@ -87,3 +87,23 @@
     border-bottom-color: rgba(#FF4C23, 0.79);
   }
 }
+.container_shop_recap{
+    tbody {
+        tr:last-child {
+            border-bottom: none;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    form {
+        text-align: center;
+        .select {
+            height: 45px;
+            outline: 0;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}

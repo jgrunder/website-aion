@@ -20,6 +20,6 @@
         </tbody>
     </table>
 
-    <a href="#" class="btn">Acheter ({{$total}}Toll)</a>
-    <a href="#" class="btn gift_button">Cadeau ({{$total}}Toll)</a>
+    <a href="{{Route('shop.summary')}}" class="btn">Acheter ({{$total}} Toll)</a>
+    <!-- <a href="#" class="btn gift_button">Cadeau ({{$total}} Toll)</a> -->
 @endif

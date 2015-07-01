@@ -64,4 +64,12 @@ class AccountData extends Model {
         return $query->where('id', $accountId);
     }
 
+    /**
+     * Get players of account
+     */
+    public function players()
+    {
+        return $this->hasMany('App\Models\Gameserver\Player', 'account_id', 'id');
+    }
+
 }

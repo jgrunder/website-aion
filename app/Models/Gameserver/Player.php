@@ -8,6 +8,7 @@ class Player extends Model {
 
     protected $table        = 'players';
     protected $connection   = 'gameserver';
+    protected $fillable     = ['account_name'];
 
     /**
      * Add in Scope function for select player online

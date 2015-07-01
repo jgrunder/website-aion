@@ -80,6 +80,24 @@ Route::get('shop/remove/{id}', [
 ]);
 
 /**
+ * SHOP SUMMARY
+ */
+Route::get('shop/summary', [
+    'as'         => 'shop.summary',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@summary'
+]);
+
+/**
+ * SHOP SUMMARY
+ */
+Route::post('shop/summary', [
+    'as'         => 'shop.summary',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@buy'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()

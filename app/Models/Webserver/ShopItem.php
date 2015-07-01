@@ -9,5 +9,6 @@ class ShopItem extends Model {
     protected $table        = 'shop_items';
     protected $connection   = 'webserver';
     protected $fillable     = ['id_category', 'name', 'price', 'quantity', 'level'];
+    public $timestamps      = false;
 
 }
