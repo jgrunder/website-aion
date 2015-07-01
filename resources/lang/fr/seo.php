@@ -1,64 +1,64 @@
 <?php
 
 return [
-    'home' => [
-        'title' => "Accueil",
+    'home'            => [
+        'title'       => "Accueil",
         'description' => "Serveur privé Aion fun et PVP stable et performant en version 4.7"
     ],
-    'news' => [
-        'title' => "Article"
+    'news'            => [
+        'title'       => "Article"
     ],
-    'login' => [
-        'title' => "Connexion"
+    'login'           => [
+        'title'       => "Connexion"
     ],
-    'subscribe' => [
-        'title' => "Inscription"
+    'subscribe'       => [
+        'title'       => "Inscription"
     ],
-    'logout' => [
-        'title' => "Déconnexion"
+    'logout'          => [
+        'title'       => "Déconnexion"
     ],
-    'account' => [
-        'title' => "Votre compte"
+    'account'         => [
+        'title'       => "Votre compte"
     ],
-    'contact' => [
-        'title' => "Contactez-nous",
+    'contact'         => [
+        'title'       => "Contactez-nous",
         'description' => "Un problème sur le serveur ? Venez nous en parler nous sommes ouverts à toutes discussions."
     ],
-    'joinus' => [
-        'title' => "Nous rejoindre",
+    'joinus'          => [
+        'title'       => "Nous rejoindre",
         'description' => "Vous souhaitez nous rejoindre ? Pas de soucis, cette page vous explique pas à pas comment rejoindre le serveur RealAion !"
     ],
-    'teamspeak' => [
-        'title' => "Teamspeak",
+    'teamspeak'       => [
+        'title'       => "Teamspeak",
         'description' => "Venez discuter sur notre serveur Teamspeak 3."
     ],
-    'rules' => [
-        'title' => "Règlement",
+    'rules'           => [
+        'title'       => "Règlement",
         'description' => "Retrouvez le règlement du serveur et gardez-le en tête pour éviter de futur problème."
     ],
-    'team' => [
-        'title' => "Equipe",
+    'team'            => [
+        'title'       => "Equipe",
         'description' => "Le serveur RealAion ne vit que grâce à ses bénévoles qui sont présents pour vous aider en cas de besoin !"
     ],
-    'error' => [
-        'title' => "Erreur",
+    'error'           => [
+        'title'       => "Erreur",
         'description' => "Vous vous trouvez actuellement sur une page qui n'existe pas ou qui a été supprimée."
     ],
-    'rates' => [
-        'title' => "Rates du serveur",
+    'rates'           => [
+        'title'       => "Rates du serveur",
         'description' => "Retrouvez les informations à propos du serveur Realaion comme les rates du serveur."
     ],
 
-    'online' => [
-        'title' => "Joueurs en ligne",
+    'online'          => [
+        'title'       => "Joueurs en ligne",
         'description' => "Venez voir qui est actuellement en ligne sur le serveur RealAion."
     ],
-    'abyss' => [
-        'title' => "Classement abyssal",
+    'abyss'           => [
+        'title'       => "Classement abyssal",
         'description' => "Venez voir qui est le plus fort en PVP Abyssal sur le serveur RealAion."
     ],
-    'bg' => [
-        'title' => "Champs de batailles",
+    'bg'              => [
+        'title'       => "Champs de batailles",
         'description' => "Venez voir qui est le plus fort sur les champs de batailles du serveur RealAion."
     ],
 
