@@ -22,7 +22,8 @@
               <li>Toll : {{$user['toll']}}</li>
             </ul>
             <br>
-            <h2>Mes Personnages :</h2>
+            @if($players->count() > 0)
+              <h2>Mes Personnages :</h2>
               <table>
                   <thead>
                   <tr>
@@ -43,6 +44,8 @@
                   @endforeach
                   </tbody>
               </table>
+            @endif
+
           </div>
           <div class="news_footer">
           </div>
