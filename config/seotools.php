@@ -7,7 +7,7 @@ return [
          */
         'defaults'       => [
             'title'       => "RealAion 4.7", // set false to total remove
-            'description' => "Serveur privé Aion fun et PVP. En version 4.7", // set false to total remove
+            'description' => "Serveur privé Aion fun et PVP stable et performant. En version 4.7", // set false to total remove
             'separator'   => ' - ',
             'keywords'    => ['aion', 'serveur', 'fun', 'pvp', 'serveur privee', 'serveur aion', 'gratuit'],
         ],
@@ -29,7 +29,7 @@ return [
          */
         'defaults' => [
             'title'       => 'RealAion 4.7', // set false to total remove
-            'description' => 'Serveur privé Aion fun et PVP. En version 4.7', // set false to total remove
+            'description' => 'Serveur privé Aion fun et PVP stable et performant. En version 4.7', // set false to total remove
             'url'         => 'http://realaion.com',
             'type'        => 'website',
             'site_name'   => 'RealAion 4.7',
@@ -41,7 +41,7 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          'card'        => 'Serveur privé Aion fun et PVP. En version 4.7',
+          'card'        => 'Serveur privé Aion fun et PVP stable et performant. En version 4.7',
           'site'        => '@Real_Aion',
         ]
     ]
