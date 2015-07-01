@@ -53,6 +53,33 @@ Route::get('shop', [
 ]);
 
 /**
+ * SHOP
+ */
+Route::get('shop/category/{id}', [
+    'as'         => 'shop.category',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@category'
+]);
+
+/**
+ * SHOP ADD CART
+ */
+Route::get('shop/add/{id}', [
+    'as'         => 'shop.add',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@addToCart'
+]);
+
+/**
+ * SHOP REMOVE CART
+ */
+Route::get('shop/remove/{id}', [
+    'as'         => 'shop.remove',
+    'middleware' => 'connected',
+    'uses'       => 'ShopController@removeToCart'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()

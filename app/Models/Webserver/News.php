@@ -10,8 +10,7 @@ class News extends Model {
     protected $connection   = 'webserver';
     protected $fillable     = ['title'];
 
-    public function creator()
-    {
+    public function creator(){
         return $this->belongsTo('App\Models\Loginserver\AccountData', 'account_id', 'id');
     }
 

@@ -893,3 +893,89 @@ div.subscribe form {
 div.subscribe .shugo {
   margin-top: 30px;
   float: right; }
+
+.item_shop {
+  width: 30%;
+  height: 150px;
+  display: inline-block;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  margin-left: 13px; }
+  .item_shop ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 15px 5px 5px 5px; }
+  .item_shop h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #8e8e8e;
+    height: 50px;
+    font-size: 15px; }
+  .item_shop .buttons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px; }
+    .item_shop .buttons a {
+      width: 40%;
+      padding: 5px 10px 5px 10px;
+      background-color: rgba(255, 76, 35, 0.79);
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      font-size: 14px; }
+      .item_shop .buttons a:first-child {
+        margin-right: 5px; }
+      .item_shop .buttons a:last-child {
+        margin-left: 5px; }
+  .item_shop:nth-child(n+4) {
+    margin-top: 20px; }
+  .item_shop .price, .item_shop .quantity {
+    color: #2e2e2e;
+    font-size: 14px; }
+
+.container_shop_categories {
+  text-align: left;
+  line-height: 1.5;
+  color: #ff4c23; }
+  .container_shop_categories .sub_categorie {
+    margin-left: 20px;
+    display: none; }
+  .container_shop_categories a {
+    color: #2e2e2e;
+    margin-bottom: 0px !important; }
+  .container_shop_categories li {
+    cursor: pointer; }
+
+.container_shop_cart {
+  font-size: 13px; }
+  .container_shop_cart a {
+    margin-bottom: 0px !important;
+    color: #ff4c23; }
+  .container_shop_cart .btn {
+    width: 45%;
+    color: white;
+    margin-top: 30px;
+    padding-top: 7px;
+    display: inline-block;
+    background-color: #332d31;
+    border-bottom-color: #332d31;
+    font-size: 15px; }
+  .container_shop_cart .gift_button {
+    background-color: rgba(255, 76, 35, 0.79);
+    border-bottom-color: rgba(255, 76, 35, 0.79); }
