@@ -31,6 +31,34 @@
     </div>
 @endif
 
+<!-- TOP VOTER -->
+<div class="bloc_with_header bloc_vote">
+    <div class="bloc_header">
+        <h2>Top Voteurs</h2>
+        <p>Devenez un ambassadeur !</p>
+    </div>
+    <div class="bloc_body center">
+        <table>
+            <thead>
+                <tr>
+                    <th width="18%">#</th>
+                    <th style="text-align: left;">Pseudo</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($topVotes as $index => $account)
+                    <tr>
+                        <td width="18%">{{$index + 1}}</td>
+                        <td style="text-align: left;">@if(empty($account->pseudo)) {{$account->name}} @else {{$account->pseudo}} @endif</td>
+                        <td>{{$account->vote}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 <!-- BATTLE RANKING -->
 <div class="bloc_with_header bloc_battleranking">

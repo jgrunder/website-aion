@@ -24,7 +24,8 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
-				$this->accountToll();
+		$this->accountToll();
+        $this->topVotes();
     }
 
     /**
@@ -81,7 +82,7 @@ abstract class Controller extends BaseController {
                         $votesAvailable[] = [
                             'id'     => $key,
                             'status' => false,
-														'diff'	 => Carbon::now()->diffForHumans($date)// TODO : Not sure ...
+                            'diff'	 => Carbon::now()->diffForHumans($date)// TODO : Not sure ...
                         ];
                     }
                 }
@@ -90,6 +91,15 @@ abstract class Controller extends BaseController {
 
             View::share('accountVotes', $votesAvailable);
         }
+    }
+
+    /**
+     * Set Variables $topVotes
+     */
+    private function topVotes()
+    {
+        $voters = AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(3)->get();
+        View::Share('topVotes', $voters);
     }
 
     /**

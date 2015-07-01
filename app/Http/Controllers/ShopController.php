@@ -19,7 +19,7 @@ class ShopController extends Controller {
      */
     public function index()
     {
-      $top_purchased = ShopItem::where('purchased', '>', 0)->take(6)->get();
+      $top_purchased = ShopItem::where('purchased', '>', 0)->orderBy('purchased', 'DESC')->take(6)->get();
 
       return view('shop.index', [
           'categories'      => ShopCategory::with('name')->get(),
