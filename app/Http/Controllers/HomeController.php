@@ -34,12 +34,14 @@ class HomeController extends Controller
 
         // SEO
         SEOMeta::setTitle(Lang::get('seo.news.title'));
-        SEOMeta::setDescription($news[0]->title);
-        OpenGraph::setDescription($news[0]->title);
+
 
         if($news->count() == 0){
-            return redirect(route('home'))->with('error', "L'article que vous demandez n'existe pas");
+            return redirect(route('home'))->with('error', Lang::get('flashmessage.news.fail_id'));
         }
+
+        SEOMeta::setDescription($news[0]->title);
+        OpenGraph::setDescription($news[0]->title);
 
         return view('home.index', [
             'full' => true,

@@ -7,6 +7,7 @@ use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
 class VoteController extends Controller {
@@ -51,7 +52,7 @@ class VoteController extends Controller {
                 AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now()]);
 
             } else {
-                return redirect(route('home'))->with('error', "Vous ne pouvez pas voter pour ce site, vous devez attendre 2H");
+                return redirect(route('home'))->with('error', Lang::get('flashmessage.vote.wait_time'));
             }
         }
 

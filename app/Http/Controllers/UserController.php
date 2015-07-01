@@ -45,7 +45,7 @@ class UserController extends Controller
 
         $this->createSession($user);
 
-        return redirect()->route('user.account')->with('success', 'Vous êtes maintenant inscrit et connecté');
+        return redirect()->route('user.account')->with('success', Lang::get('flashmessage.user.subscribe_and_logged'));
 
     }
 
@@ -75,13 +75,13 @@ class UserController extends Controller
         $user = AccountData::activated()
                 ->where('name', $request->get('username'))
                 ->where('password', base64_encode(sha1($request->get('password'), true)))
-            ->first();
+                ->first();
 
         if($user !== null){
             $this->createSession($user);
-            return redirect(route('user.account'))->with('success', 'Vous êtes maintenant connecté');
+            return redirect(route('user.account'))->with('success', Lang::get('flashmessage.user.logged'));
         } else {
-            return redirect(route('home'))->with('error', 'Votre compte n\'existe pas')->withInput();
+            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.no_account'))->withInput();
         }
 
     }
@@ -96,7 +96,7 @@ class UserController extends Controller
 
         Session::flush();
 
-        return redirect(route('home'))->with('success', 'Vous êtes maintenant déconnecté');
+        return redirect(route('home'))->with('success', Lang::get('flashmessage.user.logout'));
     }
 
     /**

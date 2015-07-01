@@ -9,6 +9,7 @@ use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopItem;
 use App\Models\Webserver\ShopHistory;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Request;
 
@@ -38,7 +39,7 @@ class ShopController extends Controller {
       $items = ShopItem::where('id_sub_category', '=', $id)->get();
 
       if($items->count() === 0) {
-        return redirect(route('shop'))->with('error', "La catégorie est surement vide ou n'existe pas");
+        return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.fail_category_id'));
       }
 
       return view('shop.index', [
@@ -104,10 +105,10 @@ class ShopController extends Controller {
         $account_toll = AccountData::me(Session::get('user.id'))->first();
 
         if(Cart::total() === 0){ // If cart is empty -> Redirect to the shop page
-            return redirect(route('shop'))->with('error', "Votre panier est vide. Vous ne pouvez pas accéder à cette page");
+            return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.empty_cart'));
         }
         else if($account_toll->toll < Cart::total()) { // If no toll -> Redirect to the shop page
-            return redirect()->back()->with('error', "Vous n'avez pas assez de point toll sur votre compte");
+            return redirect()->back()->with('error', Lang::get('flashmessage.shop.not_toll'));
         }
 
         $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
@@ -154,7 +155,7 @@ class ShopController extends Controller {
         AccountData::me($account_id)->decrement('toll', $total);
         Cart::destroy();
 
-        return redirect(route('shop'))->with('success', "Achat effectué, tapez la commande : .shop IG sur le personnage ".$player->name);
+        return redirect(route('shop'))->with('success', Lang::get('flashmessage.shop.success').$player->name);
     }
 
 }
