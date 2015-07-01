@@ -7,6 +7,7 @@ use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
 use App\Models\Gameserver\Player;
 use Illuminate\Support\Facades\Session;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class UserController extends Controller
 {
@@ -16,6 +17,9 @@ class UserController extends Controller
 	 */
     public function subscribe()
     {
+        // SEO
+        SEOMeta::setTitle('Inscription');
+
         return view('user.subscribe');
     }
 
@@ -28,17 +32,19 @@ class UserController extends Controller
      */
     public function createAccount(SubscribeUserRequest $request)
     {
+        // SEO
+        SEOMeta::setTitle('Inscription');
 
-			$user = AccountData::create([
-					'name'      => $request->input('username'),
-					'pseudo'    => $request->input('pseudo'),
-					'password'  => base64_encode(sha1($request->input('password'), true)),
-					'email'     => $request->input('email')
-			]);
+        $user = AccountData::create([
+                'name'      => $request->input('username'),
+                'pseudo'    => $request->input('pseudo'),
+                'password'  => base64_encode(sha1($request->input('password'), true)),
+                'email'     => $request->input('email')
+        ]);
 
-			$this->createSession($user);
+        $this->createSession($user);
 
-			return redirect()->route('user.account')->with('success', 'Vous êtes maintenant inscrit et connecté');
+        return redirect()->route('user.account')->with('success', 'Vous êtes maintenant inscrit et connecté');
 
     }
 
@@ -47,6 +53,9 @@ class UserController extends Controller
      */
     public function login()
     {
+        // SEO
+        SEOMeta::setTitle('Connexion');
+
         return view('user.login');
     }
 
@@ -59,17 +68,20 @@ class UserController extends Controller
      */
     public function connect(ConnectUserRequest $request)
     {
-      $user = AccountData::activated()
-          ->where('name', $request->get('username'))
-          ->where('password', base64_encode(sha1($request->get('password'), true)))
-          ->first();
+        // SEO
+        SEOMeta::setTitle('Connexion');
 
-			if($user !== null){
-				$this->createSession($user);
-	            return redirect(route('user.account'))->with('success', 'Vous êtes maintenant connecté');
-			} else {
-				return redirect(route('home'))->with('error', 'Votre compte n\'existe pas')->withInput();
-			}
+        $user = AccountData::activated()
+                ->where('name', $request->get('username'))
+                ->where('password', base64_encode(sha1($request->get('password'), true)))
+            ->first();
+
+        if($user !== null){
+            $this->createSession($user);
+            return redirect(route('user.account'))->with('success', 'Vous êtes maintenant connecté');
+        } else {
+            return redirect(route('home'))->with('error', 'Votre compte n\'existe pas')->withInput();
+        }
 
     }
 
@@ -78,6 +90,9 @@ class UserController extends Controller
      */
     public function logout()
     {
+        // SEO
+        SEOMeta::setTitle('Déconnexion');
+
         Session::flush();
 
         return redirect(route('home'))->with('success', 'Vous êtes maintenant déconnecté');
@@ -88,6 +103,9 @@ class UserController extends Controller
      */
     public function account()
     {
+        // SEO
+        SEOMeta::setTitle('Votre compte');
+
         $players = Player::where('account_id', '=', Session::get('user.id'))->get();
 
         return view('user.account', [

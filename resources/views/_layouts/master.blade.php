@@ -5,32 +5,11 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SEO -->
-    <title>{{Config::get('aion.website_name')}} - @yield('title')</title>
-    <meta name="description" content=""/>
-    <meta name="keywords" content="">
-    <meta name="author" content=""/>
-    <meta name="copyright" content=""/>
+    {!! SEO::generate() !!}
+    <meta name="author" content="Mathieu Le Tyrant"/>
+    <meta name="copyright" content="Copyright 2015 © RealAion.com"/>
     <meta name="robots" content="index,follow"/>
-    <meta name="location" content=""/>
-
-    <!-- FB Share -->
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-
-    <!-- TWITTER Share -->
-    <meta name="twitter:card" content="">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:creator" content="">
-    <meta name="twitter:image" content="">
-
-    <!-- GOOGLE + Share -->
-    <meta itemprop="name" content="">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="">
+    <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
     <link href="/css/font-awesome.min.css" rel="stylesheet">

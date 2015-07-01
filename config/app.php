@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+        'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
 		//'Barryvdh\Debugbar\ServiceProvider',
 
 		/*
@@ -195,12 +196,12 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Form'		  => 'Illuminate\Html\FormFacade',
-        'HTML'		  => 'Illuminate\Html\HtmlFacade',
+		'Form'		=> 'Illuminate\Html\FormFacade',
+        'HTML'		=> 'Illuminate\Html\HtmlFacade',
         'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
         'Carbon'    => 'Carbon\Carbon',
-		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart'
-
+		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
+        'SEO'       => 'Artesaos\SEOTools\Facades\SEOTools',
 	],
 
 ];

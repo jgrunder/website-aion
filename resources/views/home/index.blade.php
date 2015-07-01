@@ -1,7 +1,5 @@
 @extends('_layouts.master')
 
-@section('title', 'Accueil')
-
 @section('content')
 <div class="container">
     <!-- LEFT CONTENT -->

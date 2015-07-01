@@ -1,11 +1,9 @@
 @extends('_layouts.master')
 
-@section('title', 'Joueurs en lignes')
-
 @section('content')
   <div class="container_single">
     <div class="container_single_top">
-      <h1>Joueurs en lignes</h1>
+      <h1>Joueurs en ligne</h1>
     </div>
     <div class="container_single_body">
       @if(count($users) === 0)

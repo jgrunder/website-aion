@@ -1,7 +1,5 @@
 @extends('_layouts.master')
 
-@section('title', 'Nous rejoindre')
-
 @section('content')
 <div class="container_single subscribe">
   <div class="container_single_top">

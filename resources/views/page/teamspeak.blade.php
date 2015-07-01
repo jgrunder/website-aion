@@ -1,7 +1,5 @@
 @extends('_layouts.master')
 
-@section('title', 'Teamspeak')
-
 @section('content')
 <div class="container_single subscribe">
   <div class="container_single_top">

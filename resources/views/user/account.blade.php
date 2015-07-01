@@ -1,7 +1,5 @@
 @extends('_layouts.master')
 
-@section('title', 'Mon compte')
-
 @section('content')
     <div class="container">
       <div class="container_left">
