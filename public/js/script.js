@@ -48,7 +48,7 @@
 		 */
 		$('.previewItem').on('click', function(e) {
 			var itemId = $(this).attr('data-id');
-			alert('.preview '+itemId);
+			swal('.preview '+itemId);
 			e.preventDefault();
 		});
 

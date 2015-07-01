@@ -37,6 +37,7 @@
       <div class="bloc_with_header bloc_vote">
         <div class="bloc_header">
           <h2>Panier</h2>
+            <p>Vous pouvez supprimer un élément en cliquant sur la poubelle</p>
         </div>
         <div class="bloc_body center container_shop_cart">
             @include('_modules.cart')
