@@ -15,8 +15,9 @@ class StatsController extends Controller {
     public function online()
     {
         // SEO
-        SEOMeta::setTitle('Joueurs en ligne');
-        SEOMeta::setDescription('Venez voir qui est actuellement en ligne sur le serveur RealAion.');
+        SEOMeta::setTitle(Lang::get('seo.online.title'));
+        SEOMeta::setDescription(Lang::get('seo.online.description'));
+        OpenGraph::setDescription(Lang::get('seo.online.description'));
 
         return view('stats.online', [
             'users' => Player::online()->get()
@@ -29,8 +30,9 @@ class StatsController extends Controller {
     public function abyss()
     {
         // SEO
-        SEOMeta::setTitle('Classement Abyssal');
-        SEOMeta::setDescription('Venez voir qui est le plus fort en PVP Abyssal sur le serveur RealAion.');
+        SEOMeta::setTitle(Lang::get('seo.abyss.title'));
+        SEOMeta::setDescription(Lang::get('seo.abyss.description'));
+        OpenGraph::setDescription(Lang::get('seo.abyss.description'));
 
         return view('stats.abyss');
     }
@@ -41,8 +43,9 @@ class StatsController extends Controller {
     public function bg()
     {
         // SEO
-        SEOMeta::setTitle('Champs de batailles');
-        SEOMeta::setDescription('Venez voir qui est le plus fort sur les champs de batailles du serveur RealAion.');
+        SEOMeta::setTitle(Lang::get('seo.bg.title'));
+        SEOMeta::setDescription(Lang::get('seo.bg.description'));
+        OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
         return view('stats.bg', [
             'top' => Ladder::orderBy('rank', 'DESC')->get()

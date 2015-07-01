@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Illuminate\Support\Facades\Lang;
 
 class PageController extends Controller {
 
@@ -13,8 +15,9 @@ class PageController extends Controller {
     public function contactUs()
     {
         // SEO
-        SEOMeta::setTitle('Contactez-nous');
-        SEOMeta::setDescription('Un problème sur le serveur ? Venez nous en parler nous sommes ouverts à toutes discussions.');
+        SEOMeta::setTitle(Lang::get('seo.contact.title'));
+        SEOMeta::setDescription(Lang::get('seo.contact.description'));
+        OpenGraph::setDescription(Lang::get('seo.contact.description'));
 
         return view('page.contactus');
     }
@@ -25,8 +28,9 @@ class PageController extends Controller {
     public function joinUs()
     {
         // SEO
-        SEOMeta::setTitle('Nous rejoindre');
-        SEOMeta::setDescription('Vous souhaitez nous rejoindre ? Pas de soucis, cette page vous explique pas à pas comment rejoindre le serveur RealAion !');
+        SEOMeta::setTitle(Lang::get('seo.joinus.title'));
+        SEOMeta::setDescription(Lang::get('seo.joinus.description'));
+        OpenGraph::setDescription(Lang::get('seo.joinus.description'));
 
         return view('page.joinus');
     }
@@ -37,8 +41,9 @@ class PageController extends Controller {
     public function teamspeak()
     {
         // SEO
-        SEOMeta::setTitle('Teamspeak');
-        SEOMeta::setDescription('Venez discuter sur notre serveur Teamspeak 3.');
+        SEOMeta::setTitle(Lang::get('seo.teamspeak.title'));
+        SEOMeta::setDescription(Lang::get('seo.teamspeak.description'));
+        OpenGraph::setDescription(Lang::get('seo.teamspeak.description'));
 
         return view('page.teamspeak');
     }
@@ -49,8 +54,9 @@ class PageController extends Controller {
     public function rules()
     {
         // SEO
-        SEOMeta::setTitle('Règlement');
-        SEOMeta::setDescription('Retrouvez le règlement du serveur et gardez-le en tête pour éviter de futur problème.');
+        SEOMeta::setTitle(Lang::get('seo.rules.title'));
+        SEOMeta::setDescription(Lang::get('seo.rules.description'));
+        OpenGraph::setDescription(Lang::get('seo.rules.description'));
 
         return view('page.rules');
     }
@@ -61,8 +67,9 @@ class PageController extends Controller {
     public function team()
     {
         // SEO
-        SEOMeta::setTitle('Equipe du serveur');
-        SEOMeta::setDescription('Le serveur RealAion ne vit que grâce à ses bénévoles qui sont présents pour vous aider en cas de besoin !');
+        SEOMeta::setTitle(Lang::get('seo.team.title'));
+        SEOMeta::setDescription(Lang::get('seo.team.description'));
+        OpenGraph::setDescription(Lang::get('seo.team.description'));
 
         return view('page.team');
     }
@@ -73,8 +80,9 @@ class PageController extends Controller {
     public function error()
     {
         // SEO
-        SEOMeta::setTitle('Erreur');
-        SEOMeta::setDescription("Vous vous trouvez actuellement sur une page qui n'existe pas ou qui a été supprimée.");
+        SEOMeta::setTitle(Lang::get('seo.error.title'));
+        SEOMeta::setDescription(Lang::get('seo.error.description'));
+        OpenGraph::setDescription(Lang::get('seo.error.description'));
 
         return view('page.error');
     }
@@ -85,8 +93,9 @@ class PageController extends Controller {
     public function rates()
     {
         // SEO
-        SEOMeta::setTitle('Rates');
-        SEOMeta::setDescription("Retrouvez les informations à propos du serveur Realaion comme les rates du serveur.");
+        SEOMeta::setTitle(Lang::get('seo.rates.title'));
+        SEOMeta::setDescription(Lang::get('seo.rates.description'));
+        OpenGraph::setDescription(Lang::get('seo.rates.description'));
 
         return view('page.rates');
     }

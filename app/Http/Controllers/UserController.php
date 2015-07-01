@@ -6,6 +6,7 @@ use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
 use App\Models\Gameserver\Player;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Artesaos\SEOTools\Facades\SEOMeta;
 
@@ -18,7 +19,7 @@ class UserController extends Controller
     public function subscribe()
     {
         // SEO
-        SEOMeta::setTitle('Inscription');
+        SEOMeta::setTitle(Lang::get('seo.subscribe.title'));
 
         return view('user.subscribe');
     }
@@ -33,7 +34,7 @@ class UserController extends Controller
     public function createAccount(SubscribeUserRequest $request)
     {
         // SEO
-        SEOMeta::setTitle('Inscription');
+        SEOMeta::setTitle(Lang::get('seo.subscribe.title'));
 
         $user = AccountData::create([
                 'name'      => $request->input('username'),
@@ -54,7 +55,7 @@ class UserController extends Controller
     public function login()
     {
         // SEO
-        SEOMeta::setTitle('Connexion');
+        SEOMeta::setTitle(Lang::get('seo.login.title'));
 
         return view('user.login');
     }
@@ -69,7 +70,7 @@ class UserController extends Controller
     public function connect(ConnectUserRequest $request)
     {
         // SEO
-        SEOMeta::setTitle('Connexion');
+        SEOMeta::setTitle(Lang::get('seo.login.title'));
 
         $user = AccountData::activated()
                 ->where('name', $request->get('username'))
@@ -91,7 +92,7 @@ class UserController extends Controller
     public function logout()
     {
         // SEO
-        SEOMeta::setTitle('Déconnexion');
+        SEOMeta::setTitle(Lang::get('seo.logout.title'));
 
         Session::flush();
 
@@ -104,7 +105,7 @@ class UserController extends Controller
     public function account()
     {
         // SEO
-        SEOMeta::setTitle('Votre compte');
+        SEOMeta::setTitle(Lang::get('seo.account.title'));
 
         $players = Player::where('account_id', '=', Session::get('user.id'))->get();
 
