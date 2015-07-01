@@ -2,9 +2,9 @@
     <table>
         <thead>
         <tr>
-            <th width="45%">Nom</th>
-            <th>Price</th>
-            <th width="15%">QT</th>
+            <th width="45%">{{Lang::get('all.shop.name')}}</th>
+            <th>{{Lang::get('all.shop.price')}}</th>
+            <th width="15%">{{Lang::get('all.shop.qt')}}</th>
             <th></th>
         </tr>
         </thead>
@@ -20,6 +20,6 @@
         </tbody>
     </table>
 
-    <a href="{{Route('shop.summary')}}" class="btn">Acheter ({{$total}} Toll)</a>
-    <!-- <a href="#" class="btn gift_button">Cadeau ({{$total}} Toll)</a> -->
+    <a href="{{Route('shop.summary')}}" class="btn">{{Lang::get('all.shop.buy')}} ({{$total}} Toll)</a>
+    <!-- <a href="#" class="btn gift_button">{{Lang::get('all.shop.gift')}} ({{$total}} Toll)</a> -->
 @endif

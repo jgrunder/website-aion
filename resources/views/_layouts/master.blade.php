@@ -17,6 +17,7 @@
 </head>
 <body>
 
+
     <!-- Flash Messages -->
     @if(Session::has('success'))
       <div class="flash_messages success" id="flashMsg">
@@ -30,28 +31,34 @@
 
     <!-- NAV -->
     <nav class="nav">
+
+        <div class="languages">
+            <a href="{{Route('language', 'fr')}}" class="flag fr"></a>
+            <a href="{{Route('language', 'en')}}" class="flag en"></a>
+        </div>
+
         <ul class="menu">
-            <li><a href="{{Route('home')}}">Accueil</a></li>
+            <li><a href="{{Route('home')}}">{{Lang::get('all.nav.home')}}</a></li>
             <li>
-              <a href="#">A propos</a>
+              <a href="#">{{Lang::get('all.nav.about')}}</a>
               <ul class="sub_menu">
-                <li><a href="{{Route('page.teamspeak')}}">Teamspeak</a></li>
-                <li><a href="{{Route('page.team')}}">Equipe</a></li>
-                <li><a href="{{Route('page.contactus')}}">Contact</a></li>
+                <li><a href="{{Route('page.teamspeak')}}">{{Lang::get('all.nav.teamspeak')}}</a></li>
+                <li><a href="{{Route('page.team')}}">{{Lang::get('all.nav.team')}}</a></li>
+                <li><a href="{{Route('page.contactus')}}">{{Lang::get('all.nav.contact')}}</a></li>
               </ul>
             </li>
-            <li><a href="{{Route('page.rules')}}">Règles</a></li>
-            <li><a href="{{Route('page.rates')}}">Rates</a></li>
+            <li><a href="{{Route('page.rules')}}">{{Lang::get('all.nav.rules')}}</a></li>
+            <li><a href="{{Route('page.rates')}}">{{Lang::get('all.nav.rates')}}</a></li>
             <li>
                 <a href="#">Stats</a>
                 <ul class="sub_menu">
-                    <li><a href="{{Route('stats.online')}}">Joueurs en lignes</a></li>
-                    <li><a href="{{Route('stats.abyss')}}">Classement abyssal</a></li>
-                    <li><a href="{{Route('stats.bg')}}">Classement des BG</a></li>
+                    <li><a href="{{Route('stats.online')}}">{{Lang::get('all.nav.online')}}</a></li>
+                    <li><a href="{{Route('stats.abyss')}}">{{Lang::get('all.nav.abyss')}}</a></li>
+                    <li><a href="{{Route('stats.bg')}}">{{Lang::get('all.nav.bg')}}</a></li>
                 </ul>
             </li>
-            <li><a href="http://realaion.com/forum/">Forum</a></li>
-            <li><a href="{{Route('shop')}}">Boutique</a></li>
+            <li><a href="http://realaion.com/forum/">{{Lang::get('all.nav.forum')}}</a></li>
+            <li><a href="{{Route('shop')}}">{{Lang::get('all.nav.shop')}}</a></li>
         </ul>
     </nav>
 
@@ -68,17 +75,17 @@
         <div class="status">
           @foreach($serversStatus as $value)
             <span>
-              Etat du {{$value['name']}} : <span class="{{($value['status']) ? 'online' : 'offline'}}">{{($value['status']) ? 'ON' : 'OFF'}}</span>
+              {{Lang::get('all.layout.status_of')}} {{$value['name']}} : <span class="{{($value['status']) ? 'online' : 'offline'}}">{{($value['status']) ? 'ON' : 'OFF'}}</span>
             </span>
           @endforeach
         </div>
         <div class="btn_user">
           @if(Session::has('connected'))
-              <a href="{{Route('user.account')}}">Mon Compte</a>
-              <a href="{{Route('user.logout')}}">Déconnexion</a>
+              <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}}</a>
+              <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
           @else
-              <a href="#" id="btn_connexion">Connexion</a>
-              <a href="{{Route('user.subscribe')}}">Inscription</a>
+              <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>
+              <a href="{{Route('user.subscribe')}}">{{Lang::get('all.nav.subscribe')}}</a>
           @endif
         </div>
       </div>
@@ -117,8 +124,8 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p>Ce site n'est pas afillié à NCSOFT CORPORATION, NCSOFT EUROPE ou Gameforge Productions.</p><br>
-      <p>Développé par <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a> | Copyright 2015 © Real Aion</p>
+      <p>{{Lang::get('all.layout.footer_1')}}</p><br>
+      <p>{{Lang::get('all.layout.footer_2')}} <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a> | Copyright 2015 © Real Aion</p>
     </footer>
 
     <!-- JAVASCRIPTS -->

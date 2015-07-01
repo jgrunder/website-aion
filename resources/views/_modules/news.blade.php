@@ -13,9 +13,9 @@
         </p>
       </div>
       <div class="news_footer">
-        <p>Posté par {{$article->creator->pseudo}} Il y a {{Carbon::parse($article->updated_at)->diffForHumans()}}</p>
+        <p>{{Lang::get('all.news.by')}} {{$article->creator->pseudo}} Il y a {{Carbon::parse($article->updated_at)->diffForHumans()}}</p>
           @if(!isset($full))
-              <a href="{{Route('news', $article->slug)}}">Lire la suite</a>
+              <a href="{{Route('news', $article->slug)}}">{{Lang::get('all.news.next')}}</a>
           @endif
       </div>
     </div>

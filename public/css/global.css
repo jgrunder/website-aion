@@ -1060,6 +1060,27 @@ nav.nav {
   margin-top: 30px;
   position: relative;
   z-index: 1; }
+  nav.nav .languages {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    background-color: #332d31;
+    padding: 5px 10px 5px 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px; }
+    nav.nav .languages a {
+      width: auto;
+      display: inline-block !important; }
+    nav.nav .languages .flag {
+      width: 22px;
+      height: 15px;
+      display: inline-block; }
+      nav.nav .languages .flag:nth-child(n+2) {
+        margin-left: 5px; }
+    nav.nav .languages .fr {
+      background: url("../images/flag/fr.png") no-repeat; }
+    nav.nav .languages .en {
+      background: url("../images/flag/en.png") no-repeat; }
   nav.nav .menu > li {
     display: inline-block;
     line-height: 98px; }
