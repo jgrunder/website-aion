@@ -8,7 +8,7 @@
     <div class="bloc_with_header bloc_vote">
       <div class="bloc_header">
         <h2>Votez pour nous</h2>
-        <p>1 vote = <span class="strong">{{Config::get('aion.vote.toll_per_vote')}} points</span></p>
+        <p>1 vote = <span class="strong">{{Config::get('aion.vote.toll_per_vote')}} toll</span></p>
         @if(Config::get('aion.vote.boost'))
             <p>
               Event Boost Enabled
