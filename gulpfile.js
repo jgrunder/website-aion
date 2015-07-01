@@ -1,6 +1,8 @@
 var gulp 				= require('gulp');
 var scss 				= require('gulp-sass');
 var plumber 			= require('gulp-plumber');
+var concat				= require('gulp-concat');
+var uglify				= require('gulp-uglify');
 var autoprefixer 		= require('gulp-autoprefixer');
 var autoPrefixerBrowers = [
 	'chrome >= 34',
@@ -23,6 +25,21 @@ gulp.task('style', function () {
 		.pipe(scss())
 		.pipe(autoprefixer(autoPrefixerBrowers))
 		.pipe(gulp.dest('public/css'));
+});
+
+/*
+ * Concat JS
+ */
+gulp.task('script', function() {
+	gulp.src([
+		'resources/assets/js/jquery-2.1.4.min.js',
+		'resources/assets/js/jquery.bxslider.min.js',
+		'resources/assets/js/sweetalert.min.js',
+		'resources/assets/js/script.js',
+	])
+		.pipe(concat('script.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('public/js'));
 });
 
 /*
