@@ -1,5 +1,5 @@
 <div class="call_to_action">
-  <a href="#" class="online_player">
+  <a href="{{Route('stats.online')}}" class="online_player">
     <span class="elyos_count">{{$countPlayersOnlineElyos}}</span>
     <span class="asmo_count">{{$countPlayersOnlineAsmodians}}</span>
   </a>

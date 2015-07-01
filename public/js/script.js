@@ -32,7 +32,7 @@
 			$('#flashMsg').show();
 			setTimeout(function(){
 				$('#flashMsg').fadeOut(500);
-			}, 2000);
+			}, 3000);
 		}
 
 		/*

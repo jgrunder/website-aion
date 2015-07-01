@@ -25,8 +25,8 @@
               <tr>
                 <td class="strong">1</td>
                 <td>{{$user->name}}</td>
-                <td>{{Lang::get('aion.race_name.'.$user->race)}}</td>
-                <td>{{Lang::get('aion.class_name.'.$user->player_class)}}</td>
+                <td><span class="{{Lang::get('aion.race_logo.'.$user->race)}}"></span></td>
+                <td><span class="charactericon-class {{Lang::get($user->player_class)}}"></span></td>
               </tr>
             @endforeach
           </tbody>
