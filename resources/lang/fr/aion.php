@@ -22,10 +22,35 @@ return [
         'RIDER'			=> "Cavalier"
     ],
 
+    'class_logo' => [
+        'WARRIOR'		=> "icon_emblem_warrior",
+        'GLADIATOR'		=> "icon_emblem_gladiator",
+        'TEMPLAR'		=> "icon_emblem_templar",
+        'SCOUT'			=> "icon_emblem_scout",
+        'ASSASSIN'		=> "icon_emblem_assassin",
+        'RANGER'		=> "icon_emblem_ranger",
+        'MAGE'			=> "icon_emblem_mage",
+        'SORCERER'		=> "icon_emblem_sorcerer",
+        'SPIRIT_MASTER'	=> "icon_emblem_spiritmaster",
+        'PRIEST'		=> "icon_emblem_priest",
+        'CLERIC'		=> "icon_emblem_cleric",
+        'CHANTER'		=> "icon_emblem_chanter",
+        'ENGINEER'		=> "icon_emblem_warrior",
+        'GUNNER'		=> "icon_emblem_gunner",
+        'ARTIST'		=> "icon_emblem_artist",
+        'BARD'			=> "icon_emblem_bard",
+        'RIDER'			=> "icon_emblem_rider"
+    ],
+
     'race_name' => [
         'ELYOS'		=> "Elyseen",
         'ASMODIANS'	=> "Asmodien",
         'BALAUR'	=> "Balaur"
+    ],
+
+    'race_logo' => [
+        'ELYOS'		=> "icon_elyos",
+        'ASMODIANS'	=> "icon_asmo"
     ],
 
     'gender_name' => [

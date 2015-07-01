@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
+use App\Models\Gameserver\Player;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -87,8 +88,11 @@ class UserController extends Controller
      */
     public function account()
     {
+        $players = Player::where('account_id', '=', Session::get('user.id'))->get();
+
         return view('user.account', [
-            'user' => Session::get('user')
+            'user'      => Session::get('user'),
+            'players'   => $players
         ]);
     }
 

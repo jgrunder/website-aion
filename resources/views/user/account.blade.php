@@ -25,53 +25,26 @@
             </ul>
             <br>
             <h2>Mes Personnages :</h2>
-            <!-- <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Nom</th>
-                  <th>Faction</th>
-                  <th>Classe</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="strong">1</td>
-                  <td>
-                    <a href="#">Mathieu</a>
-                  </td>
-                  <td>
-                    <span class="icon_asmo"></span>
-                  </td>
-                  <td>
-                    <span class="charactericon-class icon_emblem_artist"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="strong">2</td>
-                  <td>
-                    <a href="#">Maxime</a>
-                  </td>
-                  <td>
-                    <span class="icon_elyos"></span>
-                  </td>
-                  <td>
-                    <span class="charactericon-class icon_emblem_gunner"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="strong">3</td>
-                  <td>
-                    <a href="#">Titi</a>
-                  </td>
-                  <td>
-                    <span class="icon_elyos"></span>
-                  </td>
-                  <td>
-                    <span class="charactericon-class icon_emblem_cleric"></span>
-                  </td>
-                </tr>
-            </table> -->
+              <table>
+                  <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>Nom</th>
+                      <th>Faction</th>
+                      <th>Classe</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach ($players as $index => $player)
+                      <tr>
+                          <td>{{$index + 1}}</td>
+                          <td>{{$player->name}}</td>
+                          <td><span class="{{Lang::get('aion.race_logo.'.$player->race)}}"></span></td>
+                          <td><span class="charactericon-class {{Lang::get($player->player_class)}}"></span></td>
+                      </tr>
+                  @endforeach
+                  </tbody>
+              </table>
           </div>
           <div class="news_footer">
           </div>
