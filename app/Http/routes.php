@@ -27,6 +27,14 @@ Route::get('/', [
 ]);
 
 /**
+ * NEWS
+ */
+Route::get('/news/{slug}', [
+    'as'         => 'news',
+    'uses'       => 'HomeController@news'
+]);
+
+/**
  * VOTE
  */
 Route::get('/vote/{id}', [
