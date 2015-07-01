@@ -19,12 +19,12 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($users as $user)
+            @foreach($users as $index => $user)
               <tr>
-                <td class="strong">1</td>
+                <td class="strong">{{$index + 1}}</td>
                 <td>{{$user->name}}</td>
                 <td><span class="{{Lang::get('aion.race_logo.'.$user->race)}}"></span></td>
-                <td><span class="charactericon-class {{Lang::get($user->player_class)}}"></span></td>
+                <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$user->player_class)}}"></span></td>
               </tr>
             @endforeach
           </tbody>

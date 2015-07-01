@@ -48,7 +48,7 @@ return [
 
 		'gameserver' => [
 			'driver'        => 'mysql',
-			'host'          => env('DB_HOST_GS', 'localhost'),
+			'host'          => env('DB_HOST_GS', '188.165.42.128'),
 			'database'      => env('DB_DATABASE_GS', 'forge'),
 			'username'      => env('DB_USERNAME_GS', 'forge'),
 			'password'      => env('DB_PASSWORD_GS', ''),
@@ -56,12 +56,12 @@ return [
 			'collation'     => 'utf8_unicode_ci',
 			'prefix'        => '',
 			'strict'        => false,
-            'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 		],
 
 		'loginserver' => [
 			'driver'        => 'mysql',
-			'host'          => env('DB_HOST_LS', 'localhost'),
+			'host'          => env('DB_HOST_LS', '188.165.42.128'),
 			'database'      => env('DB_DATABASE_LS', 'forge'),
 			'username'      => env('DB_USERNAME_LS', 'forge'),
 			'password'      => env('DB_PASSWORD_LS', ''),
@@ -69,7 +69,7 @@ return [
 			'collation'     => 'utf8_unicode_ci',
 			'prefix'        => '',
 			'strict'        => false,
-            'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 		],
 
         'webserver' => [
