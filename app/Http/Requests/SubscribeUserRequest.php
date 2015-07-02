@@ -56,7 +56,7 @@ class SubscribeUserRequest extends Request {
 		return [
       'username'              => 'required|notUseAccount',
       'pseudo'                => 'required',
-      'password'              => 'required|confirmed',
+      'password'              => 'required|case_diff|numbers|letters|confirmed',
       'password_confirmation' => 'required',
       'email'                 => 'email|notUseEmail',
       'g-recaptcha-response' => 'required|captcha'

@@ -139,6 +139,7 @@ return [
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
         'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
         'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
+        'Schuppo\PasswordStrength\PasswordStrengthServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
 
 		/*
