@@ -58,7 +58,8 @@ class SubscribeUserRequest extends Request {
       'pseudo'                => 'required',
       'password'              => 'required|confirmed',
       'password_confirmation' => 'required',
-      'email'                 => 'email|notUseEmail'
+      'email'                 => 'email|notUseEmail',
+      'g-recaptcha-response' => 'required|captcha'
 		];
 	}
 

@@ -138,7 +138,8 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
         'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
-		//'Barryvdh\Debugbar\ServiceProvider',
+        'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
+        //'Barryvdh\Debugbar\ServiceProvider',
 
 		/*
 		 * Application Service Providers...

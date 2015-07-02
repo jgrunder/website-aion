@@ -1688,13 +1688,16 @@ div.subscribe input {
   margin-bottom: 15px; }
 
 div.subscribe form {
-  margin-top: 80px;
+  margin-top: 50px;
   margin-left: 100px;
   float: left; }
 
 div.subscribe .shugo {
   margin-top: 30px;
   float: right; }
+
+div.subscribe .g-recaptcha {
+  margin-bottom: 15px; }
 
 .item_shop {
   width: 30%;
