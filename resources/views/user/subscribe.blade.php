@@ -11,7 +11,7 @@
 
       {!! Form::open() !!}
 
-        {!! Form::text('username', null, ['placeholder' => 'Identifiant', 'class' => 'input']) !!}
+        {!! Form::text('username', null, ['placeholder' => 'Identifiant', 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('username')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('username') as $message)
@@ -20,7 +20,7 @@
             </span>
           @endif
 
-        {!! Form::text('pseudo', null, ['placeholder' => "Pseudo d'affichage", 'class' => 'input']) !!}
+        {!! Form::text('pseudo', null, ['placeholder' => "Pseudo d'affichage", 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('pseudo')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('pseudo') as $message)
@@ -29,7 +29,7 @@
             </span>
           @endif
 
-        {!! Form::password('password', ['placeholder' => "Mot de passe", 'class' => 'input']) !!}
+        {!! Form::password('password', ['placeholder' => "Mot de passe", 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('password')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('password') as $message)
@@ -38,7 +38,7 @@
             </span>
           @endif
 
-        {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input']) !!}
+        {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('password_confirmation')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('password_confirmation') as $message)
@@ -47,7 +47,7 @@
             </span>
           @endif
 
-        {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input']) !!}
+        {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('email')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('email') as $message)

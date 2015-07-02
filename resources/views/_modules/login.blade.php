@@ -2,9 +2,9 @@
   <!-- USER : LOGOUT -->
   {!! Form::open(array('action' => 'UserController@connect')) !!}
 
-  {!! Form::text('username', null, ['placeholder' => Lang::get('all.login.username'), 'class' => 'input']) !!}
+  {!! Form::text('username', null, ['placeholder' => Lang::get('all.login.username'), 'class' => 'input', 'required' => 'required']) !!}
 
-  {!! Form::password('password', ['placeholder' => Lang::get('all.login.password'), 'class' => 'input']) !!}
+  {!! Form::password('password', ['placeholder' => Lang::get('all.login.password'), 'class' => 'input', 'required' => 'required']) !!}
 
   <input type="submit" class="btn" value="{{Lang::get('all.login.connect')}}">
 
