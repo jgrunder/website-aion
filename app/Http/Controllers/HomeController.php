@@ -21,7 +21,7 @@ class HomeController extends Controller
         OpenGraph::setDescription(Lang::get('seo.home.description'));
 
 		return view('home.index', [
-            'news' => News::all()
+            'news' => News::paginate(3)
         ]);
 	}
 

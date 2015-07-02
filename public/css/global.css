@@ -1034,7 +1034,6 @@ table {
 div.flash_messages {
   width: 250px;
   height: auto;
-  background-color: blue;
   position: fixed;
   z-index: 10;
   top: 40px;
@@ -1050,6 +1049,19 @@ div.flash_messages {
     background-color: #1fab3d; }
   div.flash_messages.error {
     background-color: #ff4c23; }
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  color: #555555; }
+  .pagination li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px; }
+  .pagination a {
+    color: #555555;
+    text-decoration: underline; }
 
 nav.nav {
   width: 958px;

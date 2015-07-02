@@ -20,3 +20,8 @@
       </div>
     </div>
 @endforeach
+
+<!-- PAGINATION -->
+@if(!isset($full))
+    {!! $news->render() !!}
+@endif
