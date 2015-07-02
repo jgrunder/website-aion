@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Lang;
 
 class UnConnected {
 
@@ -15,7 +16,7 @@ class UnConnected {
     public function handle($request, Closure $next)
     {
         if(Session::has('connected')){
-            return redirect(route('home'))->with('error', "Vous ne pouvez pas accéder à cette page en étant connecté");
+            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.unlogged'));
         }
 
         return $next($request);

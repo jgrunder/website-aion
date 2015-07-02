@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
+use Carbon\Carbon;
 
 class Language {
 

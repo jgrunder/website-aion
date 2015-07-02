@@ -17,6 +17,8 @@ return [
         'subscribe_and_logged' => 'Vous êtes maintenant inscrit et connecté',
         'logged'               => 'Vous êtes maintenant connecté',
         'no_account'           => "Votre compte n'existe pas",
-        'logout'               => 'Vous êtes maintenant déconnecté'
+        'logout'               => 'Vous êtes maintenant déconnecté',
+        'unlogged'             => 'Vous devez être connecté pour accéder à cette page',
+        'connected'            => 'Vous devez être connecté pour accéder à cette page'
     ]
 ];

@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Lang;
 
 class Connected {
 
@@ -15,7 +16,7 @@ class Connected {
 	public function handle($request, Closure $next)
 	{
         if(!Session::has('connected')){
-            return redirect(route('home'))->with('error', 'Vous devez être connecté pour accéder à cette page');
+            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.connected'));
         }
 
 		return $next($request);
