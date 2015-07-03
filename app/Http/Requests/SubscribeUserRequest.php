@@ -34,6 +34,19 @@ class SubscribeUserRequest extends Request {
 				}
 
       }, 'The email is already token');
+
+			// Rule for check Pseudo usage
+			$factory->extend('notUsePseudo', function ($attribute, $value, $parameters){
+
+				$pseudo = AccountData::where('pseudo', $value)->first();
+
+				if($pseudo !== null) {
+					return false;
+				} else {
+					return true;
+				}
+
+      }, 'The pseudo is already token');
   }
 
 	/**
@@ -55,7 +68,7 @@ class SubscribeUserRequest extends Request {
 	{
 		return [
       'username'              => 'required|notUseAccount',
-      'pseudo'                => 'required',
+      'pseudo'                => 'required|notUsePseudo',
       'password'              => 'required|case_diff|numbers|letters|confirmed',
       'password_confirmation' => 'required',
       'email'                 => 'email|notUseEmail',
