@@ -27,7 +27,9 @@
           @endforeach
 
         </div>
-        <div class="news_footer"></div>
+        <div class="news_footer">
+            @if(!isset($top)) {!! $items->render() !!} @endif
+        </div>
       </div>
     </div>
     <!-- RIGHT SIDEBAR -->

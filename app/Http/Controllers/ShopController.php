@@ -36,7 +36,7 @@ class ShopController extends Controller {
      */
     public function category($id)
     {
-      $items = ShopItem::where('id_sub_category', '=', $id)->get();
+      $items = ShopItem::where('id_sub_category', '=', $id)->paginate(9);
 
       if($items->count() === 0) {
         return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.fail_category_id'));

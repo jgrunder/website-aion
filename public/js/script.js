@@ -48,7 +48,13 @@
 		 */
 		$('.previewItem').on('click', function(e) {
 			var itemId = $(this).attr('data-id');
-			swal('.preview '+itemId);
+
+			swal({
+				title: "Tape et regarde !",
+				text: '.preview '+itemId,
+				timer: 7000
+			});
+
 			e.preventDefault();
 		});
 
