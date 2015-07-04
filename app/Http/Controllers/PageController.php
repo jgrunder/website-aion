@@ -10,19 +10,6 @@ use Illuminate\Support\Facades\Lang;
 class PageController extends Controller {
 
     /**
-     * GET /page/contactus
-     */
-    public function contactUs()
-    {
-        // SEO
-        SEOMeta::setTitle(Lang::get('seo.contact.title'));
-        SEOMeta::setDescription(Lang::get('seo.contact.description'));
-        OpenGraph::setDescription(Lang::get('seo.contact.description'));
-
-        return view('page.contactus');
-    }
-
-    /**
      * GET /page/join-us
      */
     public function joinUs()

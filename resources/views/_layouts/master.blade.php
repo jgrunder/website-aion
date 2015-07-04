@@ -44,7 +44,7 @@
               <ul class="sub_menu">
                 <li><a href="{{Route('page.teamspeak')}}">{{Lang::get('all.nav.teamspeak')}}</a></li>
                 <li><a href="{{Route('page.team')}}">{{Lang::get('all.nav.team')}}</a></li>
-                <li><a href="{{Route('page.contactus')}}">{{Lang::get('all.nav.contact')}}</a></li>
+                <li><a href="mailto:{{Config::get('aion.contactMail')}}">{{Lang::get('all.nav.contact')}}</a></li>
               </ul>
             </li>
             <li><a href="{{Route('page.rules')}}">{{Lang::get('all.nav.rules')}}</a></li>
@@ -81,7 +81,7 @@
         </div>
         <div class="btn_user">
           @if(Session::has('connected'))
-              <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}}</a>
+                <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.toll')}} Toll)</a>
               <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
           @else
               <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>

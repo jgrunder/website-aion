@@ -187,13 +187,8 @@ Route::group(['prefix' => 'database'], function()
  */
 Route::group(['prefix' => 'page'], function()
 {
-    // GET contactus
-    Route::get('contactus', [
-        'as'    => 'page.contactus',
-        'uses'  => 'PageController@contactUs'
-    ]);
 
-    // GET contactus
+    // GET joinus
     Route::get('joins-us', [
         'as'    => 'page.joins-us',
         'uses'  => 'PageController@joinUs'

@@ -20,10 +20,6 @@ return [
     'account'         => [
         'title'       => "Votre compte"
     ],
-    'contact'         => [
-        'title'       => "Contactez-nous",
-        'description' => "Un problème sur le serveur ? Venez nous en parler nous sommes ouverts à toutes discussions."
-    ],
     'joinus'          => [
         'title'       => "Nous rejoindre",
         'description' => "Vous souhaitez nous rejoindre ? Pas de soucis, cette page vous explique pas à pas comment rejoindre le serveur RealAion !"

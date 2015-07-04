@@ -8,6 +8,7 @@ return [
     'link_twitter'  => 'https://twitter.com/Real_Aion',
     'link_youtube'  => 'https://youtube.com',
     'languages'     => ['fr', 'en'],
+    'contactMail'   => 'aion@realaion.com',
 
     'servers'        => [
         'Serveur'  => [
