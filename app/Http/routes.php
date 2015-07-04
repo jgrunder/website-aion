@@ -151,7 +151,7 @@ Route::group(['prefix' => 'user'], function()
 Route::group(['prefix' => 'stats'], function()
 {
     // GET ONLINE
-    Route::get('online', [
+    Route::get('players-online', [
         'as'    => 'stats.online',
         'uses'  => 'StatsController@online'
     ]);

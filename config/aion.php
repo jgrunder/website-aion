@@ -7,6 +7,7 @@ return [
     'link_facebook' => 'https://www.facebook.com/Realaion',
     'link_twitter'  => 'https://twitter.com/Real_Aion',
     'link_youtube'  => 'https://youtube.com',
+    'languages'     => ['fr', 'en'],
 
     'servers'        => [
         'Serveur'  => [

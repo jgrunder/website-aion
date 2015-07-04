@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Config;
 
 class Language {
 
@@ -16,9 +17,18 @@ class Language {
      */
     public function handle($request, Closure $next)
     {
-        if(Cookie::has('language')){
-            App::setLocale(Cookie::get('language'));
-            Carbon::setLocale(Cookie::get('language'));
+        // Check if we have this language
+        foreach(Config::get('aion.languages') as $language) {
+
+            if(Cookie::has('language')){
+
+                if(Cookie::get('language') === $language){
+                    App::setLocale(Cookie::get('language'));
+                    Carbon::setLocale(Cookie::get('language'));
+                }
+
+            }
+
         }
 
         return $next($request);
