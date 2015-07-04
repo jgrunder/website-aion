@@ -145,6 +145,8 @@ class ShopController extends Controller {
             ]);
             ShopHistory::create([
                 'account_id'    => $account_id,
+                'player_id'     => $player_id,
+                'player_name'   => $player->name,
                 'item_id'       => $item->options['id_item'],
                 'quantity'      => $item->qty,
                 'price'         => $item->price,

@@ -22,4 +22,6 @@
 
     <a href="{{Route('shop.summary')}}" class="btn">{{Lang::get('all.shop.buy')}} ({{$total}} Toll)</a>
     <!-- <a href="#" class="btn gift_button">{{Lang::get('all.shop.gift')}} ({{$total}} Toll)</a> -->
+@else
+    <p>Votre panier est vide pour le moment</p>
 @endif
