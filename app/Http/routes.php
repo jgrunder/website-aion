@@ -225,3 +225,16 @@ Route::group(['prefix' => 'page'], function()
     ]);
 
 });
+
+/**
+ * GROUP DATABASE
+ */
+Route::group(['prefix' => 'admin'], function()
+{
+    // GET ADMIN
+    Route::get('home', [
+        'as'            => 'admin',
+        'middleware'    => 'connected',
+        'uses'          => 'AdminController@index'
+    ]);
+});
