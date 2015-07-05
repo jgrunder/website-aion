@@ -50,7 +50,7 @@ class StatsController extends Controller {
         OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
         return view('stats.bg', [
-            'top' => Ladder::orderBy('rank', 'DESC')->get()
+            'top' => Ladder::orderBy('rank', 'DESC')->with('name')->get()
         ]);
     }
 

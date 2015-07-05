@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Gameserver\Player;
+use App\Models\Gameserver\Ladder;
 use App\Models\Loginserver\AccountVote;
 use App\Models\Loginserver\AccountData;
 use Carbon\Carbon;
@@ -26,6 +27,7 @@ abstract class Controller extends BaseController {
         $this->countPlayersOnline();
 				$this->accountToll();
         $this->topVotes();
+        $this->topBg();
     }
 
     /**
@@ -100,6 +102,15 @@ abstract class Controller extends BaseController {
     {
         $voters = AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(3)->get();
         View::Share('topVotes', $voters);
+    }
+
+    /**
+     * Set Variables $topBg
+     */
+    private function topBg()
+    {
+        $topBg = Ladder::orderBy('rank', 'DESC')->with('name')->take(5)->get();
+        View::Share('topBg', $topBg);
     }
 
     /**
