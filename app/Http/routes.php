@@ -212,7 +212,7 @@ Route::group(['prefix' => 'page'], function()
         'uses'  => 'PageController@team'
     ]);
 
-    // GET team
+    // GET rates
     Route::get('rates-of-server', [
         'as'    => 'page.rates',
         'uses'  => 'PageController@rates'
@@ -235,6 +235,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     Route::get('home', [
         'as'            => 'admin',
         'uses'          => 'AdminController@index'
+    ]);
+
+    // GET NEWS
+    Route::get('news', [
+        'as'            => 'admin.news',
+        'uses'          => 'AdminController@news'
+    ]);
+
+    // GET NEWS DELETE
+    Route::get('news-delete/{id}', [
+        'as'            => 'admin.news.delete',
+        'uses'          => 'AdminController@newsDelete'
     ]);
 
 });

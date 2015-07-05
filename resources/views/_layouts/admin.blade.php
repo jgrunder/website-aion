@@ -30,7 +30,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{{Route('home')}}">Accueil</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="{{Route('admin.news')}}">Articles du site</a></li>
                 </ul>
             </div>
         </div>
