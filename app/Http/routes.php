@@ -227,14 +227,14 @@ Route::group(['prefix' => 'page'], function()
 });
 
 /**
- * GROUP DATABASE
+ * GROUP ADMIN
  */
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 1], function()
 {
-    // GET ADMIN
+    // GET HOME
     Route::get('home', [
         'as'            => 'admin',
-        'middleware'    => 'connected',
         'uses'          => 'AdminController@index'
     ]);
+
 });

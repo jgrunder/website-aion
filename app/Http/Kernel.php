@@ -30,6 +30,7 @@ class Kernel extends HttpKernel {
 		'guest'           => 'App\Http\Middleware\RedirectIfAuthenticated',
         'connected'       => 'App\Http\Middleware\Connected',
         'unConnected'     => 'App\Http\Middleware\UnConnected',
+        'AccessLevel'     => 'App\Http\Middleware\AccessLevel',
     ];
 
 }
