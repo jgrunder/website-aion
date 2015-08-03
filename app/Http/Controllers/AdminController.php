@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Webserver\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -67,7 +68,7 @@ class AdminController extends Controller
             return view ('admin.news.edit', [
                 'news' => $news
             ]);
-            
+
         }
         else {
             News::where('id', '=', $id)->update([
@@ -78,7 +79,26 @@ class AdminController extends Controller
 
             return redirect(route('admin.news'));
         }
+    }
 
+    /**
+     * GEt /admin/config
+     */
+    public function config(Request $request)
+    {
+        if($request->isMethod('post')) {
+            $configs = $request->except('_token');
+
+            foreach ($configs as $key => $value) {
+                $keyReplace = str_replace('aion_', 'aion.', $key);
+                Config::set($keyReplace, $value);
+            }
+
+        }
+
+        return view('admin.config', [
+            'configs' => Config::get('aion')
+        ]);
     }
 
 }

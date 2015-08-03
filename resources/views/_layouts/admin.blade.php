@@ -31,6 +31,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{Route('home')}}">Accueil</a></li>
                     <li><a href="{{Route('admin.news')}}">Articles du site</a></li>
+                    <li><a href="{{Route('admin.config')}}">Configuration du site</a></li>
                 </ul>
             </div>
         </div>

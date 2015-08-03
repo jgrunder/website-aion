@@ -237,6 +237,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@index'
     ]);
 
+    // GET HOME
+    Route::match(['GET', 'POST'], 'config', [
+        'as'            => 'admin.config',
+        'uses'          => 'AdminController@config'
+    ]);
+
     // GET NEWS LIST
     Route::get('news', [
         'as'            => 'admin.news',
