@@ -237,10 +237,22 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@index'
     ]);
 
-    // GET NEWS
+    // GET NEWS LIST
     Route::get('news', [
         'as'            => 'admin.news',
         'uses'          => 'AdminController@news'
+    ]);
+
+    // GET NEWS ADD
+    Route::match(['GET', 'POST'], 'news-add', [
+        'as'            => 'admin.news.add',
+        'uses'          => 'AdminController@newsAdd'
+    ]);
+
+    // GET NEWS EDIT
+    Route::match(['GET', 'POST'], 'news-edit/{id}', [
+        'as'            => 'admin.news.edit',
+        'uses'          => 'AdminController@newEdit'
     ]);
 
     // GET NEWS DELETE

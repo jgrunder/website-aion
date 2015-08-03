@@ -15,6 +15,7 @@
                         <th>Slug</th>
                         <th>Auteur</th>
                         <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -24,6 +25,7 @@
                             <td>{{$article->title}}</td>
                             <td>{{$article->slug}}</td>
                             <td>{{$article->creator->name}}</td>
+                            <td><a href="{{Route('admin.news.edit', $article->id)}}" class="fa fa-pencil-square-o"></a></td>
                             <td><a href="{{Route('admin.news.delete', $article->id)}}" class="fa fa-trash"></a></td>
                         </tr>
                     @endforeach
@@ -33,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
-                <a href="#" class="btn btn-primary">Ajouter un article</a>
+                <a href="{{Route('admin.news.add')}}" class="btn btn-primary">Ajouter un article</a>
             </div>
         </div>
     </div>

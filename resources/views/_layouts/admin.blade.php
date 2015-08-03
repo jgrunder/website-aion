@@ -41,5 +41,6 @@
     <!-- JAVASCRIPTS -->
     <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script src="http://cdn.ckeditor.com/4.5.1/standard/ckeditor.js"></script>
 </body>
 </html>

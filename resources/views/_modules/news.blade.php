@@ -6,9 +6,9 @@
       <div class="news_body">
         <p>
           @if(isset($full))
-            {{$article->text}}
+            {!! $article->text !!}
           @else
-            {{str_limit($article->text, $limit = 350, $end = '...')}}
+            {!! str_limit($article->text, $limit = 350, $end = '...') !!}
           @endif
         </p>
       </div>
