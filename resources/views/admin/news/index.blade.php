@@ -25,8 +25,14 @@
                             <td>{{$article->title}}</td>
                             <td>{{$article->slug}}</td>
                             <td>{{$article->creator->name}}</td>
-                            <td><a href="{{Route('admin.news.edit', $article->id)}}" class="fa fa-pencil-square-o"></a></td>
-                            <td><a href="{{Route('admin.news.delete', $article->id)}}" class="fa fa-trash"></a></td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="{{Route('admin.news.edit', $article->id)}}">
+                                    <i class="fa fa-pencil-square-o"></i> Editer</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="{{Route('admin.news.delete', $article->id)}}">
+                                    <i class="fa fa-trash"></i> Supprimer</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
