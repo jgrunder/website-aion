@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
+use App\Models\Webserver\ShopHistory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
@@ -15,7 +18,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $shopHistoryToday = ShopHistory::where('created_at', '=', Carbon::today())->count();
+        $shopHistoryTotal = ShopHistory::count();
+        $accountsCount = AccountData::count();
+
+        return view('admin.index', [
+            'today'             => Carbon::today(),
+            'shopHistoryToday'  => $shopHistoryToday,
+            'shopHistoryTotal'  => $shopHistoryTotal,
+            'accountsCount'     => $accountsCount
+        ]);
     }
 
     /**
