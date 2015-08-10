@@ -25,9 +25,11 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
-				$this->accountToll();
+        $this->accountToll();
         $this->topVotes();
         $this->topBg();
+        // Admin
+        $this->adminLogsMenu();
     }
 
     /**
@@ -146,6 +148,29 @@ abstract class Controller extends BaseController {
         }
 
         View::share('serversStatus', $serversStatus);
+    }
+
+    /**
+     * Set variables $adminLogsMenu
+     */
+    private function adminLogsMenu()
+    {
+        if (Session::has('connected') && Session::get('user.access_level') > 0) {
+
+            $logFiles  = Config::get('aion.logs.files');
+            $logsMenu  = [];
+
+            foreach ($logFiles as $key => $value){
+
+                if(Session::get('user.access_level') >= $value['access_level']){
+                    $logsMenu[] = $value['file'];
+                }
+
+            }
+
+            View::share('adminLogsMenu', $logsMenu);
+
+        }
     }
 
 }

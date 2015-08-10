@@ -82,7 +82,7 @@ class AdminController extends Controller
     }
 
     /**
-     * GEt /admin/config
+     * GET /admin/config
      */
     public function config(Request $request)
     {
@@ -99,6 +99,45 @@ class AdminController extends Controller
         return view('admin.config', [
             'configs' => Config::get('aion')
         ]);
+    }
+
+    /**
+     * GET /admin/logs/{name}
+     */
+    public function logs($name)
+    {
+        $logsConfig      = Config::get('aion.logs');
+        $logsPath        = $logsConfig['path'];
+        $logsFiles       = $logsConfig['files'];
+        $userAccessLevel = Session::get('user.access_level');
+
+        foreach ($logsFiles as $key => $value) {
+
+            // Check if the name are in the config
+            if ($name.$value['extension'] == $value['file'].$value['extension']) {
+
+                // Check User accessLevel
+                if ($userAccessLevel >= $value['access_level']){
+
+                    // Check if file exist
+                    if (file_exists($logsPath.$value['file'].$value['extension'])){
+
+                        $logContent = file_get_contents($logsPath.$value['file'].$value['extension']);
+
+                        return view('admin.logs', [
+                            'logName'      => $name,
+                            'logExtension' => $value['extension'],
+                            'logContent'   => $logContent
+                        ]);
+
+                    }
+
+                }
+
+            }
+        }
+
+        return redirect(route('admin'));
     }
 
 }

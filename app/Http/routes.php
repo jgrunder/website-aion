@@ -249,6 +249,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@news'
     ]);
 
+    // GET NEWS LIST
+    Route::get('logs/{name}', [
+        'as'            => 'admin.logs',
+        'uses'          => 'AdminController@logs'
+    ]);
+
     // GET NEWS ADD
     Route::match(['GET', 'POST'], 'news-add', [
         'as'            => 'admin.news.add',
