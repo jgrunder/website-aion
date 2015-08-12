@@ -54,8 +54,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.config')}}">Liste des items</a></li>
-                            <li><a href="{{Route('admin.config')}}">Liste des catégories</a></li>
-                            <li><a href="{{Route('admin.config')}}">Liste des sous-catégories</a></li>
+                            <li><a href="{{Route('admin.shop.category')}}">Liste des catégories</a></li>
+                            <li><a href="{{Route('admin.shop.subcategory')}}">Liste des sous-catégories</a></li>
                         </ul>
                     </li>
 

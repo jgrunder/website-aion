@@ -8,7 +8,8 @@ class ShopCategory extends Model {
 
     protected $table        = 'shop_category';
     protected $connection   = 'webserver';
-    protected $fillable     = ['name', 'id'];
+    protected $fillable     = ['category_name', 'id'];
+    public $timestamps      = false;
 
     public function name(){
         return $this->hasMany('App\Models\Webserver\ShopSubCategory', 'id_category', 'id');

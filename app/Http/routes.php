@@ -273,4 +273,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@newsDelete'
     ]);
 
+    // GET SHOP CATEGORY
+    Route::match(['GET', 'POST'], 'shop-category', [
+        'as'            => 'admin.shop.category',
+        'uses'          => 'AdminController@shopCategory'
+    ]);
+
+    // GET SHOP SUB CATEGORY
+    Route::match(['GET', 'POST'], 'shop-subcategory', [
+        'as'            => 'admin.shop.subcategory',
+        'uses'          => 'AdminController@shopSubCategory'
+    ]);
+
 });

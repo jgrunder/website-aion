@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
+use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopHistory;
+use App\Models\Webserver\ShopSubCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -150,6 +152,55 @@ class AdminController extends Controller
         }
 
         return redirect(route('admin'));
+    }
+
+    /**
+     * GET/POST /admin/shop-category
+     */
+    public function shopCategory(Request $request)
+    {
+        // When try to add Category
+        if($request->isMethod('post')) {
+            ShopCategory::create([
+                'category_name' => $request->input('category_name')
+            ]);
+        }
+
+        $categories = ShopCategory::get();
+
+        return view('admin.shop.category', [
+            'categories' => $categories
+        ]);
+    }
+
+    /**
+     * GET/POST /admin/shop-subcategory
+     */
+    public function shopSubCategory(Request $request)
+    {
+        // When try to add SubCategory
+        if($request->isMethod('post')) {
+            ShopSubCategory::create([
+                'id_category' => $request->input('category_id'),
+                'name' => $request->input('sub_category_name')
+            ]);
+        }
+
+        $categories             = ShopCategory::get();
+        $categoriesSelectInput  = [];
+        $subCategories          = ShopSubCategory::get();
+
+        // Create beautiful array for select Input
+        foreach($categories as $category){
+            $categoriesSelectInput[$category->category_name] = [
+              $category->id => $category->category_name
+            ];
+        }
+
+        return view('admin.shop.subcategory', [
+            'categories'    => $categoriesSelectInput,
+            'subCategories' => $subCategories
+        ]);
     }
 
 }

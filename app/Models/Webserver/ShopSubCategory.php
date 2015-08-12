@@ -9,5 +9,6 @@ class ShopSubCategory extends Model {
     protected $table        = 'shop_sub_category';
     protected $connection   = 'webserver';
     protected $fillable     = ['name', 'id_category', 'id'];
+    public $timestamps      = false;
 
 }
