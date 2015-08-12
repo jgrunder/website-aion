@@ -68,8 +68,21 @@
                             @endforeach
                         </ul>
                     </li>
-
                 </ul>
+
+                <!-- Search Function -->
+                {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'post']) !!}
+
+                <div class="form-group">
+                    {!! Form::text('search_value', null, ['placeholder' => "Je cherche ...", 'class' => 'form-control', 'required' => 'required']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::select('search_type', ['character' => 'Personnage', 'account' => 'Compte'], null, ['class' => 'form-control', 'required' => 'required']) !!}
+                </div>
+
+                {!! Form::close() !!}
+
             </div>
         </div>
     </nav>

@@ -237,6 +237,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@index'
     ]);
 
+    // GET SEARCH
+    Route::post('search', [
+        'as'            => 'admin.search',
+        'uses'          => 'AdminController@search'
+    ]);
+
     // GET HOME
     Route::match(['GET', 'POST'], 'config', [
         'as'            => 'admin.config',

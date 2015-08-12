@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
 use App\Models\Webserver\ShopCategory;
@@ -201,6 +202,33 @@ class AdminController extends Controller
             'categories'    => $categoriesSelectInput,
             'subCategories' => $subCategories
         ]);
+    }
+
+    /**
+     * POST /admin/search
+     */
+    public function search(Request $request)
+    {
+        $searchValue = $request->input('search_value');
+        $searchType  = $request->input('search_type');
+
+        switch ($searchType){
+            case 'character':
+                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                break;
+            case 'account':
+                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                break;
+            default:
+                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                break;
+
+        }
+
+        return view('admin.search', [
+           'results' => $results
+        ]);
+
     }
 
 }
