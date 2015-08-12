@@ -26,7 +26,7 @@ class HomeController extends Controller
 	}
 
     /**
-     * GET /news/{slug
+     * GET /news/{slug}
      */
     public function news($slug)
     {
@@ -34,7 +34,6 @@ class HomeController extends Controller
 
         // SEO
         SEOMeta::setTitle(Lang::get('seo.news.title'));
-
 
         if($news->count() == 0){
             return redirect(route('home'))->with('error', Lang::get('flashmessage.news.fail_id'));

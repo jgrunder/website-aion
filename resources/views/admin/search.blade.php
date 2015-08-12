@@ -7,7 +7,9 @@
                 <h1>Resultat de la recherche</h1>
             </div>
             <div class="col-md-8 col-md-offset-2">
-                <!-- TODO -->
+                @if ($searchType == 'shop_item')
+                    @include('admin.search.shop')
+                @endif
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
 use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopHistory;
+use App\Models\Webserver\ShopItem;
 use App\Models\Webserver\ShopSubCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -214,19 +215,23 @@ class AdminController extends Controller
 
         switch ($searchType){
             case 'character':
-                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
             case 'account':
-                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
+                break;
+            case 'shop_item':
+                $results = ShopItem::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
             default:
-                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->get();
+                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
 
         }
 
         return view('admin.search', [
-           'results' => $results
+            'searchType' => $searchType,
+            'results'    => $results
         ]);
 
     }
