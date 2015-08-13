@@ -236,4 +236,37 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * GET /admin/shop-add
+     */
+    public function shopAdd(Request $request)
+    {
+
+        // When try to add item
+        if($request->isMethod('post')) {
+            ShopItem::create([
+                'id_sub_category' => $request->input('id_sub_category'),
+                'id_item'         => $request->input('id_item'),
+                'name'            => $request->input('name'),
+                'price'           => $request->input('price'),
+                'quantity'        => $request->input('quantity'),
+                'level'           => $request->input('level'),
+            ]);
+        }
+
+        $subCategories      = ShopSubCategory::get();
+        $subCategoriesInput = [];
+
+        // Create beautiful array for select Input
+        foreach($subCategories as $subCategory){
+            $subCategoriesInput[$subCategory->name] = [
+              $subCategory->id => $subCategory->name
+            ];
+        }
+
+        return view('admin.shop.add', [
+            'subCategories' => $subCategoriesInput
+        ]);
+    }
+
 }

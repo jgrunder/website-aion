@@ -44,15 +44,51 @@ return [
         'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
         'files' => [
             [
-                'file'          => 'errors',
-                'extension'     => '.txt',
+                'file'          => 'adminaudit',
+                'extension'     => '.log',
                 'access_level'  => 1
             ],
             [
-                'file'          => 'gmlogs',
-                'extension'     => '.txt',
+                'file'          => 'audit',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'chat',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'console',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'error',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'exchange',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'kill',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'mail',
+                'extension'     => '.log',
+                'access_level'  => 1
+            ],
+            [
+                'file'          => 'warn',
+                'extension'     => '.log',
                 'access_level'  => 1
             ]
+
         ]
     ],
 

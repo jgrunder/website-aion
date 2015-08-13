@@ -106,6 +106,15 @@ Route::post('shop/summary', [
 ]);
 
 /**
+ * ALLOPASS
+ */
+Route::get('allopass', [
+    'as'         => 'allopass',
+    'middleware' => 'connected',
+    'uses'       => 'PaiementController@allopass'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()
@@ -238,7 +247,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     ]);
 
     // GET SEARCH
-    Route::post('search', [
+    Route::get('search', [
         'as'            => 'admin.search',
         'uses'          => 'AdminController@search'
     ]);
@@ -289,6 +298,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     Route::match(['GET', 'POST'], 'shop-subcategory', [
         'as'            => 'admin.shop.subcategory',
         'uses'          => 'AdminController@shopSubCategory'
+    ]);
+
+    // GET SHOP CATEGORY
+    Route::match(['GET', 'POST'], 'shop-add', [
+        'as'            => 'admin.shop.add',
+        'uses'          => 'AdminController@shopAdd'
     ]);
 
 });

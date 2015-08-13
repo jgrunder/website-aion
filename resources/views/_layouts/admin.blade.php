@@ -53,7 +53,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{Route('admin.config')}}">Liste des items</a></li>
+                            <li><a href="{{Route('admin.shop.add')}}">Ajouter un item dans la boutique</a></li>
                             <li><a href="{{Route('admin.shop.category')}}">Liste des catégories</a></li>
                             <li><a href="{{Route('admin.shop.subcategory')}}">Liste des sous-catégories</a></li>
                         </ul>
@@ -71,7 +71,7 @@
                 </ul>
 
                 <!-- Search Function -->
-                {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'post']) !!}
+                {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'get']) !!}
 
                 <div class="form-group">
                     {!! Form::select('search_type', ['character' => 'Personnage', 'account' => 'Compte', 'shop_item' => 'Boutique'], null, ['class' => 'form-control', 'required' => 'required']) !!}
