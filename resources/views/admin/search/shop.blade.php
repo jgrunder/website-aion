@@ -18,7 +18,7 @@
             <td>{{$result->price}}</td>
             <td>{{$result->purchased}}</td>
             <td>
-                <a class="btn btn-danger btn-xs" href="#">
+                <a class="btn btn-danger btn-xs" href="{{Route('admin.shop.edit', $result->id_item)}}">
                     <i class="fa fa-pencil-square-o"></i> Editer
                 </a>
             </td>

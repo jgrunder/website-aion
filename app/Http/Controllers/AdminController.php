@@ -242,9 +242,12 @@ class AdminController extends Controller
     public function shopAdd(Request $request)
     {
 
+        // Success message
+        $success = null;
+
         // When try to add item
         if($request->isMethod('post')) {
-            ShopItem::create([
+            $itemAdded = ShopItem::create([
                 'id_sub_category' => $request->input('id_sub_category'),
                 'id_item'         => $request->input('id_item'),
                 'name'            => $request->input('name'),
@@ -252,6 +255,10 @@ class AdminController extends Controller
                 'quantity'        => $request->input('quantity'),
                 'level'           => $request->input('level'),
             ]);
+
+            if($itemAdded !== null){
+                $success = $request->input('name')." a été ajouté avec succès";
+            }
         }
 
         $subCategories      = ShopSubCategory::get();
@@ -265,7 +272,51 @@ class AdminController extends Controller
         }
 
         return view('admin.shop.add', [
-            'subCategories' => $subCategoriesInput
+            'subCategories' => $subCategoriesInput,
+            'success'       => $success
+        ]);
+    }
+
+    /**
+     * GET /admin/shop-edit/{id}
+     */
+    public function shopEdit(Request $request, $id)
+    {
+        // Success message
+        $success = null;
+
+        // When try to edit item
+        if($request->isMethod('post')){
+            $itemSaved = ShopItem::where('id_item', '=', $id)->update([
+                'id_sub_category' => $request->input('id_sub_category'),
+                'id_item'         => $request->input('id_item'),
+                'name'            => $request->input('name'),
+                'price'           => $request->input('price'),
+                'quantity'        => $request->input('quantity'),
+                'level'           => $request->input('level'),
+            ]);
+
+            if($itemSaved !== null){
+                $success = $request->input('name')." a été modifié avec succès";
+            }
+
+        }
+
+        $subCategories      = ShopSubCategory::get();
+        $item               = ShopItem::where('id_item', '=', $id)->first();
+        $subCategoriesInput = [];
+
+        // Create beautiful array for select Input
+        foreach($subCategories as $subCategory){
+            $subCategoriesInput[$subCategory->name] = [
+                $subCategory->id => $subCategory->name
+            ];
+        }
+
+        return view('admin.shop.edit', [
+            'item'          => $item,
+            'subCategories' => $subCategoriesInput,
+            'success'       => $success
         ]);
     }
 

@@ -306,4 +306,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@shopAdd'
     ]);
 
+    // GET SHOP EDIT
+    route::match(['GET', 'POST'], 'shop-edit/{id}', [
+        'as'            => 'admin.shop.edit',
+        'uses'          => 'AdminController@shopEdit'
+    ]);
+
 });
