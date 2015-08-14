@@ -9,6 +9,8 @@
             <div class="col-md-8 col-md-offset-2">
                 @if ($searchType == 'shop_item')
                     @include('admin.search.shop')
+                @elseif ($searchType == 'character')
+                    @include('admin.search.character')
                 @endif
             </div>
         </div>
