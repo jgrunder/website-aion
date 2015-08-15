@@ -10,6 +10,11 @@ return [
     'languages'     => ['fr', 'en'],
     'contactMail'   => 'aion@realaion.com',
 
+    'allopass' => [
+        'tollGiven' => 4000,
+        'documentId'=> '307954/1326680/4588246'
+    ],
+
     'servers'        => [
         'Serveur'  => [
             'ip'    => '188.165.42.128',

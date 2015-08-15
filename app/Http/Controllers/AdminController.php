@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
+use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\News;
 use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopHistory;
@@ -325,6 +326,16 @@ class AdminController extends Controller
             'item'          => $item,
             'subCategories' => $subCategoriesInput,
             'success'       => $success
+        ]);
+    }
+
+    /**
+     * GET /admin/allopass
+     */
+    public function allopass()
+    {
+        return view('admin.allopass', [
+           'allopass' => LogsAllopass::orderBy('created_at', 'DESC')->get()
         ]);
     }
 

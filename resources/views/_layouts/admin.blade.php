@@ -66,6 +66,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autre <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.config')}}">Configuration du site</a></li>
+                            <li><a href="{{Route('admin.allopass')}}">Codes Allopass</a></li>
                         </ul>
                     </li>
                 </ul>

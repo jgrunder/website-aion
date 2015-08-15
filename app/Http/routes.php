@@ -115,6 +115,15 @@ Route::get('allopass', [
 ]);
 
 /**
+ * ALLOPASS SUCCESS
+ */
+Route::get('allopass/success', [
+    'as'         => 'allopass.success',
+    'middleware' => 'connected',
+    'uses'       => 'PaiementController@allopassSuccess'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()
@@ -310,6 +319,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     route::match(['GET', 'POST'], 'shop-edit/{id}', [
         'as'            => 'admin.shop.edit',
         'uses'          => 'AdminController@shopEdit'
+    ]);
+
+    // ALLOPASS
+    route::get('allopass', [
+        'as'            => 'admin.allopass',
+        'uses'          => 'AdminController@allopass'
     ]);
 
 });
