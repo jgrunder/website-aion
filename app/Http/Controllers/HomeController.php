@@ -26,11 +26,11 @@ class HomeController extends Controller
 	}
 
     /**
-     * GET /news/{slug}
+     * GET /news/{slug}/{id}
      */
-    public function news($slug)
+    public function news($slug, $id)
     {
-        $news = News::where('slug', '=', $slug)->get();
+        $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
 
         // SEO
         SEOMeta::setTitle(Lang::get('seo.news.title'));

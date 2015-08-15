@@ -29,7 +29,7 @@ Route::get('/', [
 /**
  * NEWS
  */
-Route::get('/news/{slug}', [
+Route::get('/news/{slug}/{id}', [
     'as'         => 'news',
     'uses'       => 'HomeController@news'
 ]);

@@ -13,10 +13,9 @@
                     <tr>
                         <th>#</th>
                         <th>Titre</th>
-                        <th>Slug</th>
                         <th>Auteur</th>
-                        <th></th>
-                        <th></th>
+                        <th>Action</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -24,7 +23,6 @@
                         <tr>
                             <th scope="row">{{$article->id}}</th>
                             <td>{{$article->title}}</td>
-                            <td>{{$article->slug}}</td>
                             <td>{{$article->creator->name}}</td>
                             <td>
                                 <a class="btn btn-danger btn-xs" href="{{Route('admin.news.edit', $article->id)}}">

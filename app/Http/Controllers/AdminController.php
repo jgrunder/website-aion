@@ -109,6 +109,7 @@ class AdminController extends Controller
         else {
             News::where('id', '=', $id)->update([
                 'title'         => $request->input('title'),
+                'slug'          => Str::slug($request->input('title'), '-'),
                 'text'          => $request->input('content')
             ]);
 

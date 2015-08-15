@@ -15,7 +15,7 @@
       <div class="news_footer">
         <p>{{Lang::get('all.news.by')}} {{$article->creator->pseudo}} Il y a {{Carbon::parse($article->updated_at)->diffForHumans()}}</p>
           @if(!isset($full))
-              <a href="{{Route('news', $article->slug)}}">{{Lang::get('all.news.next')}}</a>
+              <a href="{{Route('news', ["slug" => $article->slug, "id" => $article->id])}}">{{Lang::get('all.news.next')}}</a>
           @endif
       </div>
     </div>
