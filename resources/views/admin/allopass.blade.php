@@ -25,7 +25,6 @@
                             @else
                                 <td class="text-center">{{$code->created_at}}</td>
                             @endif
-
                         </tr>
                     @endforeach
                     </tbody>

@@ -10,11 +10,7 @@
                 {!! Form::open() !!}
 
                 <div class="form-group">
-                    {!! Form::text('title', $news->title, ['placeholder' => "Titre de l'article", 'class' => 'form-control', 'required' => 'required']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::text('slug', $news->slug, ['placeholder' => "Slug : titre-de-larticle", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('title', $news->title, ['placeholder' => "Titre de l'article", 'class' => 'form-control', 'required' => 'required', 'disabled' => 'disabled']) !!}
                 </div>
 
                 <div class="form-group">

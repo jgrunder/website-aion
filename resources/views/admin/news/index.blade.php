@@ -6,6 +6,7 @@
             <div class="col-md-12 text-center page-header">
                 <h1>Liste des articles</h1>
             </div>
+
             <div class="col-md-8 col-md-offset-2">
                 <table class="table">
                     <thead>

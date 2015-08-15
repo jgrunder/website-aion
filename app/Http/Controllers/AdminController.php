@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -59,19 +60,37 @@ class AdminController extends Controller
      */
     public function newsAdd(Request $request)
     {
+        $success    = null;
+        $error      = null;
+
         if($request->isMethod('post')){
 
-            News::create([
-                'title'         => $request->input('title'),
-                'slug'          => $request->input('slug'),
-                'text'          => $request->input('content'),
-                'account_id'    => Session::get('user.id')
-            ]);
+            $slug       = Str::slug($request->input('title'), '-');
+            $article    = News::where('slug', '=', $slug)->first();
 
-            return redirect(route('admin.news'));
+            if($article === null){
+                News::create([
+                    'title'         => $request->input('title'),
+                    'slug'          => $slug,
+                    'text'          => $request->input('content'),
+                    'account_id'    => Session::get('user.id')
+                ]);
+
+                return redirect()->back()->with('success', "Votre article a été crée avec succès.");
+
+            }
+            else {
+                return redirect()->back()->with('error', "Merci de changer le nom de votre article.")->withInput();
+            }
+
+
         }
 
-        return view('admin.news.add');
+        return view('admin.news.add', [
+            'error'     => $error,
+            'success'   => $success
+        ]);
+
     }
 
     /**
@@ -90,7 +109,6 @@ class AdminController extends Controller
         else {
             News::where('id', '=', $id)->update([
                 'title'         => $request->input('title'),
-                'slug'          => $request->input('slug'),
                 'text'          => $request->input('content')
             ]);
 
@@ -226,14 +244,11 @@ class AdminController extends Controller
             case 'character':
                 $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
-            case 'account':
-                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
-                break;
             case 'shop_item':
                 $results = ShopItem::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
             default:
-                $results = AccountData::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
+                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
 
         }

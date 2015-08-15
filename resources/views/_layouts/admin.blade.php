@@ -75,7 +75,7 @@
                 {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'get']) !!}
 
                 <div class="form-group">
-                    {!! Form::select('search_type', ['character' => 'Personnage', 'account' => 'Compte', 'shop_item' => 'Boutique'], null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::select('search_type', ['character' => 'Personnage', 'shop_item' => 'Boutique'], null, ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">

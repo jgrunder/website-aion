@@ -40,23 +40,6 @@
             </div>
         </div>
         <div class="row">
-            <!-- User subscribe Today -->
-            <div class="col col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <i class="fa fa-users"></i>
-                            Comptes <small>({{$today}})</small>
-                        </h3>
-                    </div>
-                    <div class="panel-body text-center">
-                        <p>Aujourd'hui :</p>
-                        <h2><strong>?</strong></h2>
-                        <p>Au total :</p>
-                        <h2><strong>{{$accountsCount}}</strong></h2>
-                    </div>
-                </div>
-            </div>
             <!-- Shop number -->
             <div class="col col-md-4">
                 <div class="panel panel-default">
@@ -74,20 +57,18 @@
                     </div>
                 </div>
             </div>
-            <!-- € win -->
+            <!-- User subscribe Today -->
             <div class="col col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <i class="fa fa-money"></i>
-                            Argent <small>({{$today}})</small>
+                            <i class="fa fa-users"></i>
+                            Comptes <small>({{$today}})</small>
                         </h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p>Aujourd'hui :</p>
-                        <h2><strong>?</strong></h2>
                         <p>Au total :</p>
-                        <h2><strong>?</strong></h2>
+                        <h2><strong>{{$accountsCount}}</strong></h2>
                     </div>
                 </div>
             </div>

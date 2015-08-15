@@ -6,15 +6,32 @@
             <div class="col-md-12 text-center page-header">
                 <h1>Ajouter un article</h1>
             </div>
+
+            <!-- ERROR MESSAGE -->
+            @if (Session::has('error'))
+                <div class="col col-md-8 col-md-offset-2 text-center">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{Session::get('error')}}
+                    </div>
+                </div>
+            @endif
+
+            <!-- SUCCESS MESSAGE -->
+            @if (Session::has('success'))
+                <div class="col col-md-8 col-md-offset-2 text-center">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{Session::get('success')}}
+                    </div>
+                </div>
+            @endif
+
             <div class="col-md-8 col-md-offset-2">
                 {!! Form::open() !!}
 
                     <div class="form-group">
                         {!! Form::text('title', null, ['placeholder' => "Titre de l'article", 'class' => 'form-control', 'required' => 'required']) !!}
-                    </div>
-
-                    <div class="form-group">
-                        {!! Form::text('slug', null, ['placeholder' => "Slug : titre-de-larticle", 'class' => 'form-control', 'required' => 'required']) !!}
                     </div>
 
                     <div class="form-group">
