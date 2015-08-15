@@ -81,11 +81,11 @@
         </div>
         <div class="btn_user">
           @if(Session::has('connected'))
-                <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.toll')}} Toll)</a>
-              <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
+            <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.toll')}} Toll)</a>
+            <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
           @else
-              <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>
-              <a href="{{Route('user.subscribe')}}">{{Lang::get('all.nav.subscribe')}}</a>
+            <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>
+            <a href="{{Route('user.subscribe')}}">{{Lang::get('all.nav.subscribe')}}</a>
           @endif
         </div>
       </div>
@@ -125,6 +125,9 @@
     <!-- FOOTER -->
     <footer class="footer">
       <p>{{Lang::get('all.layout.footer_1')}}</p><br>
+      @if (Session::has('connected') && Session::get('user.access_level') > 0)
+        <p><a href="{{Route('admin')}}">Administration</a></p><br>
+      @endif
       <p>{{Lang::get('all.layout.footer_2')}} <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a> | Copyright 2015 © Real Aion</p>
     </footer>
 
