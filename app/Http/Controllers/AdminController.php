@@ -6,6 +6,7 @@ use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\News;
+use App\Models\Webserver\Pages;
 use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopHistory;
 use App\Models\Webserver\ShopItem;
@@ -26,7 +27,7 @@ class AdminController extends Controller
     {
         $shopHistoryToday = ShopHistory::where('created_at', '=', Carbon::today())->count();
         $shopHistoryTotal = ShopHistory::count();
-        $accountsCount = AccountData::count();
+        $accountsCount    = AccountData::count();
 
         return view('admin.index', [
             'today'             => Carbon::today(),
@@ -352,6 +353,26 @@ class AdminController extends Controller
     {
         return view('admin.allopass', [
            'allopass' => LogsAllopass::orderBy('created_at', 'DESC')->get()
+        ]);
+    }
+
+    /**
+     * GET/POST /admin/page/{$name}
+     */
+    public function pageEdit(Request $request, $name)
+    {
+
+        if ($request->isMethod('POST')){
+            Pages::where('page_name', '=', $name)->update([
+                'fr'     => $request->input('fr'),
+                'en'     => $request->input('en')
+            ]);
+        }
+
+        $page = Pages::where('page_name', '=', $name)->first();
+
+        return view('admin.page', [
+           'page' => $page
         ]);
     }
 

@@ -1,7 +1,7 @@
 @foreach($news as $article)
     <div class="news">
       <div class="news_top">
-        <h2><a href="#">{{$article->title}}</a></h2>
+        <h2><a href="{{Route('news', ["slug" => $article->slug, "id" => $article->id])}}">{{$article->title}}</a></h2>
       </div>
       <div class="news_body">
         <p>

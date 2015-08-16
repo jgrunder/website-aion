@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Webserver\Pages;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Lang;
 
 class PageController extends Controller {
@@ -32,7 +34,11 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.teamspeak.description'));
         OpenGraph::setDescription(Lang::get('seo.teamspeak.description'));
 
-        return view('page.teamspeak');
+        $content = Pages::where('page_name', '=', 'teamspeak')->first();
+
+        return view('page.teamspeak', [
+            'content' => $content[Cookie::get('language')]
+        ]);
     }
 
     /**
@@ -45,7 +51,11 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.rules.description'));
         OpenGraph::setDescription(Lang::get('seo.rules.description'));
 
-        return view('page.rules');
+        $content = Pages::where('page_name', '=', 'rules')->first();
+
+        return view('page.rules', [
+            'content' => $content[Cookie::get('language')]
+        ]);
     }
 
     /**
@@ -58,7 +68,11 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.team.description'));
         OpenGraph::setDescription(Lang::get('seo.team.description'));
 
-        return view('page.team');
+        $content = Pages::where('page_name', '=', 'team')->first();
+
+        return view('page.team', [
+            'content' => $content[Cookie::get('language')]
+        ]);
     }
 
     /**

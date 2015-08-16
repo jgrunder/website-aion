@@ -61,6 +61,17 @@
                         </ul>
                     </li>
 
+                    <!-- PAGE -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{Route('admin.page', 'rules')}}">Editer la page Règlement</a></li>
+                            <li><a href="{{Route('admin.page', 'team')}}">Editer la page Equipe</a></li>
+                            <li><a href="{{Route('admin.page', 'teamspeak')}}">Editer la page Teamspeak</a></li>
+                            <li><a href="{{Route('admin.page', 'subscribe')}}">Editer la page Inscription</a></li>
+                        </ul>
+                    </li>
+
                     <!-- Autre -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autre <span class="caret"></span></a>

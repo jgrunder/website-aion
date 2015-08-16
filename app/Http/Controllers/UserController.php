@@ -6,6 +6,8 @@ use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Loginserver\AccountData;
 use App\Models\Gameserver\Player;
+use App\Models\Webserver\Pages;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -21,7 +23,11 @@ class UserController extends Controller
         // SEO
         SEOMeta::setTitle(Lang::get('seo.subscribe.title'));
 
-        return view('user.subscribe');
+        $content = Pages::where('page_name', '=', 'teamspeak')->first();
+
+        return view('user.subscribe', [
+            'content' => $content[Cookie::get('language')]
+        ]);
     }
 
     /**

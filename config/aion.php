@@ -12,7 +12,8 @@ return [
 
     'allopass' => [
         'tollGiven' => 4000,
-        'documentId'=> '307954/1326680/4588246'
+        'documentId'=> '307954/1326680/4588246',
+        'toMoney'   => 1
     ],
 
     'servers'        => [

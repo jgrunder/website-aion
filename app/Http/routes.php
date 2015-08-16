@@ -327,4 +327,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@allopass'
     ]);
 
+    // PAGE
+    route::match(['GET', 'POST'], 'page/{name}', [
+        'as'            => 'admin.page',
+        'uses'          => 'AdminController@pageEdit'
+    ]);
+
 });
