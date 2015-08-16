@@ -30,15 +30,15 @@ class HomeController extends Controller
      */
     public function news($slug, $id)
     {
-        $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
 
-        // SEO
-        SEOMeta::setTitle(Lang::get('seo.news.title'));
+        $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
 
         if($news->count() == 0){
             return redirect(route('home'))->with('error', Lang::get('flashmessage.news.fail_id'));
         }
 
+        // SEO
+        SEOMeta::setTitle($news[0]->title);
         SEOMeta::setDescription($news[0]->title);
         OpenGraph::setDescription($news[0]->title);
 
