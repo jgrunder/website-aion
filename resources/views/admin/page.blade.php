@@ -7,7 +7,7 @@
                 <h1>Editer la page</h1>
                 <small>{{$page->page_name}}</small>
             </div>
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                 {!! Form::open() !!}
 
 

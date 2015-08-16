@@ -6,7 +6,7 @@
             <div class="col-md-12 text-center page-header">
                 <h1>Editer l'article numéro : {{$news->id}} </h1>
             </div>
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                 {!! Form::open() !!}
 
                 <div class="form-group">
