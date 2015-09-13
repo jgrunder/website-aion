@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -121,6 +123,15 @@ Route::get('allopass/success', [
     'as'         => 'allopass.success',
     'middleware' => 'connected',
     'uses'       => 'PaiementController@allopassSuccess'
+]);
+
+/**
+ * PAYPAL
+ */
+Route::get('paypal', [
+    'as'         => 'paypal',
+    'middleware' => 'connected',
+    'uses'       => 'PaiementController@paypal'
 ]);
 
 /**
@@ -252,7 +263,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET HOME
     Route::get('home', [
         'as'            => 'admin',
-        'uses'          => 'AdminController@index'
+        'uses'          => 'Admin\NewsController@index'
     ]);
 
     // GET SEARCH
@@ -270,7 +281,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET NEWS LIST
     Route::get('news', [
         'as'            => 'admin.news',
-        'uses'          => 'AdminController@news'
+        'uses'          => 'Admin\AdminController@news'
     ]);
 
     // GET NEWS LIST
@@ -282,43 +293,43 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET NEWS ADD
     Route::match(['GET', 'POST'], 'news-add', [
         'as'            => 'admin.news.add',
-        'uses'          => 'AdminController@newsAdd'
+        'uses'          => 'Admin\AdminController@newsAdd'
     ]);
 
     // GET NEWS EDIT
     Route::match(['GET', 'POST'], 'news-edit/{id}', [
         'as'            => 'admin.news.edit',
-        'uses'          => 'AdminController@newEdit'
+        'uses'          => 'Admin\AdminController@newEdit'
     ]);
 
     // GET NEWS DELETE
     Route::get('news-delete/{id}', [
         'as'            => 'admin.news.delete',
-        'uses'          => 'AdminController@newsDelete'
+        'uses'          => 'Admin\AdminController@newsDelete'
     ]);
 
     // GET SHOP CATEGORY
     Route::match(['GET', 'POST'], 'shop-category', [
         'as'            => 'admin.shop.category',
-        'uses'          => 'AdminController@shopCategory'
+        'uses'          => 'Admin\ShopController@shopCategory'
     ]);
 
     // GET SHOP SUB CATEGORY
     Route::match(['GET', 'POST'], 'shop-subcategory', [
         'as'            => 'admin.shop.subcategory',
-        'uses'          => 'AdminController@shopSubCategory'
+        'uses'          => 'Admin\ShopController@shopSubCategory'
     ]);
 
     // GET SHOP CATEGORY
     Route::match(['GET', 'POST'], 'shop-add', [
         'as'            => 'admin.shop.add',
-        'uses'          => 'AdminController@shopAdd'
+        'uses'          => 'Admin\ShopController@shopAdd'
     ]);
 
     // GET SHOP EDIT
     route::match(['GET', 'POST'], 'shop-edit/{id}', [
         'as'            => 'admin.shop.edit',
-        'uses'          => 'AdminController@shopEdit'
+        'uses'          => 'Admin\ShopController@shopEdit'
     ]);
 
     // ALLOPASS

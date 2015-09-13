@@ -74,4 +74,12 @@ class PaiementController extends Controller {
 
     }
 
+    /**
+     * GET /user/paypal
+     */
+    public function paypal()
+    {
+        return view('paiement.paypal');
+    }
+
 }
