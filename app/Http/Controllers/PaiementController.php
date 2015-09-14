@@ -8,7 +8,6 @@ use App\Models\Webserver\LogsPaypal;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
 class PaiementController extends Controller {
 
