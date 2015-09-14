@@ -54,6 +54,15 @@ Route::get('/language/{language}', [
 ]);
 
 /**
+ * DONATION
+ */
+Route::get('donation', [
+    'as'         => 'donation',
+    'middleware' => 'connected',
+    'uses'       => 'PageController@donation'
+]);
+
+/**
  * SHOP
  */
 Route::get('shop', [

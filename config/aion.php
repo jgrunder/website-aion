@@ -16,7 +16,7 @@ return [
     ],
 
     'paypal' => [
-      'email' => 'aion@realaion.com'
+      'email' => 'unretailed@gmail.com'
     ],
 
     'servers'        => [

@@ -101,4 +101,12 @@ class PageController extends Controller {
         return view('page.rates');
     }
 
+    /**
+     * GET /donation
+     */
+    public function donation()
+    {
+        return view('page.donation');
+    }
+
 }
