@@ -86,7 +86,7 @@
 
 				var itemId = $(this).attr('data-id');
 
-				$.get("/shop/remove/"+itemId, function( data ) {
+				$.get("/shop/remove/" + itemId, function( data ) {
 					$(".container_shop_cart").html(data);
 					removeItemInCart();
 				});
@@ -97,5 +97,24 @@
 		}
 
 		removeItemInCart();
+
+		/*
+		 * PAYPAL
+		 */
+		var inputTypeRange = $("input[type=range]");
+
+		if(inputTypeRange.length > 0) {
+			inputTypeRange.on('input', function() {
+
+				var nbTool    = $(this).val();
+				var moneyNeed = $(this).val() / 5000;
+				var uid		  = $('#user_id').val();
+
+				$('#money_need').val("J'achète "+ nbTool +" toll pour "+ moneyNeed +"€");
+				$('#paypal_name').val(nbTool+' toll RealAion');
+				$('#money').val(moneyNeed);
+				$('#custom_paypal').val('tolls='+nbTool+'&uid='+uid);
+			});
+		}
 
 	});

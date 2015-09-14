@@ -135,6 +135,23 @@ Route::get('paypal', [
 ]);
 
 /**
+ * PAYPAL
+ */
+Route::post('paypal-ipn', [
+    'as'         => 'paypal.ipn',
+    'uses'       => 'PaiementController@paypalIpn'
+]);
+
+/**
+ * PAYPAL
+ */
+Route::get('paypal-valid', [
+    'as'         => 'paypal.valid',
+    'middleware' => 'connected',
+    'uses'       => 'PaiementController@paypalValid'
+]);
+
+/**
  * GROUP - USER
  */
 Route::group(['prefix' => 'user'], function()

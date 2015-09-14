@@ -15,6 +15,10 @@ return [
         'documentId'=> '307954/1326680/4588246'
     ],
 
+    'paypal' => [
+      'email' => 'aion@realaion.com'
+    ],
+
     'servers'        => [
         'Serveur'  => [
             'ip'    => '188.165.42.128',

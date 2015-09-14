@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
+use App\Models\Webserver\LogsPaypal;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class PaiementController extends Controller {
 
@@ -75,11 +77,100 @@ class PaiementController extends Controller {
     }
 
     /**
-     * GET /user/paypal
+     * GET /paypal
      */
     public function paypal()
     {
-        return view('paiement.paypal');
+        return view('paiement.paypal', [
+            'step' => 1
+        ]);
+    }
+
+    /**
+     * GET /paypal-ipn
+     */
+    public function paypalIpn()
+    {
+
+        $emailAccount   = Config::get('aion.paypal.email');
+        $req            = 'cmd=_notify-validate';
+
+        foreach ($_POST as $key => $value) {
+            $value = urlencode(stripslashes($value));
+            $req .= "&$key=$value";
+        }
+
+        $header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
+        $header .= "Host: www.paypal.com\r\n";
+        $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+        $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
+        $fp = fsockopen('ssl://www.paypal.com', 443, $errno, $errstr, 30);
+
+        $item_name        = $_POST['item_name'];
+        $item_number      = $_POST['item_number'];
+        $payment_status   = $_POST['payment_status'];
+        $payment_amount   = $_POST['mc_gross'];
+        $payment_tax      = $_POST['tax'];
+        $payment_ht       = $payment_amount - $payment_tax;
+        $payment_currency = $_POST['mc_currency'];
+        $address          = $_POST['address_street'];
+        $country          = $_POST['address_country'];
+        $city             = $_POST['address_city'];
+        $name             = $_POST['address_name'];
+        $txn_id           = $_POST['txn_id'];
+        $receiver_email   = $_POST['receiver_email'];
+        $payer_email      = $_POST['payer_email'];
+        parse_str($_POST['custom'],$custom);
+
+        if($fp){
+            fputs ($fp, $header . $req);
+            while (!feof($fp)) {
+                $res = fgets ($fp, 1024);
+                if (strcmp ($res, "VERIFIED") == 0) {
+                    echo $payment_status;
+                    // vérifier que payment_status a la valeur Completed
+                    if ( $payment_status == "Completed") {
+
+                        if ($emailAccount == $receiver_email) {
+
+                            $tolls  = $custom['tolls'];
+                            $uid    = $custom['uid'];
+
+                            if($payment_ht = $tolls / 5000) {
+
+                                LogsPaypal::create([
+                                    'id_account' => $uid,
+                                    'price'	     => $payment_ht,
+                                    'tax'	     => $payment_tax,
+                                    'email'	     => $payer_email,
+                                    'txnid'      => $txn_id,
+                                    'amount'     => $tolls,
+                                    'name'       => $name,
+                                    'country'    => $country,
+                                    'city'	     => $city,
+                                    'address'    => $address
+                                ]);
+
+                                AccountData::where('id', $uid)->increment('toll', $tolls);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    /**
+     * GET /paypal-valid
+     */
+    public function paypalValid()
+    {
+        return view('paiement.paypal', [
+            'step' => 2
+        ]);
     }
 
 }

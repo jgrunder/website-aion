@@ -985,6 +985,27 @@ input-placeholder {
   font-size: 14px;
   display: inline-block; }
 
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 500px;
+  height: 2px;
+  background: #198ade;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  outline: none; }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: white;
+  position: relative;
+  border: 3px solid #198ade;
+  z-index: 3;
+  cursor: pointer; }
+
 /*
  * BTN
  */
