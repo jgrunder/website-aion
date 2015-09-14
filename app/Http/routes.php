@@ -298,7 +298,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET NEWS LIST
     Route::get('news', [
         'as'            => 'admin.news',
-        'uses'          => 'Admin\AdminController@news'
+        'uses'          => 'Admin\NewsController@news'
     ]);
 
     // GET NEWS LIST
@@ -310,19 +310,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET NEWS ADD
     Route::match(['GET', 'POST'], 'news-add', [
         'as'            => 'admin.news.add',
-        'uses'          => 'Admin\AdminController@newsAdd'
+        'uses'          => 'Admin\NewsController@newsAdd'
     ]);
 
     // GET NEWS EDIT
     Route::match(['GET', 'POST'], 'news-edit/{id}', [
         'as'            => 'admin.news.edit',
-        'uses'          => 'Admin\AdminController@newEdit'
+        'uses'          => 'Admin\NewsController@newEdit'
     ]);
 
     // GET NEWS DELETE
     Route::get('news-delete/{id}', [
         'as'            => 'admin.news.delete',
-        'uses'          => 'Admin\AdminController@newsDelete'
+        'uses'          => 'Admin\NewsController@newsDelete'
     ]);
 
     // GET SHOP CATEGORY
