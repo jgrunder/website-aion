@@ -17,7 +17,7 @@
                 'required' => 'required',
                 'id'       => 'btn_toll_wanted',
                 'min'      => 5000,
-                'max'      => 1000000,
+                'max'      => Config::get('aion.paypal.maxToll'),
                 'step'     => 5000
             ]) !!}
 
@@ -29,8 +29,8 @@
             {!! Form::input('hidden', 'currency_code', 'EUR') !!}
             {!! Form::input('hidden', 'amount', 1, ['id' => 'money']) !!}
             {!! Form::input('hidden', 'cmd', '_xclick') !!}
-            {!! Form::input('hidden', 'uid', Session::get('user.id'), ['id' => "user_id"]) !!}
-            {!! Form::input('hidden', 'custom', 'tolls=5000&uid='.Session::get('user.id'), ['id' => "custom_paypal"]) !!}
+            {!! Form::input('hidden', 'uid', $uid, ['id' => "user_id"]) !!}
+            {!! Form::input('hidden', 'custom', 'tolls=5000&uid='.$uid, ['id' => "custom_paypal"]) !!}
 
             <br> <br>
 

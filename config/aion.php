@@ -16,7 +16,8 @@ return [
     ],
 
     'paypal' => [
-      'email' => 'unretailed@gmail.com'
+        'email'     => 'unretailed@gmail.com',
+        'maxToll'   => 1000000
     ],
 
     'servers'        => [

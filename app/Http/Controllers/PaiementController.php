@@ -59,19 +59,17 @@ class PaiementController extends Controller {
                     return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.tollGiven')." toll");
 
                 }
-                else {
-                    return redirect(route('allopass'))->with('error', "Une erreur c'est produite. Merci de contacter un administrateur");
-                }
+
+                return redirect(route('allopass'))->with('error', "Une erreur c'est produite. Merci de contacter un administrateur");
 
             }
-            else {
-                return redirect(route('allopass'))->with('error', 'Votre code allopass a déjà été utilisé');
-            }
+
+            return redirect(route('allopass'))->with('error', 'Votre code allopass a déjà été utilisé');
+
 
         }
-        else {
-            return redirect(route('allopass'))->with('error', 'Code invalide. Merci de contacter un administrateur');
-        }
+
+        return redirect(route('allopass'))->with('error', 'Code invalide. Merci de contacter un administrateur');
 
     }
 
@@ -81,7 +79,8 @@ class PaiementController extends Controller {
     public function paypal()
     {
         return view('paiement.paypal', [
-            'step' => 1
+            'step' => 1,
+            'uid'  => Session::get('user.id')
         ]);
     }
 
@@ -126,17 +125,20 @@ class PaiementController extends Controller {
             while (!feof($fp)) {
                 $res = fgets ($fp, 1024);
                 if (strcmp ($res, "VERIFIED") == 0) {
-                    echo $payment_status;
-                    // vérifier que payment_status a la valeur Completed
-                    if ( $payment_status == "Completed") {
 
+                    // Check the payment status
+                    if ($payment_status == "Completed") {
+
+                        // Check if it's RealAion who win money
                         if ($emailAccount == $receiver_email) {
 
                             $tolls  = $custom['tolls'];
                             $uid    = $custom['uid'];
 
+                            // Check if it's the good payment number
                             if($payment_ht = $tolls / 5000) {
 
+                                // Add logs in database
                                 LogsPaypal::create([
                                     'id_account' => $uid,
                                     'price'	     => $payment_ht,
@@ -150,6 +152,7 @@ class PaiementController extends Controller {
                                     'address'    => $address
                                 ]);
 
+                                // Increment tolls
                                 AccountData::where('id', $uid)->increment('toll', $tolls);
 
                             }
