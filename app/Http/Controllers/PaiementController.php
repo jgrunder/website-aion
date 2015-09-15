@@ -138,26 +138,28 @@ class PaiementController extends Controller {
                             // Check if it's the good payment number
                             if($payment_ht = $tolls / 5000) {
 
-                                // Add logs in database
-                                LogsPaypal::create([
-                                    'id_account' => $uid,
-                                    'price'	     => $payment_ht,
-                                    'tax'	     => $payment_tax,
-                                    'email'	     => $payer_email,
-                                    'txnid'      => $txn_id,
-                                    'amount'     => $tolls,
-                                    'name'       => $name,
-                                    'country'    => $country,
-                                    'city'	     => $city,
-                                    'address'    => $address
-                                ]);
-
                                 // Increment tolls
                                 AccountData::where('id', $uid)->increment('toll', $tolls);
 
                             }
                         }
                     }
+
+                    // Add logs in database
+                    LogsPaypal::create([
+                        'id_account' => $uid,
+                        'price'	     => $payment_ht,
+                        'status'     => $payment_status,
+                        'tax'	     => $payment_tax,
+                        'email'	     => $payer_email,
+                        'txnid'      => $txn_id,
+                        'amount'     => $tolls,
+                        'name'       => $name,
+                        'country'    => $country,
+                        'city'	     => $city,
+                        'address'    => $address
+                    ]);
+
                 }
             }
         }
