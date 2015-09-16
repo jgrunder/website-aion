@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-12 text-center page-header">
                 <h1>Paypal</h1>
+                <small>Historique des commandes sur paypal</small>
             </div>
             <div class="col-md-8 col-md-offset-2">
                 <table class="table">

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gameserver\Player;
+use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
+use App\Models\Webserver\LogsReals;
 use App\Models\Webserver\Pages;
 use App\Models\Webserver\ShopItem;
 use Illuminate\Http\Request;
@@ -130,6 +132,16 @@ class AdminController extends Controller
     }
 
     /**
+     * GET /admin/reals
+     */
+    public function reals()
+    {
+        return view('admin.reals', [
+            'reals' => LogsReals::orderBy('created_at', 'DESC')->get()
+        ]);
+    }
+
+    /**
      * GET/POST /admin/page/{$name}
      */
     public function pageEdit(Request $request, $name)
@@ -146,6 +158,47 @@ class AdminController extends Controller
 
         return view('admin.page', [
            'page' => $page
+        ]);
+    }
+
+    /**
+     * GET/POST /admin/add-reals
+     */
+    public function addReals(Request $request)
+    {
+        $success = null;
+        $errors  = null;
+
+        if ($request->isMethod('POST')){
+
+            $account_name = $request->input('account_name');
+            $reals        = $request->input('reals');
+            $reason       = $request->input('reason');
+
+            $account = AccountData::where('name', '=', $account_name)->first();
+
+            if($account !== null){
+
+                // Because we don't trust the team
+                LogsReals::create([
+                    'sender_name'   => Session::get('user.name'),
+                    'receiver_name' => $account_name,
+                    'reason'        => $reason,
+                    'reals'         => $reals
+                ]);
+
+                AccountData::where('name', '=', $account_name)->increment('real', $reals);
+
+                $success = "Le compte a été crédité de ".$reals." reals";
+            } else {
+                $errors = "Le compte n'existe pas";
+            }
+
+        }
+
+        return view('admin.addreals', [
+            'success' => $success,
+            'errors'  => $errors
         ]);
     }
 

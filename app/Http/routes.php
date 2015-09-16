@@ -370,10 +370,22 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@paypal'
     ]);
 
+    // REALS
+    route::get('reals', [
+        'as'            => 'admin.reals',
+        'uses'          => 'AdminController@reals'
+    ]);
+
     // PAGE
     route::match(['GET', 'POST'], 'page/{name}', [
         'as'            => 'admin.page',
         'uses'          => 'AdminController@pageEdit'
+    ]);
+
+    // ADD REALS
+    route::match(['GET', 'POST'], 'add-reals', [
+        'as'            => 'admin.add.reals',
+        'uses'          => 'AdminController@addReals'
     ]);
 
 });
