@@ -21,7 +21,11 @@
           @if(Session::has('connected') && $accountVotes[$key]['status'])
               <a href="{{ URL::route('vote', $key) }}">{{Lang::get('all.vote.vote')}} {{$vote['name']}}</a>
           @elseif (Session::has('connected') && !$accountVotes[$key]['status'])
-              <p>{{$accountVotes[$key]['diff']}} {{Lang::get('all.vote.for')}} {{$vote['name']}}</p>
+              <p>
+                  {{$vote['name']}} <br>
+                  <span class="text-blue text-size-little">{{$accountVotes[$key]['diff_hours']}}Heure et {{ $accountVotes[$key]['diff_minutes'] }}min</span>
+
+              </p>
           @else
               <a href="{{$vote['link']}}">{{Lang::get('all.vote.vote')}} {{$vote['name']}}</a>
           @endif
@@ -49,7 +53,7 @@
             <tbody>
                 @foreach($topVotes as $index => $account)
                     <tr>
-                        <td width="18%">{{$index + 1}}</td>
+                        <td width="18%" class="strong">{{$index + 1}}</td>
                         <td style="text-align: left;">@if(empty($account->pseudo)) {{$account->name}} @else {{$account->pseudo}} @endif</td>
                         <td>{{$account->vote}}</td>
                     </tr>

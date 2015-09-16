@@ -25,7 +25,6 @@ class PaiementController extends Controller {
     public function allopassSuccess(Request $request)
     {
         $recall = htmlentities($request::input('RECALL'));
-        $datas  = htmlentities($request::input('DATAS'));
 
         // Recall is empty so redirect with error message
         if(trim($recall) == ""){
