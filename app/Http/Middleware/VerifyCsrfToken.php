@@ -14,6 +14,7 @@ class VerifyCsrfToken extends BaseVerifier {
 	 */
 	public function handle($request, Closure $next)
 	{
+
 		// Hack for Paypal IPN
 		if ($request->method() == 'POST' && $request->header('User-Agent') == 'PayPal IPN ( https://www.paypal.com/ipn )') {
 			return $next($request);
