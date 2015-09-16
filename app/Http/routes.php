@@ -364,6 +364,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'AdminController@allopass'
     ]);
 
+    // PAYPAL
+    route::get('paypal', [
+        'as'            => 'admin.paypal',
+        'uses'          => 'AdminController@paypal'
+    ]);
+
     // PAGE
     route::match(['GET', 'POST'], 'page/{name}', [
         'as'            => 'admin.page',

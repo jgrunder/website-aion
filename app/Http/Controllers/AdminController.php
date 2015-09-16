@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gameserver\Player;
 use App\Models\Webserver\LogsAllopass;
+use App\Models\Webserver\LogsPaypal;
 use App\Models\Webserver\Pages;
 use App\Models\Webserver\ShopItem;
 use Illuminate\Http\Request;
@@ -115,6 +116,16 @@ class AdminController extends Controller
     {
         return view('admin.allopass', [
            'allopass' => LogsAllopass::orderBy('created_at', 'DESC')->get()
+        ]);
+    }
+
+    /**
+     * GET /admin/paypal
+     */
+    public function paypal()
+    {
+        return view('admin.paypal', [
+            'paypal' => LogsPaypal::orderBy('created_at', 'DESC')->get()
         ]);
     }
 
