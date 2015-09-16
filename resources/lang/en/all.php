@@ -24,7 +24,8 @@ return [
     'layout'               => [
         'status_of'        => 'Status of',
         'footer_1'         => "This site is in no way affiliated with NCSOFT CORPORATION, NCSOFT EUROPE or Gameforge Productions Gmbh nor any of their respective products.",
-        'footer_2'         => "Developed by"
+        'footer_2'         => "Developed by",
+        'name'             => "name"
     ],
     'shop'                 => [
         'buy'              => 'Buy',

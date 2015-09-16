@@ -74,7 +74,7 @@
           <thead>
               <tr>
                   <th width="18%">#</th>
-                  <th style="text-align: left;">Name</th>
+                  <th style="text-align: left;">{{Lang::get('all.layout.name')}}</th>
                   <th>Points</th>
               </tr>
           </thead>
