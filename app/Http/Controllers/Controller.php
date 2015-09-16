@@ -83,7 +83,7 @@ abstract class Controller extends BaseController {
                             'status' => true
                         ];
                     } else {
-                        $diff = $date->addHours(2)->subHours(Carbon::now()->hour);
+                        $diff = $date->addHours(2)->subHours(Carbon::now()->hour)->subMinutes(Carbon::now()->minute);
                         $votesAvailable[] = [
                             'id'            => $key,
                             'status'        => false,
