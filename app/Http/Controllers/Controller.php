@@ -25,7 +25,7 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
-        $this->accountToll();
+        $this->accountReal();
         $this->topVotes();
         $this->topBg();
         // Admin
@@ -46,14 +46,14 @@ abstract class Controller extends BaseController {
 		/**
      * Set Variables $accountVotes
      */
-		private function accountToll()
+		private function accountReal()
 		{
 			if(Session::has('connected')) {
 				$user = AccountData::where('id', Session::get('user.id'))->first();
-				Session::put('user.toll', $user['toll']);
+				Session::put('user.real', $user['real']);
 			}
 			else {
-				Session::put('user.toll', 0);
+				Session::put('user.real', 0);
 			}
 		}
 

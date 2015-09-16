@@ -8,7 +8,7 @@
     <div class="bloc_with_header bloc_vote">
       <div class="bloc_header">
         <h2>{{Lang::get('all.vote.title')}}</h2>
-        <p>1 vote = <span class="strong">{{Config::get('aion.vote.toll_per_vote')}} toll</span></p>
+        <p>1 vote = <span class="strong">{{Config::get('aion.vote.real_per_vote')}} reals</span></p>
         @if(Config::get('aion.vote.boost'))
             <p>
               {{Lang::get('all.vote.boost')}}

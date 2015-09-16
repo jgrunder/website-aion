@@ -55,8 +55,8 @@ class PaiementController extends Controller {
 
                 if (LogsAllopass::insert($recall, Session::get('user.id')) !== null) {
 
-                    AccountData::where('id', Session::get('user.id'))->increment('toll', Config::get('aion.allopass.tollGiven'));
-                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.tollGiven')." toll");
+                    AccountData::where('id', Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
+                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.realGiven')." reals");
 
                 }
 
@@ -132,14 +132,14 @@ class PaiementController extends Controller {
                         // Check if it's RealAion who win money
                         if ($emailAccount == $receiver_email) {
 
-                            $tolls  = $custom['tolls'];
+                            $reals  = $custom['reals'];
                             $uid    = $custom['uid'];
 
                             // Check if it's the good payment number
-                            if($payment_ht = $tolls / 5000) {
+                            if($payment_ht = $reals / 5000) {
 
                                 // Increment tolls
-                                AccountData::where('id', $uid)->increment('toll', $tolls);
+                                AccountData::where('id', $uid)->increment('real', $reals);
 
                             }
                         }
@@ -153,7 +153,7 @@ class PaiementController extends Controller {
                         'tax'	     => $payment_tax,
                         'email'	     => $payer_email,
                         'txnid'      => $txn_id,
-                        'amount'     => $tolls,
+                        'amount'     => $reals,
                         'name'       => $name,
                         'country'    => $country,
                         'city'	     => $city,

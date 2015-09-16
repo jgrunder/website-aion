@@ -42,7 +42,7 @@ return [
     ],
     'rates'           => [
         'title'       => "Server rates",
-        'description' => "Find some informations about the server like the Tolls gain"
+        'description' => "Find some informations about the server like the Reals gain"
     ],
 
     'online'          => [

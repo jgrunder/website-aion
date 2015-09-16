@@ -8,7 +8,7 @@ class AccountData extends Model {
 
     protected $table        = 'account_data';
     protected $connection   = 'loginserver';
-    protected $fillable     = ['id', 'name', 'password', 'email', 'toll', 'vote', 'pseudo'];
+    protected $fillable     = ['id', 'name', 'password', 'email', 'real', 'vote', 'pseudo'];
     public $timestamps      = false;
 
     /**
@@ -32,9 +32,9 @@ class AccountData extends Model {
      *
      * @return
      */
-    public function scopeAddToll($query, $accountId, $tollPerVote)
+    public function scopeAddReal($query, $accountId, $quantity)
     {
-        return $query->where('id', $accountId)->increment('toll', $tollPerVote);
+        return $query->where('id', $accountId)->increment('real', $quantity);
     }
 
     /**

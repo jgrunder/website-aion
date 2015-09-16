@@ -7,7 +7,7 @@ return [
     'shop'                     => [
         'fail_category_id'     => "La catégorie est surement vide ou n'existe pas",
         'empty_cart'           => "Votre panier est vide. Vous ne pouvez pas accéder à cette page",
-        'not_toll'             => "Vous n'avez pas assez de point toll sur votre compte",
+        'not_real'             => "Vous n'avez pas assez de point reals sur votre compte",
         'success'              => "Achat effectué, tapez la commande : .shop IG sur le personnage "
     ],
     'vote'                     => [

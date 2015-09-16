@@ -102,13 +102,13 @@ class ShopController extends Controller {
      */
     public function summary()
     {
-        $account_toll = AccountData::me(Session::get('user.id'))->first();
+        $account = AccountData::me(Session::get('user.id'))->first();
 
         if(Cart::total() === 0){ // If cart is empty -> Redirect to the shop page
             return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.empty_cart'));
         }
-        else if($account_toll->toll < Cart::total()) { // If no toll -> Redirect to the shop page
-            return redirect()->back()->with('error', Lang::get('flashmessage.shop.not_toll'));
+        else if($account->real < Cart::total()) { // If no real -> Redirect to the shop page
+            return redirect()->back()->with('error', Lang::get('flashmessage.shop.not_real'));
         }
 
         $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
@@ -154,7 +154,7 @@ class ShopController extends Controller {
             ]);
         }
 
-        AccountData::me($account_id)->decrement('toll', $total);
+        AccountData::me($account_id)->decrement('real', $total);
         Cart::destroy();
 
         return redirect(route('shop'))->with('success', Lang::get('flashmessage.shop.success').$player->name);

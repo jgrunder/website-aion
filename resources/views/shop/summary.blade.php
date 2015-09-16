@@ -32,7 +32,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td style="font-weight: bold">{{$total}} Toll</td>
+                            <td style="font-weight: bold">{{$total}} Reals</td>
                         </tr>
                     </table>
 

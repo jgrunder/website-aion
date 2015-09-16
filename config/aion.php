@@ -11,13 +11,13 @@ return [
     'contactMail'   => 'aion@realaion.com',
 
     'allopass' => [
-        'tollGiven' => 4000,
+        'realGiven' => 4000,
         'documentId'=> '307954/1326680/4588246'
     ],
 
     'paypal' => [
         'email'     => 'unretailed@gmail.com',
-        'maxToll'   => 1000000
+        'maxReal'   => 1000000
     ],
 
     'servers'        => [
@@ -105,7 +105,7 @@ return [
     'vote' => [
         'activated'         => true,
         'boost'             => false,
-        'toll_per_vote'     => 100,
+        'real_per_vote'     => 100,
         'links'      => [
             [
                 'name' => 'RPG',

@@ -110,10 +110,10 @@
 				var moneyNeed = $(this).val() / 5000;
 				var uid		  = $('#user_id').val();
 
-				$('#money_need').val("J'achète "+ nbTool +" toll pour "+ moneyNeed +"€");
-				$('#paypal_name').val(nbTool+' toll RealAion');
+				$('#money_need').val("J'achète "+ nbTool +" reals pour "+ moneyNeed +"€");
+				$('#paypal_name').val(nbTool+' reals');
 				$('#money').val(moneyNeed);
-				$('#custom_paypal').val('tolls='+nbTool+'&uid='+uid);
+				$('#custom_paypal').val('reals='+nbTool+'&uid='+uid);
 			});
 		}
 

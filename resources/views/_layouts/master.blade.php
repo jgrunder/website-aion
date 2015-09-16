@@ -81,7 +81,7 @@
         </div>
         <div class="btn_user">
           @if(Session::has('connected'))
-            <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.toll')}} Toll)</a>
+            <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.real')}} Reals)</a>
             <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
           @else
             <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>

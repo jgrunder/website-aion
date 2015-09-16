@@ -19,7 +19,7 @@
               <li>Identifiant : {{$user['name']}}</li>
               <li>Pseudo d'affichage : {{$user['pseudo']}}</li>
               <li>Email : {{$user['email']}}</li>
-              <li>Toll : {{$user['toll']}}</li>
+              <li>Reals : {{$user['real']}}</li>
             </ul>
             <br>
             @if($players->count() > 0)

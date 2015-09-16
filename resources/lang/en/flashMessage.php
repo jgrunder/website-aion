@@ -7,7 +7,7 @@ return [
     'shop'                     => [
         'fail_category_id'     => "Empty category",
         'empty_cart'           => "Empty Cart",
-        'not_toll'             => "You have not enough tolls on your account",
+        'not_real'             => "You have not enough reals on your account",
         'success'              => "Successful purchase : Write .shop IG on the character"
     ],
     'vote'                     => [

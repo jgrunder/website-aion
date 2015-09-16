@@ -17,24 +17,24 @@
                 'required' => 'required',
                 'id'       => 'btn_toll_wanted',
                 'min'      => 5000,
-                'max'      => Config::get('aion.paypal.maxToll'),
+                'max'      => Config::get('aion.paypal.maxReal'),
                 'step'     => 5000
             ]) !!}
 
             {!! Form::input('hidden', 'business', Config::get('aion.paypal.email')) !!}
             {!! Form::input('hidden', 'notify_url', 'http://realaion.com/paypal-ipn') !!}
             {!! Form::input('hidden', 'return', 'http://realaion.com/paypal-valid') !!}
-            {!! Form::input('hidden', 'item_name', '5000 toll RealAion', ['id' => 'paypal_name']) !!}
+            {!! Form::input('hidden', 'item_name', '5000 reals', ['id' => 'paypal_name']) !!}
             {!! Form::input('hidden', 'quantity', '1') !!}
             {!! Form::input('hidden', 'currency_code', 'EUR') !!}
             {!! Form::input('hidden', 'amount', 1, ['id' => 'money']) !!}
             {!! Form::input('hidden', 'cmd', '_xclick') !!}
             {!! Form::input('hidden', 'uid', $uid, ['id' => "user_id"]) !!}
-            {!! Form::input('hidden', 'custom', 'tolls=5000&uid='.$uid, ['id' => "custom_paypal"]) !!}
+            {!! Form::input('hidden', 'custom', 'reals=5000&uid='.$uid, ['id' => "custom_paypal"]) !!}
 
             <br> <br>
 
-            <input type="submit" id="money_need" class="btn btn-primary" value="J'achète 5000 toll pour 1€">
+            <input type="submit" id="money_need" class="btn btn-primary" value="J'achète 5000 reals pour 1€">
 
           {!! Form::close() !!}
           @endif
