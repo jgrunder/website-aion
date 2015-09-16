@@ -23,7 +23,11 @@
           @elseif (Session::has('connected') && !$accountVotes[$key]['status'])
               <p>
                   {{$vote['name']}} <br>
-                  <span class="text-blue text-size-little">{{$accountVotes[$key]['diff_hours']}}Heure et {{ $accountVotes[$key]['diff_minutes'] }}min</span>
+                  <span class="text-blue text-size-little">
+                      @if($accountVotes[$key]['diff_hours'])
+                          {{$accountVotes[$key]['diff_hours']}}Heure et
+                      @endif
+                      {{$accountVotes[$key]['diff_minutes']}}min</span>
 
               </p>
           @else

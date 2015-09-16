@@ -38,6 +38,20 @@ class AccountData extends Model {
     }
 
     /**
+     * Add in Scope function for vote
+     *
+     * @param $query
+     *
+     * @param $accountId
+     *
+     * @return
+     */
+    public function scopeIncrementVoteCount($query, $accountId)
+    {
+        return $query->where('id', $accountId)->increment('vote');
+    }
+
+    /**
      * Add in Scope function for select Me account
      *
      * @param $query

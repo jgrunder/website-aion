@@ -87,7 +87,7 @@ abstract class Controller extends BaseController {
                         $votesAvailable[] = [
                             'id'            => $key,
                             'status'        => false,
-                            'diff_hours'    => $diff->format('g'),
+                            'diff_hours'    => ($diff->format('g') == 12) ? null : $diff->format('g'),
                             'diff_minutes'  => $diff->format('i')
                         ];
                     }
