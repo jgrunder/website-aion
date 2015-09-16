@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Codes Allopass</h1>
+                <h1>Allopass</h1>
             </div>
             <div class="col-md-4 col-md-offset-4">
                 <table class="table">
