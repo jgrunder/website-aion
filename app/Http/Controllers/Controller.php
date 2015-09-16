@@ -1,13 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-use App\Models\Gameserver\Player;
 use App\Models\Gameserver\Ladder;
-use App\Models\Loginserver\AccountVote;
+use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
+use App\Models\Loginserver\AccountVote;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesCommands;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
@@ -37,25 +37,25 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians = Player::online()->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		 = Player::online()->where('race', '=', 'ELYOS')->count();
+			$count_asmodians    = Player::online()->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		= Player::online()->where('race', '=', 'ELYOS')->count();
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
     }
 
-		/**
+    /**
      * Set Variables $accountVotes
      */
-		private function accountReal()
-		{
-			if(Session::has('connected')) {
-				$user = AccountData::me(Session::get('user.id'))->first();
-				Session::put('user.real', $user['real']);
-			}
-			else {
-				Session::put('user.real', 0);
-			}
-		}
+    private function accountReal()
+    {
+        if(Session::has('connected')) {
+            $user = AccountData::me(Session::get('user.id'))->first();
+            Session::put('user.real', $user['real']);
+        }
+        else {
+            Session::put('user.real', 0);
+        }
+    }
 
     /**
      * Set Variables $accountVotes

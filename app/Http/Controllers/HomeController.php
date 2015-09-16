@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Webserver\News;
-use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Lang;
 
 class HomeController extends Controller

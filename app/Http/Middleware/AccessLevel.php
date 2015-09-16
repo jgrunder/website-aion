@@ -1,9 +1,8 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Session;
 
 class AccessLevel {
 

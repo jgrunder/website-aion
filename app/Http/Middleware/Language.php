@@ -3,8 +3,8 @@
 use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Cookie;
 
 class Language {
 
