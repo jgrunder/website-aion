@@ -49,7 +49,7 @@ abstract class Controller extends BaseController {
 		private function accountReal()
 		{
 			if(Session::has('connected')) {
-				$user = AccountData::where('id', Session::get('user.id'))->first();
+				$user = AccountData::me(Session::get('user.id'))->first();
 				Session::put('user.real', $user['real']);
 			}
 			else {

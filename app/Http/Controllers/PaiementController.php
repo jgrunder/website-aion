@@ -55,7 +55,7 @@ class PaiementController extends Controller {
 
                 if (LogsAllopass::insert($recall, Session::get('user.id')) !== null) {
 
-                    AccountData::where('id', Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
+                    AccountData::me(Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
                     return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.realGiven')." reals");
 
                 }
@@ -139,7 +139,7 @@ class PaiementController extends Controller {
                             if($payment_ht = $reals / 5000) {
 
                                 // Increment tolls
-                                AccountData::where('id', $uid)->increment('real', $reals);
+                                AccountData::me($uid)->increment('real', $reals);
 
                             }
                         }

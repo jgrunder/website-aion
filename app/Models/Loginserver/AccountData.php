@@ -24,31 +24,17 @@ class AccountData extends Model {
     }
 
     /**
-     * Add in Scope function for vote
+     * Increment Reals
      *
      * @param $query
      * @param $accountId
-     * @param $tollPerVote
+     * @param $quantity
      *
      * @return
      */
     public function scopeAddReal($query, $accountId, $quantity)
     {
         return $query->where('id', $accountId)->increment('real', $quantity);
-    }
-
-    /**
-     * Add in Scope function for vote
-     *
-     * @param $query
-     *
-     * @param $accountId
-     *
-     * @return
-     */
-    public function scopeAddNewVote($query, $accountId)
-    {
-        return $query->where('id', $accountId)->increment('vote');
     }
 
     /**
