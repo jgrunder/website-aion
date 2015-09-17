@@ -140,7 +140,7 @@ return [
         'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
         'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
         'Schuppo\PasswordStrength\PasswordStrengthServiceProvider',
-        //'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
 
 		/*
 		 * Application Service Providers...

@@ -117,7 +117,7 @@ class AdminController extends Controller
     public function allopass()
     {
         return view('admin.allopass', [
-           'allopass' => LogsAllopass::orderBy('created_at', 'DESC')->get()
+           'allopass' => LogsAllopass::orderBy('created_at', 'DESC')->paginate(30)
         ]);
     }
 
@@ -127,7 +127,7 @@ class AdminController extends Controller
     public function paypal()
     {
         return view('admin.paypal', [
-            'paypal' => LogsPaypal::orderBy('created_at', 'DESC')->get()
+            'paypal' => LogsPaypal::orderBy('created_at', 'DESC')->paginate(30)
         ]);
     }
 
@@ -137,7 +137,7 @@ class AdminController extends Controller
     public function reals()
     {
         return view('admin.reals', [
-            'reals' => LogsReals::orderBy('created_at', 'DESC')->get()
+            'reals' => LogsReals::orderBy('created_at', 'DESC')->paginate(30)
         ]);
     }
 

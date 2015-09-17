@@ -46,7 +46,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="fa fa-shopping-cart"></i>
-                            Achat Boutique <small>({{$today}})</small>
+                            Achat Boutique
                         </h3>
                     </div>
                     <div class="panel-body text-center">
@@ -63,7 +63,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="fa fa-users"></i>
-                            Comptes <small>({{$today}})</small>
+                            Comptes
                         </h3>
                     </div>
                     <div class="panel-body text-center">

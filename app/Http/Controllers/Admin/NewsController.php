@@ -25,7 +25,6 @@ class NewsController extends Controller
     $accountsCount    = AccountData::count();
 
     return view('admin.index', [
-        'today'             => Carbon::today(),
         'shopHistoryToday'  => $shopHistoryToday,
         'shopHistoryTotal'  => $shopHistoryTotal,
         'accountsCount'     => $accountsCount

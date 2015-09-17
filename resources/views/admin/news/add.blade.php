@@ -9,7 +9,7 @@
 
             <!-- ERROR MESSAGE -->
             @if (Session::has('error'))
-                <div class="col col-md-8 col-md-offset-2 text-center">
+                <div class="col col-md-12 text-center">
                     <div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         {{Session::get('error')}}
@@ -19,7 +19,7 @@
 
             <!-- SUCCESS MESSAGE -->
             @if (Session::has('success'))
-                <div class="col col-md-8 col-md-offset-2 text-center">
+                <div class="col col-md-12 text-center">
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         {{Session::get('success')}}
