@@ -33,9 +33,9 @@
             </div>
         </div>
         <!-- Pagination -->
-        <div class="row">
+        <div class="row text-center">
             <div class="col col-md-12">
-                {{$results->render()}}
+                {!!$allopass->render() !!}
             </div>
         </div>
     </div>
