@@ -36,5 +36,11 @@
                 </table>
             </div>
         </div>
+        <!-- Pagination -->
+        <div class="row">
+            <div class="col col-md-12">
+                {{$results->render()}}
+            </div>
+        </div>
     </div>
 @stop
