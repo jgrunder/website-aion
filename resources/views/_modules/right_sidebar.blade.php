@@ -1,6 +1,6 @@
 <!-- NOUS REJOINDRE -->
 <div class="bloc_without_header">
-  <a href="{{Route('page.joins-us')}}" class="joinus"></a>
+  <a href="{{Route('page.joins-us')}}" class="joinus @if(Cookie::get('language') == 'en') ? en : '' @endif"></a>
 </div>
 
 <!-- VOTEZ POUR NOUS -->

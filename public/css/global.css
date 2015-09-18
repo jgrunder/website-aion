@@ -1707,6 +1707,8 @@ footer.footer {
   height: 63px;
   display: block;
   background: url("../images/btn_join_us.png") no-repeat; }
+  .container_right .joinus.en {
+    background: url("../images/btn_join_us_en.png") no-repeat !important; }
 
 .container_right .bloc_vote a:first-child, .container_right .bloc_vote p:first-child {
   display: block;
