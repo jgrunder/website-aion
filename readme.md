@@ -3,6 +3,8 @@
 
 ### Installation :
 
+0. Taper la commande : ```composer install``` à la racine du projet
+
 1. Ajouter le fichier .env à la racine du projet : 
 
 ```
