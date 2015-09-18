@@ -1,23 +1,58 @@
-## Laravel PHP Framework
+## RealAion
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+### Installation :
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+1. Ajouter le fichier .env à la racine du projet : 
 
-## Official Documentation
+```
+APP_ENV			= local
+APP_DEBUG		= false
+APP_KEY			= H3vhkJ12XDwU7MQHfAY2yh7pucgndLZc
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+DB_HOST_GS		= localhost
+DB_DATABASE_GS	= real_gs
+DB_USERNAME_GS	= root
+DB_PASSWORD_GS	= root
 
-## Contributing
+DB_HOST_LS		= localhost
+DB_DATABASE_LS	= real_ls
+DB_USERNAME_LS	= root
+DB_PASSWORD_LS	= root
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+DB_HOST_WS		= localhost
+DB_DATABASE_WS	= real_ws
+DB_USERNAME_WS	= root
+DB_PASSWORD_WS	= root
 
-### License
+CACHE_DRIVER	= file
+SESSION_DRIVER	= file
+QUEUE_DRIVER	= sync
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+MAIL_DRIVER		= smtp
+MAIL_HOST		= mailtrap.io
+MAIL_PORT		= 2525
+MAIL_USERNAME	= null
+MAIL_PASSWORD	= null
+
+NOCAPTCHA_SECRET=6LcZMgkTAAAAAGJa0kxveRQ1wwt9eUAfUcikmcHk
+NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
+```
+
+2. Modifier le patch pour accéder aux logs du serveurs dans : ```config/aion.php```
+
+```php
+'logs' => [
+        'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
+```
+
+3. Créer une base de donnée pour le site (SQL : ```database/sql/database.ws.sql```)
+
+4. Ajouter une collone : real(int) dans account_data
+5. Ajouter une collone : pseudo(varchar:255) dans account_data
+6. Ajouter une collone : vote(int) dans account_data
+7. Ajouter une collone : email(varchar:255) dans account_data
+8. Créer une table account_votes dans la base du donnée du login (SQL : ```database/sql/database.ls.sql)```
+
+
+
