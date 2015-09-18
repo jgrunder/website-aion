@@ -1,5 +1,12 @@
 @extends('_layouts.master')
 
 @section('content')
-    <h1>Top Abyss page</h1>
+    <div class="container_single">
+        <div class="container_single_top">
+            <h1>{{Lang::get('all.nav.abyss')}}</h1>
+        </div>
+        <div class="container_single_body">
+
+        </div>
+    </div>
 @stop

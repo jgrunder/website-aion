@@ -3,7 +3,7 @@
 @section('content')
   <div class="container_single">
     <div class="container_single_top">
-      <h1>Joueurs en ligne</h1>
+      <h1>{{Lang::get('all.nav.online')}}</h1>
     </div>
     <div class="container_single_body">
       @if(count($users) === 0)
