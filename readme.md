@@ -46,13 +46,13 @@ NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
         'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
 ```
 
-3. Créer une base de donnée pour le site (SQL : ```database/sql/database.ws.sql)
+3. Créer une base de donnée pour le site (SQL : ```database/sql/database.ws.sql```)
 
 4. Ajouter une collone : real(int) dans account_data
 5. Ajouter une collone : pseudo(varchar:255) dans account_data
 6. Ajouter une collone : vote(int) dans account_data
 7. Ajouter une collone : email(varchar:255) dans account_data
-8. Créer une table account_votes dans la base du donnée du login (SQL : ```database/sql/database.ls.sql)
+8. Créer une table account_votes dans la base du donnée du login (SQL : ```database/sql/database.ls.sql)```
 
 
 
