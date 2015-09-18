@@ -104,6 +104,9 @@
     height: 63px;
     display: block;
     background: url('../images/btn_join_us.png') no-repeat;
+    &.en {
+      background: url('../images/btn_join_us_en.png') no-repeat !important;
+    }
   }
   .bloc_vote {
     a:first-child, p:first-child {
