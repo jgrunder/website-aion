@@ -65,6 +65,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{Route('admin.page', 'joinus')}}">Editer la page Nous rejoindre</a></li>
                             <li><a href="{{Route('admin.page', 'rules')}}">Editer la page Règlement</a></li>
                             <li><a href="{{Route('admin.page', 'team')}}">Editer la page Equipe</a></li>
                             <li><a href="{{Route('admin.page', 'teamspeak')}}">Editer la page Teamspeak</a></li>

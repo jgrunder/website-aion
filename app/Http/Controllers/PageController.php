@@ -21,7 +21,11 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.joinus.description'));
         OpenGraph::setDescription(Lang::get('seo.joinus.description'));
 
-        return view('page.joinus');
+        $content = Pages::where('page_name', '=', 'joinus')->first();
+
+        return view('page.joinus', [
+            'content' => $content[Cookie::get('language')]
+        ]);
     }
 
     /**

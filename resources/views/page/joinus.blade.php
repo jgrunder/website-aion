@@ -6,6 +6,7 @@
     <h1>Nous rejoindre</h1>
   </div>
   <div class="container_single_body">
+    {!! $content !!}
   </div>
 </div>
 @stop
