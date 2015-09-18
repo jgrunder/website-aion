@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     {!! Form::label('id_item', "ID de l'item") !!}
-                    {!! Form::input('number', 'id_item', null, ['placeholder' => "100001684", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::input('number', 'id_item', null, ['placeholder' => "100001684", 'class' => 'form-control', 'required' => 'required', 'id' => 'idItem']) !!}
                 </div>
 
                 <div class="form-group">
@@ -32,7 +32,7 @@
 
                 <div class="form-group">
                     {!! Form::label('name', "Nom de l'item") !!}
-                    {!! Form::text('name', null, ['placeholder' => "Épée de gouverneur gardien", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('name', null, ['placeholder' => "Épée de gouverneur gardien", 'class' => 'form-control', 'required' => 'required', 'id' => 'nameItem']) !!}
                 </div>
 
                 <div class="form-group">
