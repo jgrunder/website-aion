@@ -14,7 +14,7 @@
 
           @foreach($items as $item)
             <div class="item_shop">
-              <h3><a href="http://aiondatabase.net/fr/item/{{$item->id_item}}" target="_blank">{{$item->name}}</a></h3>
+              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank">{{$item->name}}</a></h3>
               <ul>
                 <li class="quantity">Quantity {{$item->quantity}}</li>
                 <li class="price">Price {{$item->price}}</li>
