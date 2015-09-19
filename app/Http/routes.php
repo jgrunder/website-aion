@@ -29,6 +29,14 @@ Route::get('/', [
 ]);
 
 /**
+ * RESET PASSWORD
+ */
+Route::get('/reset-password/{token}/{name}', [
+    'as'     => 'resetpassword',
+    'uses'   => 'LostPasswordController@reset'
+]);
+
+/**
  * NEWS
  */
 Route::get('/news/{slug}/{id}', [
@@ -196,6 +204,13 @@ Route::group(['prefix' => 'user'], function()
         'as'         => 'user.account',
         'middleware' => 'connected',
         'uses'       => 'UserController@account'
+    ]);
+
+    // GET LOST PASSWORD
+    Route::match(['GET', 'POST'], 'lost-password', [
+        'as'         => 'user.lost_password',
+        'middleware' => 'unConnected',
+        'uses'       => 'LostPasswordController@index'
     ]);
 
 });

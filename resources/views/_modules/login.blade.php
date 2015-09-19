@@ -10,5 +10,5 @@
 
   {!! Form::close() !!}
 
-  <a href="#" class="password_lost">{{Lang::get('all.login.missing_password')}}</a>
+  <a href="{{Route('user.lost_password')}}" class="password_lost">{{Lang::get('all.login.missing_password')}}</a>
 </div>
