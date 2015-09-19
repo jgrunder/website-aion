@@ -26,9 +26,9 @@
 
                         {!! Form::open() !!}
 
-                        {!! Form::email('email', null, ['placeholder' => 'Your email', 'class' => 'input', 'required' => 'required']) !!}
+                        {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input', 'required' => 'required']) !!}
 
-                        <input type="submit" class="btn" value="Send the email">
+                        <input type="submit" class="btn" value="Envoyer">
 
                         {!! Form::close() !!}
 
