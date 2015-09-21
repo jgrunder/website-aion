@@ -17,6 +17,11 @@ class Language {
      */
     public function handle($request, Closure $next)
     {
+
+        // Add french to default value
+        App::setLocale('fr');
+        Carbon::setLocale('fr');
+
         // Check if we have this language
         foreach(Config::get('aion.languages') as $language) {
 
