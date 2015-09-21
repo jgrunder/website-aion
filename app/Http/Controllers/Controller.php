@@ -37,8 +37,8 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians    = Player::online()->remember(1)->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		= Player::online()->remember(1)->where('race', '=', 'ELYOS')->count();
+			$count_asmodians    = Player::online()->remember(5)->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		= Player::online()->remember(5)->where('race', '=', 'ELYOS')->count();
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
     }
@@ -49,7 +49,7 @@ abstract class Controller extends BaseController {
     private function accountReal()
     {
         if(Session::has('connected')) {
-            $user = AccountData::me(Session::get('user.id'))->first();
+            $user = AccountData::me(Session::get('user.id'))->first(['real']);
             Session::put('user.real', $user['real']);
         }
         else {

@@ -23,8 +23,13 @@ class PageController extends Controller {
     public function __construct()
     {
         parent::__construct();
+        
+        if(Cookie::has('language')) {
+            $this->language = Cookie::get('language');
+        } else {
+            $this->language = 'fr';
+        }
 
-        $this->language = Cookie::get('language');
     }
 
     /**
