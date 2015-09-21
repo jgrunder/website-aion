@@ -37,8 +37,8 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians    = Player::online()->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		= Player::online()->where('race', '=', 'ELYOS')->count();
+			$count_asmodians    = Player::online()->remember(1)->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		= Player::online()->remember(1)->where('race', '=', 'ELYOS')->count();
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
     }
@@ -104,7 +104,7 @@ abstract class Controller extends BaseController {
      */
     private function topVotes()
     {
-        $voters = AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(3)->get();
+        $voters = AccountData::remember(10)->where('vote', '>', 0)->orderBy('vote', 'DESC')->take(3)->get();
         View::Share('topVotes', $voters);
     }
 
@@ -113,7 +113,7 @@ abstract class Controller extends BaseController {
      */
     private function topBg()
     {
-        $topBg = Ladder::orderBy('rank', 'DESC')->with('name')->take(5)->get();
+        $topBg = Ladder::remember(10)->orderBy('rank', 'DESC')->with('name')->take(5)->get();
         View::Share('topBg', $topBg);
     }
 

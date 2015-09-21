@@ -3,8 +3,11 @@
 namespace App\Models\Gameserver;
 
 use Illuminate\Database\Eloquent\Model;
+use Watson\Rememberable\Rememberable;
 
 class Player extends Model {
+
+    use Rememberable;
 
     protected $table        = 'players';
     protected $connection   = 'gameserver';
