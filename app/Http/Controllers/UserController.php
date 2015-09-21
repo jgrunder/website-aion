@@ -23,7 +23,7 @@ class UserController extends Controller
         // SEO
         SEOMeta::setTitle(Lang::get('seo.subscribe.title'));
 
-        $content = Pages::where('page_name', '=', 'teamspeak')->first();
+        $content = Pages::where('page_name', '=', 'teamspeak')->remember(1440)->first();
 
         return view('user.subscribe', [
             'content' => $content[Cookie::get('language')]
