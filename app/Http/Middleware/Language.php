@@ -19,19 +19,14 @@ class Language {
     {
 
         // Add french to default value
-        App::setLocale('fr');
-        Carbon::setLocale('fr');
+        Cookie::set('language', 'fr');
 
         // Check if we have this language
         foreach(Config::get('aion.languages') as $language) {
 
-            if(Cookie::has('language')){
-
-                if(Cookie::get('language') === $language){
-                    App::setLocale(Cookie::get('language'));
-                    Carbon::setLocale(Cookie::get('language'));
-                }
-
+            if(Cookie::get('language') === $language){
+                App::setLocale(Cookie::get('language'));
+                Carbon::setLocale(Cookie::get('language'));
             }
 
         }
