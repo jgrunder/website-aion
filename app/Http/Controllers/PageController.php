@@ -12,6 +12,20 @@ use Illuminate\Support\Facades\Lang;
 class PageController extends Controller {
 
     /**
+     * What language we need
+     * @var string
+     */
+    protected $language;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->language = Cookie::get('language');
+
+    }
+
+    /**
      * GET /page/join-us
      */
     public function joinUs()
@@ -21,10 +35,10 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.joinus.description'));
         OpenGraph::setDescription(Lang::get('seo.joinus.description'));
 
-        $content = Pages::where('page_name', '=', 'joinus')->first();
+        $content = Pages::where('page_name', '=', 'joinus')->limit(1)->first([$this->language]);
 
         return view('page.joinus', [
-            'content' => $content[Cookie::get('language')]
+            'content' => $content[$this->language]
         ]);
     }
 
