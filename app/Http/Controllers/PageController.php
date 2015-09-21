@@ -17,12 +17,14 @@ class PageController extends Controller {
      */
     protected $language;
 
+    /**
+     * Get the language from the cookie :)
+     */
     public function __construct()
     {
         parent::__construct();
 
         $this->language = Cookie::get('language');
-
     }
 
     /**
@@ -35,7 +37,7 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.joinus.description'));
         OpenGraph::setDescription(Lang::get('seo.joinus.description'));
 
-        $content = Pages::where('page_name', '=', 'joinus')->limit(1)->first([$this->language]);
+        $content = Pages::where('page_name', '=', 'joinus')->first([$this->language]);
 
         return view('page.joinus', [
             'content' => $content[$this->language]
@@ -52,10 +54,10 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.teamspeak.description'));
         OpenGraph::setDescription(Lang::get('seo.teamspeak.description'));
 
-        $content = Pages::where('page_name', '=', 'teamspeak')->first();
+        $content = Pages::where('page_name', '=', 'teamspeak')->first([$this->language]);
 
         return view('page.teamspeak', [
-            'content' => $content[Cookie::get('language')]
+            'content' => $content[$this->language]
         ]);
     }
 
@@ -69,10 +71,10 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.rules.description'));
         OpenGraph::setDescription(Lang::get('seo.rules.description'));
 
-        $content = Pages::where('page_name', '=', 'rules')->first();
+        $content = Pages::where('page_name', '=', 'rules')->first([$this->language]);
 
         return view('page.rules', [
-            'content' => $content[Cookie::get('language')]
+            'content' => $content[$this->language]
         ]);
     }
 
@@ -86,10 +88,10 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.team.description'));
         OpenGraph::setDescription(Lang::get('seo.team.description'));
 
-        $content = Pages::where('page_name', '=', 'team')->first();
+        $content = Pages::where('page_name', '=', 'team')->first([$this->language]);
 
         return view('page.team', [
-            'content' => $content[Cookie::get('language')]
+            'content' => $content[$this->language]
         ]);
     }
 
