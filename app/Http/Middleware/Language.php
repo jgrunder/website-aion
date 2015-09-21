@@ -19,7 +19,7 @@ class Language {
     {
 
         // Add french to default value
-        Cookie::set('language', 'fr');
+        Cookie::queue(Cookie::make('language', 'fr', 45000));
 
         // Check if we have this language
         foreach(Config::get('aion.languages') as $language) {
