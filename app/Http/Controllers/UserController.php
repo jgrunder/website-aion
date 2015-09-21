@@ -51,7 +51,7 @@ class UserController extends Controller
 
         $this->createSession($user);
 
-        return redirect()->route('user.account')->with('success', Lang::get('flashmessage.user.subscribe_and_logged'));
+        return redirect()->route('user.account')->with('success', Lang::get('flashMessage.user.subscribe_and_logged'));
 
     }
 
@@ -85,9 +85,9 @@ class UserController extends Controller
 
         if($user !== null){
             $this->createSession($user);
-            return redirect(route('user.account'))->with('success', Lang::get('flashmessage.user.logged'));
+            return redirect(route('user.account'))->with('success', Lang::get('flashMessage.user.logged'));
         } else {
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.no_account'))->withInput();
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.user.no_account'))->withInput();
         }
 
     }
@@ -102,7 +102,7 @@ class UserController extends Controller
 
         Session::flush();
 
-        return redirect(route('home'))->with('success', Lang::get('flashmessage.user.logout'));
+        return redirect(route('home'))->with('success', Lang::get('flashMessage.user.logout'));
     }
 
     /**

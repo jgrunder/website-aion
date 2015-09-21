@@ -16,11 +16,11 @@ class AccessLevel {
 	public function handle($request, Closure $next)
 	{
         if(!Session::has('connected')){
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.connected'));
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.user.connected'));
         }
 
         if(Session::get('user.access_level') < $this->getLevel($request)){
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.not_access_level'));
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.user.not_access_level'));
         }
 
 		return $next($request);

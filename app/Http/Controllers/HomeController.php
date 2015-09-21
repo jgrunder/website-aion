@@ -34,7 +34,7 @@ class HomeController extends Controller
         $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
 
         if($news->count() == 0){
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.news.fail_id'));
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.news.fail_id'));
         }
 
         // SEO

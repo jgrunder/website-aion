@@ -52,7 +52,7 @@ class VoteController extends Controller {
                 AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now()]);
 
             } else {
-                return redirect(route('home'))->with('error', Lang::get('flashmessage.vote.wait_time'));
+                return redirect(route('home'))->with('error', Lang::get('flashMessage.vote.wait_time'));
             }
         }
 

@@ -16,7 +16,7 @@ class UnConnected {
     public function handle($request, Closure $next)
     {
         if(Session::has('connected')){
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.unlogged'));
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.user.unlogged'));
         }
 
         return $next($request);

@@ -39,7 +39,7 @@ class ShopController extends Controller {
       $items = ShopItem::where('id_sub_category', '=', $id)->paginate(9);
 
       if($items->count() === 0) {
-        return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.fail_category_id'));
+        return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.fail_category_id'));
       }
 
       return view('shop.index', [
@@ -105,10 +105,10 @@ class ShopController extends Controller {
         $account = AccountData::me(Session::get('user.id'))->first();
 
         if(Cart::total() === 0){ // If cart is empty -> Redirect to the shop page
-            return redirect(route('shop'))->with('error', Lang::get('flashmessage.shop.empty_cart'));
+            return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.empty_cart'));
         }
         else if($account->real < Cart::total()) { // If no real -> Redirect to the shop page
-            return redirect()->back()->with('error', Lang::get('flashmessage.shop.not_real'));
+            return redirect()->back()->with('error', Lang::get('flashMessage.shop.not_real'));
         }
 
         $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
@@ -157,7 +157,7 @@ class ShopController extends Controller {
         AccountData::me($account_id)->decrement('real', $total);
         Cart::destroy();
 
-        return redirect(route('shop'))->with('success', Lang::get('flashmessage.shop.success').$player->name);
+        return redirect(route('shop'))->with('success', Lang::get('flashMessage.shop.success').$player->name);
     }
 
 }

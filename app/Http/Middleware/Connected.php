@@ -16,7 +16,7 @@ class Connected {
 	public function handle($request, Closure $next)
 	{
         if(!Session::has('connected')){
-            return redirect(route('home'))->with('error', Lang::get('flashmessage.user.connected'));
+            return redirect(route('home'))->with('error', Lang::get('flashMessage.user.connected'));
         }
 
 		return $next($request);
