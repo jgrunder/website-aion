@@ -11,21 +11,6 @@ use Illuminate\Support\Facades\Lang;
 
 class PageController extends Controller {
 
-    /**
-     * What language we need
-     * @var string
-     */
-    protected $language;
-
-    /**
-     * Get the language from the cookie :)
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->language = Cookie::get('language');
-    }
 
     /**
      * GET /page/join-us

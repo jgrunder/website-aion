@@ -10,12 +10,18 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
 abstract class Controller extends BaseController {
 
 	use DispatchesCommands, ValidatesRequests;
+
+    /**
+     * @var $protected
+     */
+    protected $language;
 
     /**
      * Set global Variables for ALL view
@@ -28,8 +34,7 @@ abstract class Controller extends BaseController {
         $this->accountReal();
         $this->topVotes();
         $this->topBg();
-        // Admin
-        $this->adminLogsMenu();
+        $this->getLanguageFromCookie();
     }
 
     /**
@@ -153,25 +158,14 @@ abstract class Controller extends BaseController {
     }
 
     /**
-     * Set variables $adminLogsMenu
+     * Get Language from Cookie
      */
-    private function adminLogsMenu()
+    private function getLanguageFromCookie()
     {
-        if (Session::has('connected') && Session::get('user.access_level') > 0) {
-
-            $logFiles  = Config::get('aion.logs.files');
-            $logsMenu  = [];
-
-            foreach ($logFiles as $key => $value){
-
-                if(Session::get('user.access_level') >= $value['access_level']){
-                    $logsMenu[] = $value['file'];
-                }
-
-            }
-
-            View::share('adminLogsMenu', $logsMenu);
-
+        if (Cookie::has('language')){
+            $this->language = Cookie::get('language');
+        } else {
+            $this->language = 'fr';
         }
     }
 

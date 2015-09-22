@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
 use App\Models\Webserver\ShopHistory;

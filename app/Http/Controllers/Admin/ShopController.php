@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopItem;
 use App\Models\Webserver\ShopSubCategory;

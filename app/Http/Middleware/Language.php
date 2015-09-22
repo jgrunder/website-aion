@@ -17,16 +17,14 @@ class Language {
      */
     public function handle($request, Closure $next)
     {
-
-        // Add french to default value
-        Cookie::make('language', 'fr', 45000);
-
         // Check if we have this language
         foreach(Config::get('aion.languages') as $language) {
 
-            if(Cookie::get('language') === $language){
-                App::setLocale(Cookie::get('language'));
-                Carbon::setLocale(Cookie::get('language'));
+            if(Cookie::has('language')){
+                if(Cookie::get('language') === $language){
+                    App::setLocale(Cookie::get('language'));
+                    Carbon::setLocale(Cookie::get('language'));
+                }
             }
 
         }
