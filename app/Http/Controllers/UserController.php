@@ -8,7 +8,6 @@ use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\Pages;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 

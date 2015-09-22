@@ -57,6 +57,9 @@ return [
         'title'       => "Champs de batailles",
         'description' => "Venez voir qui est le plus fort sur les champs de batailles du serveur RealAion."
     ],
-
+    'lost_password'   => [
+        'title'       => "Mot de passe oublié ?",
+        'description' => "Vous avez perdu votre mot de passe pour vous connecter au serveur RealAion ? Pas de panique, nous pouvons le retrouver !"
+    ],
 
 ];

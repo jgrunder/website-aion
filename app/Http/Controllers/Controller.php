@@ -138,9 +138,8 @@ abstract class Controller extends BaseController {
                     'status' => Cache::get('status.'.$key)
                 ];
             } else {
-                $check = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
-
-                $expiresAt = Carbon::now()->addMinutes(5);
+                $check      = @fsockopen($server['ip'], $server['port'], $errno, $errstr, 1.0);
+                $expiresAt  = Carbon::now()->addMinutes(5);
 
                 Cache::put('status.'.$key, ($check) ? true : false, $expiresAt);
 

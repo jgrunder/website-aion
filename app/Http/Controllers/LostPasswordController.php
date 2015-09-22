@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use App\Models\Loginserver\AccountData;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Mail;
 
 class LostPasswordController extends Controller
@@ -14,6 +17,11 @@ class LostPasswordController extends Controller
      */
     public function index(Request $request)
     {
+
+        // SEO
+        SEOMeta::setTitle(Lang::get('seo.lost_password.title'));
+        SEOMeta::setDescription(Lang::get('seo.lost_password.description'));
+        OpenGraph::setDescription(Lang::get('seo.lost_password.description'));
 
         $success = null;
         $errors  = null;

@@ -44,7 +44,6 @@ return [
         'title'       => "Server rates",
         'description' => "Find some informations about the server like the Reals gain"
     ],
-
     'online'          => [
         'title'       => "Online players",
         'description' => "Do you know who is online on the server?"
@@ -57,6 +56,9 @@ return [
         'title'       => "Battleground ranking",
         'description' => "Who is the best in Battleground ? Each month, the 3 top gain incredible items"
     ],
-
+    'lost_password'   => [
+        'title'       => "Lost password ?",
+        'description' => "Lost your password to connect to the server RealAion? Do not panic, we can find him!"
+    ],
 
 ];
