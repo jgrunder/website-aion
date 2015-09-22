@@ -32,6 +32,8 @@
                 @endforeach
                 </tbody>
             </table>
+            <!-- Pagination -->
+            {!! $top->render() !!}
         </div>
     </div>
 @stop

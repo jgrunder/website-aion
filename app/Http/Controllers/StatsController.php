@@ -22,7 +22,7 @@ class StatsController extends Controller {
         OpenGraph::setDescription(Lang::get('seo.online.description'));
 
         return view('stats.online', [
-            'users' => Player::online()->get()
+            'users' => Player::online()->paginate(15)
         ]);
     }
 
@@ -50,7 +50,7 @@ class StatsController extends Controller {
         OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
         return view('stats.bg', [
-            'top' => Ladder::orderBy('rating', 'DESC')->with('name')->get()
+            'top' => Ladder::orderBy('rating', 'DESC')->with('name')->paginate(15)
         ]);
     }
 

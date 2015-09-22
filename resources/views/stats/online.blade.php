@@ -30,6 +30,8 @@
           </tbody>
         </table>
       @endif
+      <!-- Pagination -->
+      {!! $users->render() !!}
     </div>
   </div>
 @stop
