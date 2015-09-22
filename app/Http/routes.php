@@ -310,13 +310,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET SEARCH
     Route::get('search', [
         'as'            => 'admin.search',
-        'uses'          => 'AdminController@search'
+        'uses'          => 'Admin\AdminController@search'
     ]);
 
     // GET HOME
     Route::match(['GET', 'POST'], 'config', [
         'as'            => 'admin.config',
-        'uses'          => 'AdminController@config'
+        'uses'          => 'Admin\AdminController@config'
     ]);
 
     // GET NEWS LIST
@@ -328,7 +328,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // GET NEWS LIST
     Route::get('logs/{name}', [
         'as'            => 'admin.logs',
-        'uses'          => 'AdminController@logs'
+        'uses'          => 'Admin\AdminController@logs'
     ]);
 
     // GET NEWS ADD
@@ -376,31 +376,31 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
     // ALLOPASS
     route::get('allopass', [
         'as'            => 'admin.allopass',
-        'uses'          => 'AdminController@allopass'
+        'uses'          => 'Admin\AdminController@allopass'
     ]);
 
     // PAYPAL
     route::get('paypal', [
         'as'            => 'admin.paypal',
-        'uses'          => 'AdminController@paypal'
+        'uses'          => 'Admin\AdminController@paypal'
     ]);
 
     // REALS
     route::get('reals', [
         'as'            => 'admin.reals',
-        'uses'          => 'AdminController@reals'
+        'uses'          => 'Admin\AdminController@reals'
     ]);
 
     // PAGE
     route::match(['GET', 'POST'], 'page/{name}', [
         'as'            => 'admin.page',
-        'uses'          => 'AdminController@pageEdit'
+        'uses'          => 'Admin\AdminController@pageEdit'
     ]);
 
     // ADD REALS
     route::match(['GET', 'POST'], 'add-reals', [
         'as'            => 'admin.add.reals',
-        'uses'          => 'AdminController@addReals'
+        'uses'          => 'Admin\AdminController@addReals'
     ]);
 
 });
