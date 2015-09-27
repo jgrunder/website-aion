@@ -58,7 +58,7 @@
             @foreach($categories as $index => $category)
               <li class="top_categorie">
                 <h4>> {{$category->category_name}}</h4>
-                <ul class="sub_categorie" style="display: @if ($index == 0) block @else none @endif">
+                <ul class="sub_categorie" style="display: @if ($index == 0) block @else none @endif; font-size: 12px">
                 @foreach($category->name as $sub_category)
                   <li><a href="/shop/category/{{$sub_category->id}}">{{$sub_category->name}}</a></li>
                 @endforeach
