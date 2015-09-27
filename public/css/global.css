@@ -1783,10 +1783,17 @@ div.subscribe .shugo {
 div.subscribe .g-recaptcha {
   margin-bottom: 15px; }
 
+.shop_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
 .item_shop {
   width: 30%;
-  height: 170px;
-  display: inline-block;
   background-color: #e6e6e6;
   border-radius: 5px;
   padding: 10px;
@@ -1807,12 +1814,9 @@ div.subscribe .g-recaptcha {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 10px; }
+    margin-top: 5px; }
     .item_shop .buttons a {
-      width: 40%;
+      width: 45%;
       padding: 5px 10px 5px 10px;
       background-color: rgba(76, 114, 161, 0.79);
       border-radius: 5px;

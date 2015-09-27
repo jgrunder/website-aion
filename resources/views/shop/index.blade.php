@@ -14,7 +14,11 @@
 
           @foreach($items as $item)
             <div class="item_shop">
-              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem quality-{{\Illuminate\Support\Str::lower($item->quality_item)}}" data-id="{{$item->id_item}}">{{$item->name}}</a></h3>
+              <h3>
+                <a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem quality-{{\Illuminate\Support\Str::lower($item->quality_item)}}" data-id="{{$item->id_item}}">
+                  {{\Illuminate\Support\Str::limit($item->name, 38, '...')}}
+                </a>
+              </h3>
               <ul>
                 <li class="quantity">Quantity : {{$item->quantity}}</li>
                 <li class="price">Price : {{$item->price}}</li>
@@ -58,7 +62,7 @@
             @foreach($categories as $index => $category)
               <li class="top_categorie">
                 <h4>> {{$category->category_name}}</h4>
-                <ul class="sub_categorie" style="display: @if ($index == 0) block @else none @endif; font-size: 12px">
+                <ul class="sub_categorie" style="display: none; font-size: 12px">
                 @foreach($category->name as $sub_category)
                   <li><a href="/shop/category/{{$sub_category->id}}">{{$sub_category->name}}</a></li>
                 @endforeach
