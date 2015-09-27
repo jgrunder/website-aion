@@ -127,7 +127,12 @@
 				var itemId = $(this).attr('data-id');
 				$(this).after('<div class="information_item">Merci de patienter ...</div>');
 				$.get('/database/item/' + itemId, function(data) {
-					$('.information_item').html(data);
+
+					var $data = $(data);
+
+					$data.find('.show_random_bonus').parent().css('display', 'none');
+
+					$('.information_item').html($data.html());
 				});
 			});
 			$databaseItem.on('mouseleave', function() {
