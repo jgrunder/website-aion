@@ -1090,6 +1090,24 @@ div.flash_messages {
     color: #555555;
     text-decoration: underline; }
 
+.information_item {
+  width: 350px;
+  position: absolute;
+  z-index: 10000;
+  padding: 5px;
+  font-size: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  color: white; }
+  .information_item table {
+    text-align: left !important;
+    border-collapse: initial;
+    border-spacing: initial; }
+    .information_item table td {
+      padding: initial; }
+    .information_item table tbody tr:hover {
+      background-color: transparent; }
+
 nav.nav {
   width: 958px;
   height: 98px;

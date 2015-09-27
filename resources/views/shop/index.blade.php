@@ -14,7 +14,7 @@
 
           @foreach($items as $item)
             <div class="item_shop">
-              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank">{{$item->name}}</a></h3>
+              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem" data-id="{{$item->id_item}}">{{$item->name}}</a></h3>
               <ul>
                 <li class="quantity">Quantity {{$item->quantity}}</li>
                 <li class="price">Price {{$item->price}}</li>
@@ -50,7 +50,7 @@
       <div class="bloc_with_header bloc_vote">
         <div class="bloc_header">
           <h2>Catégories</h2>
-          <p>Des sous-catégories son disponibles</p>
+          <p>Des sous-catégories sont disponibles</p>
         </div>
         <div class="bloc_body center container_shop_categories">
 

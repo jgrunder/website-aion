@@ -204,3 +204,25 @@ div.flash_messages {
         text-decoration: underline;
     }
 }
+
+.information_item {
+	width: 350px;
+	position: absolute;
+	z-index: 10000;
+	padding: 5px;
+	font-size: 0.8rem;
+	background-color: rgba(black, 0.8);
+	border-radius: 5px;
+	color: white;
+	table {
+		text-align: left !important;
+		border-collapse: initial;
+		border-spacing: initial;
+		td {
+			padding: initial;
+		}
+		tbody tr:hover {
+			background-color: transparent;
+		}
+	}
+}

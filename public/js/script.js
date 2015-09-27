@@ -117,4 +117,22 @@
 			});
 		}
 
+		/*
+		 * AION DATABASE INFO BULLE
+		 */
+		var $databaseItem = $('.databaseItem');
+
+		if ($databaseItem.length > 0) {
+			$databaseItem.on('mouseenter', function() {
+				var itemId = $(this).attr('data-id');
+				$(this).after('<div class="information_item">Merci de patienter ...</div>');
+				$.get('/database/item/' + itemId, function(data) {
+					$('.information_item' ).html(data);
+				});
+			});
+			$databaseItem.on('mouseleave', function() {
+				$('.information_item' ).remove();
+			});
+		}
+
 	});
