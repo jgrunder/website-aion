@@ -127,7 +127,7 @@
 				var itemId = $(this).attr('data-id');
 				$(this).after('<div class="information_item">Merci de patienter ...</div>');
 				$.get('/database/item/' + itemId, function(data) {
-					$('.information_item' ).html(data);
+					$('.information_item').html(data);
 				});
 			});
 			$databaseItem.on('mouseleave', function() {

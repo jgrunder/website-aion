@@ -50,6 +50,8 @@
                     {!! Form::input('number', 'level', null, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
+                {!! Form::input('hidden', 'quality_item', 'NONE', ['id' => 'qualityItem']) !!}
+
                 <input type="submit" class="btn btn-success" value="Ajouter l'item">
 
                 {!! Form::close() !!}

@@ -1,10 +1,7 @@
-.shop_container{
-  //display: flex;
-  //justify-content: space-between;
-}
+.shop_container{  }
 .item_shop {
   width: 30%;
-  height: 150px;
+  height: 170px;
   display: inline-block;
   background-color: #e6e6e6;
   border-radius : 5px;
@@ -12,15 +9,12 @@
   position: relative;
   margin-left: 13px;
   ul {
-    display: flex;
-    justify-content: space-between;
     padding: 15px 5px 5px 5px;
   }
   h3 {
     padding-bottom: 5px;
     border-bottom: 1px solid #8e8e8e;
-    height: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
   .buttons {
     display: flex;
@@ -32,7 +26,7 @@
     a {
       width: 40%;
       padding: 5px 10px 5px 10px;
-      background-color: rgba(#FF4C23, 0.79);
+      background-color: rgba(#4c72a1, 0.79);
       border-radius: 5px;
       color: white;
       text-align: center;
@@ -44,6 +38,12 @@
         margin-left: 5px;
       }
     }
+    .previewItem {
+      background-color: rgba(black, 0.8);
+    }
+    .addItemInCart {
+      background-color: #4c72a1;
+    }
   }
   &:nth-child(n+4){
     margin-top: 20px;
@@ -53,7 +53,7 @@
 .container_shop_categories{
   text-align: left;
   line-height: 1.5;
-  color: #ff4c23;
+  color: #4c72a1;
   .sub_categorie{
     margin-left: 20px;
     display: none;
@@ -70,7 +70,7 @@
   font-size: 13px;
   a {
     margin-bottom: 0px !important;
-    color: #ff4c23;
+    color: #4c72a1;
   }
   .btn {
     width: 45%;
@@ -83,8 +83,8 @@
     font-size: 15px;
   }
   .gift_button{
-    background-color: rgba(#FF4C23, 0.79);
-    border-bottom-color: rgba(#FF4C23, 0.79);
+    background-color: rgba(#4c72a1, 0.79);
+    border-bottom-color: rgba(#4c72a1, 0.79);
   }
 }
 .container_shop_recap{

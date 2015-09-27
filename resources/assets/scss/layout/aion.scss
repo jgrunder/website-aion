@@ -90,3 +90,34 @@
   position: relative;
   top: 2px;
 }
+
+.quality-mythic {
+	color: #8f39ce;
+	&:active, &:hover {
+		color: #8f39ce;
+	}
+}
+.quality-epic {
+	color: #f08033;
+	&:active, &:hover {
+		color: #f08033;
+	}
+}
+.quality-legend {
+	color: #4ccfff;
+	&:active, &:hover {
+		color: #4ccfff;
+	}
+}
+.quality-rare {
+	color: #69e15e;
+	&:active, &:hover {
+		color: #69e15e;
+	}
+}
+.quality-common, .quality-none {
+	color: black;
+	&:active, &:hover {
+		color: black;
+	}
+}

@@ -14,10 +14,10 @@
 
           @foreach($items as $item)
             <div class="item_shop">
-              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem" data-id="{{$item->id_item}}">{{$item->name}}</a></h3>
+              <h3><a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem quality-{{\Illuminate\Support\Str::lower($item->quality_item)}}" data-id="{{$item->id_item}}">{{$item->name}}</a></h3>
               <ul>
-                <li class="quantity">Quantity {{$item->quantity}}</li>
-                <li class="price">Price {{$item->price}}</li>
+                <li class="quantity">Quantity : {{$item->quantity}}</li>
+                <li class="price">Price : {{$item->price}}</li>
               </ul>
               <div class="buttons">
                 <a href="#" class="addItemInCart" data-id="{{$item->id_item}}">Add</a>

@@ -72,6 +72,7 @@ class ShopController extends Controller
           $itemAdded = ShopItem::create([
               'id_sub_category' => $request->input('id_sub_category'),
               'id_item'         => $request->input('id_item'),
+              'quality_item'    => $request->input('quality_item'),
               'name'            => $request->input('name'),
               'price'           => $request->input('price'),
               'quantity'        => $request->input('quantity'),
