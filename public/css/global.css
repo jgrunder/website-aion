@@ -1856,10 +1856,9 @@ div.subscribe .g-recaptcha {
     margin-bottom: 0px !important;
     color: #4c72a1; }
   .container_shop_cart .btn {
-    width: 45%;
     color: white;
     margin-top: 30px;
-    padding-top: 7px;
+    padding-top: 15px;
     display: inline-block;
     background-color: #332d31;
     border-bottom-color: #332d31;
