@@ -11,7 +11,7 @@
         <tbody>
         @foreach ($items_cart as $item)
             <tr>
-                <td width="45%">{{$item->name}}</td>
+                <td width="45%" style="text-align: left; padding-left: 2px">{{$item->name}}</td>
                 <td>{{$item->price}}</td>
                 <td width="15%">{{$item->qty}}</td>
                 <td><a href="#" data-id="{{$item->options['id_item']}}" class="fa fa-trash-o removeItemInCart"></a></td>
