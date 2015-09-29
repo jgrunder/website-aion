@@ -13,7 +13,7 @@
             <tr>
                 <td width="45%" style="text-align: left; padding-left: 2px">{{$item->name}}</td>
                 <td>{{$item->price}}</td>
-                <td width="15%">{{$item->qty}}</td>
+                <td width="15%">{{$item->qty * $item->options['quantity']}}</td>
                 <td><a href="#" data-id="{{$item->options['id_item']}}" class="fa fa-trash-o removeItemInCart"></a></td>
             </tr>
         @endforeach

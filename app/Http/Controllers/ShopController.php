@@ -62,9 +62,9 @@ class ShopController extends Controller {
         if($item->count() > 0) {
 
             if(!$item_in_cart) {
-                Cart::add($id, $item->name, $item->quantity, $item->price, ['id_item' => $id]); // Add new Item in Cart
+                Cart::add($id, $item->name, 1, $item->price, ['id_item' => $id, 'quantity' => $item->quantity]); // Add new Item in Cart
             } else {
-                Cart::update($item_in_cart[0], $content_in_cart[$item_in_cart[0]]['qty'] + $item->quantity); // Update Quantity
+                Cart::update($item_in_cart[0], $content_in_cart[$item_in_cart[0]]['qty'] + 1); // Update Quantity
             }
 
             return view('_modules.cart', [
