@@ -39,7 +39,7 @@
                           <td>{{$index + 1}}</td>
                           <td>{{$player->name}}</td>
                           <td><span class="{{Lang::get('aion.race_logo.'.$player->race)}}"></span></td>
-                          <td><span class="charactericon-class {{Lang::get($player->player_class)}}"></span></td>
+                          <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$player->player_class)}}"></span></td>
                       </tr>
                   @endforeach
                   </tbody>
