@@ -299,7 +299,7 @@ Route::group(['prefix' => 'page'], function()
 /**
  * GROUP ADMIN
  */
-Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 1], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 6], function()
 {
     // GET HOME
     Route::get('home', [
