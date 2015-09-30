@@ -140,7 +140,7 @@ class ShopController extends Controller {
             ShopItem::where('id_item', '=', $item->options['id_item'])->increment('purchased', 1);
             MyShop::create([
                 'item'      => $item->options['id_item'],
-                'nb'        => $item->qty,
+                'nb'        => $item->options['quantity'] * $item->qty,
                 'player_id' => $player_id
             ]);
             ShopHistory::create([
@@ -148,7 +148,7 @@ class ShopController extends Controller {
                 'player_id'     => $player_id,
                 'player_name'   => $player->name,
                 'item_id'       => $item->options['id_item'],
-                'quantity'      => $item->qty,
+                'quantity'      => $item->options['quantity'] * $item->qty,
                 'price'         => $item->price,
                 'name'          => $item->name,
             ]);
