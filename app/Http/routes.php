@@ -183,14 +183,7 @@ Route::group(['prefix' => 'user'], function()
     // POST SUBSCRIBE
     Route::post('subscribe', 'UserController@createAccount');
 
-    // GET LOGIN
-    Route::get('login', [
-        'as'         => 'user.login',
-        'middleware' => 'unConnected',
-        'uses'       => 'UserController@login'
-    ]);
-
-    // POST SUBSCRIBE
+    // POST LOGIN
     Route::post('login', 'UserController@connect');
 
     // GET LOGOUT

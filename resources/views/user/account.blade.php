@@ -15,13 +15,16 @@
           <div class="news_body">
 
             <h2>Mes informations :</h2>
+
             <ul>
               <li>Identifiant : {{$user['name']}}</li>
               <li>Pseudo d'affichage : {{$user['pseudo']}}</li>
               <li>Email : {{$user['email']}}</li>
               <li>Reals : {{$user['real']}}</li>
             </ul>
+
             <br>
+
             @if($players->count() > 0)
               <h2>Mes Personnages :</h2>
               <table>
@@ -47,8 +50,9 @@
             @endif
 
           </div>
-          <div class="news_footer">
-          </div>
+          
+          <div class="news_footer"></div>
+
         </div>
 
       </div>

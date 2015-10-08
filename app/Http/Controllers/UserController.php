@@ -55,17 +55,6 @@ class UserController extends Controller
     }
 
     /**
-     * GET /user/login
-     */
-    public function login()
-    {
-        // SEO
-        SEOMeta::setTitle(Lang::get('seo.login.title'));
-
-        return view('user.login');
-    }
-
-    /**
      * POST /user/login
      *
      * @param ConnectUserRequest $request
