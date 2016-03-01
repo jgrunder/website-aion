@@ -44,8 +44,7 @@ NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
 2. Modifier le patch pour accéder aux logs du serveurs dans : ```config/aion.php```
 
 ```php
-'logs' => [
-        'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
+    'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
 ```
 
 3. Créer une base de donnée pour le site (SQL : ```database/sql/database.ws.sql```)
