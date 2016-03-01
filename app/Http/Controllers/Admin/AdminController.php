@@ -57,21 +57,7 @@ class AdminController extends Controller
                     // Check if file exist
                     if (file_exists($logsPath.$value['file'].$value['extension'])){
 
-                        $logContent = "";
-                        $handle     = @fopen($logsPath.$value['file'].$value['extension'], "r");
-
-                        if ($handle) {
-                            while (($buffer = fgets($handle, 4096)) !== false) {
-                                $logContent .= $buffer;
-                            }
-                            fclose($handle);
-                        }
-
-                        return view('admin.logs', [
-                            'logName'      => $name,
-                            'logExtension' => $value['extension'],
-                            'logContent'   => $logContent
-                        ]);
+                        return response()->download($logsPath.$value['file'].$value['extension']);
 
                     }
 

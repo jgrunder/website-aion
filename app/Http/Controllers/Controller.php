@@ -110,7 +110,7 @@ abstract class Controller extends BaseController {
      */
     private function topVotes()
     {
-        $voters = AccountData::remember(10)->where('vote', '>', 0)->orderBy('vote', 'DESC')->take(3)->get();
+        $voters = AccountData::remember(10)->where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
         View::Share('topVotes', $voters);
     }
 
