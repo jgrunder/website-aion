@@ -57,6 +57,7 @@ class AdminController extends Controller
                     // Check if file exist
                     if (file_exists($logsPath.$value['file'].$value['extension'])){
 
+                        // Download the file
                         return response()->download($logsPath.$value['file'].$value['extension']);
 
                     }

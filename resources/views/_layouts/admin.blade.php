@@ -106,10 +106,8 @@
 
     <!-- JAVASCRIPTS -->
     <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="/js/highlight.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="/js/script_admin.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
