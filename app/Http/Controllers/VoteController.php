@@ -23,7 +23,6 @@ class VoteController extends Controller {
     {
 
         $accountId      = Session::get('user.id');
-        $realPerVote    = (!Config::get('aion.vote.boost')) ? Config::get('aion.vote.real_per_vote') : Config::get('aion.vote.real_per_vote') + 50;
         $votesLinks     = Config::get('aion.vote.links');
         $accountVote    = AccountVote::where('account_id', $accountId)
                                      ->where('site', $id)
@@ -32,12 +31,12 @@ class VoteController extends Controller {
         if($accountVote === null){
 
             AccountData::IncrementVoteCount($accountId);
-            AccountData::AddReal($accountId, $realPerVote);
 
             AccountVote::create([
                 'account_id' => $accountId,
                 'site'       => $id,
-                'date'       => Carbon::now()
+                'date'       => Carbon::now(),
+                'add'        => 0
             ]);
 
         } else {
@@ -47,9 +46,8 @@ class VoteController extends Controller {
             if($oldDate->diffInHours(Carbon::now()) >= 2){
 
                 AccountData::IncrementVoteCount($accountId);
-                AccountData::AddReal($accountId, $realPerVote);
 
-                AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now()]);
+                AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now(), 'add' => 0]);
 
             } else {
                 return redirect(route('home'))->with('error', Lang::get('flashMessage.vote.wait_time'));
