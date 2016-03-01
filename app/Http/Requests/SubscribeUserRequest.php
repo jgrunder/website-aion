@@ -26,7 +26,8 @@ class SubscribeUserRequest extends Request {
 			'pseudo'                => 'required|unique:account_data,pseudo',
 			'password'              => 'required|case_diff|numbers|letters|confirmed',
 			'password_confirmation' => 'required',
-			'email'                 => 'required|email|unique:account_data,email'
+			'email'                 => 'required|email|unique:account_data,email',
+			'g-recaptcha-response' 	=> 'required|captcha'
 		];
 	}
 
