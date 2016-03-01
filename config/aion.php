@@ -3,7 +3,7 @@
 return [
 
   'website_name'             => 'RealAion',
-  'aion_version'             => '4.7',
+  'aion_version'             => '4.9',
   'link_facebook'            => 'https://www.facebook.com/Realaion',
   'link_twitter'             => 'https://twitter.com/Real_Aion',
   'link_youtube'             => 'https://youtube.com',

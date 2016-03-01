@@ -3,7 +3,7 @@
 return [
     'home'            => [
         'title'       => "Home",
-        'description' => "Aion Private server 4.7 Gameforge"
+        'description' => "Aion Private server 4.9 Gameforge"
     ],
     'news'            => [
         'title'       => "News"

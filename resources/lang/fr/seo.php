@@ -3,7 +3,7 @@
 return [
     'home'            => [
         'title'       => "Accueil",
-        'description' => "Serveur privé Aion fun et PVP stable et performant en version 4.7"
+        'description' => "Serveur privé Aion fun et PVP stable et performant en version 4.9"
     ],
     'news'            => [
         'title'       => "Article"
