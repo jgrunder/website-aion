@@ -31,6 +31,7 @@ class HasVote {
                     $vote = AccountVote::where('account_id', $accountId)->where('add', 0)->where('site', $key)->first();
 
                     if($vote){
+                        AccountData::IncrementVoteCount($accountId);
                         AccountData::AddReal($accountId, $realPerVote);
                         AccountVote::where('account_id', $accountId)->where('add', 0)->where('site', $key)->update(['add' => 1]);
                     }

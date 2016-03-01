@@ -30,8 +30,6 @@ class VoteController extends Controller {
 
         if($accountVote === null){
 
-            AccountData::IncrementVoteCount($accountId);
-
             AccountVote::create([
                 'account_id' => $accountId,
                 'site'       => $id,
@@ -44,8 +42,6 @@ class VoteController extends Controller {
             $oldDate = Carbon::parse($accountVote->date);
 
             if($oldDate->diffInHours(Carbon::now()) >= 2){
-
-                AccountData::IncrementVoteCount($accountId);
 
                 AccountVote::where('account_id', $accountId)->where('site', $id)->update(['date' => Carbon::now(), 'add' => 0]);
 
