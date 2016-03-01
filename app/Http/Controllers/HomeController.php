@@ -15,14 +15,14 @@ class HomeController extends Controller
      */
 	public function index()
 	{
-        // SEO
-        SEOMeta::setTitle(Lang::get('seo.home.title'));
-        SEOMeta::setDescription(Lang::get('seo.home.description'));
-        OpenGraph::setDescription(Lang::get('seo.home.description'));
+    // SEO
+    SEOMeta::setTitle(Lang::get('seo.home.title'));
+    SEOMeta::setDescription(Lang::get('seo.home.description'));
+    OpenGraph::setDescription(Lang::get('seo.home.description'));
 
 		return view('home.index', [
-            'news' => News::orderBy('created_at', 'DESC')->paginate(3)
-        ]);
+      'news' => News::orderBy('created_at', 'DESC')->paginate(3)
+    ]);
 	}
 
     /**
@@ -30,22 +30,22 @@ class HomeController extends Controller
      */
     public function news($slug, $id)
     {
+      $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
 
-        $news = News::where('slug', '=', $slug)->where('id', '=', $id)->get();
+      // News don't exist
+      if($news->count() == 0){
+        return redirect(route('home'))->with('error', Lang::get('flashMessage.news.fail_id'));
+      }
 
-        if($news->count() == 0){
-            return redirect(route('home'))->with('error', Lang::get('flashMessage.news.fail_id'));
-        }
+      // SEO
+      SEOMeta::setTitle($news[0]->title);
+      SEOMeta::setDescription($news[0]->title);
+      OpenGraph::setDescription($news[0]->title);
 
-        // SEO
-        SEOMeta::setTitle($news[0]->title);
-        SEOMeta::setDescription($news[0]->title);
-        OpenGraph::setDescription($news[0]->title);
-
-        return view('home.index', [
-            'full' => true,
-            'news' => $news
-        ]);
+      return view('home.index', [
+        'full' => true,
+        'news' => $news
+      ]);
     }
 
 }

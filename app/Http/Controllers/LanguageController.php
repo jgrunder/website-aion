@@ -27,7 +27,6 @@ class LanguageController extends Controller
 
         return redirect()->back()->with('error', "This language is not support yet");
 
-
     }
 
 }

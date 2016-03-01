@@ -23,7 +23,7 @@ class ConnectUserRequest extends Request {
 	{
 		return [
 			'username' => 'required',
-      		'password' => 'required'
+			'password' => 'required'
 		];
 	}
 

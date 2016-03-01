@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'gameserver',
+	'default' => 'loginserver',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,8 +55,7 @@ return [
 			'charset'       => 'utf8',
 			'collation'     => 'utf8_unicode_ci',
 			'prefix'        => '',
-			'strict'        => false,
-            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'strict'        => false
 		],
 
 		'loginserver' => [
@@ -68,22 +67,20 @@ return [
 			'charset'       => 'utf8',
 			'collation'     => 'utf8_unicode_ci',
 			'prefix'        => '',
-			'strict'        => false,
-            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'strict'        => false
 		],
 
-        'webserver' => [
-            'driver'        => 'mysql',
-            'host'          => env('DB_HOST_WS', 'localhost'),
-            'database'      => env('DB_DATABASE_WS', 'forge'),
-            'username'      => env('DB_USERNAME_WS', 'forge'),
-            'password'      => env('DB_PASSWORD_WS', ''),
-            'charset'       => 'utf8',
-            'collation'     => 'utf8_unicode_ci',
-            'prefix'        => '',
-            'strict'        => false,
-            //'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
-        ]
+		'webserver' => [
+				'driver'        => 'mysql',
+				'host'          => env('DB_HOST_WS', 'localhost'),
+				'database'      => env('DB_DATABASE_WS', 'forge'),
+				'username'      => env('DB_USERNAME_WS', 'forge'),
+				'password'      => env('DB_PASSWORD_WS', ''),
+				'charset'       => 'utf8',
+				'collation'     => 'utf8_unicode_ci',
+				'prefix'        => '',
+				'strict'        => false
+		]
 
 	],
 
