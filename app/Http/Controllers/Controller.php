@@ -119,7 +119,7 @@ abstract class Controller extends BaseController {
      */
     private function topBg()
     {
-        $topBg = Ladder::remember(10)->orderBy('rank', 'DESC')->with('name')->take(5)->get();
+        $topBg = Ladder::remember(10)->orderBy('rating', 'DESC')->with('name')->take(5)->get();
         View::Share('topBg', $topBg);
     }
 
