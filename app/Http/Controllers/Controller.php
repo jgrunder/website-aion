@@ -42,8 +42,9 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians    = Player::online()->remember(5)->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		= Player::online()->remember(5)->where('race', '=', 'ELYOS')->count();
+			$count_asmodians  = Player::online()->remember(5)->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		  = Player::online()->remember(5)->where('race', '=', 'ELYOS')->count();
+
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
     }

@@ -23,7 +23,7 @@ class VoteController extends Controller {
     {
 
         $accountId      = Session::get('user.id');
-        $realPerVote    = Config::get('aion.vote.real_per_vote');
+        $realPerVote    = (!Config::get('aion.vote.boost')) ? Config::get('aion.vote.real_per_vote') : Config::get('aion.vote.real_per_vote') + 50;
         $votesLinks     = Config::get('aion.vote.links');
         $accountVote    = AccountVote::where('account_id', $accountId)
                                      ->where('site', $id)
