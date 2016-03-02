@@ -57,6 +57,35 @@
                     </div>
                 </div>
             </div>
+            <!-- Best items buy -->
+            <div class="col col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <i class="fa fa-line-chart"></i>
+                            Meilleurs Ventes
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th width="90%">Nom</th>
+                                <th style="text-align: center;">Achats</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($topItemsBuy as $index => $item)
+                                <tr>
+                                    <td width="90%" class="strong">{{$item->name}}</td>
+                                    <td style="text-align: center;">{{$item->purchased}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             <!-- User subscribe Today -->
             <div class="col col-md-4">
                 <div class="panel panel-default">

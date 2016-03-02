@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\News;
 use App\Models\Webserver\ShopHistory;
+use App\Models\Webserver\ShopItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,6 +20,7 @@ class NewsController extends Controller
    */
   public function index()
   {
+    $topItemsBuy      = ShopItem::orderBy('purchased', 'desc')->take(5)->get();
     $shopHistoryToday = ShopHistory::where('created_at', '=', Carbon::today())->count();
     $shopHistoryTotal = ShopHistory::count();
     $accountsCount    = AccountData::count();
@@ -26,7 +28,8 @@ class NewsController extends Controller
     return view('admin.index', [
         'shopHistoryToday'  => $shopHistoryToday,
         'shopHistoryTotal'  => $shopHistoryTotal,
-        'accountsCount'     => $accountsCount
+        'accountsCount'     => $accountsCount,
+        'topItemsBuy'       => $topItemsBuy
     ]);
   }
 
