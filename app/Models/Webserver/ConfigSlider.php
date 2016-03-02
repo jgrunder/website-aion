@@ -3,6 +3,7 @@
 namespace App\Models\Webserver;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Input;
 
 class ConfigSlider extends Model {
 
@@ -10,5 +11,21 @@ class ConfigSlider extends Model {
     protected $connection   = 'webserver';
     protected $fillable     = ['title', 'path'];
     public $timestamps      = false;
+
+    /**
+     * Upload a file
+     *
+     * @param $file
+     * @return mixed
+     */
+    public static function upload($file)
+    {
+        $destinationPath    = 'uploads/slider'; // upload path
+        $extension          = $file->getClientOriginalExtension(); // getting image extension
+        $fileName           = rand(11111,99999).'.'.$extension; // renameing image
+        $upload_success     =$file->move($destinationPath, $fileName);
+
+        return $upload_success->getPathname();
+    }
 
 }
