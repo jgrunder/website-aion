@@ -90,8 +90,9 @@ class AdminController extends Controller
             default:
                 $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
                 break;
-
         }
+
+        $results->appends(['search_value' => $searchValue, 'search_type' => $searchType]);
 
         return view('admin.search', [
             'searchType' => $searchType,
