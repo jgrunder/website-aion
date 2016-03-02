@@ -82,13 +82,13 @@ class AdminController extends Controller
 
         switch ($searchType){
             case 'character':
-                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
+                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
                 break;
             case 'shop_item':
-                $results = ShopItem::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
+                $results = ShopItem::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
                 break;
             default:
-                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(15);
+                $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
                 break;
         }
 
