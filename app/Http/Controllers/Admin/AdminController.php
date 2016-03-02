@@ -19,26 +19,6 @@ class AdminController extends Controller
 {
 
     /**
-     * GET /admin/config
-     */
-    public function config(Request $request)
-    {
-        if($request->isMethod('post')) {
-            $configs = $request->except('_token');
-
-            foreach ($configs as $key => $value) {
-                $keyReplace = str_replace('aion_', 'aion.', $key);
-                Config::set($keyReplace, $value);
-            }
-
-        }
-
-        return view('admin.config', [
-            'configs' => Config::get('aion')
-        ]);
-    }
-
-    /**
      * GET /admin/logs/{name}
      */
     public function logs($name)
