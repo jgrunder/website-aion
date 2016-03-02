@@ -396,4 +396,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'Admin\AdminController@addReals'
     ]);
 
+    // PAGE
+    route::match(['GET', 'POST'], 'slider', [
+      'as'            => 'admin.slider',
+      'uses'          => 'Admin\AdminController@slider'
+    ]);
+
 });

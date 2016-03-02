@@ -4,6 +4,7 @@ use App\Models\Gameserver\Ladder;
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
+use App\Models\Webserver\ConfigSlider;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -35,6 +36,7 @@ abstract class Controller extends BaseController {
         $this->topVotes();
         $this->topBg();
         $this->getLanguageFromCookie();
+        $this->getSlider();
     }
 
     /**
@@ -47,6 +49,14 @@ abstract class Controller extends BaseController {
 
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
+    }
+
+    /**
+     * Set Variables $slider
+     */
+    private function getSlider()
+    {
+        View::share('slider', ConfigSlider::all());
     }
 
     /**

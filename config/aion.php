@@ -35,21 +35,6 @@ return [
     ]
   ],
 
-  'slider'                   => [
-    [
-      'image'              => '1.jpg',
-      'title'              => 'Titre de l’article du slider 1'
-    ],
-    [
-      'image'              => '2.jpg',
-      'title'              => 'Titre de l’article du slider 2'
-    ],
-    [
-      'image'              => '3.jpg',
-      'title'              => 'Titre de l’article du slider 3'
-    ]
-  ],
-
   'logs'                     => [
     'path'                 => '/Users/letyrantmathieu/Desktop/logs-realAion/',
     'files'                => [

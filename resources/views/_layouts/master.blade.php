@@ -98,8 +98,8 @@
 
         <!-- SLIDER -->
         <ul id="bxslider">
-          @foreach(Config::get('aion.slider') as $value)
-            <li><img src="/images/slider/{{$value['image']}}" title="{{$value['title']}}"/></li>
+          @foreach($slider as $value)
+            <li><img src="/{{$value['path']}}" title="{{$value['title']}}"/></li>
           @endforeach
         </ul>
 

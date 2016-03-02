@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
+use App\Models\Webserver\ConfigSlider;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
 use App\Models\Webserver\LogsReals;
@@ -11,6 +12,7 @@ use App\Models\Webserver\Pages;
 use App\Models\Webserver\ShopItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -186,6 +188,26 @@ class AdminController extends Controller
         return view('admin.addreals', [
             'success' => $success,
             'errors'  => $errors
+        ]);
+    }
+
+    /**
+     * GET/POST /admin/sider
+     */
+    public function slider(Request $request)
+    {
+        if ($request->isMethod('POST')){
+            $data = $request->all();
+            ConfigSlider::create([
+                'title' => $data['title'],
+                'path'  => ConfigSlider::upload(Input::file('path'))
+            ]);
+        }
+
+        $slider = ConfigSlider::all();
+
+        return view('admin.slider', [
+            'slider' => $slider
         ]);
     }
 
