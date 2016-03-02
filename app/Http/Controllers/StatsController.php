@@ -22,7 +22,7 @@ class StatsController extends Controller {
         OpenGraph::setDescription(Lang::get('seo.online.description'));
 
         return view('stats.online', [
-            'users' => Player::online()->paginate(15)
+            'users' => Player::online()->paginate(100)
         ]);
     }
 
