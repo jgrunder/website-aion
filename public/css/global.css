@@ -1153,7 +1153,7 @@ nav.nav {
     position: absolute;
     top: -30px;
     right: 10px;
-    background-color: #332d31;
+    background-color: #081529;
     padding: 5px 10px 5px 10px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px; }
@@ -1294,7 +1294,7 @@ header.header {
       header.header .header_top .btn_user a:first-child:hover {
         background-color: #eeeeee; }
     header.header .header_top .btn_user a:last-child {
-      background-color: #332d31;
+      background-color: #081529;
       color: white;
       border-top-right-radius: 5px;
       position: relative;
@@ -1630,11 +1630,11 @@ div.container_single {
   div.container_single .container_single_top {
     width: 100%;
     height: 55px;
-    background: url("../images/container_top_background.jpg") no-repeat;
+    background: #f4f4f4;
     background-size: cover;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    color: white;
+    color: #2e2e2e;
     line-height: 55px;
     padding-left: 30px;
     text-transform: uppercase;
@@ -1720,11 +1720,11 @@ footer.footer {
   .container_left .news .news_top {
     width: 100%;
     height: 55px;
-    background: url("../images/top_news.jpg") no-repeat;
+    background-color: #f4f4f4;
     background-size: cover;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    color: white;
+    color: #2e2e2e;
     line-height: 55px;
     padding-left: 30px;
     text-transform: uppercase;
