@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loginserver\AccountData;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
-use App\Models\Loginserver\AccountData;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Mail;
 

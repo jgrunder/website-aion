@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
