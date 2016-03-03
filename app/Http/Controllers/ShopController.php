@@ -21,8 +21,8 @@ class ShopController extends Controller {
      */
     public function index()
     {
-        $top_purchased = ShopItem::where('purchased', '>', 0)->orderBy('purchased', 'DESC')->take(6)->get();
-        $accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
+        $top_purchased  = ShopItem::where('purchased', '>', 0)->orderBy('purchased', 'DESC')->take(6)->get();
+        $accountLevel   = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
 
         return view('shop.index', [
           'accountLevel'    => $accountLevel,
@@ -39,8 +39,8 @@ class ShopController extends Controller {
      */
     public function category($id)
     {
-        $items = ShopItem::where('id_sub_category', '=', $id)->paginate(9);
-        $accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
+        $items          = ShopItem::where('id_sub_category', '=', $id)->paginate(12);
+        $accountLevel   = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
 
         if($items->count() === 0) {
             return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.fail_category_id'));

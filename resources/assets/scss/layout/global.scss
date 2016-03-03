@@ -195,12 +195,37 @@ div.flash_messages {
     padding-top: 30px;
     color: #555555;
     li {
+		width: 20px;
+		height: 25px;
+		border: solid 1px #4c72a1;
+		background-color: #fff;
+		border-radius: 5px;
+		color: #4c72a1;
         display: inline-block;
         margin-left: 5px;
         margin-right: 5px;
+		text-align: center;
+		&.active{
+			background-color: #4c72a1;
+			color: white;
+		}
+		&.disabled{
+			border: solid 1px #cacaca;
+			color: #cacaca;
+		}
     }
+	span {
+		width: 100%;
+		height: 100%;
+		padding-top: 4px;
+		float: right;
+	}
     a {
-        color: #555555;
+		width: 100%;
+		height: 100%;
+		color: #4c72a1;
+		padding-top: 4px;
+		text-align: center;
         text-decoration: underline;
     }
 }

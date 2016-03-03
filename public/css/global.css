@@ -1093,11 +1093,33 @@ div.flash_messages {
   padding-top: 30px;
   color: #555555; }
   .pagination li {
+    width: 20px;
+    height: 25px;
+    border: solid 1px #4c72a1;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #4c72a1;
     display: inline-block;
     margin-left: 5px;
-    margin-right: 5px; }
+    margin-right: 5px;
+    text-align: center; }
+    .pagination li.active {
+      background-color: #4c72a1;
+      color: white; }
+    .pagination li.disabled {
+      border: solid 1px #cacaca;
+      color: #cacaca; }
+  .pagination span {
+    width: 100%;
+    height: 100%;
+    padding-top: 4px;
+    float: right; }
   .pagination a {
-    color: #555555;
+    width: 100%;
+    height: 100%;
+    color: #4c72a1;
+    padding-top: 4px;
+    text-align: center;
     text-decoration: underline; }
 
 .information_item {
