@@ -18,7 +18,7 @@
                             <h3>
                                 <img src="" alt="">
                                 <a href="http://aiondatabase.net/{{Cookie::get('language')}}/item/{{$item->id_item}}" target="_blank" class="databaseItem quality-{{\Illuminate\Support\Str::lower($item->quality_item)}}" data-id="{{$item->id_item}}">
-                                    {{\Illuminate\Support\Str::limit($item->name, 23, '...')}}
+                                    {{\Illuminate\Support\Str::limit($item->name, 20, '...')}}
                                 </a>
                             </h3>
 
