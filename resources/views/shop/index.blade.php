@@ -29,9 +29,7 @@
                             </ul>
 
                             <div class="buttons">
-                                @if(isset($accountLevel->level) && $accountLevel->level >= $item->level)
-                                    <a href="#" class="addItemInCart" data-id="{{$item->id_item}}">Add</a>
-                                @endif
+                                <a href="#" class="addItemInCart" data-id="{{$item->id_item}}">Add</a>
                                 <a href="#" class="previewItem" data-id="{{$item->id_item}}">Preview</a>
                             </div>
 
