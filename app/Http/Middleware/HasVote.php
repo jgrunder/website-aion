@@ -21,7 +21,7 @@ class HasVote {
     {
         if(Session::has('connected')){
 
-            var_dump($request->headers->get('referer'));
+            dd($request->headers->get('referer'));
 
             $accountId      = Session::get('user.id');
             $votesInConfig  = Config ::get('aion.vote.links');
