@@ -75,4 +75,12 @@ class AccountData extends Model {
         return $this->hasMany('App\Models\Gameserver\Player', 'account_id', 'id');
     }
 
+    /**
+     * Return account level
+     */
+    public function level()
+    {
+        return $this->belongsTo('App\Models\LoginServer\AccountLevel', 'account_id', 'id');
+    }
+
 }

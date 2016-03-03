@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserWasPurchasedReal;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
@@ -55,6 +56,7 @@ class PaiementController extends Controller {
                 if (LogsAllopass::insert($recall, Session::get('user.id')) !== null) {
 
                     AccountData::me(Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
+                    event(new UserWasPurchasedReal(Session::get('user.id')));
                     return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.realGiven')." reals");
 
                 }
@@ -158,6 +160,8 @@ class PaiementController extends Controller {
                         'city'	     => $city,
                         'address'    => $address
                     ]);
+
+                    event(new UserWasPurchasedReal($uid));
 
                 }
             }

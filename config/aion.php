@@ -103,6 +103,33 @@ return [
         'referer'            => null
       ],
     ]
+  ],
+
+  'levels' => [
+    [
+      'level' => 0,
+      'price' => 0
+    ],
+    [
+      'level' => 1,
+      'price' => 5
+    ],
+    [
+      'level' => 2,
+      'price' => 20
+    ],
+    [
+      'level' => 3,
+      'price' => 45
+    ],
+    [
+      'level' => 4,
+      'price' => 80
+    ],
+    [
+      'level' => 5,
+      'price' => 125
+    ]
   ]
 
 ];

@@ -6,8 +6,10 @@ use App\Http\Requests\ConnectUserRequest;
 use App\Http\Requests\SubscribeUserRequest;
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
+use App\Models\Loginserver\AccountLevel;
 use App\Models\Webserver\Pages;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
@@ -101,11 +103,27 @@ class UserController extends Controller
         // SEO
         SEOMeta::setTitle(Lang::get('seo.account.title'));
 
-        $players = Player::where('account_id', '=', Session::get('user.id'))->get();
+        $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
+        $accountLevel   = AccountLevel::where('account_id', Session::get('user.id'))->first();
+        $levels         = Config::get('aion.levels');
+
+        if(!$accountLevel){
+            $nextLevel = $levels[1];
+        } else {
+            $reverseLevels  = array_reverse($levels);;
+
+            if($accountLevel['level'] + 1 > $reverseLevels[0]['level']){
+                $nextLevel = $reverseLevels[0];
+            } else {
+                $nextLevel = $levels[$accountLevel['level'] + 1];
+            }
+        }
 
         return view('user.account', [
             'user'      => Session::get('user'),
-            'players'   => $players
+            'players'   => $players,
+            'level'     => $accountLevel,
+            'nextLevel' => $nextLevel
         ]);
     }
 

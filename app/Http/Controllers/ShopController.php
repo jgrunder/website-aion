@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gameserver\MyShop;
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
+use App\Models\Loginserver\AccountLevel;
 use App\Models\Webserver\ShopCategory;
 use App\Models\Webserver\ShopHistory;
 use App\Models\Webserver\ShopItem;
@@ -20,15 +21,17 @@ class ShopController extends Controller {
      */
     public function index()
     {
-      $top_purchased = ShopItem::where('purchased', '>', 0)->orderBy('purchased', 'DESC')->take(6)->get();
+        $top_purchased = ShopItem::where('purchased', '>', 0)->orderBy('purchased', 'DESC')->take(6)->get();
+        $accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
 
-      return view('shop.index', [
+        return view('shop.index', [
+          'accountLevel'    => $accountLevel,
           'categories'      => ShopCategory::with('name')->get(),
           'top'             => true,
           'items'           => $top_purchased,
           'items_cart'      => Cart::content(),
           'total'           => Cart::total()
-      ]);
+        ]);
     }
 
     /**
@@ -36,18 +39,20 @@ class ShopController extends Controller {
      */
     public function category($id)
     {
-      $items = ShopItem::where('id_sub_category', '=', $id)->paginate(9);
+        $items = ShopItem::where('id_sub_category', '=', $id)->paginate(9);
+        $accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
 
-      if($items->count() === 0) {
-        return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.fail_category_id'));
-      }
+        if($items->count() === 0) {
+            return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.fail_category_id'));
+        }
 
-      return view('shop.index', [
+        return view('shop.index', [
+          'accountLevel'    => $accountLevel,
           'categories'      => ShopCategory::with('name')->get(),
           'items'           => $items,
           'items_cart'      => Cart::content(),
           'total'           => Cart::total()
-      ]);
+        ]);
     }
 
     /**
@@ -68,8 +73,8 @@ class ShopController extends Controller {
             }
 
             return view('_modules.cart', [
-                'items_cart'      => Cart::content(),
-                'total'           => Cart::total()
+              'items_cart'      => Cart::content(),
+              'total'           => Cart::total()
             ]);
 
         }
@@ -92,8 +97,8 @@ class ShopController extends Controller {
         }
 
         return view('_modules.cart', [
-            'items_cart'      => Cart::content(),
-            'total'           => Cart::total()
+          'items_cart'      => Cart::content(),
+          'total'           => Cart::total()
         ]);
     }
 
@@ -119,10 +124,10 @@ class ShopController extends Controller {
         }
 
         return view('shop.summary', [
-            'categories'      => ShopCategory::with('name')->get(),
-            'items_cart'      => Cart::content(),
-            'total'           => Cart::total(),
-            'players'         => $players_array
+          'categories'      => ShopCategory::with('name')->get(),
+          'items_cart'      => Cart::content(),
+          'total'           => Cart::total(),
+          'players'         => $players_array
         ]);
     }
 
@@ -139,18 +144,18 @@ class ShopController extends Controller {
         foreach(Cart::content() as $item){
             ShopItem::where('id_item', '=', $item->options['id_item'])->increment('purchased', 1);
             MyShop::create([
-                'item'      => $item->options['id_item'],
-                'nb'        => $item->options['quantity'] * $item->qty,
-                'player_id' => $player_id
+              'item'      => $item->options['id_item'],
+              'nb'        => $item->options['quantity'] * $item->qty,
+              'player_id' => $player_id
             ]);
             ShopHistory::create([
-                'account_id'    => $account_id,
-                'player_id'     => $player_id,
-                'player_name'   => $player->name,
-                'item_id'       => $item->options['id_item'],
-                'quantity'      => $item->options['quantity'] * $item->qty,
-                'price'         => $item->price,
-                'name'          => $item->name,
+              'account_id'    => $account_id,
+              'player_id'     => $player_id,
+              'player_name'   => $player->name,
+              'item_id'       => $item->options['id_item'],
+              'quantity'      => $item->options['quantity'] * $item->qty,
+              'price'         => $item->price,
+              'name'          => $item->name,
             ]);
         }
 

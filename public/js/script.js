@@ -131,13 +131,24 @@
 					var $data = $(data);
 
 					$data.find('.show_random_bonus').parent().css('display', 'none');
+					$data.find('.item-icon').css('display', 'none');
 
 					$('.information_item').html($data.html());
 				});
 			});
 			$databaseItem.on('mouseleave', function() {
-				$('.information_item' ).remove();
+				$('.information_item').remove();
 			});
 		}
+
+		$('.item_shop').each(function() {
+			var itemId = $(this).find('h3 a').attr('data-id');
+			var that   = this;
+			$.get('/database/item/' + itemId, function(data) {
+				var $data 	= $(data);
+				var iconUrl = $data.find('.item-icon img[alt="icon"]').attr('src');
+				$(that).find('img').attr("src", iconUrl);
+			});
+		});
 
 	});

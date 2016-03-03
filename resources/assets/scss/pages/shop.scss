@@ -9,14 +9,28 @@
   padding: 10px;
   position: relative;
   margin-left: 13px;
-  ul {
-    padding: 15px 5px 5px 5px;
+  img {
+    width: 30px;
+    height: 30px;
+    float: left;
   }
   h3 {
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #8e8e8e;
-    font-size: 14px;
+    a {
+      padding-left: 5px;
+      font-size: 10px;
+    }
   }
+
+  ul {
+    padding: 5px 0px 5px 0px;
+    font-size: 11px;
+    .value {
+      color: #4c72a1;
+    }
+  }
+
   .buttons {
     display: flex;
     justify-content: center;

@@ -11,8 +11,8 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
+		'App\Events\UserWasPurchasedReal' => [
+			'App\Handlers\Events\GenerateUserLevel',
 		],
 	];
 
