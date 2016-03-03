@@ -1724,13 +1724,12 @@ footer.footer {
     background-size: cover;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    color: #2e2e2e;
     line-height: 55px;
     padding-left: 30px;
     text-transform: uppercase;
     font-weight: bold; }
     .container_left .news .news_top a {
-      color: white; }
+      color: #2e2e2e; }
   .container_left .news .news_body {
     background-color: #fcf8f7;
     padding: 30px;
