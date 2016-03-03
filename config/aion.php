@@ -95,12 +95,12 @@ return [
       [
         'name'               => 'RPG',
         'link'               => 'http://www.rpg-paradize.com/?page=vote&vote=99942',
-        'referer'            => 'http://www.rpg-paradize.com/out.php?num=99942'
+        'referer'            => 'http://www.rpg-paradize.com/site-RealAion+4.9+-99942'
       ],
       [
         'name'               => 'Gowonda',
         'link'               => 'http://www.gowonda.com/vote.php?server_id=5635',
-        'referer'            => 'http://www.gowonda.com/out.php?server_id=5635'
+        'referer'            => 'http://www.gowonda.com/serveur-aion-5635-RealAion-4.9-!.htm'
       ],
     ]
   ],
