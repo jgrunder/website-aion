@@ -76,6 +76,10 @@ input-placeholder{
 	&:hover {
 		border: 1px solid $input_color_hover;
 	}
+	&.block{
+		display: block;
+		margin-bottom: 10px;
+	}
 }
 .input_error {
 	&:focus, &:hover {
@@ -88,6 +92,14 @@ input-placeholder{
 	left: 5px;
 	top: -8px;
 	color: #fe3432;
+	font-size: 14px;
+	display: inline-block;
+}
+.success_form {
+	position: relative;
+	left: 5px;
+	top: -8px;
+	color: #53a248;
 	font-size: 14px;
 	display: inline-block;
 }
@@ -142,6 +154,11 @@ input[type="range"]::-webkit-slider-thumb{
 		border-bottom: 3px solid #53a248;
 		color: white;
 		background-color: #4b9841;
+	}
+	&.btn-small{
+		font-size: 12px;
+		height: 30px;
+		padding: 5px 20px 5px 20px;
 	}
 }
 

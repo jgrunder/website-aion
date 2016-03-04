@@ -21,7 +21,9 @@
                         <li>Email : {{$user['email']}}</li>
                     </ul>
 
-                    <br>
+                    <a href="{{Route('user.account.edit')}}" class="btn btn-small">Modifier mon compte</a>
+
+                    <br><br>
 
                     <h2>Boutique :</h2>
 

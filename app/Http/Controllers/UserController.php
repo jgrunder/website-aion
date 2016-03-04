@@ -9,6 +9,7 @@ use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountLevel;
 use App\Models\Webserver\Pages;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
@@ -124,6 +125,53 @@ class UserController extends Controller
             'players'   => $players,
             'level'     => $accountLevel,
             'nextLevel' => $nextLevel
+        ]);
+    }
+
+    public function edit(Request $request)
+    {
+        // SEO
+        SEOMeta::setTitle(Lang::get('seo.account.title'));
+
+        $errors  = [];
+        $success = [];
+
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            // Password
+            if($data['password'] && ($data['password'] !== $data['password_confirmation'])){
+                $errors['password'] = 'Les mots de passe ne correspondent pas';
+            } else if($data['password'] && ($data['password'] === $data['password_confirmation'])){
+                AccountData::where('id', Session::get('user.id'))->update([
+                    'password' => base64_encode(sha1($data['password'], true))
+                ]);
+                $success['password'] = 'Mot de passe sauvegardé';
+            }
+
+            // Pseudo
+            if($data['pseudo']){
+                $accountBaseOnPseudo = AccountData::where('pseudo', $data['pseudo'])->where('id', '<>', Session::get('user.id'))->first();
+
+                if($accountBaseOnPseudo){
+                    $errors['pseudo'] = 'Le pseudo est déjà pris';
+                } else {
+                    AccountData::where('id', Session::get('user.id'))->update([
+                      'pseudo' => $data['pseudo']
+                    ]);
+                    Session::put('user.pseudo', $data['pseudo']);
+                    $success['pseudo'] = 'Pseudo sauvegardé';
+                }
+            }
+
+        }
+
+        $user = AccountData::where('id', Session::get('user.id'))->first();
+
+        return view('user.edit', [
+            'user'      => $user,
+            'errors'    => $errors,
+            'success'   => $success
         ]);
     }
 

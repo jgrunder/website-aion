@@ -987,6 +987,9 @@ input-placeholder {
     border: 1px solid #8e8e8e; }
   .input:hover {
     border: 1px solid #8e8e8e; }
+  .input.block {
+    display: block;
+    margin-bottom: 10px; }
 
 .input_error {
   border: 1px solid #ff4c23; }
@@ -1000,6 +1003,17 @@ input-placeholder {
   color: #fe3432;
   font-size: 14px;
   display: inline-block; }
+
+.error {
+  color: #fe3432;
+  font-size: 14px;
+  display: block;
+}
+.success {
+  color: #53a248;
+  font-size: 14px;
+  display: block;
+}
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -1049,6 +1063,10 @@ input[type="range"]::-webkit-slider-thumb {
     border-bottom: 3px solid #53a248;
     color: white;
     background-color: #4b9841; }
+  .btn.btn-small {
+    font-size: 12px;
+    height: 30px;
+    padding: 5px 20px 5px 20px; }
 
 /*
  * TABLE

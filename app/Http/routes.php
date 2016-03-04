@@ -199,6 +199,13 @@ Route::group(['prefix' => 'user'], function()
         'uses'       => 'UserController@account'
     ]);
 
+    // EDIT ACCOUNT
+    Route::match(['GET', 'POST'], 'edit', [
+        'as'         => 'user.account.edit',
+        'middleware' => 'connected',
+        'uses'       => 'UserController@edit'
+    ]);
+
     // GET LOST PASSWORD
     Route::match(['GET', 'POST'], 'lost-password', [
         'as'         => 'user.lost_password',
