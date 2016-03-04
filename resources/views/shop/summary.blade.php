@@ -36,13 +36,19 @@
                         </tr>
                     </table>
 
-                    {!! Form::open() !!}
+                    @if($players)
+                        {!! Form::open() !!}
 
-                    {!! Form::select('player_id', $players, null, ['class' => 'select']) !!}
+                        {!! Form::select('player_id', $players, null, ['class' => 'select']) !!}
 
-                    <input type="submit" class="btn" value="Acheter"/>
+                        <input type="submit" class="btn" value="Acheter"/>
 
-                    {!! Form::close() !!}
+                        {!! Form::close() !!}
+                    @else
+                        <br>
+                        <center><a href="{{Route('shop')}}" class="btn">Vous n'avez pas de personnage sur le serveur</a></center>
+                    @endif
+
 
                 </div>
                 <div class="news_footer"></div>

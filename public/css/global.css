@@ -1043,9 +1043,11 @@ input[type="range"]::-webkit-slider-thumb {
           transition: all 0.3s; }
   .btn:hover {
     background-color: #53a248;
+    color: white;
     border-bottom: 3px solid #478a3d; }
   .btn:active {
     border-bottom: 3px solid #53a248;
+    color: white;
     background-color: #4b9841; }
 
 /*

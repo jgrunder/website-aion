@@ -11,7 +11,7 @@
         <tbody>
         @foreach ($items_cart as $item)
             <tr>
-                <td width="45%" style="text-align: left; padding-left: 2px">{{$item->name}}</td>
+                <td width="45%" style="font-size: 10px; text-align: left; padding-left: 2px">{{\Illuminate\Support\Str::limit($item->name, 20, '...')}}</td>
                 <td>{{$item->price}}</td>
                 <td width="15%">{{$item->qty * $item->options['quantity']}}</td>
                 <td><a href="#" data-id="{{$item->options['id_item']}}" class="fa fa-trash-o removeItemInCart"></a></td>
