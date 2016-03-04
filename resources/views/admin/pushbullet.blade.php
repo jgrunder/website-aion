@@ -12,7 +12,7 @@
                 <div class="col col-md-4 col-md-offset-4 text-center">
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        La notification a été envoyé à {{$count}} personnes.
+                        La notification a été envoyé à {{$count}} @if($count == 0 || $count == 1) personne @else personnes @endif.
                     </div>
                 </div>
             @endif
