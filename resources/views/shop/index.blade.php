@@ -29,7 +29,11 @@
                             </ul>
 
                             <div class="buttons">
-                                <a href="#" class="addItemInCart" data-id="{{$item->id_item}}">Add</a>
+                                @if((isset($accountLevel->level) && $accountLevel->level >= $item->level) || (!isset($accountLevel) && $item->level == 0))
+                                    <a href="#" class="addItemInCart" data-id="{{$item->id_item}}">Add</a>
+                                @else
+                                    <a style="opacity: 0;"></a>
+                                @endif
                                 <a href="#" class="previewItem" data-id="{{$item->id_item}}">Preview</a>
                             </div>
 
