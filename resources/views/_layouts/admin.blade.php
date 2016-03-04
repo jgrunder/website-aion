@@ -78,6 +78,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autre <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.slider')}}">Slider</a></li>
+                            <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
                             <li><a href="{{Route('admin.add.reals')}}">Ajouter des Reals</a></li>
                             <li><a href="{{Route('admin.reals')}}">Log Reals</a></li>
                             <li><a href="{{Route('admin.allopass')}}">Log Allopass</a></li>

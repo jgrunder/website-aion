@@ -128,6 +128,9 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * GET /user/edit
+     */
     public function edit(Request $request)
     {
         // SEO
@@ -162,6 +165,14 @@ class UserController extends Controller
                     Session::put('user.pseudo', $data['pseudo']);
                     $success['pseudo'] = 'Pseudo sauvegardé';
                 }
+            }
+
+            // PushBullet
+            if($data['pushbullet']){
+                AccountData::where('id', Session::get('user.id'))->update([
+                  'pushbullet' => $data['pushbullet']
+                ]);
+                $success['pushbullet'] = 'Pushbullet sauvegardé';
             }
 
         }

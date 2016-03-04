@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Lahaxearnaud\LaravelPushbullet\LaravelPushbulletFacade;
 
 class AdminController extends Controller
 {
@@ -192,4 +193,23 @@ class AdminController extends Controller
         ]);
     }
 
+    public function pushbullet(Request $request)
+    {
+        $count = null;
+
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            $pushBulletsEmails = AccountData::select('pushbullet')->where('pushbullet', '!=', '')->get();
+            $count = $pushBulletsEmails->count();
+
+            foreach($pushBulletsEmails as $pushbullet){
+                LaravelPushbulletFacade::user($pushbullet->pushbullet)->note('[RealAion] '.$data['title'], $data['content']);
+            }
+        }
+
+        return view('admin.pushbullet', [
+            'count' => $count
+        ]);
+    }
 }

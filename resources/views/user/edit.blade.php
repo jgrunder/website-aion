@@ -24,6 +24,14 @@
                         <span class="success">{{$success['pseudo']}}</span>
                     @endif
 
+                    <span>PushBullet : </span>
+                    {!! Form::text('pushbullet', $user->pushbullet, ['placeholder' => 'Email PushBullet', 'class' => 'input block']) !!}
+                    @if(isset($errors['pushbullet']))
+                        <span class="error">{{$errors['pushbullet']}}</span>
+                    @elseif(isset($success['pushbullet']))
+                        <span class="success">{{$success['pushbullet']}}</span>
+                    @endif
+
                     <span>Nouveau mot de passe : </span>
                     {!! Form::password('password', ['placeholder' => 'Mot de passe', 'class' => 'input block']) !!}
                     {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input block']) !!}

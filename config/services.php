@@ -34,4 +34,8 @@ return [
 		'secret' => '',
 	],
 
+	'pushbullet' => [
+		'apiKey' => 'o.Vv2qzQ8Mbi16dlyWvP8P4RBYuPbhbGRm',
+	],
+
 ];

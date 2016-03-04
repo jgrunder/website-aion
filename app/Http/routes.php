@@ -397,10 +397,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level'
         'uses'          => 'Admin\AdminController@addReals'
     ]);
 
-    // PAGE
+    // SLIDER
     route::match(['GET', 'POST'], 'slider', [
       'as'            => 'admin.slider',
       'uses'          => 'Admin\AdminController@slider'
+    ]);
+
+    // SLIDER
+    route::match(['GET', 'POST'], 'pushbullet', [
+      'as'            => 'admin.pushbullet',
+      'uses'          => 'Admin\AdminController@pushbullet'
     ]);
 
 });
