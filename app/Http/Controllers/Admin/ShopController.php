@@ -77,6 +77,7 @@ class ShopController extends Controller
               'price'           => $request->input('price'),
               'quantity'        => $request->input('quantity'),
               'level'           => $request->input('level'),
+              'purchased'       => 0
           ]);
 
           if($itemAdded !== null){
