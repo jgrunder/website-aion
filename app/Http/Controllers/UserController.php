@@ -187,6 +187,28 @@ class UserController extends Controller
     }
 
     /**
+     * GET /user/unlock
+     */
+    public function unlockPlayer($playerId, $accountId)
+    {
+        $player = Player::where('account_id', $accountId)->where('id', $playerId)->where('online', 0)->first();
+
+        if($player){
+            Player::where('id', $playerId)->update([
+                'world_id'  => '120010000',
+                'x'         => '1275.5504',
+                'y'         => '1169.5846',
+                'z'         => '215.21492',
+                'heading'   => 30
+            ]);
+
+            return 'OK';
+        } else {
+            return 'KO';
+        }
+    }
+
+    /**
      * Create Session with information
      *
      * @param $user

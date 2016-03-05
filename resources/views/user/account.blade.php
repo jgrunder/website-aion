@@ -42,6 +42,7 @@
                             <th>Nom</th>
                             <th>Faction</th>
                             <th>Classe</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,6 +52,7 @@
                                 <td>{{$player->name}}</td>
                                 <td><span class="{{Lang::get('aion.race_logo.'.$player->race)}}"></span></td>
                                 <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$player->player_class)}}"></span></td>
+                                <td><a class="btnUnluckPlayer" player-id="{{$player->id}}" account-id="{{Session::get('user.id')}}">Débloquer</a></td>
                             </tr>
                         @endforeach
                         </tbody>

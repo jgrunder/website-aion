@@ -44,6 +44,25 @@
 		});
 
 		/*
+		 * unlock player
+		 */
+		$('.btnUnluckPlayer').on('click', function(e) {
+			var playerId 	= $(this).attr('player-id');
+			var accountId 	= $(this).attr('account-id');
+			var that 		= $(this);
+
+			$.get("/user/unlock/"+playerId+"/"+accountId, function( data ) {
+				if(data == 'OK'){
+					that.text('Débloqué');
+				} else {
+					that.text('Erreur');
+				}
+			});
+
+			e.preventDefault();
+		});
+
+		/*
 		 * Shop Preview alert
 		 */
 		$('.previewItem').on('click', function(e) {
@@ -116,6 +135,8 @@
 				$('#custom_paypal').val('reals='+nbTool+'&uid='+uid);
 			});
 		}
+
+
 
 		/*
 		 * AION DATABASE INFO BULLE

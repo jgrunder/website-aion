@@ -192,6 +192,12 @@ Route::group(['prefix' => 'user'], function()
         'uses'  => 'UserController@logout'
     ]);
 
+    // Unluck player
+    Route::get('unlock/{playerId}/{accountId}', [
+        'as' => 'user.unlock.player',
+        'uses'=> 'UserController@unlockPlayer'
+    ]);
+
     // GET ACCOUNT
     Route::get('account', [
         'as'         => 'user.account',
