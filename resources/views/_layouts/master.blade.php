@@ -17,17 +17,8 @@
 </head>
 <body>
 
-
     <!-- Flash Messages -->
-    @if(Session::has('success'))
-      <div class="flash_messages success" id="flashMsg">
-          <p>{{ Session::get('success') }}</p>
-      </div>
-    @elseif(Session::has('error'))
-    <div class="flash_messages error" id="flashMsg">
-        <p>{{ Session::get('error') }}</p>
-    </div>
-    @endif
+    @include('_modules.flash_message')
 
     <!-- NAV -->
     <nav class="nav">
@@ -40,12 +31,12 @@
         <ul class="menu">
             <li><a href="{{Route('home')}}">{{Lang::get('all.nav.home')}}</a></li>
             <li>
-              <a href="#">{{Lang::get('all.nav.about')}}</a>
-              <ul class="sub_menu">
-                <li><a href="{{Route('page.teamspeak')}}">{{Lang::get('all.nav.teamspeak')}}</a></li>
-                <li><a href="{{Route('page.team')}}">{{Lang::get('all.nav.team')}}</a></li>
-                <li><a href="mailto:{{Config::get('aion.contactMail')}}">{{Lang::get('all.nav.contact')}}</a></li>
-              </ul>
+                <a href="#">{{Lang::get('all.nav.about')}}</a>
+                <ul class="sub_menu">
+                    <li><a href="{{Route('page.teamspeak')}}">{{Lang::get('all.nav.teamspeak')}}</a></li>
+                    <li><a href="{{Route('page.team')}}">{{Lang::get('all.nav.team')}}</a></li>
+                    <li><a href="mailto:{{Config::get('aion.contactMail')}}">{{Lang::get('all.nav.contact')}}</a></li>
+                </ul>
             </li>
             <li><a href="{{Route('page.rules')}}">{{Lang::get('all.nav.rules')}}</a></li>
             <li><a href="{{Route('page.rates')}}">{{Lang::get('all.nav.rates')}}</a></li>
@@ -70,52 +61,42 @@
     <!-- HEADER -->
     <header class="header">
 
-      <!-- TOP -->
-      <div class="header_top">
-        <div class="status">
-          @foreach($serversStatus as $value)
-            <span>
-              {{Lang::get('all.layout.status_of')}} {{$value['name']}} : <span class="{{($value['status']) ? 'online' : 'offline'}}">{{($value['status']) ? 'ON' : 'OFF'}}</span>
-            </span>
-          @endforeach
-        </div>
-        <div class="btn_user">
-          @if(Session::has('connected'))
-            <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.real')}} Reals)</a>
-            <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
-          @else
-            <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>
-            <a href="{{Route('user.subscribe')}}">{{Lang::get('all.nav.subscribe')}}</a>
-          @endif
-        </div>
-      </div>
-
-      <!-- USER LOGIN -->
-      @include('_modules.login')
-
-      <!-- SLIDER | SOCIAL -->
-      <div class="header_bottom">
-
-        <!-- SLIDER -->
-        <ul id="bxslider">
-          @foreach($slider as $value)
-            <li><img src="/{{$value['path']}}" title="{{$value['title']}}"/></li>
-          @endforeach
-        </ul>
-
-        <div class="slider_controller">
-          <span id="slider-prev"></span>
-          <span id="slider-next"></span>
+        <!-- TOP -->
+        <div class="header_top">
+            <div class="status">
+                @foreach($serversStatus as $value)
+                    <span>
+                    {{Lang::get('all.layout.status_of')}} {{$value['name']}} : <span class="{{($value['status']) ? 'online' : 'offline'}}">{{($value['status']) ? 'ON' : 'OFF'}}</span>
+                    </span>
+                @endforeach
+            </div>
+            <div class="btn_user">
+                @if(Session::has('connected'))
+                    <a href="{{Route('user.account')}}">{{Lang::get('all.nav.account')}} ({{Session::get('user.real')}} Reals)</a>
+                    <a href="{{Route('user.logout')}}">{{Lang::get('all.nav.logout')}}</a>
+                @else
+                    <a href="#" id="btn_connexion">{{Lang::get('all.nav.login')}}</a>
+                    <a href="{{Route('user.subscribe')}}">{{Lang::get('all.nav.subscribe')}}</a>
+                @endif
+            </div>
         </div>
 
-        <!-- SOCIAL -->
-        <div class="social">
-          <a href="{{Config::get('aion.link_facebook')}}" target="_blank" class="fa fa-facebook"></a>
-          <a href="{{Config::get('aion.link_twitter')}}" target="_blank" class="fa fa-twitter"></a>
-          <a href="{{Config::get('aion.link_youtube')}}" target="_blank"class="fa fa-youtube-play"></a>
-        </div>
+        <!-- USER LOGIN -->
+        @include('_modules.login')
 
-      </div>
+        <!-- SLIDER | SOCIAL -->
+        <div class="header_bottom">
+
+            @include('_modules.slider')
+
+            <!-- SOCIAL -->
+            <div class="social">
+                <a href="{{Config::get('aion.link_facebook')}}" target="_blank" class="fa fa-facebook"></a>
+                <a href="{{Config::get('aion.link_twitter')}}" target="_blank" class="fa fa-twitter"></a>
+                <a href="{{Config::get('aion.link_youtube')}}" target="_blank"class="fa fa-youtube-play"></a>
+            </div>
+
+        </div>
 
     </header>
 
@@ -124,11 +105,11 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p>{{Lang::get('all.layout.footer_1')}}</p><br>
-      @if (Session::has('connected') && Session::get('user.access_level') > 0)
-        <p><a href="{{Route('admin')}}">Administration</a></p><br>
-      @endif
-      <p>{{Lang::get('all.layout.footer_2')}} <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a> | Copyright 2015 © Real Aion</p>
+        <p>{{Lang::get('all.layout.footer_1')}}</p><br>
+        @if (Session::has('connected') && Session::get('user.access_level') > 0)
+            <p><a href="{{Route('admin')}}">Administration</a></p><br>
+        @endif
+        <p>{{Lang::get('all.layout.footer_2')}} <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a> | Copyright 2015 © Real Aion</p>
     </footer>
 
     <!-- JAVASCRIPTS -->
@@ -138,7 +119,7 @@
     <script type="text/javascript" src="/js/script.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
