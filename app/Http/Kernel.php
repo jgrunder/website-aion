@@ -27,7 +27,6 @@ class Kernel extends HttpKernel {
 	 */
 	protected $routeMiddleware = [
         'connected'       => 'App\Http\Middleware\Connected',
-        'unConnected'     => 'App\Http\Middleware\UnConnected',
         'AccessLevel'     => 'App\Http\Middleware\AccessLevel',
     ];
 
