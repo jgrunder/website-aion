@@ -1004,16 +1004,13 @@ input-placeholder {
   font-size: 14px;
   display: inline-block; }
 
-.error {
-  color: #fe3432;
-  font-size: 14px;
-  display: block;
-}
-.success {
+.success_form {
+  position: relative;
+  left: 5px;
+  top: -8px;
   color: #53a248;
   font-size: 14px;
-  display: block;
-}
+  display: inline-block; }
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -1122,7 +1119,8 @@ div.flash_messages {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
-    text-align: center; }
+    text-align: center;
+    padding-top: 4px; }
     .pagination li.active {
       background-color: #4c72a1;
       color: white; }
@@ -1131,14 +1129,11 @@ div.flash_messages {
       color: #cacaca; }
   .pagination span {
     width: 100%;
-    height: 100%;
-    padding-top: 4px;
-    float: right; }
+    height: 100%; }
   .pagination a {
     width: 100%;
     height: 100%;
     color: #4c72a1;
-    padding-top: 4px;
     text-align: center;
     text-decoration: underline; }
 
@@ -1891,6 +1886,7 @@ div.subscribe .g-recaptcha {
     margin-bottom: 0px !important;
     color: #4c72a1; }
   .container_shop_cart .btn {
+    width: 40%;
     color: white;
     margin-top: 30px;
     padding-top: 15px;
