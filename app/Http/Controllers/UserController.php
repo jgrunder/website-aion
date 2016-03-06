@@ -169,10 +169,14 @@ class UserController extends Controller
 
             // PushBullet
             if($data['pushbullet']){
-                AccountData::where('id', Session::get('user.id'))->update([
-                  'pushbullet' => $data['pushbullet']
-                ]);
-                $success['pushbullet'] = 'Pushbullet sauvegardé';
+								if(!filter_var($data['pushbullet'], FILTER_VALIDATE_EMAIL)){
+									$errors['pushbullet'] = 'Merci de rentrer un email valide';
+								} else {
+									AccountData::where('id', Session::get('user.id'))->update([
+	                  'pushbullet' => $data['pushbullet']
+	                ]);
+	                $success['pushbullet'] = 'Pushbullet sauvegardé';
+								}
             }
 
         }
