@@ -48,9 +48,9 @@ return [
         'title'       => "Online players",
         'description' => "Do you know who is online on the server?"
     ],
-    'abyss'           => [
-        'title'       => "Abyss ranking",
-        'description' => "Do you know who is the best player in PvP? Maybe you?"
+    'legions'           => [
+        'title'       => "Legions Ranking",
+        'description' => "Do you know who is the best legions?"
     ],
     'bg'              => [
         'title'       => "Battleground ranking",

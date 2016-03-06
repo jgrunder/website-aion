@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Gameserver\Ladder;
+use App\Models\Gameserver\Legion;
 use App\Models\Gameserver\Player;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -27,16 +28,18 @@ class StatsController extends Controller {
     }
 
     /**
-     * GET /stats/abyss
+     * GET /stats/legions
      */
-    public function abyss()
+    public function legions()
     {
         // SEO
-        SEOMeta::setTitle(Lang::get('seo.abyss.title'));
-        SEOMeta::setDescription(Lang::get('seo.abyss.description'));
-        OpenGraph::setDescription(Lang::get('seo.abyss.description'));
+        SEOMeta::setTitle(Lang::get('seo.legions.title'));
+        SEOMeta::setDescription(Lang::get('seo.legions.description'));
+        OpenGraph::setDescription(Lang::get('seo.legions.description'));
 
-        return view('stats.abyss');
+        return view('stats.legions', [
+            'legions' => Legion::orderBy('contribution_points', 'desc')->paginate(100)
+        ]);
     }
 
     /**

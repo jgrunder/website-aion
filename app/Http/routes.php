@@ -52,7 +52,7 @@ Route::group(['prefix' => 'user'], function() {
 /** Stats */
 Route::group(['prefix' => 'stats'], function() {
     Route::get('players-online', ['as' => 'stats.online', 'uses' => 'StatsController@online']);
-    Route::get('abyss', ['as' => 'stats.abyss', 'uses' => 'StatsController@abyss']);
+    Route::get('legions', ['as' => 'stats.legions', 'uses' => 'StatsController@legions']);
     Route::get('bg', ['as' => 'stats.bg', 'uses' => 'StatsController@bg']);
 });
 

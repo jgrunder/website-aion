@@ -49,9 +49,9 @@ return [
         'title'       => "Joueurs en ligne",
         'description' => "Venez voir qui est actuellement en ligne sur le serveur RealAion."
     ],
-    'abyss'           => [
-        'title'       => "Classement abyssal",
-        'description' => "Venez voir qui est le plus fort en PVP Abyssal sur le serveur RealAion."
+    'legions'           => [
+        'title'       => "Classement des légions",
+        'description' => "Venez voir qu'elle est la légions la plus forte de RealAion"
     ],
     'bg'              => [
         'title'       => "Champs de batailles",

@@ -11,7 +11,7 @@ return [
         'rates'            => 'Rates',
         'stats'            => 'Stats',
         'online'           => 'Joueurs en lignes',
-        'abyss'            => 'Classement abyssal',
+        'legions'          => 'Classement des légions',
         'bg'               => 'Classement des BG',
         'forum'            => 'Forum',
         'shop'             => 'Boutique',
