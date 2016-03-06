@@ -26,7 +26,7 @@ Route::group(['prefix' => 'shop', 'middleware' => ['connected']], function() {
     Route::get('category/{id}', ['as' => 'shop.category', 'uses' => 'ShopController@category']);
     Route::get('add/{id}', ['as' => 'shop.add', 'uses' => 'ShopController@addToCart']);
     Route::get('remove/{id}', ['as' => 'shop.remove', 'uses' => 'ShopController@removeToCart']);
-    Route::get('summary/{mode}', ['as' => 'shop.summary', 'uses' => 'ShopController@summary']);
+    Route::get('summary', ['as' => 'shop.summary', 'uses' => 'ShopController@summary']);
     Route::post('summary', ['as' => 'shop.summary', 'uses' => 'ShopController@buy']);
 });
 
