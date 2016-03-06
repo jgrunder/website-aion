@@ -16,9 +16,9 @@ Route::pattern('AccountId', '[0-9]+');
 Route::get('/', ['as' => 'home', 'uses'   => 'HomeController@index']);
 Route::get('/reset-password/{token}/{name}', ['as' => 'resetpassword', 'uses' => 'LostPasswordController@reset']);
 Route::get('/news/{slug}/{id}', ['as' => 'news', 'uses' => 'HomeController@news']);
-Route::get('/vote/{id}', ['as' => 'vote', 'uses' => 'VoteController@index'])->middleware('connected');
+Route::get('/vote/{id}', ['as' => 'vote', 'uses' => 'VoteController@index', 'middleware' => 'connected']);
 Route::get('/language/{language}', ['as' => 'language', 'uses' => 'LanguageController@change']);
-Route::get('donation', ['as' => 'donation', 'uses' => 'PageController@donation'])->middleware('connected');
+Route::get('donation', ['as' => 'donation', 'uses' => 'PageController@donation', 'middleware' => 'connected']);
 
 /** Shop */
 Route::group(['prefix' => 'shop', 'middleware' => ['connected']], function() {
@@ -26,16 +26,16 @@ Route::group(['prefix' => 'shop', 'middleware' => ['connected']], function() {
     Route::get('category/{id}', ['as' => 'shop.category', 'uses' => 'ShopController@category']);
     Route::get('add/{id}', ['as' => 'shop.add', 'uses' => 'ShopController@addToCart']);
     Route::get('remove/{id}', ['as' => 'shop.remove', 'uses' => 'ShopController@removeToCart']);
-    Route::get('summary/', ['as' => 'shop.summary', 'uses' => 'ShopController@summary']);
+    Route::get('summary/{mode}', ['as' => 'shop.summary', 'uses' => 'ShopController@summary']);
     Route::post('summary', ['as' => 'shop.summary', 'uses' => 'ShopController@buy']);
 });
 
 /** Paiement */
-Route::get('allopass', ['as' => 'allopass', 'uses' => 'PaiementController@allopass'])->middleware('connected');
-Route::get('allopass/success', ['as' => 'allopass.success', 'uses' => 'PaiementController@allopassSuccess'])->middleware('connected');
-Route::get('paypal', ['as' => 'paypal', 'uses' => 'PaiementController@paypal'])->middleware('connected');
-Route::post('paypal-ipn', ['as' => 'paypal.ipn', 'uses' => 'PaiementController@paypalIpn']);
-Route::get('paypal-valid', ['as' => 'paypal.valid', 'uses' => 'PaiementController@paypalValid'])->middleware('connected');
+Route::get('allopass', ['as' => 'allopass', 'uses' => 'PaiementController@allopass', 'middleware' => 'connected']);
+Route::get('allopass/success', ['as' => 'allopass.success', 'uses' => 'PaiementController@allopassSuccess', 'middleware' => 'connected']);
+Route::get('paypal', ['as' => 'paypal', 'uses' => 'PaiementController@paypal', 'middleware' => 'connected']);
+Route::post('paypal-ipn', ['as' => 'paypal.ipn', 'uses' => 'PaiementController@paypalIpn', 'middleware' => 'connected']);
+Route::get('paypal-valid', ['as' => 'paypal.valid', 'uses' => 'PaiementController@paypalValid', 'middleware' => 'connected']);
 
 /** User */
 Route::group(['prefix' => 'user'], function() {
@@ -44,8 +44,8 @@ Route::group(['prefix' => 'user'], function() {
     Route::post('login', 'UserController@connect');
     Route::get('logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);
     Route::get('unlock/{playerId}/{accountId}', ['as' => 'user.unlock.player', 'uses'=> 'UserController@unlockPlayer']);
-    Route::get('account', ['as' => 'user.account', 'uses' => 'UserController@account'])->middleware('connected');
-    Route::match(['GET', 'POST'], 'edit', ['as' => 'user.account.edit', 'uses' => 'UserController@edit'])->middleware('connected');
+    Route::get('account', ['as' => 'user.account', 'uses' => 'UserController@account', 'middleware' => 'connected']);
+    Route::match(['GET', 'POST'], 'edit', ['as' => 'user.account.edit', 'uses' => 'UserController@edit', 'middleware' => 'connected']);
     Route::match(['GET', 'POST'], 'lost-password', ['as' => 'user.lost_password', 'uses' => 'LostPasswordController@index']);
 });
 
