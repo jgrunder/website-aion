@@ -9,7 +9,7 @@
             <table>
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>Position</th>
                     <th>Nom</th>
                     <th>Level</th>
                     <th>Points</th>
