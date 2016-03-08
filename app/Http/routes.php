@@ -34,8 +34,8 @@ Route::group(['prefix' => 'shop', 'middleware' => ['connected']], function() {
 Route::get('allopass', ['as' => 'allopass', 'uses' => 'PaiementController@allopass', 'middleware' => 'connected']);
 Route::get('allopass/success', ['as' => 'allopass.success', 'uses' => 'PaiementController@allopassSuccess', 'middleware' => 'connected']);
 Route::get('paypal', ['as' => 'paypal', 'uses' => 'PaiementController@paypal', 'middleware' => 'connected']);
-Route::post('paypal-ipn', ['as' => 'paypal.ipn', 'uses' => 'PaiementController@paypalIpn', 'middleware' => 'connected']);
-Route::get('paypal-valid', ['as' => 'paypal.valid', 'uses' => 'PaiementController@paypalValid', 'middleware' => 'connected']);
+Route::post('paypal-ipn', ['as' => 'paypal.ipn', 'uses' => 'PaiementController@paypalIpn']);
+Route::get('paypal-valid', ['as' => 'paypal.valid', 'uses' => 'PaiementController@paypalValid']);
 
 /** User */
 Route::group(['prefix' => 'user'], function() {
