@@ -25,7 +25,7 @@
                     @endif
 
                     <span>PushBullet : </span>
-                    {!! Form::text('pushbullet', $user->pushbullet, ['placeholder' => 'Email PushBullet', 'class' => 'input block']) !!}
+                    {!! Form::email('pushbullet', $user->pushbullet, ['placeholder' => 'Email Pushbullet', 'class' => 'input block']) !!}
                     @if(isset($errors['pushbullet']))
                         <span class="error">{{$errors['pushbullet']}}</span>
                     @elseif(isset($success['pushbullet']))
