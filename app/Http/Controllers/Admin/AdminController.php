@@ -193,18 +193,27 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * GET/POST /admin/pushbullet
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\View\View
+     */
     public function pushbullet(Request $request)
     {
         $count = null;
 
         if($request->isMethod('post')){
-            $data = $request->all();
 
-            $pushBulletsEmails = AccountData::select('pushbullet')->where('pushbullet', '!=', '')->get();
-            $count = $pushBulletsEmails->count();
+            $data       = $request->all();
+            $accounts   = AccountData::select('pushbullet')->where('pushbullet', '!=', '')->get();
+            $count      = $accounts->count();
 
-            foreach($pushBulletsEmails as $pushbullet){
-                LaravelPushbulletFacade::user($pushbullet->pushbullet)->note('[RealAion] '.$data['title'], $data['content']);
+            foreach($accounts as $account){
+                if(filter_var($account->pushbullet, FILTER_VALIDATE_EMAIL)){
+                    LaravelPushbulletFacade::user($account->pushbullet)->note('[RealAion] '.$data['title'], $data['content']);
+                }
             }
         }
 
