@@ -72,23 +72,23 @@ Route::group(['prefix' => 'page'], function() {
 });
 
 /** Admin */
-Route::group(['prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 6], function() {
-    Route::get('home', ['as' => 'admin', 'uses' => 'Admin\NewsController@index']);
-    Route::get('search', ['as' => 'admin.search', 'uses' => 'Admin\AdminController@search']);
-    Route::get('news', ['as' => 'admin.news', 'uses' => 'Admin\NewsController@news']);
-    Route::get('logs/{name}', ['as' => 'admin.logs', 'uses' => 'Admin\AdminController@logs']);
-    Route::match(['GET', 'POST'], 'news-add', ['as' => 'admin.news.add', 'uses' => 'Admin\NewsController@newsAdd']);
-    Route::match(['GET', 'POST'], 'news-edit/{id}', ['as' => 'admin.news.edit', 'uses' => 'Admin\NewsController@newEdit']);
-    Route::get('news-delete/{id}', ['as' => 'admin.news.delete', 'uses' => 'Admin\NewsController@newsDelete']);
-    Route::match(['GET', 'POST'], 'shop-category', ['as' => 'admin.shop.category', 'uses' => 'Admin\ShopController@shopCategory']);
-    Route::match(['GET', 'POST'], 'shop-subcategory', ['as' => 'admin.shop.subcategory', 'uses' => 'Admin\ShopController@shopSubCategory']);
-    Route::match(['GET', 'POST'], 'shop-add', ['as' => 'admin.shop.add', 'uses' => 'Admin\ShopController@shopAdd']);
-    route::match(['GET', 'POST'], 'shop-edit/{id}', ['as' => 'admin.shop.edit', 'uses' => 'Admin\ShopController@shopEdit']);
-    route::get('allopass', ['as' => 'admin.allopass', 'uses' => 'Admin\AdminController@allopass']);
-    route::get('paypal', ['as' => 'admin.paypal', 'uses' => 'Admin\AdminController@paypal']);
-    route::get('reals', ['as' => 'admin.reals', 'uses' => 'Admin\AdminController@reals']);
-    route::match(['GET', 'POST'], 'page/{name}', ['as' => 'admin.page', 'uses' => 'Admin\AdminController@pageEdit']);
-    route::match(['GET', 'POST'], 'add-reals', ['as' => 'admin.add.reals', 'uses' => 'Admin\AdminController@addReals']);
-    route::match(['GET', 'POST'], 'slider', ['as' => 'admin.slider', 'uses' => 'Admin\AdminController@slider']);
-    route::match(['GET', 'POST'], 'pushbullet', ['as' => 'admin.pushbullet', 'uses' => 'Admin\AdminController@pushbullet']);
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 6], function() {
+    Route::get('home', ['as' => 'admin', 'uses' => 'NewsController@index']);
+    Route::get('search', ['as' => 'admin.search', 'uses' => 'AdminController@search']);
+    Route::get('news', ['as' => 'admin.news', 'uses' => 'NewsController@news']);
+    Route::get('logs/{name}', ['as' => 'admin.logs', 'uses' => 'AdminController@logs']);
+    Route::match(['GET', 'POST'], 'news-add', ['as' => 'admin.news.add', 'uses' => 'NewsController@newsAdd']);
+    Route::match(['GET', 'POST'], 'news-edit/{id}', ['as' => 'admin.news.edit', 'uses' => 'NewsController@newEdit']);
+    Route::get('news-delete/{id}', ['as' => 'admin.news.delete', 'uses' => 'NewsController@newsDelete']);
+    Route::match(['GET', 'POST'], 'shop-category', ['as' => 'admin.shop.category', 'uses' => 'ShopController@shopCategory']);
+    Route::match(['GET', 'POST'], 'shop-subcategory', ['as' => 'admin.shop.subcategory', 'uses' => 'ShopController@shopSubCategory']);
+    Route::match(['GET', 'POST'], 'shop-add', ['as' => 'admin.shop.add', 'uses' => 'ShopController@shopAdd']);
+    route::match(['GET', 'POST'], 'shop-edit/{id}', ['as' => 'admin.shop.edit', 'uses' => 'ShopController@shopEdit']);
+    route::get('allopass', ['as' => 'admin.allopass', 'uses' => 'AdminController@allopass']);
+    route::get('paypal', ['as' => 'admin.paypal', 'uses' => 'AdminController@paypal']);
+    route::get('reals', ['as' => 'admin.reals', 'uses' => 'AdminController@reals']);
+    route::match(['GET', 'POST'], 'page/{name}', ['as' => 'admin.page', 'uses' => 'AdminController@pageEdit']);
+    route::match(['GET', 'POST'], 'add-reals', ['as' => 'admin.add.reals', 'uses' => 'AdminController@addReals']);
+    route::match(['GET', 'POST'], 'slider', ['as' => 'admin.slider', 'uses' => 'AdminController@slider']);
+    route::match(['GET', 'POST'], 'pushbullet', ['as' => 'admin.pushbullet', 'uses' => 'AdminController@pushbullet']);
 });
