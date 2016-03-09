@@ -12,19 +12,20 @@ class DatabaseController extends Controller {
      */
     public function item($id)
     {
-      $key = 'item_'.$id;
+        $key = 'item_'.$id;
 
-      if(Cache::has($key)){
-          echo Cache::get($key);
-      } else {
+        if(Cache::has($key)){
+            echo Cache::get($key);
+        }
+        else {
 
-        $value = file_get_contents('http://aiondatabase.net/tip.php?id=item--'.$id.'&l=fr&nf=on');
-        $value = str_replace('src="/', 'src="http://aiondatabase.net/', $value);
+            $value = file_get_contents('http://aiondatabase.net/tip.php?id=item--'.$id.'&l=fr&nf=on');
+            $value = str_replace('src="/', 'src="http://aiondatabase.net/', $value);
 
-        Cache::forever('item_'.$id, $value);
+            Cache::forever('item_'.$id, $value);
 
-        echo $value;
-      }
+            echo $value;
+        }
     }
 
 }

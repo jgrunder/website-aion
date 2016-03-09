@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
 
-	/**
-	 * GET /user/subscribe
-	 */
+    /**
+     * GET /user/subscribe
+     */
     public function subscribe()
     {
         // SEO
@@ -45,10 +45,10 @@ class UserController extends Controller
         SEOMeta::setTitle(Lang::get('seo.subscribe.title'));
 
         $user = AccountData::create([
-                'name'      => $request->input('username'),
-                'pseudo'    => $request->input('pseudo'),
-                'password'  => base64_encode(sha1($request->input('password'), true)),
-                'email'     => $request->input('email')
+            'name'      => $request->input('username'),
+            'pseudo'    => $request->input('pseudo'),
+            'password'  => base64_encode(sha1($request->input('password'), true)),
+            'email'     => $request->input('email')
         ]);
 
         $this->createSession($user);
@@ -70,9 +70,9 @@ class UserController extends Controller
         SEOMeta::setTitle(Lang::get('seo.login.title'));
 
         $user = AccountData::activated()
-                ->where('name', $request->get('username'))
-                ->where('password', base64_encode(sha1($request->get('password'), true)))
-                ->first();
+            ->where('name', $request->get('username'))
+            ->where('password', base64_encode(sha1($request->get('password'), true)))
+            ->first();
 
         if($user !== null){
             $this->createSession($user);
@@ -160,7 +160,7 @@ class UserController extends Controller
                     $errors['pseudo'] = 'Le pseudo est déjà pris';
                 } else {
                     AccountData::where('id', Session::get('user.id'))->update([
-                      'pseudo' => $data['pseudo']
+                        'pseudo' => $data['pseudo']
                     ]);
                     Session::put('user.pseudo', $data['pseudo']);
                     $success['pseudo'] = 'Pseudo sauvegardé';
@@ -169,14 +169,14 @@ class UserController extends Controller
 
             // PushBullet
             if($data['pushbullet']){
-								if(!filter_var($data['pushbullet'], FILTER_VALIDATE_EMAIL)){
-									$errors['pushbullet'] = 'Merci de rentrer un email valide';
-								} else {
-									AccountData::where('id', Session::get('user.id'))->update([
-	                  'pushbullet' => $data['pushbullet']
-	                ]);
-	                $success['pushbullet'] = 'Pushbullet sauvegardé';
-								}
+                if(!filter_var($data['pushbullet'], FILTER_VALIDATE_EMAIL)){
+                    $errors['pushbullet'] = 'Merci de rentrer un email valide';
+                } else {
+                    AccountData::where('id', Session::get('user.id'))->update([
+                        'pushbullet' => $data['pushbullet']
+                    ]);
+                    $success['pushbullet'] = 'Pushbullet sauvegardé';
+                }
             }
 
         }
@@ -199,11 +199,11 @@ class UserController extends Controller
 
         if($player){
             Player::where('id', $playerId)->update([
-                'world_id'  => '120010000',
-                'x'         => '1275.5504',
-                'y'         => '1169.5846',
-                'z'         => '215.21492',
-                'heading'   => 30
+                'world_id'  => Config::get('aion.spawn.world_id'),
+                'x'         => Config::get('aion.spawn.x'),
+                'y'         => Config::get('aion.spawn.y'),
+                'z'         => Config::get('aion.spawn.z'),
+                'heading'   => Config::get('aion.spawn.heading')
             ]);
 
             return 'OK';

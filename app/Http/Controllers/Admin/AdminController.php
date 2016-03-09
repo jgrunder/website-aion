@@ -37,11 +37,13 @@ class AdminController extends Controller
                 // Check User accessLevel
                 if ($userAccessLevel >= $value['access_level']){
 
+                    $filePath = $logsPath.$value['file'].$value['extension'];
+
                     // Check if file exist
-                    if (file_exists($logsPath.$value['file'].$value['extension'])){
+                    if (file_exists($filePath)){
 
                         // Download the file
-                        return response()->download($logsPath.$value['file'].$value['extension']);
+                        return response()->download($filePath);
 
                     }
 
