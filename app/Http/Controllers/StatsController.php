@@ -8,6 +8,7 @@ use App\Models\Gameserver\Legion;
 use App\Models\Gameserver\Player;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 
 class StatsController extends Controller {
@@ -45,15 +46,22 @@ class StatsController extends Controller {
     /**
      * GET /stats/bg
      */
-    public function bg()
+    public function bg(Request $request)
     {
         // SEO
         SEOMeta::setTitle(Lang::get('seo.bg.title'));
         SEOMeta::setDescription(Lang::get('seo.bg.description'));
         OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
+        $start = 1;
+
+        if($request->input('page')){
+            $start = ((15 * $request->input('page')) - 15) + 1;
+        }
+
         return view('stats.bg', [
-            'top' => Ladder::orderBy('rating', 'DESC')->with('name')->paginate(15)
+            'top'   => Ladder::orderBy('rating', 'DESC')->with('name')->paginate(15),
+            'start' => $start
         ]);
     }
 

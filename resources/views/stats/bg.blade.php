@@ -15,19 +15,17 @@
                     <td>Race</td>
                     <th>Classe</th>
                     <th>Victoire</th>
-                    <th>Défaite</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($top as $index => $player)
+                @foreach($top as $player)
                     <tr>
-                        <td class="strong">{{$index + 1}}</td>
+                        <td class="strong">{{$start + 1}}</td>
                         <td>{{$player->name['name']}}</td>
                         <td>{{$player->rating}}</td>
                         <td><span class="{{Lang::get('aion.race_logo.'.$player->name['race'])}}"></span></td>
                         <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$player->name['player_class'])}}"></span></td>
                         <td>{{$player->wins}}</td>
-                        <td>{{$player->losses}}</td>
                     </tr>
                 @endforeach
                 </tbody>
