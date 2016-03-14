@@ -42,7 +42,7 @@ class StatsController extends Controller {
 
         return view('stats.legions', [
             'legions' => Legion::orderBy('contribution_points', 'desc')->paginate(100),
-            'start'   =>  ($request->input('page')) ? ((15 * $request->input('page')) - 15) : 0
+            'start'   =>  ($request->input('page')) ? ((100 * $request->input('page')) - 100) : 0
         ]);
     }
 
