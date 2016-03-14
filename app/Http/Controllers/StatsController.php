@@ -30,8 +30,10 @@ class StatsController extends Controller {
 
     /**
      * GET /stats/legions
+     * @param Request $request
+     * @return \Illuminate\View\View
      */
-    public function legions()
+    public function legions(Request $request)
     {
         // SEO
         SEOMeta::setTitle(Lang::get('seo.legions.title'));
@@ -39,12 +41,15 @@ class StatsController extends Controller {
         OpenGraph::setDescription(Lang::get('seo.legions.description'));
 
         return view('stats.legions', [
-            'legions' => Legion::orderBy('contribution_points', 'desc')->paginate(100)
+            'legions' => Legion::orderBy('contribution_points', 'desc')->paginate(100),
+            'start'   =>  ($request->input('page')) ? ((15 * $request->input('page')) - 15) : 0
         ]);
     }
 
     /**
      * GET /stats/bg
+     * @param Request $request
+     * @return \Illuminate\View\View
      */
     public function bg(Request $request)
     {
@@ -53,15 +58,9 @@ class StatsController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.bg.description'));
         OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
-        $start = 0;
-
-        if($request->input('page')){
-            $start = ((15 * $request->input('page')) - 15);
-        }
-
         return view('stats.bg', [
             'top'   => Ladder::orderBy('rating', 'DESC')->with('name')->paginate(15),
-            'start' => $start
+            'start' => ($request->input('page')) ? ((15 * $request->input('page')) - 15) : 0
         ]);
     }
 

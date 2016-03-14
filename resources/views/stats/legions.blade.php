@@ -18,7 +18,7 @@
                 <tbody>
                 @foreach($legions as $index => $legion)
                     <tr>
-                        <td class="strong">{{$index + 1}}</td>
+                        <td class="strong">{{$start + ($index + 1)}}</td>
                         <td>{{$legion->name}}</td>
                         <td>{{$legion->level}}</td>
                         <td>{{$legion->contribution_points}}</td>
