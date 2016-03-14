@@ -18,9 +18,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($top as $player)
+                @foreach($top as $index => $player)
                     <tr>
-                        <td class="strong">{{$start + 1}}</td>
+                        <td class="strong">{{$start + ($index + 1)}}</td>
                         <td>{{$player->name['name']}}</td>
                         <td>{{$player->rating}}</td>
                         <td><span class="{{Lang::get('aion.race_logo.'.$player->name['race'])}}"></span></td>

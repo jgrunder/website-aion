@@ -53,10 +53,10 @@ class StatsController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.bg.description'));
         OpenGraph::setDescription(Lang::get('seo.bg.description'));
 
-        $start = 1;
+        $start = 0;
 
         if($request->input('page')){
-            $start = ((15 * $request->input('page')) - 15) + 1;
+            $start = ((15 * $request->input('page')) - 15);
         }
 
         return view('stats.bg', [
