@@ -39,7 +39,7 @@ class ShopController extends Controller {
      */
     public function category($id)
     {
-        $items          = ShopItem::where('id_sub_category', '=', $id)->paginate(12);
+        $items          = ShopItem::orderBy('level', 'DESC')->where('id_sub_category', '=', $id)->paginate(12);
         $accountLevel   = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
 
         if($items->count() === 0) {
