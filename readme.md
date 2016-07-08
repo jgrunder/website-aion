@@ -3,9 +3,9 @@
 
 ### Installation :
 
-0. Taper la commande : ```composer install``` à la racine du projet
+0. Execute : ```composer install``` on the project root
 
-1. Ajouter le fichier .env à la racine du projet : 
+1. Create a ```.env``` file to the project root
 
 ```
 APP_ENV			= local
@@ -41,13 +41,9 @@ NOCAPTCHA_SECRET=6LcZMgkTAAAAAGJa0kxveRQ1wwt9eUAfUcikmcHk
 NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
 ```
 
-2. Modifier le patch pour accéder aux logs du serveurs dans : ```config/aion.php```
+2. You have a config files : ```config/aion.php```
 
-```php
-    'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
-```
-
-3. Créer une base de donnée pour le site (SQL : ```database/sql/database.ws.sql```)
+3. Create a new database for the website (SQL : ```database/sql/database.ws.sql```)
 
 4. Ajouter une collone : real(int) dans account_data
 5. Ajouter une collone : pseudo(varchar:255) dans account_data
