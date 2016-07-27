@@ -49,8 +49,13 @@ NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
 5. Ajouter une collone : pseudo(varchar:255) dans account_data
 6. Ajouter une collone : vote(int) dans account_data
 7. Ajouter une collone : email(varchar:255) dans account_data
-8. Ajouter une collone : token(varchar:255) dans account_data 
-9. Créer une table account_votes dans la base du donnée du login (SQL : ```database/sql/database.ls.sql)```
-
-
+8. Ajouter une collone : token(varchar:255) dans account_data
+9. Créer une table account_votes dans la base de donnée du login (SQL : ```database/sql/database.ls.sql)```
+10. Créer une table ladder_player dans la base de donnée du game (SQL : ```database/sql/database.gs.sql)```
+11.  Après vous devez compiler le CSS / JS (Vous devez avoir NodeJS) :
+```shell
+npm i -g gulp
+gulp style
+gulp script
+```
 
