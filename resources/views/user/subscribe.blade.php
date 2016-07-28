@@ -56,8 +56,6 @@
             </span>
           @endif
 
-        {!! app('captcha')->display() !!}
-
         <input type="submit" class="btn btn-primary" value="Valider l'inscription">
 
       {!! Form::close() !!}
