@@ -11,9 +11,9 @@
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
 </head>
 <body>
 
@@ -107,9 +107,9 @@
     @yield('content')
 
     <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="/js/script_admin.js"></script>
+    <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/bootstrap.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/script_admin.js') !!}"></script>
 </body>
 </html>
