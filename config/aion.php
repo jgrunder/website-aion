@@ -2,14 +2,15 @@
 
 return [
 
-    'website_name'             => 'RealAion',
+    'website_name'             => 'Aion server',
     'aion_version'             => '4.9',
-    'link_facebook'            => 'https://www.facebook.com/Realaion',
-    'link_twitter'             => 'https://twitter.com/Real_Aion',
-    'link_youtube'             => 'https://youtube.com',
-    'languages'                => ['fr', 'en'],
-    'contactMail'              => 'aion@realaion.com',
+    'link_facebook'            => '#',
+    'link_twitter'             => '#',
+    'link_youtube'             => '#',
+    'languages'                => ['en', 'fr'],
+    'contactMail'              => 'mathieu.letyrant@gmail.com',
 
+    // When you are connect you can unlock your character
     'spawn'                    => [
         'world_id'             => '120010000',
         'x'                    => '1275.5504',
@@ -30,19 +31,20 @@ return [
 
     'servers'                  => [
         'Serveur'              => [
-            'ip'               => '188.165.42.128',
+            'ip'               => '127.0.0.1',
             'port'             => 2106
         ],
         'Login'                => [
-            'ip'               => '188.165.42.128',
+            'ip'               => '127.0.0.1',
             'port'             => 7777
         ],
         'TS'                   => [
-            'ip'               => 'realaion.com',
+            'ip'               => '127.0.0.1',
             'port'             => 9987
         ]
     ],
 
+    // On the back office you can download logs from the server
     'logs'                     => [
         'path'                 => '/Users/letyrantmathieu/Desktop/logs-realAion/',
         'files'                => [
@@ -95,24 +97,26 @@ return [
         ]
     ],
 
+    // Vote System
     'vote'                     => [
-        'activated'              => true,
+        'activated'              => true, // You can activate or not the vote system
         'boost'                  => false,
         'real_per_vote'          => 100,
         'links'                  => [
             [
                 'name'               => 'RPG',
                 'link'               => 'http://www.rpg-paradize.com/?page=vote&vote=99942',
-                'referer'            => 'http://www.rpg-paradize.com/site-RealAion+4.9+-99942'
+                'referer'            => 'http://www.rpg-paradize.com/site-RealAion+4.9+-99942' // Use for check if the user has realy vote
             ],
             [
                 'name'               => 'Gowonda',
                 'link'               => 'http://www.gowonda.com/vote.php?server_id=5635',
-                'referer'            => 'http://www.gowonda.com/serveur-aion-5635-RealAion-4.9-!.htm'
+                'referer'            => 'http://www.gowonda.com/serveur-aion-5635-RealAion-4.9-!.htm' // Use for check if the user has realy vote
             ],
         ]
     ],
 
+    // Level is use for the shop, more you buy on the shop more you account level-up
     'levels' => [
         [
             'level' => 0,

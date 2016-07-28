@@ -48,7 +48,7 @@ return [
 
 		'gameserver' => [
 			'driver'        => 'mysql',
-			'host'          => env('DB_HOST_GS', '188.165.42.128'),
+			'host'          => env('DB_HOST_GS', '127.0.0.1'),
 			'database'      => env('DB_DATABASE_GS', 'forge'),
 			'username'      => env('DB_USERNAME_GS', 'forge'),
 			'password'      => env('DB_PASSWORD_GS', ''),
@@ -60,7 +60,7 @@ return [
 
 		'loginserver' => [
 			'driver'        => 'mysql',
-			'host'          => env('DB_HOST_LS', '188.165.42.128'),
+			'host'          => env('DB_HOST_LS', '127.0.0.1'),
 			'database'      => env('DB_DATABASE_LS', 'forge'),
 			'username'      => env('DB_USERNAME_LS', 'forge'),
 			'password'      => env('DB_PASSWORD_LS', ''),
@@ -72,7 +72,7 @@ return [
 
 		'webserver' => [
 				'driver'        => 'mysql',
-				'host'          => env('DB_HOST_WS', 'localhost'),
+				'host'          => env('DB_HOST_WS', '127.0.0.1'),
 				'database'      => env('DB_DATABASE_WS', 'forge'),
 				'username'      => env('DB_USERNAME_WS', 'forge'),
 				'password'      => env('DB_PASSWORD_WS', ''),
