@@ -12,8 +12,8 @@
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/global.css" rel="stylesheet">
+    <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/global.css') !!}" rel="stylesheet">
 </head>
 <body>
 
@@ -113,10 +113,10 @@
     </footer>
 
     <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="/js/sweetalert.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/jquery.bxslider.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
