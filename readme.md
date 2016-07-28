@@ -5,7 +5,7 @@
 
 0. Execute : ```composer install``` on the project root
 
-1. Create a ```.env``` file to the project root
+1. Create a ```.env``` file to the project root and edit database access for Game/Login/Website
 
 ```
 APP_ENV			= local
@@ -41,18 +41,11 @@ MAIL_PASSWORD	= null
 2. You have a config files : ```config/aion.php```
 
 3. Create a new database for the website (SQL : ```database/sql/database.ws.sql```)
-
-4. Ajouter une collone : real(int) dans account_data
-5. Ajouter une collone : pseudo(varchar:255) dans account_data
-6. Ajouter une collone : vote(int) dans account_data
-7. Ajouter une collone : email(varchar:255) dans account_data
-8. Ajouter une collone : token(varchar:255) dans account_data
-9. Créer une table account_votes dans la base de donnée du login (SQL : ```database/sql/database.ls.sql)```
-10. Créer une table ladder_player dans la base de donnée du game (SQL : ```database/sql/database.gs.sql)```
-11.  Après vous devez compiler le CSS / JS (Vous devez avoir NodeJS) :
-```shell
-npm i -g gulp
-gulp style
-gulp script
-```
+4. Add a new column : real(int) in account_data
+5. Add a new column : pseudo(varchar:255) in account_data
+6. Add a new column : vote(int) in account_data
+7. Add a new column : email(varchar:255) in account_data
+8. Add a new column : token(varchar:255) in account_data
+9. Execute this SQL on your login database (SQL : ```database/sql/database.ls.sql)```
+10. Execute this SQL on your game database (SQL : ```database/sql/database.gs.sql)```
 
