@@ -24,7 +24,7 @@ class SubscribeUserRequest extends Request {
 		return [
 			'username'              => 'required|unique:account_data,name',
 			'pseudo'                => 'required|unique:account_data,pseudo',
-			'password'              => 'required|case_diff|numbers|letters|confirmed',
+			'password'              => 'required|confirmed',
 			'password_confirmation' => 'required',
 			'email'                 => 'required|email|unique:account_data,email'
 		];

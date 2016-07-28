@@ -138,8 +138,6 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 		'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
-		'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
-		'Schuppo\PasswordStrength\PasswordStrengthServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Lahaxearnaud\LaravelPushbullet\LaravelPushbulletServiceProvider',
 

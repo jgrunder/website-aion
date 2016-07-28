@@ -36,9 +36,6 @@ MAIL_HOST		= mailtrap.io
 MAIL_PORT		= 2525
 MAIL_USERNAME	= null
 MAIL_PASSWORD	= null
-
-NOCAPTCHA_SECRET=6LcZMgkTAAAAAGJa0kxveRQ1wwt9eUAfUcikmcHk
-NOCAPTCHA_SITEKEY=6LcZMgkTAAAAAPnlZ_FpE8eX3oKx6rMTtvWmoeTE
 ```
 
 2. You have a config files : ```config/aion.php```
