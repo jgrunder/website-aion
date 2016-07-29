@@ -79,8 +79,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.slider')}}">Slider</a></li>
                             <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
-                            <li><a href="{{Route('admin.add.reals')}}">Add Reals</a></li>
-                            <li><a href="{{Route('admin.reals')}}">Log Reals</a></li>
+                            <li><a href="{{Route('admin.add.points')}}">Add Points shop</a></li>
+                            <li><a href="{{Route('admin.points')}}">Log Points shop</a></li>
                             <li><a href="{{Route('admin.allopass')}}">Log Allopass</a></li>
                             <li><a href="{{Route('admin.paypal')}}">Log Paypal</a></li>
                         </ul>

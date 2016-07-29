@@ -1,14 +1,18 @@
-<?php namespace App\Http\Controllers;
+<?php
+namespace App\Http\Controllers;
+
+use Carbon\Carbon;
 
 use App\Models\Gameserver\Ladder;
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
 use App\Models\Webserver\ConfigSlider;
-use Carbon\Carbon;
+
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
@@ -32,7 +36,7 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
-        $this->accountReal();
+        $this->accountShopPoints();
         $this->topVotes();
         $this->topBg();
         $this->getLanguageFromCookie();
@@ -60,16 +64,16 @@ abstract class Controller extends BaseController {
     }
 
     /**
-     * Set Variables $accountVotes
+     * Update Variable in the session
      */
-    private function accountReal()
+    private function accountShopPoints()
     {
         if(Session::has('connected')) {
-            $user = AccountData::me(Session::get('user.id'))->first(['real']);
-            Session::put('user.real', $user['real']);
+            $user = AccountData::me(Session::get('user.id'))->first(['shop_points']);
+            Session::put('user.shop_points', $user['shop_points']);
         }
         else {
-            Session::put('user.real', 0);
+            Session::put('user.shop_points', 0);
         }
     }
 

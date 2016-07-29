@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserWasPurchasedReal;
+use App\Events\UserWasPurchasedShopPoint;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
+
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
@@ -55,9 +56,9 @@ class PaiementController extends Controller {
 
                 if (LogsAllopass::insert($recall, Session::get('user.id')) !== null) {
 
-                    AccountData::me(Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
-                    event(new UserWasPurchasedReal(Session::get('user.id')));
-                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.realGiven')." reals");
+                    AccountData::me(Session::get('user.id'))->increment('points', Config::get('aion.allopass.pointsGiven'));
+                    event(new UserWasPurchasedShopPoint(Session::get('user.id')));
+                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.pointsGiven'));
 
                 }
 
@@ -133,14 +134,14 @@ class PaiementController extends Controller {
                         // Check if it's RealAion who win money
                         if ($emailAccount == $receiver_email) {
 
-                            $reals  = $custom['reals'];
-                            $uid    = $custom['uid'];
+                            $points  = $custom['points'];
+                            $uid     = $custom['uid'];
 
                             // Check if it's the good payment number
-                            if($payment_ht = $reals / 5000) {
+                            if($payment_ht = $points / 5000) {
 
                                 // Increment tolls
-                                AccountData::me($uid)->increment('real', $reals);
+                                AccountData::me($uid)->increment('shop_points', $points);
 
                             }
                         }
@@ -151,17 +152,17 @@ class PaiementController extends Controller {
                         'id_account' => $uid,
                         'price'	     => $payment_ht,
                         'status'     => $payment_status,
-                        'tax'	       => $payment_tax,
+                        'tax'	     => $payment_tax,
                         'email'	     => $payer_email,
                         'txnid'      => $txn_id,
-                        'amount'     => $reals,
+                        'amount'     => $points,
                         'name'       => $name,
                         'country'    => $country,
                         'city'	     => $city,
                         'address'    => $address
                     ]);
 
-                    event(new UserWasPurchasedReal($uid));
+                    event(new UserWasPurchasedShopPoint($uid));
 
                 }
             }

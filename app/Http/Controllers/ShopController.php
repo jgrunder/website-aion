@@ -112,7 +112,7 @@ class ShopController extends Controller {
         if(Cart::total() === 0){ // If cart is empty -> Redirect to the shop page
             return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.empty_cart'));
         }
-        else if($account->real < Cart::total()) { // If no real -> Redirect to the shop page
+        else if($account->shop_points < Cart::total()) { // If no shop points -> Redirect to the shop page
             return redirect()->back()->with('error', Lang::get('flashMessage.shop.not_real'));
         }
 
@@ -159,7 +159,8 @@ class ShopController extends Controller {
             ]);
         }
 
-        AccountData::me($account_id)->decrement('real', $total);
+        AccountData::me($account_id)->decrement('shop_points', $total);
+
         Cart::destroy();
 
         return redirect(route('shop'))->with('success', Lang::get('flashMessage.shop.success').$player->name);

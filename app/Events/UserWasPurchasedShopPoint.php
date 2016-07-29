@@ -4,7 +4,7 @@ use App\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
 
-class UserWasPurchasedReal extends Event {
+class UserWasPurchasedShopPoint extends Event {
 
 	use SerializesModels;
 

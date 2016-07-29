@@ -23,7 +23,7 @@ class HasVote {
 
             $accountId      = Session::get('user.id');
             $votesInConfig  = Config ::get('aion.vote.links');
-            $realPerVote    = (!Config::get('aion.vote.boost')) ? Config::get('aion.vote.real_per_vote') : Config::get('aion.vote.real_per_vote') + 50;
+            $pointsPerVote  = (!Config::get('aion.vote.boost')) ? Config::get('aion.vote.shop_points_per_vote') : Config::get('aion.vote.shop_points_per_vote') + Config::get('aion.vote.boost_value');
             $referer        = $request->headers->get('referer');
 
             foreach ($votesInConfig as $key => $value) {
@@ -33,7 +33,7 @@ class HasVote {
 
                     if($vote){
                         AccountData::IncrementVoteCount($accountId);
-                        AccountData::AddReal($accountId, $realPerVote);
+                        AccountData::AddShopPoints($accountId, $pointsPerVote);
                         AccountVote::where('account_id', $accountId)->where('add', 0)->where('site', $key)->update(['add' => 1]);
                     }
 

@@ -1,11 +1,13 @@
 <?php namespace App\Handlers\Events;
 
-use App\Events\UserWasPurchasedReal;
+use App\Events\UserWasPurchasedShopPoint;
 
 use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountLevel;
+
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
+
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use Illuminate\Support\Facades\Config;
@@ -27,13 +29,13 @@ class GenerateUserLevel {
 	/**
 	 * Handle the event.
 	 *
-	 * @param  UserWasPurchasedReal  $event
+	 * @param  UserWasPurchasedShopPoint  $event
 	 * @return void
 	 */
-	public function handle(UserWasPurchasedReal $event)
+	public function handle(UserWasPurchasedShopPoint $event)
 	{
-		$accountId 		= $event->accountId;
-		$levels		 		= Config::get('aion.levels');
+		$accountId = $event->accountId;
+		$levels	   = Config::get('aion.levels');
 
 		$logsAllopass = LogsAllopass::where('id_account', $accountId)->count();
 		$logsPaypal 	= LogsPaypal::where('id_account', $accountId)->where('status', 'completed')->get();
@@ -56,8 +58,8 @@ class GenerateUserLevel {
 		if(!$accountLevelFromDatabase){
 			AccountLevel::create([
 				'account_id' 	=> $accountId,
-				'total' 			=> $logsAllopass,
-				'level' 			=> $accountLevel
+				'total' 		=> $logsAllopass,
+				'level' 		=> $accountLevel
 			]);
 		} else {
 			AccountLevel::where('account_id', $accountId)->update([

@@ -20,13 +20,14 @@ return [
     ],
 
     'allopass'                 => [
-        'realGiven'            => 4000,
+        'url'                  => 'https://payment.allopass.com/buy/buy.apu?ids=307954&idd=1326680',
+        'pointsGiven'          => 4000,
         'documentId'           => '307954/1326680/4588246'
     ],
 
     'paypal'                   => [
         'email'                => 'unretailed@gmail.com',
-        'maxReal'              => 1000000
+        'maxShopPoints'        => 1000000
     ],
 
     'servers'                  => [
@@ -101,7 +102,8 @@ return [
     'vote'                     => [
         'activated'              => true, // You can activate or not the vote system
         'boost'                  => false,
-        'real_per_vote'          => 100,
+        'boost_value'            => 50,
+        'shop_points_per_vote'   => 100,
         'links'                  => [
             [
                 'name'               => 'RPG',
