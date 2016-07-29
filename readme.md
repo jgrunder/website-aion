@@ -14,17 +14,17 @@ APP_DEBUG		= false
 APP_KEY			= H3vhkJ12XDwU7MQHfAY2yh7pucgndLZc
 
 DB_HOST_GS		= localhost
-DB_DATABASE_GS	= real_gs
+DB_DATABASE_GS	= aion_gs
 DB_USERNAME_GS	= root
 DB_PASSWORD_GS	= root
 
 DB_HOST_LS		= localhost
-DB_DATABASE_LS	= real_ls
+DB_DATABASE_LS	= aion_ls
 DB_USERNAME_LS	= root
 DB_PASSWORD_LS	= root
 
 DB_HOST_WS		= localhost
-DB_DATABASE_WS	= real_ws
+DB_DATABASE_WS	= aion_ws
 DB_USERNAME_WS	= root
 DB_PASSWORD_WS	= root
 
