@@ -102,7 +102,8 @@ return [
     'vote'                     => [
         'activated'              => true, // You can activate or not the vote system
         'boost'                  => false,
-        'real_per_vote'          => 100,
+        'boost_value'            => 50,
+        'shop_points_per_vote'   => 100,
         'links'                  => [
             [
                 'name'               => 'RPG',

@@ -27,7 +27,7 @@ class AccountData extends Model {
     }
 
     /**
-     * Increment Reals
+     * Increment Shop points
      *
      * @param $query
      * @param $accountId
@@ -35,7 +35,7 @@ class AccountData extends Model {
      *
      * @return
      */
-    public function scopeAddReal($query, $accountId, $quantity)
+    public function scopeAddShopPoints($query, $accountId, $quantity)
     {
         return $query->where('id', $accountId)->increment('shop_point', $quantity);
     }
