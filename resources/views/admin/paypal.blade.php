@@ -5,16 +5,15 @@
         <div class="row">
             <div class="col-md-12 text-center page-header">
                 <h1>Paypal</h1>
-                <small>Historique des commandes sur paypal</small>
             </div>
             <div class="col-md-8 col-md-offset-2">
                 <table class="table">
                     <thead>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Compte</th>
-                        <th class="text-center">Prix</th>
-                        <th class="text-center">Reals</th>
+                        <th class="text-center">Account</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Points</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Date</th>
                     </tr>

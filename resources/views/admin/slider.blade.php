@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Liste des images du slider</h1>
+                <h1>Slider's images</h1>
             </div>
 
             <!-- Liste des images -->
@@ -13,7 +13,7 @@
                     <thead>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Nom</th>
+                        <th class="text-center">Name</th>
                         <th class="text-center">Path</th>
                     </tr>
                     </thead>
@@ -34,14 +34,14 @@
                 {!! Form::open(['files'=>true]) !!}
 
                 <div class="form-group">
-                    {!! Form::text('title', null, ['placeholder' => "Titre", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('title', null, ['placeholder' => "Title", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::file('path') !!}
                 </div>
 
-                <input type="submit" class="btn btn-primary" value="Ajouter l'image">
+                <input type="submit" class="btn btn-primary" value="Add">
 
                 {!! Form::close() !!}
             </div>

@@ -4,14 +4,14 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-12 text-center page-header">
-                <h1>Liste des Sous-catégories</h1>
+                <h1>List Sub-categories</h1>
             </div>
             <div class="col col-md-4 col-md-offset-4">
                 <table class="table">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th class="text-center">Nom</th>
+                        <th class="text-center">Name</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -36,12 +36,12 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::text('sub_category_name', null, ['placeholder' => "Titre de la sous-catégorie", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('sub_category_name', null, ['placeholder' => "Title", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <br> <br>
 
-                <button type="submit" class="btn btn-success">Ajouter la sous-catégorie</button>
+                <button type="submit" class="btn btn-success">Add Sub-category</button>
 
 
                 {!! Form::close() !!}

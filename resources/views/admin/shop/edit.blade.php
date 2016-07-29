@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-12 text-center page-header">
-                <h1>Editer sur la boutique</h1>
+                <h1>Edit object</h1>
                 <small>{{$item->name}}</small>
             </div>
 
@@ -51,7 +51,7 @@
                     {!! Form::input('number', 'level', $item->level, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <input type="submit" class="btn btn-danger" value="Editer l'item">
+                <input type="submit" class="btn btn-danger" value="Edit item">
 
                 {!! Form::close() !!}
             </div>

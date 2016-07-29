@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Notification PushBullet</h1>
+                <h1>PushBullet notification</h1>
             </div>
 
             <!-- Success -->
@@ -12,7 +12,7 @@
                 <div class="col col-md-4 col-md-offset-4 text-center">
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        La notification a été envoyé à {{$count}} @if($count == 0 || $count == 1) personne @else personnes @endif.
+                        The notification was sent to {{$count}} @if($count == 0 || $count == 1) person @else people @endif.
                     </div>
                 </div>
             @endif
@@ -22,14 +22,14 @@
                 {!! Form::open() !!}
 
                 <div class="form-group">
-                    {!! Form::text('title', null, ['placeholder' => "Titre", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('title', null, ['placeholder' => "Title", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::text('content', null, ['placeholder' => "Description ...", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <input type="submit" class="btn btn-primary" value="Envoyer">
+                <input type="submit" class="btn btn-primary" value="Send">
 
                 {!! Form::close() !!}
             </div>

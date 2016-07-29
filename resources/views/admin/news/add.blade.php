@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Ajouter un article</h1>
+                <h1>Add a news</h1>
             </div>
 
             <!-- ERROR MESSAGE -->
@@ -31,14 +31,14 @@
                 {!! Form::open() !!}
 
                     <div class="form-group">
-                        {!! Form::text('title', null, ['placeholder' => "Titre de l'article", 'class' => 'form-control', 'required' => 'required']) !!}
+                        {!! Form::text('title', null, ['placeholder' => "Title", 'class' => 'form-control', 'required' => 'required']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::textarea('content', null, ['placeholder' => "Ici tu me feras toujours un joli texte", 'class' => 'form-control ckeditor', 'required' => 'required', 'rows' => 10, 'cols' => 40]) !!}
+                        {!! Form::textarea('content', null, ['placeholder' => "Your beautiful text", 'class' => 'form-control ckeditor', 'required' => 'required', 'rows' => 10, 'cols' => 40]) !!}
                     </div>
 
-                    <input type="submit" class="btn btn-primary" value="Ajouter l'article">
+                    <input type="submit" class="btn btn-primary" value="Add the news">
 
                 {!! Form::close() !!}
             </div>

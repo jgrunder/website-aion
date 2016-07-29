@@ -1,12 +1,12 @@
 <table class="table">
     <thead>
     <tr>
-        <th>Nom</th>
-        <th>N° compte</th>
-        <th>Nom de compte</th>
+        <th>Name</th>
+        <th>Account ID</th>
+        <th>Account Name</th>
         <th>Race</th>
         <th>Classe</th>
-        <th class="text-center">En ligne ?</th>
+        <th class="text-center">Online ?</th>
     </tr>
     </thead>
     <tbody>
@@ -17,7 +17,7 @@
             <td>{{$result->account_name}}</td>
             <td>{{$result->race}}</td>
             <td>{{$result->player_class}}</td>
-            <td class="text-center"> @if($result->online == 1) Oui @else Non @endif </td>
+            <td class="text-center"> @if($result->online == 1) Yes @else No @endif </td>
         </tr>
     @endforeach
     </tbody>

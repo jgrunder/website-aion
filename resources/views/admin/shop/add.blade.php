@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-12 text-center page-header">
-                <h1>Ajouter un item dans la boutique</h1>
+                <h1>Add item in the shop</h1>
             </div>
 
             <!-- SUCCESS MESSAGE -->
@@ -52,7 +52,7 @@
 
                 {!! Form::input('hidden', 'quality_item', 'NONE', ['id' => 'qualityItem']) !!}
 
-                <input type="submit" class="btn btn-success" value="Ajouter l'item">
+                <input type="submit" class="btn btn-success" value="Add item">
 
                 {!! Form::close() !!}
             </div>

@@ -31,11 +31,11 @@
                 {!! Form::open() !!}
 
                 <div class="form-group">
-                    {!! Form::text('account_name', null, ['placeholder' => "Nom de compte", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('account_name', null, ['placeholder' => "Account name", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::text('reason', null, ['placeholder' => "Motif", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('reason', null, ['placeholder' => "Reason", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">

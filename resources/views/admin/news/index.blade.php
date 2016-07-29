@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Liste des articles</h1>
+                <h1>News</h1>
             </div>
 
             <div class="col-md-8 col-md-offset-2">
@@ -12,8 +12,8 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Titre</th>
-                        <th>Auteur</th>
+                        <th>Title</th>
+                        <th>Author</th>
                         <th>Action</th>
                         <th>Action</th>
                     </tr>
@@ -26,12 +26,12 @@
                             <td>{{$article->creator->name}}</td>
                             <td>
                                 <a class="btn btn-danger btn-xs" href="{{Route('admin.news.edit', $article->id)}}">
-                                    <i class="fa fa-pencil-square-o"></i> Editer
+                                    <i class="fa fa-pencil-square-o"></i> Edit
                                 </a>
                             </td>
                             <td>
                                 <a class="btn btn-danger btn-xs" href="{{Route('admin.news.delete', $article->id)}}">
-                                    <i class="fa fa-trash"></i> Supprimer
+                                    <i class="fa fa-trash"></i> Delete
                                 </a>
                             </td>
                         </tr>

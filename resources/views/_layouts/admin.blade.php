@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::text('search_value', null, ['placeholder' => "Je cherche ...", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('search_value', null, ['placeholder' => "Name", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 {!! Form::close() !!}
