@@ -45,6 +45,10 @@ MAIL_PASSWORD	= null
 
 4. After Having execute the command, all databases have been modified.
 
+5. Execute : ```php artisan db:seed```
+
+6. After having execute the command, a news have been added.
+
 ### Apache :
 The framework ships with a public/.htaccess file that is used to allow URLs without index.php. If you use Apache to serve your Laravel application, be sure to enable the mod_rewrite module.
 

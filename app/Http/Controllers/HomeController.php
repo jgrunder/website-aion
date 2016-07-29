@@ -15,14 +15,14 @@ class HomeController extends Controller
      */
 	public function index()
 	{
-    // SEO
-    SEOMeta::setTitle(Lang::get('seo.home.title'));
-    SEOMeta::setDescription(Lang::get('seo.home.description'));
-    OpenGraph::setDescription(Lang::get('seo.home.description'));
+        // SEO
+        SEOMeta::setTitle(Lang::get('seo.home.title'));
+        SEOMeta::setDescription(Lang::get('seo.home.description'));
+        OpenGraph::setDescription(Lang::get('seo.home.description'));
 
 		return view('home.index', [
-      'news' => News::orderBy('created_at', 'DESC')->paginate(3)
-    ]);
+            'news' => News::orderBy('created_at', 'DESC')->paginate(3)
+        ]);
 	}
 
     /**
