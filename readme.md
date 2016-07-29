@@ -6,12 +6,13 @@ This is a of the [website](https://infinit.io/_/yD4R3n4.jpg) and the back-office
 
 0. Execute : ```composer install``` on the project root
 
-1. Create a ```.env``` file to the project root and edit database access for Game/Login/Website
+1. Create a ```.env``` file to the project root
 
 ```
-APP_ENV			= local
+APP_ENV			= production
 APP_DEBUG		= false
 APP_KEY			= H3vhkJ12XDwU7MQHfAY2yh7pucgndLZc
+APP_URL         = https://server-aion.com
 
 DB_HOST_GS		= localhost
 DB_DATABASE_GS	= aion_gs
@@ -39,15 +40,21 @@ MAIL_USERNAME	= null
 MAIL_PASSWORD	= null
 ```
 
-2. You have a config files : ```config/aion.php```
+2. Update ```APP_KEY``` on your .env file
 
-3. Execute : ```php artisan migrate```
+3. Update ```APP_URL``` on your .env file
 
-4. After Having execute the command, all databases have been modified.
+4. Update ```DB_HOST_GS | DB_HOST_LS | DB_HOST_WS``` and other for have access to databases. (You need create empty database for the website)
 
-5. Execute : ```php artisan db:seed```
+4. You have a config files : ```config/aion.php```
 
-6. After having execute the command, a news have been added.
+5. Execute : ```php artisan migrate```
+
+6. After Having execute the command, all databases have been modified.
+
+7. Execute : ```php artisan db:seed```
+
+8. After having execute the command, a news have been added.
 
 ### Apache :
 The framework ships with a public/.htaccess file that is used to allow URLs without index.php. If you use Apache to serve your Laravel application, be sure to enable the mod_rewrite module.
@@ -62,10 +69,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
 ```
 
-### Nginx
+### Nginx :
 On Nginx, the following directive in your site configuration will allow "pretty" URLs:
 ```
 location / {
     try_files $uri $uri/ /index.php?$query_string;
 }
 ```
+
+### Support :
+
+If you have a issue, you can create a issue on github.
