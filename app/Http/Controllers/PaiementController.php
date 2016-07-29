@@ -131,7 +131,6 @@ class PaiementController extends Controller {
                     // Check the payment status
                     if ($payment_status == "Completed") {
 
-                        // Check if it's RealAion who win money
                         if ($emailAccount == $receiver_email) {
 
                             $points  = $custom['points'];

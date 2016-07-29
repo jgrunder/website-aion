@@ -217,7 +217,7 @@ class AdminController extends Controller
 
             foreach($accounts as $account){
                 if(filter_var($account->pushbullet, FILTER_VALIDATE_EMAIL)){
-                    LaravelPushbulletFacade::user($account->pushbullet)->note('[RealAion] '.$data['title'], $data['content']);
+                    LaravelPushbulletFacade::user($account->pushbullet)->note('[Aion Server] '.$data['title'], $data['content']);
                 }
             }
         }

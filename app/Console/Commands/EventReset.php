@@ -43,8 +43,8 @@ class EventReset extends Command {
 
 	public function handle()
 	{
-		// Select the best voter and add 200 real
-		$bestVoter = AccountData::orderBy('vote', 'desc')->take(1)->increment('real', 200);
+		// Select the best voter and add 200 shop_points
+		$bestVoter = AccountData::orderBy('vote', 'desc')->take(1)->increment('shop_points', 200);
 
 		// Reset all vote count
 		AccountData::where('vote', '>', 0)->update(['vote' => 0]);
