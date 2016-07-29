@@ -36,7 +36,7 @@ abstract class Controller extends BaseController {
         $this->accountVotes();
         $this->countPlayersOnline();
         $this->accountShopPoints();
-        $this->topBg();
+        $this->topVotes();
         $this->getLanguageFromCookie();
         $this->getSlider();
     }
