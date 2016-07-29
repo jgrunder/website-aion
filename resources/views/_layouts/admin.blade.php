@@ -26,28 +26,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{Route('home')}}">RealAion</a>
+                <a class="navbar-brand" href="{{Route('home')}}">Aion server</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{Route('admin')}}">Accueil</a></li>
+                    <li><a href="{{Route('admin')}}">Home</a></li>
 
                     <!-- Articles -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{Route('admin.news')}}">Liste des articles</a></li>
-                            <li><a href="{{Route('admin.news.add')}}">Ajouter un article</a></li>
+                            <li><a href="{{Route('admin.news')}}">The news</a></li>
+                            <li><a href="{{Route('admin.news.add')}}">Add a news</a></li>
                         </ul>
                     </li>
 
                     <!-- Boutique -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{Route('admin.shop.add')}}">Ajouter un item dans la boutique</a></li>
-                            <li><a href="{{Route('admin.shop.category')}}">Liste des catégories</a></li>
-                            <li><a href="{{Route('admin.shop.subcategory')}}">Liste des sous-catégories</a></li>
+                            <li><a href="{{Route('admin.shop.add')}}">Add item in shop</a></li>
+                            <li><a href="{{Route('admin.shop.category')}}">Categories list</a></li>
+                            <li><a href="{{Route('admin.shop.subcategory')}}">List of sub-categories</a></li>
                         </ul>
                     </li>
 
@@ -65,21 +65,21 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{Route('admin.page', 'joinus')}}">Editer la page Nous rejoindre</a></li>
-                            <li><a href="{{Route('admin.page', 'rules')}}">Editer la page Règlement</a></li>
-                            <li><a href="{{Route('admin.page', 'team')}}">Editer la page Equipe</a></li>
-                            <li><a href="{{Route('admin.page', 'teamspeak')}}">Editer la page Teamspeak</a></li>
-                            <li><a href="{{Route('admin.page', 'subscribe')}}">Editer la page Inscription</a></li>
+                            <li><a href="{{Route('admin.page', 'joinus')}}">Edit : Join-us</a></li>
+                            <li><a href="{{Route('admin.page', 'rules')}}">Edit: Rules</a></li>
+                            <li><a href="{{Route('admin.page', 'team')}}">Edit : Team</a></li>
+                            <li><a href="{{Route('admin.page', 'teamspeak')}}">Edit : Teamspeak</a></li>
+                            <li><a href="{{Route('admin.page', 'subscribe')}}">Edit : Subscribe</a></li>
                         </ul>
                     </li>
 
                     <!-- Autre -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autre <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.slider')}}">Slider</a></li>
                             <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
-                            <li><a href="{{Route('admin.add.reals')}}">Ajouter des Reals</a></li>
+                            <li><a href="{{Route('admin.add.reals')}}">Add Reals</a></li>
                             <li><a href="{{Route('admin.reals')}}">Log Reals</a></li>
                             <li><a href="{{Route('admin.allopass')}}">Log Allopass</a></li>
                             <li><a href="{{Route('admin.paypal')}}">Log Paypal</a></li>
