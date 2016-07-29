@@ -78,7 +78,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'Acce
     Route::get('search', ['as' => 'admin.search', 'uses' => 'AdminController@search']);
     Route::get('logs/{name}', ['as' => 'admin.logs', 'uses' => 'AdminController@logs']);
     route::match(['GET', 'POST'], 'page/{name}', ['as' => 'admin.page', 'uses' => 'AdminController@pageEdit']);
-    route::match(['GET', 'POST'], 'add-reals', ['as' => 'admin.add.reals', 'uses' => 'AdminController@addReals']);
+    route::match(['GET', 'POST'], 'add-points', ['as' => 'admin.add.points', 'uses' => 'AdminController@addPoints']);
     route::match(['GET', 'POST'], 'slider', ['as' => 'admin.slider', 'uses' => 'AdminController@slider']);
     route::match(['GET', 'POST'], 'pushbullet', ['as' => 'admin.pushbullet', 'uses' => 'AdminController@pushbullet']);
 
@@ -94,7 +94,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'Acce
     Route::group(['prefix' => 'paiement'], function() {
         Route::get('allopass', ['as' => 'admin.allopass', 'uses' => 'AdminController@allopass']);
         Route::get('paypal', ['as' => 'admin.paypal', 'uses' => 'AdminController@paypal']);
-        Route::get('reals', ['as' => 'admin.reals', 'uses' => 'AdminController@reals']);
+        Route::get('points', ['as' => 'admin.points', 'uses' => 'AdminController@points']);
     });
 
     /** News */

@@ -7,13 +7,16 @@ use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\ConfigSlider;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
-use App\Models\Webserver\LogsReals;
+use App\Models\Webserver\LogsShopPoints;
 use App\Models\Webserver\Pages;
 use App\Models\Webserver\ShopItem;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+
 use Lahaxearnaud\LaravelPushbullet\LaravelPushbulletFacade;
 
 class AdminController extends Controller
@@ -105,12 +108,12 @@ class AdminController extends Controller
     }
 
     /**
-     * GET /admin/reals
+     * GET /admin/points
      */
-    public function reals()
+    public function points()
     {
-        return view('admin.reals', [
-            'reals' => LogsReals::orderBy('created_at', 'DESC')->paginate(30)
+        return view('admin.shop_points', [
+            'points' => LogsShopPoints::orderBy('created_at', 'DESC')->paginate(30)
         ]);
     }
 
@@ -135,9 +138,9 @@ class AdminController extends Controller
     }
 
     /**
-     * GET/POST /admin/add-reals
+     * GET/POST /admin/add-points
      */
-    public function addReals(Request $request)
+    public function addPoints(Request $request)
     {
         $success = null;
         $errors  = null;
@@ -145,7 +148,7 @@ class AdminController extends Controller
         if ($request->isMethod('POST')){
 
             $account_name = $request->input('account_name');
-            $reals        = $request->input('reals');
+            $shopPoints   = $request->input('points');
             $reason       = $request->input('reason');
 
             $account = AccountData::where('name', '=', $account_name)->first();
@@ -153,23 +156,23 @@ class AdminController extends Controller
             if($account !== null){
 
                 // Because we don't trust the team
-                LogsReals::create([
+                LogsShopPoints::create([
                     'sender_name'   => Session::get('user.name'),
                     'receiver_name' => $account_name,
                     'reason'        => $reason,
-                    'reals'         => $reals
+                    'points'        => $shopPoints
                 ]);
 
-                AccountData::where('name', '=', $account_name)->increment('real', $reals);
+                AccountData::where('name', '=', $account_name)->increment('shop_points', $shopPoints);
 
-                $success = "Le compte a été crédité de ".$reals." reals";
+                $success = "Le compte a été crédité de ".$shopPoints;
             } else {
                 $errors = "Le compte n'existe pas";
             }
 
         }
 
-        return view('admin.addreals', [
+        return view('admin.addPoints', [
             'success' => $success,
             'errors'  => $errors
         ]);

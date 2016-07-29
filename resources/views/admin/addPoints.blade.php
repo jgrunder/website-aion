@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Ajouter des reals</h1>
+                <h1>Add Points shop</h1>
             </div>
 
             <!-- ERROR MESSAGE -->
@@ -15,17 +15,17 @@
                         {{$errors}}
                     </div>
                 </div>
-                @endif
+            @endif
 
-                        <!-- SUCCESS MESSAGE -->
-                @if ($success)
-                    <div class="col col-md-4 col-md-offset-4 text-center">
-                        <div class="alert alert-success alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            {{$success}}
-                        </div>
+            <!-- SUCCESS MESSAGE -->
+            @if ($success)
+                <div class="col col-md-4 col-md-offset-4 text-center">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{$success}}
                     </div>
-                @endif
+                </div>
+            @endif
 
             <div class="col-md-4 col-md-offset-4 text-center">
                 {!! Form::open() !!}
@@ -39,10 +39,10 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::input('number', 'reals', null, ['placeholder' => 50, 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::input('number', 'points', null, ['placeholder' => 50, 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <input type="submit" class="btn btn-danger" value="Ajouter les Reals">
+                <input type="submit" class="btn btn-danger" value="Add shop Points">
 
                 {!! Form::close() !!}
             </div>
