@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Models\Loginserver\AccountVote;
 use Carbon\Carbon;
+
+use App\Http\Requests;
+
+use App\Models\Loginserver\AccountVote;
+
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
@@ -23,9 +26,7 @@ class VoteController extends Controller {
 
         $accountId      = Session::get('user.id');
         $votesLinks     = Config::get('aion.vote.links');
-        $accountVote    = AccountVote::where('account_id', $accountId)
-                                     ->where('site', $id)
-                                     ->first();
+        $accountVote    = AccountVote::where('account_id', $accountId)->where('site', $id)->first();
 
         if($accountVote === null){
 

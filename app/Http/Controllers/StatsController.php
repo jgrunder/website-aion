@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+
 use App\Models\Gameserver\Legion;
 use App\Models\Gameserver\Player;
+
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Lang;
 
 class StatsController extends Controller {

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+
 use App\Models\Webserver\Pages;
+
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
+
 use Illuminate\Support\Facades\Lang;
 
 class PageController extends Controller {
-
 
     /**
      * GET /page/join-us
