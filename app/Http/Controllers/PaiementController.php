@@ -6,6 +6,7 @@ use App\Events\UserWasPurchasedShopPoint;
 use App\Models\Loginserver\AccountData;
 use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
+
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
@@ -133,14 +134,14 @@ class PaiementController extends Controller {
                         // Check if it's RealAion who win money
                         if ($emailAccount == $receiver_email) {
 
-                            $reals  = $custom['reals'];
-                            $uid    = $custom['uid'];
+                            $points  = $custom['points'];
+                            $uid     = $custom['uid'];
 
                             // Check if it's the good payment number
-                            if($payment_ht = $reals / 5000) {
+                            if($payment_ht = $points / 5000) {
 
                                 // Increment tolls
-                                AccountData::me($uid)->increment('real', $reals);
+                                AccountData::me($uid)->increment('shop_points', $points);
 
                             }
                         }
@@ -151,10 +152,10 @@ class PaiementController extends Controller {
                         'id_account' => $uid,
                         'price'	     => $payment_ht,
                         'status'     => $payment_status,
-                        'tax'	       => $payment_tax,
+                        'tax'	     => $payment_tax,
                         'email'	     => $payer_email,
                         'txnid'      => $txn_id,
-                        'amount'     => $reals,
+                        'amount'     => $points,
                         'name'       => $name,
                         'country'    => $country,
                         'city'	     => $city,

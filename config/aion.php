@@ -27,7 +27,7 @@ return [
 
     'paypal'                   => [
         'email'                => 'unretailed@gmail.com',
-        'maxReal'              => 1000000
+        'maxShopPoints'        => 1000000
     ],
 
     'servers'                  => [

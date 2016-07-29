@@ -129,10 +129,10 @@
 				var moneyNeed = $(this).val() / 5000;
 				var uid		  = $('#user_id').val();
 
-				$('#money_need').val("J'achète "+ nbTool +" reals pour "+ moneyNeed +"€");
-				$('#paypal_name').val(nbTool+' reals');
+				$('#money_need').val("Buy "+ nbTool +" points shop for "+ moneyNeed +"€");
+				$('#paypal_name').val(nbTool+' Points Shop');
 				$('#money').val(moneyNeed);
-				$('#custom_paypal').val('reals='+nbTool+'&uid='+uid);
+				$('#custom_paypal').val('points='+nbTool+'&uid='+uid);
 			});
 		}
 
