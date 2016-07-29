@@ -13,6 +13,7 @@ APP_ENV			= production
 APP_DEBUG		= false
 APP_KEY			= H3vhkJ12XDwU7MQHfAY2yh7pucgndLZc
 APP_URL         = https://server-aion.com
+PUSHBULLET_KEY  =
 
 DB_HOST_GS		= localhost
 DB_DATABASE_GS	= aion_gs

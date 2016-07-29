@@ -35,7 +35,7 @@ return [
 	],
 
 	'pushbullet' => [
-		'apiKey' => 'o.Vv2qzQ8Mbi16dlyWvP8P4RBYuPbhbGRm',
+		'apiKey' => env('PUSHBULLET_KEY'),
 	],
 
 ];
