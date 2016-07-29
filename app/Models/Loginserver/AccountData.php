@@ -11,7 +11,7 @@ class AccountData extends Model {
 
     protected $table        = 'account_data';
     protected $connection   = 'loginserver';
-    protected $fillable     = ['id', 'name', 'password', 'email', 'real', 'vote', 'pseudo', 'token', 'pushbullet'];
+    protected $fillable     = ['id', 'name', 'password', 'email', 'shop_point', 'vote', 'pseudo', 'token', 'pushbullet'];
     public $timestamps      = false;
 
     /**
@@ -37,7 +37,7 @@ class AccountData extends Model {
      */
     public function scopeAddReal($query, $accountId, $quantity)
     {
-        return $query->where('id', $accountId)->increment('real', $quantity);
+        return $query->where('id', $accountId)->increment('shop_point', $quantity);
     }
 
     /**
