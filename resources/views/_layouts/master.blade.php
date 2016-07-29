@@ -45,7 +45,6 @@
                 <ul class="sub_menu">
                     <li><a href="{{Route('stats.online')}}">{{Lang::get('all.nav.online')}}</a></li>
                     <li><a href="{{Route('stats.legions')}}">{{Lang::get('all.nav.legions')}}</a></li>
-                    <li><a href="{{Route('stats.bg')}}">{{Lang::get('all.nav.bg')}}</a></li>
                 </ul>
             </li>
             <li><a href="http://realaion.com/forum/">{{Lang::get('all.nav.forum')}}</a></li>

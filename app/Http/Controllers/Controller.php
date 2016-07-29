@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
-use App\Models\Gameserver\Ladder;
 use App\Models\Gameserver\Player;
 use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
@@ -37,7 +36,6 @@ abstract class Controller extends BaseController {
         $this->accountVotes();
         $this->countPlayersOnline();
         $this->accountShopPoints();
-        $this->topVotes();
         $this->topBg();
         $this->getLanguageFromCookie();
         $this->getSlider();
@@ -126,15 +124,6 @@ abstract class Controller extends BaseController {
     {
         $voters = AccountData::remember(10)->where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
         View::Share('topVotes', $voters);
-    }
-
-    /**
-     * Set Variables $topBg
-     */
-    private function topBg()
-    {
-        $topBg = Ladder::remember(10)->orderBy('rating', 'DESC')->with('name')->take(5)->get();
-        View::Share('topBg', $topBg);
     }
 
     /**

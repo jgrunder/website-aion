@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Models\Gameserver\Ladder;
 use App\Models\Gameserver\Legion;
 use App\Models\Gameserver\Player;
 use Artesaos\SEOTools\Facades\OpenGraph;
@@ -43,24 +42,6 @@ class StatsController extends Controller {
         return view('stats.legions', [
             'legions' => Legion::orderBy('contribution_points', 'desc')->paginate(100),
             'start'   =>  ($request->input('page')) ? ((100 * $request->input('page')) - 100) : 0
-        ]);
-    }
-
-    /**
-     * GET /stats/bg
-     * @param Request $request
-     * @return \Illuminate\View\View
-     */
-    public function bg(Request $request)
-    {
-        // SEO
-        SEOMeta::setTitle(Lang::get('seo.bg.title'));
-        SEOMeta::setDescription(Lang::get('seo.bg.description'));
-        OpenGraph::setDescription(Lang::get('seo.bg.description'));
-
-        return view('stats.bg', [
-            'top'   => Ladder::orderBy('rating', 'DESC')->with('name')->paginate(15),
-            'start' => ($request->input('page')) ? ((15 * $request->input('page')) - 15) : 0
         ]);
     }
 

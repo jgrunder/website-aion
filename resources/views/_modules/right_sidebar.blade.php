@@ -64,31 +64,3 @@
         </table>
     </div>
 </div>
-
-
-<!-- BATTLE RANKING -->
-<div class="bloc_with_header bloc_battleranking">
-  <div class="bloc_header">
-    <h2>Battle ranking</h2>
-  </div>
-  <div class="bloc_body">
-      <table>
-          <thead>
-              <tr>
-                  <th width="18%">#</th>
-                  <th style="text-align: left;">{{Lang::get('all.layout.name')}}</th>
-                  <th>Points</th>
-              </tr>
-          </thead>
-          <tbody>
-              @foreach($topBg as $index => $player)
-                  <tr>
-                      <td width="18%" class="strong">{{$index + 1}}</td>
-                      <td style="text-align: left;">{{$player->name['name']}}</td>
-                      <td>{{$player->rating}}</td>
-                  </tr>
-              @endforeach
-          </tbody>
-      </table>
-  </div>
-</div>
