@@ -55,7 +55,7 @@
 
     <!-- LOGO -->
     <div class="logo">
-        <img class="logo" src="/images/logo.png" alt="Logo de RealAion">
+        <img class="logo" src="{!! asset('images/logo.png') !!}" alt="Logo">
     </div>
 
     <!-- HEADER -->
