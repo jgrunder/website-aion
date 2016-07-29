@@ -1,7 +1,7 @@
 <!-- SLIDER -->
 <ul id="bxslider">
     @foreach($slider as $value)
-        <li><img src="/{{$value['path']}}" title="{{$value['title']}}"/></li>
+        <li><img src="{!! asset($value['path']) !!}" title="{{$value['title']}}"/></li>
     @endforeach
 </ul>
 
