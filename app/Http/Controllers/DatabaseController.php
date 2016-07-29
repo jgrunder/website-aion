@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cookie;
 
 class DatabaseController extends Controller {
 
@@ -19,7 +20,7 @@ class DatabaseController extends Controller {
         }
         else {
 
-            $value = file_get_contents('http://aiondatabase.net/tip.php?id=item--'.$id.'&l=fr&nf=on');
+            $value = file_get_contents('http://aiondatabase.net/tip.php?id=item--'.$id.'&l='.Cookie::get('language').'&nf=on');
             $value = str_replace('src="/', 'src="http://aiondatabase.net/', $value);
 
             Cache::forever('item_'.$id, $value);
