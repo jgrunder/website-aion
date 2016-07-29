@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron">
-                <h1>Administration</h1>
-                <p>Ce DashBoard GM est fait pour vous aider dans l'administration. Merci de ne pas faire le con avec sous peine d'expulsion.</p>
+                <h1>GM's Dashboard</h1>
+                <p>If you have a issue, contact : <a href="mailto:mathieu.letyrant@gmail.com">mathieu.letyrant@gmail.com</a></p>
             </div>
         </div>
         <!-- Status Servers -->
@@ -33,10 +33,10 @@
             @endforeach
 
         </div>
-        <!-- Des Chiffres -->
+        <!-- Numbers -->
         <div class="row">
             <div class="col col-md-12 page-header text-center">
-                <h1>Des chiffres</h1>
+                <h1>Numbers</h1>
             </div>
         </div>
         <div class="row">
@@ -46,13 +46,13 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="fa fa-shopping-cart"></i>
-                            Achat Boutique
+                            Purchase shop
                         </h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p>Aujourd'hui :</p>
+                        <p>Today :</p>
                         <h2><strong>{{$shopHistoryToday}}</strong></h2>
-                        <p>Au total :</p>
+                        <p>Total :</p>
                         <h2><strong>{{$shopHistoryTotal}}</strong></h2>
                     </div>
                 </div>
@@ -63,15 +63,15 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="fa fa-line-chart"></i>
-                            Meilleurs Ventes
+                            Best sales
                         </h3>
                     </div>
                     <div class="panel-body">
                         <table>
                             <thead>
                             <tr>
-                                <th width="90%">Nom</th>
-                                <th style="text-align: center;">Achats</th>
+                                <th width="90%">Name</th>
+                                <th style="text-align: center;">Sales</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -92,11 +92,11 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="fa fa-users"></i>
-                            Comptes
+                            Accounts
                         </h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p>Au total :</p>
+                        <p>Total :</p>
                         <h2><strong>{{$accountsCount}}</strong></h2>
                     </div>
                 </div>
