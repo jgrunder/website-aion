@@ -20,7 +20,8 @@ return [
     ],
 
     'allopass'                 => [
-        'realGiven'            => 4000,
+        'url'                  => 'https://payment.allopass.com/buy/buy.apu?ids=307954&idd=1326680',
+        'pointsGiven'          => 4000,
         'documentId'           => '307954/1326680/4588246'
     ],
 

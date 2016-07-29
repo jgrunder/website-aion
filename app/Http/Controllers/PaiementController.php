@@ -55,9 +55,9 @@ class PaiementController extends Controller {
 
                 if (LogsAllopass::insert($recall, Session::get('user.id')) !== null) {
 
-                    AccountData::me(Session::get('user.id'))->increment('real', Config::get('aion.allopass.realGiven'));
+                    AccountData::me(Session::get('user.id'))->increment('points', Config::get('aion.allopass.pointsGiven'));
                     event(new UserWasPurchasedShopPoint(Session::get('user.id')));
-                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.realGiven')." reals");
+                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.pointsGiven'));
 
                 }
 
