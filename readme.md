@@ -41,14 +41,9 @@ MAIL_PASSWORD	= null
 
 2. You have a config files : ```config/aion.php```
 
-3. Create a new database for the website (SQL : ```database/sql/database.ws.sql```)
-4. Add a new column : shop_points(int) in account_data
-5. Add a new column : pseudo(varchar:255) in account_data
-6. Add a new column : vote(int) in account_data
-7. Add a new column : email(varchar:255) in account_data
-8. Add a new column : token(varchar:255) in account_data
-9. Execute this SQL on your login database (SQL : ```database/sql/database.ls.sql)```
-10. Execute this SQL on your game database (SQL : ```database/sql/database.gs.sql)```
+3. Execute : ```php artisan migrate```
+
+4. After Having execute the command, all databases have been modified.
 
 ### Apache :
 The framework ships with a public/.htaccess file that is used to allow URLs without index.php. If you use Apache to serve your Laravel application, be sure to enable the mod_rewrite module.
