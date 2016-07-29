@@ -36,7 +36,7 @@ abstract class Controller extends BaseController {
         $this->serversTest();
         $this->accountVotes();
         $this->countPlayersOnline();
-        $this->accountShopPoint();
+        $this->accountShopPoints();
         $this->topVotes();
         $this->topBg();
         $this->getLanguageFromCookie();
@@ -66,14 +66,14 @@ abstract class Controller extends BaseController {
     /**
      * Update Variable in the session
      */
-    private function accountShopPoint()
+    private function accountShopPoints()
     {
         if(Session::has('connected')) {
-            $user = AccountData::me(Session::get('user.id'))->first(['shop_point']);
-            Session::put('user.shop_point', $user['shop_point']);
+            $user = AccountData::me(Session::get('user.id'))->first(['shop_points']);
+            Session::put('user.shop_points', $user['shop_points']);
         }
         else {
-            Session::put('user.shop_point', 0);
+            Session::put('user.shop_points', 0);
         }
     }
 
