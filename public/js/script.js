@@ -53,9 +53,9 @@
 
 			$.get("/user/unlock/"+playerId+"/"+accountId, function( data ) {
 				if(data == 'OK'){
-					that.text('Débloqué');
+					that.text('Unlocked');
 				} else {
-					that.text('Erreur');
+					that.text('Error');
 				}
 			});
 
@@ -69,7 +69,7 @@
 			var itemId = $(this).attr('data-id');
 
 			swal({
-				title: "Tape et regarde !",
+				title: "Tap and look !",
 				text: '.preview '+itemId,
 				timer: 7000
 			});
@@ -146,7 +146,7 @@
 		if ($databaseItem.length > 0) {
 			$databaseItem.on('mouseenter', function() {
 				var itemId = $(this).attr('data-id');
-				$(this).after('<div class="information_item">Merci de patienter ...</div>');
+				$(this).after('<div class="information_item">Waiting ...</div>');
 				$.get('/database/item/' + itemId, function(data) {
 
 					var $data = $(data);
