@@ -12,9 +12,11 @@ class CreateEmail extends Migration {
 	 */
 	public function up()
 	{
-        Schema::connection('loginserver')->table('account_data', function ($table) {
-            $table->string('email')->nullable()->default(null)->after('name');
-        });
+        if(!Schema::connection('loginserver')->hasColumn('email')){
+            Schema::connection('loginserver')->table('account_data', function ($table) {
+                $table->string('email')->nullable()->default(null)->after('name');
+            });
+        }
 	}
 
 	/**
