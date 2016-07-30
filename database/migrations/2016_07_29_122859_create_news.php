@@ -30,7 +30,7 @@ class CreateNews extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('news');
 	}
 
 }

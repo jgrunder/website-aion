@@ -30,7 +30,7 @@ class CreateLogsShopPoints extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('logs_shop_points');
 	}
 
 }

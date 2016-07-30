@@ -25,7 +25,7 @@ class CreateShopCategory extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('shop_category');
 	}
 
 }

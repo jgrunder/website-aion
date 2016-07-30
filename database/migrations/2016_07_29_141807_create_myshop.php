@@ -27,6 +27,6 @@ class CreateMyshop extends Migration
      */
     public function down()
     {
-        //
+        Schema::connection('gameserver')->drop('myshop');
     }
 }

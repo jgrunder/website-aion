@@ -28,7 +28,7 @@ class CreateAccountVotes extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('loginserver')->drop('account_votes');
 	}
 
 }

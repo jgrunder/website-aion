@@ -21,6 +21,7 @@ class CreateShopItems extends Migration {
             $table->integer('quantity');
             $table->integer('level');
             $table->integer('purchased');
+            $table->string('quality_item');
         });
 	}
 
@@ -31,7 +32,7 @@ class CreateShopItems extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('shop_items');
 	}
 
 }

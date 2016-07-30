@@ -27,7 +27,7 @@ class CreateLogsAllopass extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('logs_allopass');
 	}
 
 }

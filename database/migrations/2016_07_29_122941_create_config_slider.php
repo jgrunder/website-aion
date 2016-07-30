@@ -26,7 +26,7 @@ class CreateConfigSlider extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('config_slider');
 	}
 
 }

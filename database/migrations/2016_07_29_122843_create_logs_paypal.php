@@ -36,7 +36,7 @@ class CreateLogsPaypal extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('webserver')->drop('logs_paypal');
 	}
 
 }

@@ -24,7 +24,9 @@ class CreateLevel extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::connection('loginserver')->table('account_data', function ($table) {
+            $table->dropColumn('level');
+        });
 	}
 
 }

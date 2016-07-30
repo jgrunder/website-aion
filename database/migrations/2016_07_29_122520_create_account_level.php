@@ -27,7 +27,7 @@ class CreateAccountLevel extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::connection('loginserver')->drop('account_level');
 	}
 
 }
