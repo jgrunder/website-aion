@@ -20,7 +20,7 @@
         </tbody>
     </table>
 
-    <a href="{{Route('shop.summary')}}" class="btn">{{Lang::get('all.shop.buy')}} {{$total}} Reals</a>
+    <a href="{{Route('shop.summary')}}" class="btn">{{Lang::get('all.shop.buy')}} {{$total}} Points</a>
 @else
     Votre panier est vide pour le moment
 @endif

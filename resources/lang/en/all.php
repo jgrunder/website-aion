@@ -28,11 +28,18 @@ return [
         'name'             => "Name"
     ],
     'shop'                 => [
-        'buy'              => 'Buy',
-        'gift'             => 'Gift',
-        'name'             => 'Name',
-        'price'            => 'Price',
-        'qt'               => 'QT'
+        'buy'                => 'Buy',
+        'gift'               => 'Gift',
+        'name'               => 'Name',
+        'title'              => 'Shop',
+        'best_sales'         => 'Best Sales',
+        'qt'                 => 'QT',
+        'price'              => 'Price',
+        'level'              => 'Level',
+        'shopping_cart'      => 'Shopping cart',
+        'shopping_cart_desc' => 'You can delete an item by clicking on the trash',
+        'categories'         => 'Categories',
+        'categories_desc'    => 'Sub-categories available'
     ],
     'login'                => [
         'username'         => 'Username',
@@ -62,5 +69,16 @@ return [
         'password_confirm' => 'Password confirmation',
         'email'            => 'Email',
         'submit'           => 'Subscribe'
+    ],
+    'shop'                 => [
+        'title'              => 'Shop',
+        'best_sales'         => 'Best Sales',
+        'qt'                 => 'Quantity',
+        'price'              => 'Price',
+        'level'              => 'Level',
+        'shopping_cart'      => 'Shopping cart',
+        'shopping_cart_desc' => 'You can delete an item by clicking on the trash',
+        'categories'         => 'Categories',
+        'categories_desc'    => 'Sub-categories available'
     ]
 ];

@@ -28,11 +28,18 @@ return [
         'name'             => "Nom"
     ],
     'shop'                 => [
-        'buy'              => 'Acheter',
-        'gift'             => 'Cadeau',
-        'name'             => 'Nom',
-        'price'            => 'Prix',
-        'qt'               => 'QT'
+        'buy'                => 'Acheter',
+        'gift'               => 'Cadeau',
+        'name'               => 'Nom',
+        'title'              => 'Boutique',
+        'best_sales'         => 'Meilleurs ventes',
+        'qt'                 => 'QT',
+        'price'              => 'Price',
+        'level'              => 'Level',
+        'shopping_cart'      => 'Panier',
+        'shopping_cart_desc' => 'Vous pouvez supprimer un élément en cliquant sur ​​la corbeille',
+        'categories'         => 'Catégories',
+        'categories_desc'    => 'Sous-catégories disponibles'
     ],
     'login'                => [
         'username'         => 'Identifiant',

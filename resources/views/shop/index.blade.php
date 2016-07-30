@@ -8,7 +8,7 @@
         <div class="container_left">
             <div class="news">
                 <div class="news_top">
-                    <h2>Boutique @if(isset($top)) (Meilleurs ventes) @endif</h2>
+                    <h2>{!! Lang::get('all.shop.title') !!} @if(isset($top)) ({!! Lang::get('all.subscribe.best_sales') !!}) @endif</h2>
                 </div>
                 <div class="news_body shop_container">
 
@@ -23,9 +23,9 @@
                             </h3>
 
                             <ul>
-                                <li class="quantity">Quantité : <strong class="value">{{$item->quantity}}</strong></li>
-                                <li class="price">Prix :  <strong class="value">{{$item->price}}</strong></li>
-                                <li class="price">Niveau :  <strong class="value">{{$item->level}}</strong></li>
+                                <li class="quantity">{!! Lang::get('all.subscribe.qt') !!} : <strong class="value">{{$item->quantity}}</strong></li>
+                                <li class="price">{!! Lang::get('all.subscribe.price') !!} :  <strong class="value">{{$item->price}}</strong></li>
+                                <li class="price">{!! Lang::get('all.subscribe.level') !!} :  <strong class="value">{{$item->level}}</strong></li>
                             </ul>
 
                             <div class="buttons">
@@ -52,8 +52,8 @@
             <!-- CART -->
             <div class="bloc_with_header bloc_vote">
                 <div class="bloc_header">
-                    <h2>Panier</h2>
-                    <p>Vous pouvez supprimer un élément en cliquant sur la poubelle</p>
+                    <h2>{!! Lang::get('all.subscribe.shopping_cart') !!}</h2>
+                    <p>{!! Lang::get('all.subscribe.shopping_cart_desc') !!}</p>
                 </div>
                 <div class="bloc_body center container_shop_cart">
                     @include('_modules.cart')
@@ -63,8 +63,8 @@
             <!-- CATEGORIES -->
             <div class="bloc_with_header bloc_vote">
                 <div class="bloc_header">
-                    <h2>Catégories</h2>
-                    <p>Des sous-catégories sont disponibles</p>
+                    <h2>{!! Lang::get('all.subscribe.categories') !!}</h2>
+                    <p>{!! Lang::get('all.subscribe.categories_desc') !!}</p>
                 </div>
                 <div class="bloc_body center container_shop_categories">
 

@@ -60,8 +60,8 @@
             <!-- CATEGORIES -->
             <div class="bloc_with_header bloc_vote">
                 <div class="bloc_header">
-                    <h2>Catégories</h2>
-                    <p>Des sous-catégories son disponibles</p>
+                    <h2>{!! Lang::get('all.subscribe.categories') !!}</h2>
+                    <p>{!! Lang::get('all.subscribe.categories_desc') !!}</p>
                 </div>
                 <div class="bloc_body center container_shop_categories">
 
