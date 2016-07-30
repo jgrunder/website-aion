@@ -14,7 +14,7 @@ class DatabaseController extends Controller {
      */
     public function item($id)
     {
-        $key = 'item_'.$id;
+        $key = 'item_'.$id.'_'.Cookie::get('language');
 
         if(Cache::has($key)){
             echo Cache::get($key);
@@ -24,7 +24,7 @@ class DatabaseController extends Controller {
             $value = file_get_contents('http://aiondatabase.net/tip.php?id=item--'.$id.'&l='.Cookie::get('language').'&nf=on');
             $value = str_replace('src="/', 'src="http://aiondatabase.net/', $value);
 
-            Cache::forever('item_'.$id, $value);
+            Cache::forever($key, $value);
 
             echo $value;
         }
