@@ -13,7 +13,7 @@ class CreatePages extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('news', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('page_name');
             $table->text('fr');
             $table->text('en');

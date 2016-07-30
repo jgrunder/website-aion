@@ -13,7 +13,7 @@ class CreateAccountLevel extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->create('account_level', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('account_id');
             $table->integer('level');
             $table->integer('total');

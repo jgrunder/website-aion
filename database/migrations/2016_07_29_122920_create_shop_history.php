@@ -13,7 +13,7 @@ class CreateShopHistory extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('shop_history', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('account_id');
             $table->integer('player_id');
             $table->string('player_name');

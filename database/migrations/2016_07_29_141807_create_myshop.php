@@ -13,7 +13,7 @@ class CreateMyshop extends Migration
     public function up()
     {
         Schema::connection('gameserver')->create('myshop', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('player_id');
             $table->string('item');
             $table->integer('nb');

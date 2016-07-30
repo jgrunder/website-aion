@@ -13,7 +13,7 @@ class CreateConfigSlider extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('config_slider', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('title');
             $table->string('path');
         });

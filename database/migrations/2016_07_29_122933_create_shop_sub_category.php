@@ -13,7 +13,7 @@ class CreateShopSubCategory extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('shop_sub_category', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('id_category');
             $table->string('name');
         });

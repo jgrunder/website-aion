@@ -13,7 +13,7 @@ class CreateLogsShopPoints extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('logs_shop_points', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('sender_name');
             $table->string('receiver_name');
             $table->string('reason');

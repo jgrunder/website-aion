@@ -13,7 +13,7 @@ class CreateShopItems extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('shop_items', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('id_sub_category');
             $table->string('id_item');
             $table->string('name');

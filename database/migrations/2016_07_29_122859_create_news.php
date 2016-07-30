@@ -13,7 +13,7 @@ class CreateNews extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('news', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('title');
             $table->string('slug');
             $table->string('text');

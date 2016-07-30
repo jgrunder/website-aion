@@ -13,7 +13,7 @@ class CreateAccountVotes extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->create('account_votes', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('account_id');
             $table->integer('site');
             $table->integer('add');

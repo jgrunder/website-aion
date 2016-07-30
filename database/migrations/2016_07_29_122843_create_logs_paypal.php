@@ -13,7 +13,7 @@ class CreateLogsPaypal extends Migration {
 	public function up()
 	{
         Schema::connection('webserver')->create('logs_paypal', function ($table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('id_account');
             $table->string('status');
             $table->string('price');
