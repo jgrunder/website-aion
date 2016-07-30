@@ -69,16 +69,5 @@ return [
         'password_confirm' => 'Password confirmation',
         'email'            => 'Email',
         'submit'           => 'Subscribe'
-    ],
-    'shop'                 => [
-        'title'              => 'Shop',
-        'best_sales'         => 'Best Sales',
-        'qt'                 => 'Quantity',
-        'price'              => 'Price',
-        'level'              => 'Level',
-        'shopping_cart'      => 'Shopping cart',
-        'shopping_cart_desc' => 'You can delete an item by clicking on the trash',
-        'categories'         => 'Categories',
-        'categories_desc'    => 'Sub-categories available'
     ]
 ];
