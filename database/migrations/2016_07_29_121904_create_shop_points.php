@@ -13,7 +13,7 @@ class CreateShopPoints extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->table('account_data', function ($table) {
-            $table->integer('shop_points')->default(0);
+            $table->integer('shop_points')->default(0)->after('toll');
         });
 	}
 

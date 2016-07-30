@@ -13,7 +13,7 @@ class CreatePushbullet extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->table('account_data', function ($table) {
-            $table->string('pushbullet');
+            $table->string('pushbullet')->nullable()->default(null)->after('email');
         });
 	}
 

@@ -12,7 +12,7 @@ class CreatePages extends Migration {
 	 */
 	public function up()
 	{
-        Schema::connection('webserver')->create('news', function ($table) {
+        Schema::connection('webserver')->create('pages', function ($table) {
             $table->increments('id');
             $table->string('page_name');
             $table->text('fr');
@@ -27,7 +27,7 @@ class CreatePages extends Migration {
 	 */
 	public function down()
 	{
-		Schema::connection('webserver')->drop('news');
+		Schema::connection('webserver')->drop('pages');
 	}
 
 }

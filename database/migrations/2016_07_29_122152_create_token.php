@@ -13,7 +13,7 @@ class CreateToken extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->table('account_data', function ($table) {
-            $table->string('token');
+            $table->string('token')->nullable()->default(null);
         });
 	}
 

@@ -17,7 +17,7 @@ class CreateNews extends Migration {
             $table->string('title');
             $table->string('slug');
             $table->string('text');
-            $table->account_id('account_id');
+            $table->integer('account_id');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
