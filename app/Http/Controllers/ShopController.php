@@ -32,7 +32,8 @@ class ShopController extends Controller {
           'top'             => true,
           'items'           => $top_purchased,
           'items_cart'      => Cart::content(),
-          'total'           => Cart::total()
+          'total'           => Cart::total(),
+          'count'           => Cart::count()
         ]);
     }
 
@@ -53,7 +54,8 @@ class ShopController extends Controller {
           'categories'      => ShopCategory::with('name')->get(),
           'items'           => $items,
           'items_cart'      => Cart::content(),
-          'total'           => Cart::total()
+          'total'           => Cart::total(),
+          'count'           => Cart::count()
         ]);
     }
 
@@ -65,9 +67,8 @@ class ShopController extends Controller {
         $item            = ShopItem::where('id_item', '=', $id)->first();
         $item_in_cart    = Cart::search(['id' => $id]);
         $content_in_cart = Cart::content();
-        $itemsCount      = $item->count();
 
-        if($itemsCount > 0) {
+        if($item->count() > 0) {
 
             if(!$item_in_cart) {
                 Cart::add($id, $item->name, 1, $item->price, ['id_item' => $id, 'quantity' => $item->quantity]); // Add new Item in Cart
@@ -78,7 +79,7 @@ class ShopController extends Controller {
             return view('_modules.cart', [
               'items_cart'      => Cart::content(),
               'total'           => Cart::total(),
-              'count'           => $itemsCount
+              'count'           => Cart::count()
             ]);
 
         }
@@ -102,7 +103,8 @@ class ShopController extends Controller {
 
         return view('_modules.cart', [
           'items_cart'      => Cart::content(),
-          'total'           => Cart::total()
+          'total'           => Cart::total(),
+          'count'           => Cart::count()
         ]);
     }
 
@@ -131,7 +133,8 @@ class ShopController extends Controller {
           'categories'      => ShopCategory::with('name')->get(),
           'items_cart'      => Cart::content(),
           'total'           => Cart::total(),
-          'players'         => $players_array
+          'players'         => $players_array,
+          'count'           => Cart::count()
         ]);
     }
 
