@@ -65,8 +65,9 @@ class ShopController extends Controller {
         $item            = ShopItem::where('id_item', '=', $id)->first();
         $item_in_cart    = Cart::search(['id' => $id]);
         $content_in_cart = Cart::content();
+        $itemsCount      = $item->count();
 
-        if($item->count() > 0) {
+        if($itemsCount > 0) {
 
             if(!$item_in_cart) {
                 Cart::add($id, $item->name, 1, $item->price, ['id_item' => $id, 'quantity' => $item->quantity]); // Add new Item in Cart
@@ -76,7 +77,8 @@ class ShopController extends Controller {
 
             return view('_modules.cart', [
               'items_cart'      => Cart::content(),
-              'total'           => Cart::total()
+              'total'           => Cart::total(),
+              'count'           => $itemsCount
             ]);
 
         }

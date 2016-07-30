@@ -1,4 +1,4 @@
-@if ($total > 0)
+@if ($count > 0)
     <table>
         <thead>
         <tr>
