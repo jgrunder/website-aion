@@ -8,7 +8,7 @@
         <div class="container_left">
             <div class="news">
                 <div class="news_top">
-                    <h2>{!! Lang::get('all.shop.title') !!} @if(isset($top)) ({!! Lang::get('all.subscribe.best_sales') !!}) @endif</h2>
+                    <h2>{!! Lang::get('all.shop.title') !!} @if(isset($top)) ({!! Lang::get('all.shop.best_sales') !!}) @endif</h2>
                 </div>
                 <div class="news_body shop_container">
 
@@ -23,9 +23,9 @@
                             </h3>
 
                             <ul>
-                                <li class="quantity">{!! Lang::get('all.subscribe.qt') !!} : <strong class="value">{{$item->quantity}}</strong></li>
-                                <li class="price">{!! Lang::get('all.subscribe.price') !!} :  <strong class="value">{{$item->price}}</strong></li>
-                                <li class="price">{!! Lang::get('all.subscribe.level') !!} :  <strong class="value">{{$item->level}}</strong></li>
+                                <li class="quantity">{!! Lang::get('all.shop.qt') !!} : <strong class="value">{{$item->quantity}}</strong></li>
+                                <li class="price">{!! Lang::get('all.shop.price') !!} :  <strong class="value">{{$item->price}}</strong></li>
+                                <li class="price">{!! Lang::get('all.shop.level') !!} :  <strong class="value">{{$item->level}}</strong></li>
                             </ul>
 
                             <div class="buttons">
@@ -52,8 +52,8 @@
             <!-- CART -->
             <div class="bloc_with_header bloc_vote">
                 <div class="bloc_header">
-                    <h2>{!! Lang::get('all.subscribe.shopping_cart') !!}</h2>
-                    <p>{!! Lang::get('all.subscribe.shopping_cart_desc') !!}</p>
+                    <h2>{!! Lang::get('all.shop.shopping_cart') !!}</h2>
+                    <p>{!! Lang::get('all.shop.shopping_cart_desc') !!}</p>
                 </div>
                 <div class="bloc_body center container_shop_cart">
                     @include('_modules.cart')
@@ -63,8 +63,8 @@
             <!-- CATEGORIES -->
             <div class="bloc_with_header bloc_vote">
                 <div class="bloc_header">
-                    <h2>{!! Lang::get('all.subscribe.categories') !!}</h2>
-                    <p>{!! Lang::get('all.subscribe.categories_desc') !!}</p>
+                    <h2>{!! Lang::get('all.shop.categories') !!}</h2>
+                    <p>{!! Lang::get('all.shop.categories_desc') !!}</p>
                 </div>
                 <div class="bloc_body center container_shop_categories">
 
