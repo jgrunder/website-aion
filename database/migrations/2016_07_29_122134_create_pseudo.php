@@ -13,7 +13,7 @@ class CreatePseudo extends Migration {
 	public function up()
 	{
         Schema::connection('loginserver')->table('account_data', function ($table) {
-            $table->string('pseudo');
+            $table->string('pseudo')->nullable()->default(null);
         });
 	}
 
