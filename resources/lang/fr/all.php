@@ -53,5 +53,14 @@ return [
     'top_vote'             => [
         'title'            => 'Top Voteurs',
         'description'      => 'Devenez un ambassadeur !'
+    ],
+    'subscribe'            => [
+        'title'            => 'Inscription',
+        'username'         => 'Identifiant',
+        'pseudo'           => 'Pseudo',
+        'password'         => 'Mot de passe',
+        'password_confirm' => 'Répéter le mot de passe',
+        'email'            => 'Email',
+        'submit'           => 'Inscription'
     ]
 ];

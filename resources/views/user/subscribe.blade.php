@@ -3,7 +3,7 @@
 @section('content')
   <div class="container_single subscribe">
     <div class="container_single_top">
-      <h1>Inscription</h1>
+      <h1>{!! Lang::get('all.subscribe.title') !!}</h1>
     </div>
     <div class="container_single_body">
 
@@ -11,7 +11,7 @@
 
       {!! Form::open() !!}
 
-        {!! Form::text('username', null, ['placeholder' => 'Identifiant', 'class' => 'input', 'required' => 'required']) !!}
+        {!! Form::text('username', null, ['placeholder' => Lang::get('all.subscribe.username'), 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('username')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('username') as $message)
@@ -20,7 +20,7 @@
             </span>
           @endif
 
-        {!! Form::text('pseudo', null, ['placeholder' => "Pseudo d'affichage", 'class' => 'input', 'required' => 'required']) !!}
+        {!! Form::text('pseudo', null, ['placeholder' => Lang::get('all.subscribe.pseudo'), 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('pseudo')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('pseudo') as $message)
@@ -29,7 +29,7 @@
             </span>
           @endif
 
-        {!! Form::password('password', ['placeholder' => "Mot de passe", 'class' => 'input', 'required' => 'required']) !!}
+        {!! Form::password('password', ['placeholder' => Lang::get('all.subscribe.password'), 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('password')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('password') as $message)
@@ -38,7 +38,7 @@
             </span>
           @endif
 
-        {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input', 'required' => 'required']) !!}
+        {!! Form::password('password_confirmation', ['placeholder' => Lang::get('all.subscribe.password_confirm'), 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('password_confirmation')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('password_confirmation') as $message)
@@ -47,7 +47,7 @@
             </span>
           @endif
 
-        {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input', 'required' => 'required']) !!}
+        {!! Form::email('email', null, ['placeholder' => Lang::get('all.subscribe.email'), 'class' => 'input', 'required' => 'required']) !!}
           @if (count($errors->get('email')) > 0)
             <span class="error_form">
                 @foreach ($errors->get('email') as $message)
@@ -56,7 +56,7 @@
             </span>
           @endif
 
-        <input type="submit" class="btn btn-primary" value="Valider l'inscription">
+        <input type="submit" class="btn btn-primary" value="{!! Lang::get('all.subscribe.submit') !!}">
 
       {!! Form::close() !!}
 
