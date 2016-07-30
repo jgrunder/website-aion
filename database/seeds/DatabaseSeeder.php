@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
         $this->call('Pages');
         $this->call('News');
+        $this->call('Sliders');
 	}
 
 }
