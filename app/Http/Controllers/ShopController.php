@@ -115,7 +115,7 @@ class ShopController extends Controller {
             return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.empty_cart'));
         }
         else if($account->shop_points < Cart::total()) { // If no shop points -> Redirect to the shop page
-            return redirect()->back()->with('error', Lang::get('flashMessage.shop.not_real'));
+            return redirect()->back()->with('error', Lang::get('flashMessage.shop.not_shop_points'));
         }
 
         $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
