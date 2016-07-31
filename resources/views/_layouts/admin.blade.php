@@ -13,7 +13,6 @@
     <!-- STYLESHEETS -->
     <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
     <link href="//bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
 </head>
 <body>
 
