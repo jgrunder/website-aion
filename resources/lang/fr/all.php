@@ -38,6 +38,7 @@ return [
         'level'              => 'Level',
         'shopping_cart'      => 'Panier',
         'shopping_cart_desc' => 'Vous pouvez supprimer un élément en cliquant sur ​​la corbeille',
+        'shopping_cart_empty'=> 'Votre panier est vide pour le moment',
         'categories'         => 'Catégories',
         'categories_desc'    => 'Sous-catégories disponibles'
     ],

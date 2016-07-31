@@ -38,6 +38,7 @@ return [
         'level'              => 'Level',
         'shopping_cart'      => 'Shopping cart',
         'shopping_cart_desc' => 'You can delete an item by clicking on the trash',
+        'shopping_cart_empty'=> 'Your shopping cart is empty',
         'categories'         => 'Categories',
         'categories_desc'    => 'Sub-categories available'
     ],

@@ -22,5 +22,5 @@
 
     <a href="{{Route('shop.summary')}}" class="btn">{{Lang::get('all.shop.buy')}} {{$total}} Points</a>
 @else
-    Votre panier est vide pour le moment
+    {{Lang::get('all.shop.shopping_cart_empty')}}
 @endif
