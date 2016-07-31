@@ -32,7 +32,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td style="font-weight: bold">{{$total}} Reals</td>
+                            <td style="font-weight: bold">{{$total}} Points's Shop</td>
                         </tr>
                     </table>
 
