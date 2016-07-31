@@ -43,7 +43,7 @@ return [
     ],
 
     'race_name'          => [
-        'ELYOS'		       => "Elyseen",
+        'ELYOS'		       => "Elyséen",
         'ASMODIANS'	     => "Asmodien",
         'BALAUR'	       => "Balaur"
     ],

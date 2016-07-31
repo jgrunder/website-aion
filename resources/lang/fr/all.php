@@ -10,7 +10,7 @@ return [
         'rules'            => 'Règles',
         'rates'            => 'Rates',
         'stats'            => 'Stats',
-        'online'           => 'Joueurs en lignes',
+        'online'           => 'Joueurs en ligne',
         'legions'          => 'Classement des légions',
         'bg'               => 'Classement des BG',
         'forum'            => 'Forum',

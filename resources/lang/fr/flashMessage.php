@@ -5,10 +5,10 @@ return [
         'fail_id'              => "L'article que vous demandez n'existe pas"
     ],
     'shop'                     => [
-        'fail_category_id'     => "La catégorie est surement vide ou n'existe pas",
-        'empty_cart'           => "Votre panier est vide. Vous ne pouvez pas accéder à cette page",
-        'not_real'             => "Vous n'avez pas assez de point reals sur votre compte",
-        'success'              => "Achat effectué, tapez la commande : .shop IG sur le personnage "
+        'fail_category_id' => "La catégorie est surement vide ou n'existe pas",
+        'empty_cart'       => "Votre panier est vide. Vous ne pouvez pas accéder à cette page",
+        'not_shop_points'  => "Vous n'avez pas assez de point boutique sur votre compte",
+        'success'          => "Achat effectué, tapez la commande : .shop IG sur le personnage "
     ],
     'vote'                     => [
         'wait_time'            => "Vous ne pouvez pas voter pour ce site, vous devez attendre 2H"
