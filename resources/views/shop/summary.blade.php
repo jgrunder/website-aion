@@ -24,15 +24,15 @@
                         @foreach ($items_cart as $item)
                             <tr>
                                 <td width="45%">{{$item->name}}</td>
-                                <td>{{$item->price}}</td>
-                                <td width="15%">{{$item->qty * $item->options['quantity']}}</td>
+                                <td>{{number_format($item->price, 0, '.', '.')}}</td>
+                                <td width="15%">{{number_format($item->qty * $item->options['quantity'], 0, '.', '.')}}</td>
                             </tr>
                         @endforeach
                         </tbody>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td style="font-weight: bold">{{$total}} Points's Shop</td>
+                            <td style="font-weight: bold">{{number_format($total, 0, '.', '.')}} Points's Shop</td>
                         </tr>
                     </table>
 
