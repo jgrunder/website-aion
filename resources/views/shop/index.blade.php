@@ -23,8 +23,8 @@
                             </h3>
 
                             <ul>
-                                <li class="quantity">{!! Lang::get('all.shop.qt') !!} : <strong class="value">{{$item->quantity}}</strong></li>
-                                <li class="price">{!! Lang::get('all.shop.price') !!} :  <strong class="value">{{$item->price}}</strong></li>
+                                <li class="quantity">{!! Lang::get('all.shop.qt') !!} : <strong class="value">{{number_format($item->quantity, 0, '.', '.')}}</strong></li>
+                                <li class="price">{!! Lang::get('all.shop.price') !!} :  <strong class="value">{{number_format($item->price, 0, '.', '.')}}</strong></li>
                                 <li class="price">{!! Lang::get('all.shop.level') !!} :  <strong class="value">{{$item->level}}</strong></li>
                             </ul>
 
