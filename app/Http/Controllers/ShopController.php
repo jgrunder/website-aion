@@ -115,7 +115,7 @@ class ShopController extends Controller {
     {
         $account = AccountData::me(Session::get('user.id'))->first();
 
-        if(Cart::total() === 0){ // If cart is empty -> Redirect to the shop page
+        if(Cart::count() == 0) { // If cart is empty -> Redirect to the shop page
             return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.empty_cart'));
         }
         else if($account->shop_points < Cart::total()) { // If no shop points -> Redirect to the shop page
