@@ -22,7 +22,7 @@ class HasVote {
         if(Session::has('connected')){
 
             $accountId      = Session::get('user.id');
-            $votesInConfig  = Config ::get('aion.vote.links');
+            $votesInConfig  = Config::get('aion.vote.links');
             $pointsPerVote  = (!Config::get('aion.vote.boost')) ? Config::get('aion.vote.shop_points_per_vote') : Config::get('aion.vote.shop_points_per_vote') + Config::get('aion.vote.boost_value');
             $referer        = $request->headers->get('referer');
 
