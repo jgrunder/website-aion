@@ -45,10 +45,12 @@
                     {!! Form::input('number', 'quantity', null, ['placeholder' => "1", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('level', "Level") !!}
-                    {!! Form::input('number', 'level', null, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
-                </div>
+                @if(Config::get('aion.enable_account_level'))
+                    <div class="form-group">
+                        {!! Form::label('level', "Level") !!}
+                        {!! Form::input('number', 'level', null, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
+                    </div>
+                @endif
 
                 {!! Form::input('hidden', 'quality_item', 'NONE', ['id' => 'qualityItem']) !!}
 

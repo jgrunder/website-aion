@@ -19,7 +19,7 @@ class CreateShopItems extends Migration {
             $table->string('name');
             $table->integer('price');
             $table->integer('quantity');
-            $table->integer('level');
+            $table->integer('level')->default(0);
             $table->integer('purchased');
             $table->string('quality_item');
         });

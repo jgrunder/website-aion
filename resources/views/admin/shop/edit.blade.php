@@ -46,10 +46,12 @@
                     {!! Form::input('number', 'quantity', $item->quantity, ['placeholder' => "1", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('level', "Level") !!}
-                    {!! Form::input('number', 'level', $item->level, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
-                </div>
+                @if(Config::get('aion.enable_account_level'))
+                    <div class="form-group">
+                        {!! Form::label('level', "Level") !!}
+                        {!! Form::input('number', 'level', $item->level, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
+                    </div>
+                @endif
 
                 <input type="submit" class="btn btn-danger" value="Edit item">
 
