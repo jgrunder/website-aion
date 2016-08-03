@@ -51,12 +51,14 @@
 			var accountId 	= $(this).attr('account-id');
 			var that 		= $(this);
 
-			$.get("/user/unlock/"+playerId+"/"+accountId, function( data ) {
+			$.get("/user/unlock/" + playerId + "/" + accountId, function(data) {
 				if(data == 'OK'){
 					that.text('Unlocked');
+				} else if(data == 'NO_PLAYER') {
+					that.text('Character not find');
 				} else {
-					that.text('Error');
-				}
+                    that.text('Character connected');
+                }
 			});
 
 			e.preventDefault();

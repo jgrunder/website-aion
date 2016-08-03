@@ -195,25 +195,31 @@ class UserController extends Controller
     }
 
     /**
-     * GET /user/unlock
+     * GET /user/unlock/{playerId)/{accountId}
      */
     public function unlockPlayer($playerId, $accountId)
     {
-        $player = Player::where('account_id', $accountId)->where('id', $playerId)->where('online', 0)->first();
+        $player = Player::where('account_id', $accountId)->where('id', $playerId)->first();
 
-        if($player){
-            Player::where('id', $playerId)->update([
-                'world_id'  => Config::get('aion.spawn.world_id'),
-                'x'         => Config::get('aion.spawn.x'),
-                'y'         => Config::get('aion.spawn.y'),
-                'z'         => Config::get('aion.spawn.z'),
-                'heading'   => Config::get('aion.spawn.heading')
-            ]);
-
-            return 'OK';
-        } else {
-            return 'KO';
+        if(!$player){
+            return 'NO_PLAYER';
         }
+
+        if($player->online == 1) {
+            return 'PLAYER_CONNECTED';
+        }
+
+        // Teleport the character
+        Player::where('id', $playerId)->update([
+            'world_id'  => ($player->race === 'ELYOS') ? Config::get('aion.spawn.elyos.world_id') : Config::get('aion.spawn.asmodians.world_id'),
+            'x'         => ($player->race === 'ELYOS') ? Config::get('aion.spawn.elyos.x') : Config::get('aion.spawn.asmodians.x'),
+            'y'         => ($player->race === 'ELYOS') ? Config::get('aion.spawn.elyos.y') : Config::get('aion.spawn.asmodians.y'),
+            'z'         => ($player->race === 'ELYOS') ? Config::get('aion.spawn.elyos.z') : Config::get('aion.spawn.asmodians.z'),
+            'heading'   => ($player->race === 'ELYOS') ? Config::get('aion.spawn.elyos.heading') : Config::get('aion.spawn.asmodians.heading')
+        ]);
+
+        // Success
+        return 'OK';
     }
 
     /**

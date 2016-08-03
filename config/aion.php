@@ -2,21 +2,30 @@
 
 return [
 
-    'website_name'             => 'Aion server',
-    'aion_version'             => '4.9',
-    'link_facebook'            => '#',
-    'link_twitter'             => '#',
-    'link_youtube'             => '#',
-    'languages'                => ['en', 'fr'],
-    'contactMail'              => 'mathieu.letyrant@gmail.com',
+    'website_name'  => 'Aion server',
+    'aion_version'  => '4.9',
+    'link_facebook' => '#',
+    'link_twitter'  => '#',
+    'link_youtube'  => '#',
+    'languages'     => ['en', 'fr'],
+    'contactMail'   => 'mathieu.letyrant@gmail.com',
 
     // When you are connect you can unlock your character
-    'spawn'                    => [
-        'world_id'             => '120010000',
-        'x'                    => '1275.5504',
-        'y'                    => '1169.5846',
-        'z'                    => '215.21492',
-        'heading'              => 30
+    'spawn' => [
+        'elyos' => [
+            'world_id' => '120010000',
+            'x'        => '1275.5504',
+            'y'        => '1169.5846',
+            'z'        => '215.21492',
+            'heading'  => 30
+        ],
+        'asmodians' => [
+            'world_id' => '120010000',
+            'x'        => '1275.5504',
+            'y'        => '1169.5846',
+            'z'        => '215.21492',
+            'heading'  => 30
+        ]
     ],
 
     'allopass'                 => [
