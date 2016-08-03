@@ -37,7 +37,7 @@ class AccountData extends Model {
      */
     public function scopeAddShopPoints($query, $accountId, $quantity)
     {
-        return $query->where('id', $accountId)->increment('shop_point', $quantity);
+        return $query->where('id', $accountId)->increment('shop_points', $quantity);
     }
 
     /**
