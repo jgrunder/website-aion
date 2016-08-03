@@ -78,6 +78,9 @@ location / {
 }
 ```
 
+### Command .shop
+There is an exemple on the WIKI : [right here ](https://github.com/Mathew78540/realaion/wiki/Command-.shop)
+
 ### Support :
 
 If you have a issue, you can create a issue on github.
