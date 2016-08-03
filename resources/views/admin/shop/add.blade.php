@@ -27,7 +27,7 @@
 
                 <div class="form-group">
                     {!! Form::label('id_sub_category', "Nom de la sous-catégorie") !!}
-                    {!! Form::select('id_sub_category', $subCategories, null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::select('id_sub_category', $categories, null, ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">

@@ -86,19 +86,22 @@ class ShopController extends Controller
           }
       }
 
-      $subCategories      = ShopSubCategory::get();
-      $subCategoriesInput = [];
+      // List all Sub-Categories group by Category
+      $categories = ShopCategory::all()->reduce(function($acc, $cat) {
+          $subCategories = ShopSubCategory::where('id_category', $cat->id)->get();
 
-      // Create beautiful array for select Input
-      foreach($subCategories as $subCategory){
-          $subCategoriesInput[$subCategory->name] = [
-            $subCategory->id => $subCategory->name
-          ];
-      }
+          $acc[$cat->category_name] = $subCategories->reduce(function($ac, $sub) {
+              $ac[$sub->id] = $sub->name;
+
+              return $ac;
+          }, []);
+
+          return $acc;
+      }, []);
 
       return view('admin.shop.add', [
-          'subCategories' => $subCategoriesInput,
-          'success'       => $success
+          'categories' => $categories,
+          'success'    => $success
       ]);
   }
 
