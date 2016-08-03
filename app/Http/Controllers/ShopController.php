@@ -156,7 +156,7 @@ class ShopController extends Controller {
               'player_id' => $player_id
             ]);
 
-            for($i = 0; i < $item->qty; $i++){
+            for($i = 0; $i < $item->qty; $i++){
                 ShopHistory::create([
                   'account_id'    => $account_id,
                   'player_id'     => $player_id,
