@@ -28,9 +28,10 @@
                     <h2>Boutique :</h2>
 
                     Vous avez sur votre compte <strong class="text-blue">{{$user['shop_points']}} points shop</strong>
-                    et vous avez dépensé <strong class="text-blue">@if(!$level) 0€ @else {{$level['total'].'€'}} @endif </strong><br>
-
-                    Pour atteindre le niveau  <strong class="text-blue">{{$nextLevel['level']}}</strong> dans la boutique vous devez dépenser <strong class="text-blue">{{$nextLevel['price']}}€</strong>
+                    @if(Config::get('aion.enable_account_level'))
+                        et vous avez dépensé <strong class="text-blue">@if(!$level) 0€ @else {{$level['total'].'€'}} @endif </strong><br>
+                        Pour atteindre le niveau  <strong class="text-blue">{{$nextLevel['level']}}</strong> dans la boutique vous devez dépenser <strong class="text-blue">{{$nextLevel['price']}}€</strong>
+                    @endif
 
                     <br><br>
 

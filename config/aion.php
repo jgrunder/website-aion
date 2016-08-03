@@ -128,6 +128,7 @@ return [
     ],
 
     // Level is use for the shop, more you buy on the shop more you account level-up
+    'enable_account_level' => false,
     'levels' => [
         [
             'level' => 0,
