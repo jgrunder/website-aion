@@ -155,15 +155,19 @@ class ShopController extends Controller {
               'nb'        => $item->options['quantity'] * $item->qty,
               'player_id' => $player_id
             ]);
-            ShopHistory::create([
-              'account_id'    => $account_id,
-              'player_id'     => $player_id,
-              'player_name'   => $player->name,
-              'item_id'       => $item->options['id_item'],
-              'quantity'      => $item->options['quantity'] * $item->qty,
-              'price'         => $item->price,
-              'name'          => $item->name,
-            ]);
+
+            for($i = 0; i < $item->qty; $i++){
+                ShopHistory::create([
+                  'account_id'    => $account_id,
+                  'player_id'     => $player_id,
+                  'player_name'   => $player->name,
+                  'item_id'       => $item->options['id_item'],
+                  'quantity'      => $item->options['quantity'],
+                  'price'         => $item->price,
+                  'name'          => $item->name,
+                ]);
+            }
+
         }
 
         AccountData::me($account_id)->decrement('shop_points', $total);
