@@ -22,27 +22,27 @@
                 {!! Form::open() !!}
 
                 <div class="form-group">
-                    {!! Form::label('id_item', "ID de l'item") !!}
+                    {!! Form::label('id_item', "Item's ID") !!}
                     {!! Form::input('number', 'id_item', $item->id_item, ['placeholder' => "100001684", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('id_sub_category', "Nom de la sous-catégorie") !!}
+                    {!! Form::label('id_sub_category', "Name of the Sub-Category") !!}
                     {!! Form::select('id_sub_category', $subCategories, $item->id_sub_category, ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('name', "Nom de l'item") !!}
+                    {!! Form::label('name', "Item's name") !!}
                     {!! Form::text('name', $item->name, ['placeholder' => "Épée de gouverneur gardien", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('price', "Prix à l'unité") !!}
+                    {!! Form::label('price', "Price per unit") !!}
                     {!! Form::input('number', 'price', $item->price, ['placeholder' => "200", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('quantity', "Quantité") !!}
+                    {!! Form::label('quantity', "Quantity") !!}
                     {!! Form::input('number', 'quantity', $item->quantity, ['placeholder' => "1", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
