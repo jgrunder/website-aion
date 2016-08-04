@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{Route('home')}}">Aion server</a>
+                <a class="navbar-brand" href="{{Route('home')}}">{{Config::get('aion.website_name')}}</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -44,9 +44,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{Route('admin.shop.add')}}">Add item in shop</a></li>
+                            <li><a href="{{Route('admin.shop.add')}}">Add item</a></li>
                             <li><a href="{{Route('admin.shop.category')}}">Categories list</a></li>
-                            <li><a href="{{Route('admin.shop.subcategory')}}">List of sub-categories</a></li>
+                            <li><a href="{{Route('admin.shop.subcategory')}}">Sub-categories list</a></li>
                         </ul>
                     </li>
 
@@ -78,8 +78,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.slider')}}">Slider</a></li>
                             <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
-                            <li><a href="{{Route('admin.add.points')}}">Add Points shop</a></li>
-                            <li><a href="{{Route('admin.points')}}">Log Points shop</a></li>
+                            <li><a href="{{Route('admin.add.points')}}">Add Points's Shop</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{Route('admin.points')}}">Log Points's Shop</a></li>
                             <li><a href="{{Route('admin.allopass')}}">Log Allopass</a></li>
                             <li><a href="{{Route('admin.paypal')}}">Log Paypal</a></li>
                         </ul>

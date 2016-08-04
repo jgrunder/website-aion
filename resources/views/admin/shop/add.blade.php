@@ -50,6 +50,8 @@
                         {!! Form::label('level', "Level") !!}
                         {!! Form::input('number', 'level', null, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
                     </div>
+                @else
+                    {!! Form::hidden('level', 0, ['placeholder' => "0", 'class' => 'form-control', 'required' => 'required']) !!}
                 @endif
 
                 {!! Form::input('hidden', 'quality_item', 'NONE', ['id' => 'qualityItem']) !!}

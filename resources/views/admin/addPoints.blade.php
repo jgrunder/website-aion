@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-header">
-                <h1>Add Points shop</h1>
+                <h1>Add Points's Shop</h1>
             </div>
 
             <!-- ERROR MESSAGE -->
