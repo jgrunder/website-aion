@@ -7,7 +7,7 @@
             <!-- CALL TO ACTION -->
             @include('_modules.call_to_action')
 
-                    <!-- NEWS -->
+            <!-- NEWS -->
             <div class="news">
                 <div class="news_top">
                     <h1>Modifier mon compte</h1>
@@ -24,12 +24,14 @@
                         <span class="success">{{$success['pseudo']}}</span>
                     @endif
 
-                    <span>PushBullet : </span>
-                    {!! Form::email('pushbullet', $user->pushbullet, ['placeholder' => 'Email Pushbullet', 'class' => 'input block']) !!}
-                    @if(isset($errors['pushbullet']))
-                        <span class="error">{{$errors['pushbullet']}}</span>
-                    @elseif(isset($success['pushbullet']))
-                        <span class="success">{{$success['pushbullet']}}</span>
+                    @if(Config::get('services.pushbullet.apiKey'))
+                        <span>PushBullet : </span>
+                        {!! Form::email('pushbullet', $user->pushbullet, ['placeholder' => 'Email Pushbullet', 'class' => 'input block']) !!}
+                        @if(isset($errors['pushbullet']))
+                            <span class="error">{{$errors['pushbullet']}}</span>
+                        @elseif(isset($success['pushbullet']))
+                            <span class="success">{{$success['pushbullet']}}</span>
+                        @endif
                     @endif
 
                     <span>Nouveau mot de passe : </span>

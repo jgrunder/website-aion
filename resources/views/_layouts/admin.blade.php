@@ -77,7 +77,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{Route('admin.slider')}}">Slider</a></li>
-                            <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
+                            @if(Config::get('services.pushbullet.apiKey'))
+                                <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
+                            @endif
                             <li><a href="{{Route('admin.add.points')}}">Add Points's Shop</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{Route('admin.points')}}">Log Points's Shop</a></li>
