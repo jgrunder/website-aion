@@ -7,7 +7,7 @@
     <!-- SEO -->
     {!! SEO::generate() !!}
     <meta name="author" content="Mathieu Le Tyrant"/>
-    <meta name="copyright" content="Copyright 2015 © RealAion.com"/>
+    <meta name="copyright" content="Copyright 2016 © MathieuLeTyrant.com"/>
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
