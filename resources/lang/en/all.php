@@ -70,5 +70,29 @@ return [
         'password_confirm' => 'Password confirmation',
         'email'            => 'Email',
         'submit'           => 'Subscribe'
+    ],
+    'edit_account' => [
+        'title'        => 'Edit account',
+        'new_password' => 'New password',
+        'edit'         => 'Edit'
+    ],
+    'my_account' => [
+        'title'             => 'My account',
+        'my_informations'   => 'My Informations',
+        'username'          => 'Username',
+        'modify_my_account' => 'Modify my account',
+        'shop'              => 'Shop',
+        'characters'        => 'My characters',
+        'on_your_account'   => 'You have on your account',
+        'and_you_spent'     => 'and you spent',
+        'to_achieve_the'    => 'To achieve the',
+        'must_spend'        => 'in the shop you have to spend',
+        'table' => [
+            'name'    => 'Name',
+            'faction' => 'Faction',
+            'classe'  => 'Classe',
+            'action'  => 'Action',
+            'unlock'  => 'Unlock'
+        ]
     ]
 ];

@@ -10,7 +10,7 @@
             <!-- NEWS -->
             <div class="news">
                 <div class="news_top">
-                    <h1>Modifier mon compte</h1>
+                    <h1>{{ Lang::get('all.edit_account.title') }}</h1>
                 </div>
                 <div class="news_body">
 
@@ -34,16 +34,16 @@
                         @endif
                     @endif
 
-                    <span>Nouveau mot de passe : </span>
-                    {!! Form::password('password', ['placeholder' => 'Mot de passe', 'class' => 'input block']) !!}
-                    {!! Form::password('password_confirmation', ['placeholder' => "Retapez le mot de passe", 'class' => 'input block']) !!}
+                    <span>{{ Lang::get('all.edit_account.new_password') }} : </span>
+                    {!! Form::password('password', ['placeholder' => Lang::get('all.subscribe.password'), 'class' => 'input block']) !!}
+                    {!! Form::password('password_confirmation', ['placeholder' => Lang::get('all.subscribe.password_confirm'), 'class' => 'input block']) !!}
                     @if(isset($errors['password']))
                         <span class="error">{{$errors['password']}}</span>
                     @elseif(isset($success['password']))
                         <span class="success">{{$success['password']}}</span>
                     @endif
 
-                    <input type="submit" class="btn btn-primary" value="Modifier">
+                    <input type="submit" class="btn btn-primary" value="{{ Lang::get('all.edit_account.edit') }}">
 
                     {!! Form::close() !!}
 

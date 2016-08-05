@@ -7,43 +7,43 @@
             <!-- CALL TO ACTION -->
             @include('_modules.call_to_action')
 
-                    <!-- NEWS -->
+            <!-- NEWS -->
             <div class="news">
                 <div class="news_top">
-                    <h1>Mon Compte</h1>
+                    <h1>{{ Lang::get('all.my_account.title') }}</h1>
                 </div>
                 <div class="news_body">
-                    <h2>Mes informations :</h2>
+                    <h2>{{ Lang::get('all.my_account.my_informations') }} :</h2>
 
                     <ul>
-                        <li>Identifiant : {{$user['name']}}</li>
-                        <li>Pseudo d'affichage : {{$user['pseudo']}}</li>
+                        <li>{{ Lang::get('all.my_account.username') }} : {{$user['name']}}</li>
+                        <li>Pseudo : {{$user['pseudo']}}</li>
                         <li>Email : {{$user['email']}}</li>
                     </ul>
 
-                    <a href="{{Route('user.account.edit')}}" class="btn btn-small">Modifier mon compte</a>
+                    <a href="{{Route('user.account.edit')}}" class="btn btn-small">{{ Lang::get('all.my_account.modify_my_account') }}</a>
 
                     <br><br>
 
-                    <h2>Boutique :</h2>
+                    <h2>{{ Lang::get('all.my_account.shop') }} :</h2>
 
-                    Vous avez sur votre compte <strong class="text-blue">{{$user['shop_points']}} points shop</strong>
+                    {{ Lang::get('all.my_account.on_your_account') }} <strong class="text-blue">{{$user['shop_points']}} Points's Shop</strong>
                     @if(Config::get('aion.enable_account_level'))
-                        et vous avez dépensé <strong class="text-blue">@if(!$level) 0€ @else {{$level['total'].'€'}} @endif </strong><br>
-                        Pour atteindre le niveau  <strong class="text-blue">{{$nextLevel['level']}}</strong> dans la boutique vous devez dépenser <strong class="text-blue">{{$nextLevel['price']}}€</strong>
+                        {{ Lang::get('all.my_account.and_you_spent') }} <strong class="text-blue">@if(!$level) 0€ @else {{$level['total'].'€'}} @endif </strong><br>
+                        {{ Lang::get('all.my_account.to_achieve_the') }}  <strong class="text-blue">{{$nextLevel['level']}}</strong> {{ Lang::get('all.my_account.must_spend') }} <strong class="text-blue">{{$nextLevel['price']}}€</strong>
                     @endif
 
                     <br><br>
 
-                    <h2>Mes Personnages :</h2>
+                    <h2>{{ Lang::get('all.my_account.characters') }} :</h2>
                     <table>
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nom</th>
-                            <th>Faction</th>
-                            <th>Classe</th>
-                            <th>Action</th>
+                            <th>{{ Lang::get('all.my_account.table.name') }}</th>
+                            <th>{{ Lang::get('all.my_account.table.faction') }}</th>
+                            <th>{{ Lang::get('all.my_account.table.classe') }}</th>
+                            <th>{{ Lang::get('all.my_account.table.action') }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,7 +53,7 @@
                                 <td>{{$player->name}}</td>
                                 <td><span class="{{Lang::get('aion.race_logo.'.$player->race)}}"></span></td>
                                 <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$player->player_class)}}"></span></td>
-                                <td><a class="btnUnluckPlayer" player-id="{{$player->id}}" account-id="{{Session::get('user.id')}}">Débloquer</a></td>
+                                <td><a class="btnUnluckPlayer" player-id="{{$player->id}}" account-id="{{Session::get('user.id')}}">{{ Lang::get('all.my_account.table.unlock') }}</a></td>
                             </tr>
                         @endforeach
                         </tbody>

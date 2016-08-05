@@ -70,5 +70,29 @@ return [
         'password_confirm' => 'Répéter le mot de passe',
         'email'            => 'Email',
         'submit'           => 'Inscription'
+    ],
+    'edit_account' => [
+        'title'        => 'Modifier mon compte',
+        'new_password' => 'Nouveau mot de passe',
+        'edit'         => 'Modifier'
+    ],
+    'my_account' => [
+        'title'             => 'Mon compte',
+        'my_informations'   => 'Mes informations',
+        'username'          => 'Identifiant',
+        'modify_my_account' => 'Modifier mon compte',
+        'shop'              => 'Boutique',
+        'characters'        => 'Mes personnages',
+        'on_your_account'   => 'Vous avez sur votre compte',
+        'and_you_spent'     => 'et vous avez dépensé',
+        'to_achieve_the'    => 'Pour atteindre le niveau',
+        'must_spend'        => 'dans la boutique vous devez dépenser',
+        'table' => [
+            'name'    => 'Nom',
+            'faction' => 'Faction',
+            'classe'  => 'Classe',
+            'action'  => 'Action',
+            'unlock'  => 'Débloqué'
+        ]
     ]
 ];
