@@ -18,7 +18,9 @@ return [
         'account'          => 'Mon compte',
         'logout'           => 'Déconnexion',
         'login'            => 'Connexion',
-        'subscribe'        => 'Inscription'
+        'subscribe'        => 'Inscription',
+        'join_us'          => 'Nous rejoindre',
+        'errors'           => 'Erreurs'
     ],
     'layout'               => [
         'status_of'        => 'Etat du',

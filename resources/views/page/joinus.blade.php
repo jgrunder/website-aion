@@ -3,7 +3,7 @@
 @section('content')
 <div class="container_single subscribe">
   <div class="container_single_top">
-    <h1>Nous rejoindre</h1>
+    <h1>{{ Lang::get('all.nav.join_us') }}</h1>
   </div>
   <div class="container_single_body">
     {!! $content !!}

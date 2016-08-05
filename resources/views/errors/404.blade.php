@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>404 - RealAion 4.9</title>
+    <title>404 - {{Config::get('aion.website_name')}}</title>
     <style>
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
         a:link {
@@ -72,7 +72,7 @@
     <div id="container404">
         <img src="http://2.bp.blogspot.com/-WaHaYF7vMRo/VX_Cro6zTDI/AAAAAAAACdY/JMpdKqMaH6w/s1600/notfound.jpeg" id="logo404">
         <h1>Waduh... Kok gak ada sih???</h1>
-        <h2>Erreur 404. <a href="http://realaion.com">Je retourne sur le site ...</a></h2>
+        <h2>Error 404. <a href="{{Config::get('app.url')}}">Back to the website ...</a></h2>
     </div>
 </body>
 </html>

@@ -18,7 +18,9 @@ return [
         'account'          => 'Account Services',
         'logout'           => 'Log Out',
         'login'            => 'Login',
-        'subscribe'        => 'Subscribe'
+        'subscribe'        => 'Subscribe',
+        'join_us'          => 'Join us',
+        'errors'           => 'Errors'
     ],
     'layout'               => [
         'status_of'        => 'Status of',
