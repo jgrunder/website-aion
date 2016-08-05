@@ -1,4 +1,5 @@
-<?php namespace App\Handlers\Events;
+<?php
+namespace App\Listeners;
 
 use App\Events\UserWasPurchasedShopPoint;
 
@@ -9,7 +10,7 @@ use App\Models\Webserver\LogsAllopass;
 use App\Models\Webserver\LogsPaypal;
 
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldBeQueued;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
