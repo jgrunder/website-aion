@@ -12,7 +12,7 @@
 
     <!-- STYLESHEETS -->
     <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/bootswatch.min.css') !!}" rel="stylesheet">
 </head>
 <body>
 
