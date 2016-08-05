@@ -1,23 +1,21 @@
 @extends('_layouts.master')
 
-@section('title', 'Récapitulatif')
-
 @section('content')
     <div class="container">
         <!-- LEFT CONTENT -->
         <div class="container_left">
             <div class="news">
                 <div class="news_top">
-                    <h2>Récapitulatif</h2>
+                    <h2>{!! Lang::get('all.shop.summary') !!}</h2>
                 </div>
                 <div class="news_body container_shop_recap">
 
                     <table>
                         <thead>
                         <tr>
-                            <th width="45%">Nom</th>
-                            <th>Price</th>
-                            <th width="15%">QT</th>
+                            <th width="45%">{!! Lang::get('all.shop.name') !!}</th>
+                            <th>{!! Lang::get('all.shop.price') !!}</th>
+                            <th width="15%">{!! Lang::get('all.shop.qt') !!}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,6 +27,7 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <!-- Total -->
                         <tr>
                             <td></td>
                             <td></td>
@@ -46,9 +45,8 @@
                         {!! Form::close() !!}
                     @else
                         <br>
-                        <center><a href="{{Route('shop')}}" class="btn">Vous n'avez pas de personnage sur le serveur</a></center>
+                        <center><a href="{{Route('shop')}}" class="btn">{!! Lang::get('all.shop.no_characters') !!}</a></center>
                     @endif
-
 
                 </div>
                 <div class="news_footer"></div>

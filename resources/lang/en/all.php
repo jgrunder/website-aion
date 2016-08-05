@@ -12,7 +12,6 @@ return [
         'stats'            => 'Stats',
         'online'           => 'Online Players',
         'legions'          => 'Legions Ranking',
-        'bg'               => 'BG Ranking',
         'forum'            => 'Forum',
         'shop'             => 'Items Shop',
         'donate'           => 'Donate',
@@ -40,7 +39,9 @@ return [
         'shopping_cart_desc' => 'You can delete an item by clicking on the trash',
         'shopping_cart_empty'=> 'Your shopping cart is empty',
         'categories'         => 'Categories',
-        'categories_desc'    => 'Sub-categories available'
+        'categories_desc'    => 'Sub-categories available',
+        'summary'            => 'Summary',
+        'no_characters'      => 'You do not have character on the server'
     ],
     'login'                => [
         'username'         => 'Username',
@@ -94,5 +95,17 @@ return [
             'action'  => 'Action',
             'unlock'  => 'Unlock'
         ]
+    ],
+    'legions' => [
+        'position' => 'Position',
+        'name'     => 'Name',
+        'level'    => 'Level',
+        'points'   => 'Points'
+    ],
+    'online' => [
+        'no_players_online' => 'No players online',
+        'name'              => 'Name',
+        'faction'           => 'Faction',
+        'classe'            => 'Classe'
     ]
 ];

@@ -9,10 +9,10 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Position</th>
-                    <th>Nom</th>
-                    <th>Level</th>
-                    <th>Points</th>
+                    <th>{{Lang::get('all.legions.position')}}</th>
+                    <th>{{Lang::get('all.legions.name')}}</th>
+                    <th>{{Lang::get('all.legions.level')}}</th>
+                    <th>{{Lang::get('all.legions.points')}}</th>
                 </tr>
                 </thead>
                 <tbody>

@@ -7,15 +7,15 @@
     </div>
     <div class="container_single_body">
       @if(count($users) === 0)
-          <center>Aucun joueurs en lignes</center>
+          <center>{{Lang::get('all.online.no_players_online')}}</center>
       @else
         <table>
           <thead>
             <tr>
               <th>#</th>
-              <th>Nom</th>
-              <th>Faction</th>
-              <th>Classe</th>
+              <th>{{Lang::get('all.online.name')}}</th>
+              <th>{{Lang::get('all.online.faction')}}</th>
+              <th>{{Lang::get('all.online.classe')}}</th>
             </tr>
           </thead>
           <tbody>

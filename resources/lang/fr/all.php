@@ -12,7 +12,6 @@ return [
         'stats'            => 'Stats',
         'online'           => 'Joueurs en ligne',
         'legions'          => 'Classement des légions',
-        'bg'               => 'Classement des BG',
         'forum'            => 'Forum',
         'shop'             => 'Boutique',
         'donate'           => 'Donation',
@@ -40,7 +39,9 @@ return [
         'shopping_cart_desc' => 'Vous pouvez supprimer un élément en cliquant sur ​​la corbeille',
         'shopping_cart_empty'=> 'Votre panier est vide pour le moment',
         'categories'         => 'Catégories',
-        'categories_desc'    => 'Sous-catégories disponibles'
+        'categories_desc'    => 'Sous-catégories disponibles',
+        'summary'            => 'Récapitulatif',
+        'no_characters'      => "Vous n'avez pas de personnage sur le serveur"
     ],
     'login'                => [
         'username'         => 'Identifiant',
@@ -94,5 +95,17 @@ return [
             'action'  => 'Action',
             'unlock'  => 'Débloqué'
         ]
+    ],
+    'legions' => [
+        'position' => 'Position',
+        'name'     => 'Nom',
+        'level'    => 'Level',
+        'points'   => 'Points'
+    ],
+    'online' => [
+        'no_players_online' => 'Aucun joueurs en lignes',
+        'name'              => 'Nom',
+        'faction'           => 'Faction',
+        'classe'            => 'Classe'
     ]
 ];
