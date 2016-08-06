@@ -9,6 +9,7 @@ return [
     'link_youtube'  => '#',
     'languages'     => ['en', 'fr'],
     'contactMail'   => 'mathieu.letyrant@gmail.com',
+    'forumUrl'      => '#',
 
     // When you are connect you can unlock your character
     'spawn' => [

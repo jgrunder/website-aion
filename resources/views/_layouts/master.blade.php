@@ -47,7 +47,7 @@
                     <li><a href="{{Route('stats.legions')}}">{{Lang::get('all.nav.legions')}}</a></li>
                 </ul>
             </li>
-            <li><a href="http://realaion.com/forum/">{{Lang::get('all.nav.forum')}}</a></li>
+            <li><a href="{{ Config::get('aion.forumUrl') }}">{{Lang::get('all.nav.forum')}}</a></li>
             <li><a href="{{Route('shop')}}">{{Lang::get('all.nav.shop')}}</a></li>
         </ul>
     </nav>
