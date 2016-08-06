@@ -36,7 +36,10 @@ return [
 
     'paypal'                   => [
         'email'                => 'unretailed@gmail.com',
-        'maxShopPoints'        => 1000000
+        'maxShopPoints'        => 1000000,
+        'points_per_euro'      => 5000, // 5000 Shop's Points equal 1€
+        'currency_code'        => 'EUR', // Look paypal for that
+        'currency_display'     => '€'
     ],
 
     'servers'                  => [

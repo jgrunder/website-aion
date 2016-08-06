@@ -112,9 +112,11 @@
     </footer>
 
     <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('js/jquery.bxslider.min.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
+    @section('javascript')
+        <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/jquery.bxslider.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
+    @show
 </body>
 </html>

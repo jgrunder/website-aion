@@ -120,27 +120,6 @@
 		removeItemInCart();
 
 		/*
-		 * PAYPAL
-		 */
-		var inputTypeRange = $("input[type=range]");
-
-		if(inputTypeRange.length > 0) {
-			inputTypeRange.on('input', function() {
-
-				var nbTool    = $(this).val();
-				var moneyNeed = $(this).val() / 5000;
-				var uid		  = $('#user_id').val();
-
-				$('#money_need').val("Buy "+ nbTool +" points shop for "+ moneyNeed +"€");
-				$('#paypal_name').val(nbTool+' Points Shop');
-				$('#money').val(moneyNeed);
-				$('#custom_paypal').val('points='+nbTool+'&uid='+uid);
-			});
-		}
-
-
-
-		/*
 		 * AION DATABASE INFO BULLE
 		 */
 		var $databaseItem = $('.databaseItem');

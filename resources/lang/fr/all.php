@@ -109,5 +109,12 @@ return [
         'name'              => 'Nom',
         'faction'           => 'Faction',
         'classe'            => 'Classe'
+    ],
+    'paypal' => [
+        'title'           => 'Paypal (Choisissez VOS ENVIES)',
+        'slider'          => 'Faites glisser le curseur de gauche à droite',
+        'congratulations' => 'Félicitations, votre compte a été crédité !',
+        'buy'             => 'Acheter',
+        'for'             => 'pour'
     ]
 ];

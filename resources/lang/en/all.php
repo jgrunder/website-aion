@@ -109,5 +109,12 @@ return [
         'name'              => 'Name',
         'faction'           => 'Faction',
         'classe'            => 'Classe'
+    ],
+    'paypal' => [
+        'title'           => 'Paypal (Choose YOUR DESIRES)',
+        'slider'          => 'Slide the slider from left to right',
+        'congratulations' => 'Congratulations, you just have to be credited !',
+        'buy'             => 'Buy',
+        'for'             => 'for'
     ]
 ];

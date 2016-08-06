@@ -93,59 +93,68 @@ class PaiementController extends Controller {
     public function paypalIpn()
     {
 
-        $emailAccount   = Config::get('aion.paypal.email');
-        $req            = 'cmd=_notify-validate';
+        $emailAccount = Config::get('aion.paypal.email');
 
+        // Prepare the URL to send via cURL
+        $req = 'cmd=_notify-validate';
+        if(function_exists('get_magic_quotes_gpc')) {
+            $get_magic_quotes_exists = true;
+        }
         foreach ($_POST as $key => $value) {
-            $value = urlencode(stripslashes($value));
+            if($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) {
+                $value = urlencode(stripslashes($value));
+            } else {
+                $value = urlencode($value);
+            }
             $req .= "&$key=$value";
         }
 
-        $header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
-        $header .= "Host: www.paypal.com\r\n";
-        $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
-        $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-        $fp = fsockopen('ssl://www.paypal.com', 443, $errno, $errstr, 30);
+        // Initial cURL
+        $ch = curl_init();
 
-        $item_name        = $_POST['item_name'];
-        $item_number      = $_POST['item_number'];
-        $payment_status   = $_POST['payment_status'];
-        $payment_amount   = $_POST['mc_gross'];
-        $payment_tax      = $_POST['tax'];
-        $payment_ht       = $payment_amount - $payment_tax;
-        $payment_currency = $_POST['mc_currency'];
-        $address          = $_POST['address_street'];
-        $country          = $_POST['address_country'];
-        $city             = $_POST['address_city'];
-        $name             = $_POST['address_name'];
-        $txn_id           = $_POST['txn_id'];
-        $receiver_email   = $_POST['receiver_email'];
-        $payer_email      = $_POST['payer_email'];
-        parse_str($_POST['custom'],$custom);
+        curl_setopt($ch, CURLOPT_URL, "https://www.paypal.com");
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
 
-        if($fp){
-            fputs ($fp, $header . $req);
-            while (!feof($fp)) {
-                $res = fgets ($fp, 1024);
-                if (strcmp ($res, "VERIFIED") == 0) {
+        // Return result
+        $result = curl_exec($ch);
 
-                    // Check the payment status
-                    if ($payment_status == "Completed") {
+        // Close cURL connection
+        curl_close($ch);
 
-                        if ($emailAccount == $receiver_email) {
+        // If condition
+        if($result == 'VERIFIED') {
+            $item_name        = $_POST['item_name'];
+            $item_number      = $_POST['item_number'];
+            $payment_status   = $_POST['payment_status'];
+            $payment_amount   = $_POST['mc_gross'];
+            $payment_tax      = $_POST['tax'];
+            $payment_ht       = $payment_amount - $payment_tax;
+            $payment_currency = $_POST['mc_currency'];
+            $address          = $_POST['address_street'];
+            $country          = $_POST['address_country'];
+            $city             = $_POST['address_city'];
+            $name             = $_POST['address_name'];
+            $txn_id           = $_POST['txn_id'];
+            $receiver_email   = $_POST['receiver_email'];
+            $payer_email      = $_POST['payer_email'];
+            parse_str($_POST['custom'],$custom);
 
-                            $points  = $custom['points'];
-                            $uid     = $custom['uid'];
+            if ($emailAccount == $receiver_email) {
 
-                            // Check if it's the good payment number
-                            if($payment_ht = $points / 5000) {
+                $points  = $custom['points'];
+                $uid     = $custom['uid'];
 
-                                // Increment tolls
-                                AccountData::me($uid)->increment('shop_points', $points);
+                // Check if it's the good payment number
+                if($payment_ht = $points / Config::get('aion.paypal.points_per_euro')) {
 
-                            }
-                        }
-                    }
+                    // Increment tolls
+                    AccountData::me($uid)->increment('shop_points', $points);
 
                     // Add logs in database
                     LogsPaypal::create([
@@ -163,12 +172,9 @@ class PaiementController extends Controller {
                     ]);
 
                     event(new UserWasPurchasedShopPoint($uid));
-
                 }
             }
         }
-
-
     }
 
     /**
