@@ -47,11 +47,11 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-        $count_asmodians = Cache::remember('online_number_asmodians', 5, function() {
+        $count_asmodians = Cache::remember('online_number_asmodians', Config::get('aion.cache.online_number'), function() {
             return Player::online()->where('race', '=', 'ASMODIANS')->count();
         });
 
-        $count_elyos = Cache::remember('online_number_elyos', 5, function() {
+        $count_elyos = Cache::remember('online_number_elyos', Config::get('aion.cache.online_number'), function() {
             return Player::online()->where('race', '=', 'ELYOS')->count();
         });
 
@@ -132,7 +132,7 @@ abstract class Controller extends BaseController {
      */
     private function topVotes()
     {
-        $voters = Cache::remember('top_votes', 10, function() {
+        $voters = Cache::remember('top_votes', Config::get('aion.cache.top_vote'), function() {
             return AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
         });
 

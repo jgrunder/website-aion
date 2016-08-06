@@ -28,6 +28,11 @@ return [
         ]
     ],
 
+    'cache' => [
+        'top_vote'      => 10, // Every 10 minutes, we clear the cache of top voter
+        'online_number' => 2 // Every 2 minutes, we clear count of players online
+    ],
+
     'allopass'                 => [
         'url'                  => 'https://payment.allopass.com/buy/buy.apu?ids=307954&idd=1326680',
         'pointsGiven'          => 4000,
