@@ -1,14 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin;
-
 /**
  * PATTERNS
  *
  */
 Route::pattern('id', '[0-9]+');
 Route::pattern('playerId', '[0-9]+');
-Route::pattern('AccountId', '[0-9]+');
+Route::pattern('accountId', '[0-9]+');
 
 /**
  * ROUTES

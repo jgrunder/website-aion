@@ -8,9 +8,10 @@ use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
 use App\Models\Webserver\ConfigSlider;
 
-use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\View;
 
 abstract class Controller extends BaseController {
 
-	use DispatchesCommands, ValidatesRequests;
+	use ValidatesRequests;
 
     /**
      * @var $protected
@@ -46,8 +47,8 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians  = Player::online()->remember(5)->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		  = Player::online()->remember(5)->where('race', '=', 'ELYOS')->count();
+			$count_asmodians  = Player::online()->where('race', '=', 'ASMODIANS')->count();
+			$count_elyos 		  = Player::online()->where('race', '=', 'ELYOS')->count();
 
 			View::share('countPlayersOnlineAsmodians', $count_asmodians);
 			View::share('countPlayersOnlineElyos', $count_elyos);
@@ -122,7 +123,7 @@ abstract class Controller extends BaseController {
      */
     private function topVotes()
     {
-        $voters = AccountData::remember(10)->where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
+        $voters = AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
         View::Share('topVotes', $voters);
     }
 

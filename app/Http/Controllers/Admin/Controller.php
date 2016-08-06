@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 
-use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\View;
 
 abstract class Controller extends BaseController {
 
-    use DispatchesCommands, ValidatesRequests;
+    use ValidatesRequests;
 
     /**
      * @var $protected

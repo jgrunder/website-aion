@@ -3,11 +3,8 @@
 namespace App\Models\Loginserver;
 
 use Illuminate\Database\Eloquent\Model;
-use Watson\Rememberable\Rememberable;
 
 class AccountData extends Model {
-
-    use Rememberable;
 
     protected $table        = 'account_data';
     protected $connection   = 'loginserver';
