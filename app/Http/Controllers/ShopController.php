@@ -174,7 +174,7 @@ class ShopController extends Controller {
 
         Cart::destroy();
 
-        return redirect(route('shop'))->with('success', Lang::get('flashMessage.shop.success').$player->name);
+        return redirect(route('shop'))->with('success', Lang::get('flashMessage.shop.success').' '.$player->name);
     }
 
 }

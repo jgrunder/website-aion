@@ -11,6 +11,7 @@ use App\Models\Webserver\LogsPaypal;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Lang;
 
 class PaiementController extends Controller {
 
@@ -31,7 +32,7 @@ class PaiementController extends Controller {
 
         // Recall is empty so redirect with error message
         if(trim($recall) == ""){
-            return redirect(route('allopass'))->with('error', 'Paramètres allopass invalident');
+            return redirect(route('allopass'))->with('error', Lang::get('flashMessage.paiement.wrong_allopass'));
         }
 
         // Contain the allopass code
@@ -59,20 +60,20 @@ class PaiementController extends Controller {
 
                     AccountData::me(Session::get('user.id'))->increment('points', Config::get('aion.allopass.pointsGiven'));
                     event(new UserWasPurchasedShopPoint(Session::get('user.id')));
-                    return redirect(route('allopass'))->with('success', "Votre compte a été crédité de ".Config::get('aion.allopass.pointsGiven'));
+                    return redirect(route('allopass'))->with('success', Lang::get('flashMessage.paiement.success_allopass')." ".Config::get('aion.allopass.pointsGiven'));
 
                 }
 
-                return redirect(route('allopass'))->with('error', "Une erreur c'est produite. Merci de contacter un administrateur");
+                return redirect(route('allopass'))->with('error', Lang::get('flashMessage.paiement.error_allopass'));
 
             }
 
-            return redirect(route('allopass'))->with('error', 'Votre code allopass a déjà été utilisé');
+            return redirect(route('allopass'))->with('error', Lang::get('flashMessage.paiement.already_used_allopass'));
 
 
         }
 
-        return redirect(route('allopass'))->with('error', 'Code invalide. Merci de contacter un administrateur');
+        return redirect(route('allopass'))->with('error', Lang::get('flashMessage.paiement.error_allopass'));
 
     }
 

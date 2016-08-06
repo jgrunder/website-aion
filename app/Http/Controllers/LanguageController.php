@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Lang;
 
 class LanguageController extends Controller
 {
@@ -25,7 +26,7 @@ class LanguageController extends Controller
 
         }
 
-        return redirect()->back()->with('error', "This language is not support yet");
+        return redirect()->back()->with('error', Lang::get('flashMessage.language.not_supported'));
 
     }
 
