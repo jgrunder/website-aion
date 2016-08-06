@@ -59,7 +59,11 @@ abstract class Controller extends BaseController {
      */
     private function getSlider()
     {
-        View::share('slider', ConfigSlider::all());
+        $sliders = Cache::rememberForever('sliders', function() {
+            return ConfigSlider::all();
+        });
+
+        View::share('slider', $sliders);
     }
 
     /**

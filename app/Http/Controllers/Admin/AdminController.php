@@ -13,6 +13,7 @@ use App\Models\Webserver\ShopItem;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -191,7 +192,11 @@ class AdminController extends Controller
             ]);
         }
 
-        $slider = ConfigSlider::all();
+        // Flush the cache
+        Cache::forget('sliders');
+        $slider = Cache::rememberForever('sliders', function() {
+            return ConfigSlider::all();
+        });
 
         return view('admin.slider', [
             'slider' => $slider
