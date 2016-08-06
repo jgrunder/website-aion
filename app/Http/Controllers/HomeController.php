@@ -8,6 +8,7 @@ use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,12 @@ class HomeController extends Controller
         SEOMeta::setDescription(Lang::get('seo.home.description'));
         OpenGraph::setDescription(Lang::get('seo.home.description'));
 
+        $news = Cache::rememberForever('news', function() {
+            return News::orderBy('created_at', 'DESC')->paginate(3);
+        });
+
 		return view('home.index', [
-            'news' => News::orderBy('created_at', 'DESC')->paginate(3)
+            'news' => $news
         ]);
 	}
 

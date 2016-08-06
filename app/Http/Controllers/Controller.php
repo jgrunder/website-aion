@@ -47,11 +47,16 @@ abstract class Controller extends BaseController {
      */
     private function countPlayersOnline()
     {
-			$count_asmodians  = Player::online()->where('race', '=', 'ASMODIANS')->count();
-			$count_elyos 		  = Player::online()->where('race', '=', 'ELYOS')->count();
+        $count_asmodians = Cache::remember('online_number_asmodians', 5, function() {
+            return Player::online()->where('race', '=', 'ASMODIANS')->count();
+        });
 
-			View::share('countPlayersOnlineAsmodians', $count_asmodians);
-			View::share('countPlayersOnlineElyos', $count_elyos);
+        $count_elyos = Cache::remember('online_number_elyos', 5, function() {
+            return Player::online()->where('race', '=', 'ELYOS')->count();
+        });
+
+		View::share('countPlayersOnlineAsmodians', $count_asmodians);
+		View::share('countPlayersOnlineElyos', $count_elyos);
     }
 
     /**
@@ -127,7 +132,10 @@ abstract class Controller extends BaseController {
      */
     private function topVotes()
     {
-        $voters = AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
+        $voters = Cache::remember('top_votes', 10, function() {
+            return AccountData::where('vote', '>', 0)->orderBy('vote', 'DESC')->take(5)->get();
+        });
+
         View::Share('topVotes', $voters);
     }
 

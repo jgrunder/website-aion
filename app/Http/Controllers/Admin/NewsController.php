@@ -50,6 +50,8 @@ class NewsController extends Controller
   public function newsDelete($id)
   {
       News::destroy($id);
+      Cache::forget('news');
+
       return redirect()->back();
   }
 
@@ -84,6 +86,9 @@ class NewsController extends Controller
 
       }
 
+      // Clean cache
+      Cache::forget('news');
+
       return view('admin.news.add', [
           'error'     => $error,
           'success'   => $success
@@ -110,6 +115,9 @@ class NewsController extends Controller
               'slug'          => Str::slug($request->input('title'), '-'),
               'text'          => $request->input('content')
           ]);
+
+          // Clean cache
+          Cache::forget('news');
 
           return redirect(route('admin.news'));
       }
