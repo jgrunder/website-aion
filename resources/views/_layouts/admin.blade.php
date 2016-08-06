@@ -80,9 +80,9 @@
                             @if(Config::get('services.pushbullet.apiKey'))
                                 <li><a href="{{Route('admin.pushbullet')}}">Pushbullet</a></li>
                             @endif
-                            <li><a href="{{Route('admin.add.points')}}">Add Points's Shop</a></li>
+                            <li><a href="{{Route('admin.add.points')}}">Add Shop's Points</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{Route('admin.points')}}">Log Points's Shop</a></li>
+                            <li><a href="{{Route('admin.points')}}">Log Shop's Points</a></li>
                             <li><a href="{{Route('admin.allopass')}}">Log Allopass</a></li>
                             <li><a href="{{Route('admin.paypal')}}">Log Paypal</a></li>
                         </ul>
