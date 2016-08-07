@@ -11,6 +11,7 @@ use App\Models\Webserver\ShopItem;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
