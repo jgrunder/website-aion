@@ -172,7 +172,7 @@ class UserController extends Controller
             }
 
             // PushBullet
-            if($data['pushbullet']){
+            if(isset($data['pushbullet']) && $data['pushbullet']){
                 if(!filter_var($data['pushbullet'], FILTER_VALIDATE_EMAIL)){
                     $errors['pushbullet'] = 'Merci de rentrer un email valide';
                 } else {
