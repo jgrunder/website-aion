@@ -57,6 +57,10 @@ MAIL_PASSWORD	= null
 
 8. After having execute the command, a news have been added.
 
+9. Execute : ```gulp --production```
+
+10. After having execute the command, all assets have been created and compile
+
 ### Apache :
 The framework ships with a public/.htaccess file that is used to allow URLs without index.php. If you use Apache to serve your Laravel application, be sure to enable the mod_rewrite module.
 
