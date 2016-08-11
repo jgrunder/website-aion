@@ -10,6 +10,7 @@ return [
     'languages'     => ['en', 'fr'],
     'contactMail'   => 'mathieu.letyrant@gmail.com',
     'forumUrl'      => '#',
+    'minimumAccessLevel' => 2, // Minimum accessLevel for access to the back office
 
     // When you are connect you can unlock your character
     'spawn' => [
@@ -117,21 +118,21 @@ return [
     ],
 
     // Vote System
-    'vote'                     => [
-        'activated'              => true, // You can activate or not the vote system
-        'boost'                  => false,
-        'boost_value'            => 50,
-        'shop_points_per_vote'   => 100,
-        'links'                  => [
+    'vote' => [
+        'activated'            => true, // You can activate or not the vote system
+        'boost'                => false,
+        'boost_value'          => 50,
+        'shop_points_per_vote' => 100,
+        'links' => [
             [
-                'name'               => 'RPG',
-                'link'               => 'http://www.rpg-paradize.com/?page=vote&vote=99942',
-                'referer'            => 'http://www.rpg-paradize.com/site-RealAion+4.9+-99942' // Use for check if the user has realy vote
+                'name'    => 'RPG',
+                'link'    => 'http://www.rpg-paradize.com/?page=vote&vote=99942',
+                'referer' => 'http://www.rpg-paradize.com/site-RealAion+4.9+-99942' // Use for check if the user has realy vote
             ],
             [
-                'name'               => 'Gowonda',
-                'link'               => 'http://www.gowonda.com/vote.php?server_id=5635',
-                'referer'            => 'http://www.gowonda.com/serveur-aion-5635-RealAion-4.9-!.htm' // Use for check if the user has realy vote
+                'name'    => 'Gowonda',
+                'link'    => 'http://www.gowonda.com/vote.php?server_id=5635',
+                'referer' => 'http://www.gowonda.com/serveur-aion-5635-RealAion-4.9-!.htm' // Use for check if the user has realy vote
             ],
         ]
     ],

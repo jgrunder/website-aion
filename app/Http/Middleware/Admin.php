@@ -3,8 +3,9 @@
 use Closure;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Config;
 
-class AccessLevel {
+class Admin {
 
   /**
    * Handle an incoming request.
@@ -15,27 +16,12 @@ class AccessLevel {
    */
   public function handle($request, Closure $next)
   {
-    if(!Session::has('connected')){
-      return redirect(route('home'))->with('error', Lang::get('flashMessage.user.connected'));
-    }
 
-    if(Session::get('user.access_level') < $this->getLevel($request)){
+    if(Session::get('user.access_level') < Config::get('aion.minimumAccessLevel')){
       return redirect(route('home'))->with('error', Lang::get('flashMessage.user.not_access_level'));
     }
 
     return $next($request);
-  }
-
-  /**
-   * Return the accel_level properties in the route
-   * @param $request
-   * @return mixed
-   */
-  private function getLevel($request)
-  {
-    $level = $request->route()->getAction();
-
-    return $level['access_level'];
   }
 
 }

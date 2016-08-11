@@ -105,7 +105,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <p>{{Lang::get('all.layout.footer_1')}}</p><br>
-        @if (Session::has('connected') && Session::get('user.access_level') > 0)
+        @if (Session::has('connected') && Session::get('user.access_level') > Config::get('aion.minimumAccessLevel'))
             <p><a href="{{Route('admin')}}">Administration</a></p><br>
         @endif
         <p>{{Lang::get('all.layout.footer_2')}} <a href="http://mathieuletyrant.com" target="_blank">Mathieu Le Tyrant</a></p>

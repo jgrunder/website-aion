@@ -70,7 +70,7 @@ Route::group(['prefix' => 'page'], function() {
 });
 
 /** Admin */
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'AccessLevel', 'access_level' => 6], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['connected', 'admin']], function() {
 
     Route::get('home', ['as' => 'admin', 'uses' => 'NewsController@index']);
     Route::get('search', ['as' => 'admin.search', 'uses' => 'AdminController@search']);
