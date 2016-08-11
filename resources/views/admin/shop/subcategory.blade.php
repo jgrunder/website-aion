@@ -18,7 +18,11 @@
                     @foreach($subCategories as $subCategory)
                         <tr>
                             <th scope="row">{{$subCategory->id}}</th>
-                            <td class="text-center">{{$subCategory->name}}</td>
+                            <td class="text-center">
+                              <a href="{{Route('admin.shop.subcategory.items', $subCategory->id)}}">
+                                {{$subCategory->name}}
+                              </a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

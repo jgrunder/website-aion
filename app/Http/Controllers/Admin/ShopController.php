@@ -147,4 +147,18 @@ class ShopController extends Controller
           'success'       => $success
       ]);
   }
+
+  /**
+   * GET/POST /admin/shop/subcategory/{id}
+   */
+  public function ItemsInSubCategory($id)
+  {
+      $subCategory = ShopSubCategory::find($id);
+      $items = ShopItem::where('id_sub_category', '=', $id)->paginate(20);
+
+      return view('admin.shop.items_in_subcategory', [
+          'results'     => $items,
+          'subCategory' => $subCategory
+      ]);
+  }
 }

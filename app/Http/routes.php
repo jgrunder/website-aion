@@ -84,6 +84,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['con
     Route::group(['prefix' => 'shop'], function() {
         Route::match(['GET', 'POST'], 'category', ['as' => 'admin.shop.category', 'uses' => 'ShopController@shopCategory']);
         Route::match(['GET', 'POST'], 'subcategory', ['as' => 'admin.shop.subcategory', 'uses' => 'ShopController@shopSubCategory']);
+        Route::get('subcategory/{id}', ['as' => 'admin.shop.subcategory.items', 'uses' => 'ShopController@ItemsInSubCategory']);
         Route::match(['GET', 'POST'], 'add', ['as' => 'admin.shop.add', 'uses' => 'ShopController@shopAdd']);
         Route::match(['GET', 'POST'], 'edit/{id}', ['as' => 'admin.shop.edit', 'uses' => 'ShopController@shopEdit']);
     });
