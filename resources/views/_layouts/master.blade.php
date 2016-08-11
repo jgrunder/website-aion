@@ -12,6 +12,7 @@
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
+    <link href="{!! asset('css/libs.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/global.css') !!}" rel="stylesheet">
 </head>
 <body>

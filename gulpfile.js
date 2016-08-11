@@ -9,6 +9,9 @@ elixir(function(mix) {
        .styles([
             'bootswatch.min.css',
             'font-awesome.min.css'
+       ], 'public/css/admin.css')
+       .styles([
+            'font-awesome.min.css'
        ], 'public/css/libs.css');
 });
 
