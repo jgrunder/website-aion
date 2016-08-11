@@ -1,50 +1,38 @@
-var gulp 				= require('gulp');
-var scss 				= require('gulp-sass');
-var plumber 			= require('gulp-plumber');
-var concat				= require('gulp-concat');
-var uglify				= require('gulp-uglify');
-var autoprefixer 		= require('gulp-autoprefixer');
-var autoPrefixerBrowers = [
-	'chrome >= 34',
-	'safari >= 7',
-	'opera >= 23',
-	'ios >= 7',
-	'android >= 4.0',
-	'bb >= 10',
-	'ie >= 10',
-	'ie_mob >= 10',
-	'ff >= 30'
-];
+var elixir = require('laravel-elixir');
+var elixirImageMin = require('laravel-elixir-imagemin');
 
-/*
- * Compile SCSS files
+/**
+ * Stylesheet
  */
-gulp.task('style', function () {
-	gulp.src('resources/assets/scss/global.scss')
-		.pipe(plumber())
-		.pipe(scss())
-		.pipe(autoprefixer(autoPrefixerBrowers))
-		.pipe(gulp.dest('public/css'));
+elixir(function(mix) {
+    mix.sass('global.scss')
+       .styles([
+            'bootswatch.min.css',
+            'font-awesome.min.css'
+       ], 'public/css/libs.css');
 });
 
-/*
- * Concat JS
+/**
+ * Scripts
  */
-gulp.task('script', function() {
-	gulp.src([
-		'resources/assets/js/jquery-2.1.4.min.js',
-		'resources/assets/js/jquery.bxslider.min.js',
-		'resources/assets/js/sweetalert.min.js',
-		'resources/assets/js/script.js',
-	])
-		.pipe(concat('script.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('public/js'));
+elixir(function(mix) {
+    mix.scripts([
+        'libs/jquery-2.1.4.min.js',
+        'libs/bootstrap.min.js',
+        'script_admin.js'
+    ], 'public/js/admin.js');
+
+    mix.scripts([
+        'libs/jquery-2.1.4.min.js',
+        'libs/jquery.bxslider.min.js',
+        'libs/sweetalert.min.js',
+        'script.js'
+    ], 'public/js/global.js');
 });
 
-/*
- * Watch Files
+/**
+ * Images
  */
-gulp.task('watch', ['style'], function() {
-	gulp.watch('resources/assets/scss/**/*', ['style']);
-});
+elixir(function(mix) {
+    mix.imagemin("./resources/assets/images", "public/images");
+})

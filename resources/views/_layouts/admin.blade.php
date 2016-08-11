@@ -11,8 +11,7 @@
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
-    <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/bootswatch.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/libs.css') !!}" rel="stylesheet">
 </head>
 <body>
 
@@ -109,9 +108,7 @@
     @yield('content')
 
     <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('js/bootstrap.min.js') !!}"></script>
     <script type="text/javascript" src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('js/script_admin.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('js/admin.js') !!}"></script>
 </body>
 </html>

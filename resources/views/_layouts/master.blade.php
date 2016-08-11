@@ -12,7 +12,6 @@
     <meta name="location" content="France"/>
 
     <!-- STYLESHEETS -->
-    <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/global.css') !!}" rel="stylesheet">
 </head>
 <body>
@@ -113,10 +112,7 @@
 
     <!-- JAVASCRIPTS -->
     @section('javascript')
-        <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/jquery.bxslider.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/script.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/global.js') !!}"></script>
     @show
 </body>
 </html>

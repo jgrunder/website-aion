@@ -4,3 +4,7 @@
 .idea
 node_modules
 public/uploads
+public/css
+public/images
+public/js/admin.js
+public/js/global.js
