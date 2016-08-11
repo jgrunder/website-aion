@@ -46,5 +46,12 @@ class Pages extends Seeder
           'fr'        => '',
           'en'        => ''
         ]);
+
+        DB::connection('webserver')->table('pages')->insert([
+          'id'        => 6,
+          'page_name' => 'rates',
+          'fr'        => '',
+          'en'        => ''
+        ]);
     }
 }

@@ -104,7 +104,11 @@ class PageController extends Controller {
         SEOMeta::setDescription(Lang::get('seo.rates.description'));
         OpenGraph::setDescription(Lang::get('seo.rates.description'));
 
-        return view('page.rates');
+        $content = Pages::where('page_name', '=', 'rates')->first([$this->language]);
+
+        return view('page.rates', [
+            'content' => $content[$this->language]
+        ]);
     }
 
     /**

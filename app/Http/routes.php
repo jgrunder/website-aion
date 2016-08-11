@@ -51,7 +51,6 @@ Route::group(['prefix' => 'user'], function() {
 Route::group(['prefix' => 'stats'], function() {
     Route::get('players-online', ['as' => 'stats.online', 'uses' => 'StatsController@online']);
     Route::get('legions', ['as' => 'stats.legions', 'uses' => 'StatsController@legions']);
-    Route::get('bg', ['as' => 'stats.bg', 'uses' => 'StatsController@bg']);
 });
 
 /** Database */
