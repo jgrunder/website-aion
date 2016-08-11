@@ -161,4 +161,18 @@ class ShopController extends Controller
           'subCategory' => $subCategory
       ]);
   }
+
+  /**
+   *
+   * Get /admin/shop/delete/{id}
+   *
+   * @param [integer] $id Item's ID
+   */
+  public function shopDelete($id)
+  {
+      ShopItem::where('id_item', $id)->delete();
+
+      return back()->with('success', 'Object deleted');
+  }
+
 }

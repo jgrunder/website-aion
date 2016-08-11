@@ -22,6 +22,11 @@
                     <i class="fa fa-pencil-square-o"></i> Edit
                 </a>
             </td>
+            <td>
+                <a class="btn btn-danger btn-xs" href="{{Route('admin.shop.delete', $result->id_item)}}">
+                    <i class="fa fa-trash"></i> Delete
+                </a>
+            </td>
         </tr>
     @endforeach
     </tbody>

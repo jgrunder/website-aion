@@ -87,6 +87,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['con
         Route::get('subcategory/{id}', ['as' => 'admin.shop.subcategory.items', 'uses' => 'ShopController@ItemsInSubCategory']);
         Route::match(['GET', 'POST'], 'add', ['as' => 'admin.shop.add', 'uses' => 'ShopController@shopAdd']);
         Route::match(['GET', 'POST'], 'edit/{id}', ['as' => 'admin.shop.edit', 'uses' => 'ShopController@shopEdit']);
+        Route::get('delete/{id}', ['as' => 'admin.shop.delete', 'uses' => 'ShopController@shopDelete']);
     });
 
     /** Paiement */
