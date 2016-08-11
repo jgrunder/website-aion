@@ -149,17 +149,35 @@ class ShopController extends Controller
   }
 
   /**
-   * GET/POST /admin/shop/subcategory/{id}
+   * GET /admin/shop/subcategory/{id}
    */
   public function ItemsInSubCategory($id)
   {
       $subCategory = ShopSubCategory::find($id);
       $items = ShopItem::where('id_sub_category', '=', $id)->paginate(20);
 
-      return view('admin.shop.items_in_subcategory', [
-          'results'     => $items,
-          'subCategory' => $subCategory
+      return view('admin.shop.items', [
+          'results' => $items,
+          'title'   => $subCategory->name
       ]);
+  }
+
+  /**
+   * GET /admin/shop/category/{id}
+   */
+  public function ItemsInCategory($id)
+  {
+    $category         = ShopCategory::find($id);
+    $subCategories    = ShopSubCategory::where('id_category', $category->id)->get();
+    $subCategoriesId  = $subCategories->reduce(function($acc, $item) {
+      $acc[] = $item->id;
+      return $acc;
+    }, []);
+
+    return view('admin.shop.items', [
+        'results' => ShopItem::whereIn('id_sub_category', $subCategoriesId)->paginate(20),
+        'title'   => $category->category_name
+    ]);
   }
 
   /**
