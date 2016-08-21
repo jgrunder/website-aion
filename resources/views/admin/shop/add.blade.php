@@ -45,6 +45,11 @@
                     {!! Form::input('number', 'quantity', null, ['placeholder' => "1", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
+                <div class="form-group">
+                  {!! Form::label('preview', "Item's preview") !!}
+                  {!! Form::select('preview', ['1' => 'Oui', '0' => 'Non']) !!}
+                </div>
+
                 @if(Config::get('aion.enable_account_level'))
                     <div class="form-group">
                         {!! Form::label('level', "Level") !!}

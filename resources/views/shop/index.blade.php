@@ -34,7 +34,11 @@
                                 @else
                                     <a style="opacity: 0;"></a>
                                 @endif
-                                <a href="#" class="previewItem" data-id="{{$item->id_item}}">Preview</a>
+                                @if($item->preview)
+                                  <a href="#" class="previewItem" data-id="{{$item->id_item}}">Preview</a>
+                                @else
+                                  <a style="opacity: 0;"></a>
+                                @endif
                             </div>
 
                         </div>

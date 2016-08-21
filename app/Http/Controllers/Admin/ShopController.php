@@ -78,6 +78,7 @@ class ShopController extends Controller
               'price'           => $request->input('price'),
               'quantity'        => $request->input('quantity'),
               'level'           => $request->input('level'),
+              'preview'         => (int) $request->input('preview'),
               'purchased'       => 0
           ]);
 
@@ -122,6 +123,7 @@ class ShopController extends Controller
               'price'           => $request->input('price'),
               'quantity'        => $request->input('quantity'),
               'level'           => $request->input('level'),
+              'preview'         => (int) $request->input('preview')
           ]);
 
           if($itemSaved !== null){
