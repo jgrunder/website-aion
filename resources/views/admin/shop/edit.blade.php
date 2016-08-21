@@ -48,7 +48,7 @@
 
                 <div class="form-group">
                   {!! Form::label('preview', "Item's preview") !!}
-                  {!! Form::select('preview', ['1' => 'Oui', '0' => 'Non'], (string) $item->preview) !!}
+                  {!! Form::select('preview', ['1' => 'Yes', '0' => 'No'], (string) $item->preview) !!}
                 </div>
 
                 @if(Config::get('aion.enable_account_level'))
