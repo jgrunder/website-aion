@@ -83,7 +83,10 @@ location / {
 ```
 
 ### Command .shop
-There is an exemple on the WIKI : [right here ](https://github.com/Mathew78540/realaion/wiki/Command-.shop)
+There is an exemple on the WIKI : [right here](https://github.com/Mathew78540/realaion/wiki/Command-.shop)
+
+### Command .preview
+There is an exemple on the WIKI : [right here](https://github.com/Mathew78540/realaion/wiki/Command-.preview)
 
 ### Support :
 
