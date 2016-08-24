@@ -19,7 +19,7 @@
                     {!! Form::textarea('en', $page->en, ['class' => 'form-control ckeditor', 'required' => 'required', 'rows' => 10, 'cols' => 40]) !!}
                 </div>
 
-                <input type="submit" class="btn btn-primary" value="Edit the page">
+                <input type="submit" class="btn btn-warning" value="Edit the page">
 
                 {!! Form::close() !!}
             </div>

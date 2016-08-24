@@ -42,7 +42,7 @@
                     {!! Form::input('number', 'points', null, ['placeholder' => 50, 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <input type="submit" class="btn btn-danger" value="Add shop Points">
+                <input type="submit" class="btn btn-primary" value="Add shop Points">
 
                 {!! Form::close() !!}
             </div>

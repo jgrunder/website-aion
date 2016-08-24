@@ -37,7 +37,7 @@
                     {!! Form::text('category_name', null, ['placeholder' => "Title", 'class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
-                <input type="submit" class="btn btn-success" value="Add the category">
+                <input type="submit" class="btn btn-primary" value="Add the category">
 
                 {!! Form::close() !!}
             </div>

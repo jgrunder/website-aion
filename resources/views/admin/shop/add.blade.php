@@ -61,7 +61,7 @@
 
                 {!! Form::input('hidden', 'quality_item', 'NONE', ['id' => 'qualityItem']) !!}
 
-                <input type="submit" class="btn btn-success" value="Add item">
+                <input type="submit" class="btn btn-primary" value="Add item">
 
                 {!! Form::close() !!}
             </div>

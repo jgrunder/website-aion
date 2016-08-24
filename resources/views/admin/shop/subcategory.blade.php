@@ -51,7 +51,7 @@
 
                 <br> <br>
 
-                <button type="submit" class="btn btn-success">Add Sub-category</button>
+                <button type="submit" class="btn btn-primary">Add Sub-category</button>
 
 
                 {!! Form::close() !!}

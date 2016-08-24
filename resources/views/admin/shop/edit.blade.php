@@ -58,7 +58,7 @@
                     </div>
                 @endif
 
-                <input type="submit" class="btn btn-danger" value="Edit item">
+                <input type="submit" class="btn btn-warning" value="Edit item">
 
                 {!! Form::close() !!}
             </div>

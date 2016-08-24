@@ -12,9 +12,9 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Title</th>
+                        <th width="20%">Title</th>
+                        <th>Content</th>
                         <th>Author</th>
-                        <th>Action</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -23,13 +23,12 @@
                         <tr>
                             <th scope="row">{{$article->id}}</th>
                             <td>{{$article->title}}</td>
+                            <td>{{str_limit($article->text, $limit = 50, $end = '...')}}</td>
                             <td>{{$article->creator->name}}</td>
                             <td>
-                                <a class="btn btn-danger btn-xs" href="{{Route('admin.news.edit', $article->id)}}">
+                                <a class="btn btn-warning btn-xs" href="{{Route('admin.news.edit', $article->id)}}">
                                     <i class="fa fa-pencil-square-o"></i> Edit
                                 </a>
-                            </td>
-                            <td>
                                 <a class="btn btn-danger btn-xs" href="{{Route('admin.news.delete', $article->id)}}">
                                     <i class="fa fa-trash"></i> Delete
                                 </a>
