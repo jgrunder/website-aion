@@ -72,10 +72,14 @@ class AdminController extends Controller
                 $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
                 break;
             case 'shop_item_name':
-                $results = ShopItem::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
+                $results = ShopItem::with(['sub' => function($query) {
+                  return $query->with('category');
+                }])->where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
                 break;
             case 'shop_item_id':
-                $results = ShopItem::where('id_item', $searchValue)->paginate(30);
+                $results = ShopItem::with(['sub' => function($query) {
+                  return $query->with('category');
+                }])->where('id_item', $searchValue)->paginate(30);
                 break;
             default:
                 $results = Player::where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);

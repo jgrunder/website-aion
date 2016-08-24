@@ -16,7 +16,9 @@ class ShopController extends Controller
   public function allItems()
   {
     return view('admin.shop.items', [
-        'results' => ShopItem::paginate(20),
+        'results' => ShopItem::with(['sub' => function($query) {
+          return $query->with('category');
+        }])->paginate(20),
         'title'   => 'All items in the shop'
     ]);
   }
