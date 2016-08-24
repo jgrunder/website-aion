@@ -94,7 +94,7 @@
                 {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'get']) !!}
 
                 <div class="form-group">
-                    {!! Form::select('search_type', ['character' => 'Characters', 'shop_item' => 'Shop'], null, ['class' => 'form-control']) !!}
+                    {!! Form::select('search_type', ['character' => 'Characters', 'shop_item_name' => 'Shop (Name)', 'shop_item_id' => 'Shop (ID)'], null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">

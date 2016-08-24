@@ -7,7 +7,7 @@
                 <h1>Search Result</h1>
             </div>
             <div class="col-md-12">
-                @if ($searchType == 'shop_item')
+                @if ($searchType == 'shop_item_name' || $searchType == 'shop_item_id')
                     @include('admin.search.shop')
                 @elseif ($searchType == 'character')
                     @include('admin.search.character')
