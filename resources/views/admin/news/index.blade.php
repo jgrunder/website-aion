@@ -41,7 +41,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
-                <a href="{{Route('admin.news.add')}}" class="btn btn-primary">Ajouter un article</a>
+                <a href="{{Route('admin.news.add')}}" class="btn btn-primary">Add a news</a>
             </div>
         </div>
     </div>
