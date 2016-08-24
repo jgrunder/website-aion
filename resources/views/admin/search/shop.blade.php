@@ -18,7 +18,7 @@
               <a href="{{Route('admin.shop.category.items', $result->sub->category->id)}}">
                 {{$result->sub->category->category_name}}
               </a> /
-              <a href="{{Route('admin.shop.subcategory.items', $result->sub->name)}}">
+              <a href="{{Route('admin.shop.subcategory.items', $result->sub->id)}}">
                 {{$result->sub->name}}
               </a>
             </td>
