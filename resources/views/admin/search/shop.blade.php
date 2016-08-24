@@ -2,7 +2,9 @@
     <thead>
     <tr>
         <th>#</th>
+        <th>Category</th>
         <th>Name</th>
+        <th>Quantity</th>
         <th>Price</th>
         <th>Number of purchase</th>
         <th>Action</th>
@@ -13,8 +15,17 @@
         <tr>
             <th scope="row">{{$result->id_item}}</th>
             <td>
+              <a href="{{Route('admin.shop.category.items', $result->sub->category->id)}}">
+                {{$result->sub->category->category_name}}
+              </a> /
+              <a href="{{Route('admin.shop.subcategory.items', $result->sub->name)}}">
+                {{$result->sub->name}}
+              </a>
+            </td>
+            <td>
                 <a href="http://aiondatabase.net/en/item/{{$result->id_item}}" target="_blank">{{$result->name}}</a>
             </td>
+            <td>{{$result->quantity}}</td>
             <td>{{$result->price}}</td>
             <td>{{$result->purchased}}</td>
             <td>
