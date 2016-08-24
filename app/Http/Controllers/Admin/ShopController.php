@@ -94,7 +94,7 @@ class ShopController extends Controller
           ]);
 
           if($itemAdded !== null){
-              $success = $request->input('name')." a été ajouté avec succès";
+              $success = $request->input('name')." was added successfully";
           }
       }
 
@@ -138,7 +138,7 @@ class ShopController extends Controller
           ]);
 
           if($itemSaved !== null){
-              $success = $request->input('name')." a été modifié avec succès";
+              $success = $request->input('name')." was successfully changed";
           }
 
       }
@@ -207,7 +207,7 @@ class ShopController extends Controller
   {
       ShopItem::where('id_item', $id)->delete();
 
-      return back()->with('success', 'Object deleted');
+      return back()->with('success', 'Object was successfully deleted');
   }
 
 }
