@@ -11,6 +11,17 @@ use Illuminate\Http\Request;
 class ShopController extends Controller
 {
   /**
+   * GET /admin/shop/all
+   */
+  public function allItems()
+  {
+    return view('admin.shop.items', [
+        'results' => ShopItem::paginate(20),
+        'title'   => 'All items in the shop'
+    ]);
+  }
+
+  /**
    * GET/POST /admin/shop-category
    */
   public function shopCategory(Request $request)

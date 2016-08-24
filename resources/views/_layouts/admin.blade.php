@@ -43,6 +43,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{Route('admin.shop.all')}}">All items</a></li>
                             <li><a href="{{Route('admin.shop.add')}}">Add item</a></li>
                             <li><a href="{{Route('admin.shop.category')}}">Categories list</a></li>
                             <li><a href="{{Route('admin.shop.subcategory')}}">Sub-categories list</a></li>
@@ -93,11 +94,11 @@
                 {!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('admin.search'), 'method' => 'get']) !!}
 
                 <div class="form-group">
-                    {!! Form::select('search_type', ['character' => 'Characters', 'shop_item' => 'Shop'], null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::select('search_type', ['character' => 'Characters', 'shop_item' => 'Shop'], null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::text('search_value', null, ['placeholder' => "Name", 'class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('search_value', null, ['placeholder' => "Name", 'class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::close() !!}

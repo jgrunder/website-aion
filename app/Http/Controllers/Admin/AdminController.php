@@ -64,7 +64,7 @@ class AdminController extends Controller
      */
     public function search(Request $request)
     {
-        $searchValue = $request->input('search_value');
+        $searchValue = empty($request->input('search_value')) ? '%' : $request->input('search_value');
         $searchType  = $request->input('search_type');
 
         switch ($searchType){
