@@ -6,7 +6,7 @@
             <div class="col-md-12 text-center page-header">
                 <h1>Search Result</h1>
             </div>
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                 @if ($searchType == 'shop_item')
                     @include('admin.search.shop')
                 @elseif ($searchType == 'character')
