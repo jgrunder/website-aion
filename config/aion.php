@@ -12,6 +12,14 @@ return [
     'forumUrl'      => '#',
     'minimumAccessLevel' => 2, // Minimum accessLevel for access to the back office
 
+    'page' => [
+        'online_players' => [
+            'display_map'              => true, // If set to true, display the map name on 'Online players'
+            'display_map_access_level' => 0, // Minimum access level to display map
+            'display_level'            => true
+        ]
+    ],
+
     // When you are connect you can unlock your character
     'spawn' => [
         'elyos' => [

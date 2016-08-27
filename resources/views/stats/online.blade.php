@@ -12,17 +12,27 @@
         <table>
           <thead>
             <tr>
-              <th>#</th>
               <th>{{Lang::get('all.online.name')}}</th>
+              @if(Config::get('aion.page.online_players.display_level'))
+                <th>{{Lang::get('all.online.level')}}</th>
+              @endif
+              @if(Config::get('aion.page.online_players.display_map') && Session::has('connected') && Session::get('user.access_level') >= Config::get('aion.page.online_players.display_map_access_level'))
+                <th>{{Lang::get('all.online.world')}}</th>
+              @endif
               <th>{{Lang::get('all.online.faction')}}</th>
               <th>{{Lang::get('all.online.classe')}}</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($users as $index => $user)
+            @foreach($users as $user)
               <tr>
-                <td class="strong">{{$index + 1}}</td>
-                <td>{{$user->name}}</td>
+                <td class="strong">{{$user->name}}</td>
+                @if(Config::get('aion.page.online_players.display_level'))
+                  <td>{{$user->exp}}</td>
+                @endif
+                @if(Config::get('aion.page.online_players.display_map') && Session::has('connected') && Session::get('user.access_level') >= Config::get('aion.page.online_players.display_map_access_level'))
+                  <td>{{$user->world_id}}</td>
+                @endif
                 <td><span class="{{Lang::get('aion.race_logo.'.$user->race)}}"></span></td>
                 <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$user->player_class)}}"></span></td>
               </tr>

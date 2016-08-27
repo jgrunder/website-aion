@@ -3,6 +3,7 @@
 namespace App\Models\Gameserver;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Lang;
 
 class Player extends Model {
 
@@ -17,6 +18,44 @@ class Player extends Model {
     public function scopeOnline($query)
     {
         return $query->where('online', 1);
+    }
+
+    /**
+     * Return player level base on the exp
+     *
+     * @param integer $value 2314763
+     *
+     * @return integer 19
+     */
+    public function getExpAttribute($value)
+    {
+        $expMapper = Lang::get('aion.exp');
+
+        foreach($expMapper as $xp => $level) {
+            if($value <= $xp){
+                return $level;
+                break;
+            }
+        }
+    }
+
+    /**
+     * Return name of the map
+     *
+     * @param  integer $value 110010000
+     *
+     * @return string Sanctum
+     */
+    public function getWorldIdAttribute($value)
+    {
+        $mapMapper = Lang::get('aion.map');
+
+        foreach ($mapMapper as $id => $name) {
+            if($value == $id){
+                return $name;
+                break;
+            }
+        }
     }
 
 }

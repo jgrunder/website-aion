@@ -108,7 +108,9 @@ return [
         'no_players_online' => 'No players online',
         'name'              => 'Name',
         'faction'           => 'Faction',
-        'classe'            => 'Classe'
+        'classe'            => 'Classe',
+        'level'             => 'Level',
+        'world'             => 'World'
     ],
     'paypal' => [
         'title'           => 'Paypal (Choose YOUR DESIRES)',
