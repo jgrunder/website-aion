@@ -11,7 +11,7 @@ return [
     'contactMail'        => 'mathieu.letyrant@gmail.com',
     'forumUrl'           => '#',
     'minimumAccessLevel' => 2, // Minimum accessLevel for access to the back office
-    'enable_weddings'    => false, // Display block with last 5 weddings
+    'enable_weddings'    => true, // Display block with last 5 weddings
 
     'page' => [
         'online_players' => [
@@ -44,39 +44,39 @@ return [
         'online_number' => 2 // Every 2 minutes, we clear count of players online
     ],
 
-    'allopass'                 => [
-        'url'                  => 'https://payment.allopass.com/buy/buy.apu?ids=307954&idd=1326680',
-        'pointsGiven'          => 4000,
-        'documentId'           => '307954/1326680/4588246'
+    'allopass' => [
+        'url'         => 'https://payment.allopass.com/buy/buy.apu?ids=307954&idd=1326680',
+        'pointsGiven' => 4000,
+        'documentId'  => '307954/1326680/4588246'
     ],
 
-    'paypal'                   => [
-        'email'                => 'unretailed@gmail.com',
-        'maxShopPoints'        => 1000000,
-        'points_per_euro'      => 5000, // 5000 Shop's Points equal 1€
-        'currency_code'        => 'EUR', // Look paypal for that
-        'currency_display'     => '€'
+    'paypal' => [
+        'email'            => 'unretailed@gmail.com',
+        'maxShopPoints'    => 1000000,
+        'points_per_euro'  => 5000, // 5000 Shop's Points equal 1€
+        'currency_code'    => 'EUR', // Look paypal for that
+        'currency_display' => '€'
     ],
 
-    'servers'                  => [
-        'Serveur'              => [
-            'ip'               => '127.0.0.1',
-            'port'             => 2106
+    'servers' => [
+        'Game' => [
+            'ip'   => '127.0.0.1',
+            'port' => 2106
         ],
-        'Login'                => [
-            'ip'               => '127.0.0.1',
-            'port'             => 7777
+        'Login' => [
+            'ip'   => '127.0.0.1',
+            'port' => 7777
         ],
-        'TS'                   => [
-            'ip'               => '127.0.0.1',
-            'port'             => 9987
+        'TS' => [
+            'ip'   => '127.0.0.1',
+            'port' => 9987
         ]
     ],
 
     // On the back office you can download logs from the server
-    'logs'                     => [
-        'path'                 => '/Users/letyrantmathieu/Desktop/logs-realAion/',
-        'files'                => [
+    'logs' => [
+        'path' => '/Users/letyrantmathieu/Desktop/logs-realAion/',
+        'files' => [
             [
                 'file'         => 'adminaudit',
                 'extension'    => '.log',
