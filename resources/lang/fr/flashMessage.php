@@ -14,19 +14,19 @@ return [
         'wait_time'            => "Vous ne pouvez pas voter pour ce site, vous devez attendre 2H"
     ],
     'user' => [
-        'subscribe_and_logged' => 'Vous êtes maintenant inscrit et connecté',
-        'logged'               => 'Vous êtes maintenant connecté',
+        'subscribe_and_logged' => 'Vous êtes maintenant inscrit(e) et connecté(e)',
+        'logged'               => 'Vous êtes maintenant connecté(e)',
         'no_account'           => "Votre compte n'existe pas",
-        'logout'               => 'Vous êtes maintenant déconnecté',
-        'unlogged'             => 'Vous devez être connecté pour accéder à cette page',
-        'connected'            => 'Vous devez être connecté pour accéder à cette page',
+        'logout'               => 'Vous êtes maintenant déconnecté(e)',
+        'unlogged'             => 'Vous devez être connecté(e) pour accéder à cette page',
+        'connected'            => 'Vous devez être connecté(e) pour accéder à cette page',
         'not_access_level'     => "Vous n'avez pas le grade pour accéder à cette page"
     ],
     'language' => [
-        'not_supported' => "La langue séléctionné n'est pas supporté"
+        'not_supported' => "La langue séléctionnée n'est pas supportée"
     ],
     'paiement' => [
-        'wrong_allopass'        => 'Paramètres allopass invalident',
+        'wrong_allopass'        => 'Paramètres allopass invalides',
         'success_allopass'      => 'Votre compte a été crédité de',
         'error_allopass'        => "Une erreur c'est produite. Merci de contacter un administrateur",
         'already_used_allopass' => 'Le code allopass a déjà été utilisé'

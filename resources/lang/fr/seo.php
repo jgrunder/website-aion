@@ -47,19 +47,19 @@ return [
 
     'online'          => [
         'title'       => "Joueurs en ligne",
-        'description' => "Venez voir qui est actuellement en ligne sur le serveur RealAion."
+        'description' => "Venez voir qui est actuellement en ligne sur le serveur."
     ],
     'legions'           => [
         'title'       => "Classement des légions",
-        'description' => "Venez voir qu'elle est la légions la plus forte de RealAion"
+        'description' => "Venez voir quelle est la légion la plus forte sur le serveur."
     ],
     'bg'              => [
         'title'       => "Champs de batailles",
-        'description' => "Venez voir qui est le plus fort sur les champs de batailles du serveur RealAion."
+        'description' => "Venez voir qui est le plus fort sur les champs de batailles."
     ],
     'lost_password'   => [
         'title'       => "Mot de passe oublié ?",
-        'description' => "Vous avez perdu votre mot de passe pour vous connecter au serveur RealAion ? Pas de panique, nous pouvons le retrouver !"
+        'description' => "Vous avez perdu votre mot de passe pour vous connecter sur le serveur ? Pas de panique, nous pouvons le réinitialiser !"
     ],
 
 ];

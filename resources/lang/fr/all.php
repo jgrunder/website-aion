@@ -33,7 +33,7 @@ return [
         'gift'               => 'Cadeau',
         'name'               => 'Nom',
         'title'              => 'Boutique',
-        'best_sales'         => 'Meilleurs ventes',
+        'best_sales'         => 'Meilleures ventes',
         'qt'                 => 'QT',
         'price'              => 'Price',
         'level'              => 'Level',
@@ -109,7 +109,7 @@ return [
         'points'   => 'Points'
     ],
     'online' => [
-        'no_players_online' => 'Aucun joueurs en lignes',
+        'no_players_online' => 'Aucun joueurs en ligne',
         'name'              => 'Nom',
         'faction'           => 'Faction',
         'classe'            => 'Classe',
