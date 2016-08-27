@@ -64,3 +64,27 @@
         </table>
     </div>
 </div>
+
+@if(Config::get('aion.enable_weddings') && isset($weddings) && $weddings->count() > 0)
+<div class="bloc_with_header bloc_vote">
+    <div class="bloc_header" style="background-color: #e6549f">
+        <h2 style="color: white">{{Lang::get('all.weddings.title')}}</h2>
+        <p style="color: white">{{Lang::get('all.weddings.sub_title')}}</p>
+    </div>
+    <div class="bloc_body center">
+        <table>
+            <tbody>
+                @foreach($weddings as $wedding)
+                    <tr>
+                        <td width="100%" style="text-align: center">
+                            {{$wedding->firstPlayer->name}}
+                            <span style="color: #e6549">♥</span>
+                            {{$wedding->secondPlayer->name}}
+                         </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+@endif

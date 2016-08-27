@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 
 use App\Models\Gameserver\Player;
+use App\Models\Gameserver\Weddings;
 use App\Models\Loginserver\AccountData;
 use App\Models\Loginserver\AccountVote;
 use App\Models\Webserver\ConfigSlider;
@@ -40,6 +41,7 @@ abstract class Controller extends BaseController {
         $this->topVotes();
         $this->getLanguageFromCookie();
         $this->getSlider();
+        $this->weddings();
     }
 
     /**
@@ -57,6 +59,16 @@ abstract class Controller extends BaseController {
 
 		View::share('countPlayersOnlineAsmodians', $count_asmodians);
 		View::share('countPlayersOnlineElyos', $count_elyos);
+    }
+
+    /**
+     * Set Variables $weddings
+     */
+    private function weddings()
+    {
+        if(Config::get('aion.enable_weddings')){
+            View::share('weddings', Weddings::orderBy('id', 'DESC')->take(5)->get());
+        }
     }
 
     /**

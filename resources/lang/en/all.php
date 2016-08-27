@@ -51,6 +51,10 @@ return [
         'connect'          => 'Connect',
         'missing_password' => 'Missing Password'
     ],
+    'weddings' => [
+        'title'     => 'Weddings',
+        'sub_title' => 'They said YES !'
+    ],
     'news'                 => [
         'by'               => 'By',
         'next'             => 'Next'

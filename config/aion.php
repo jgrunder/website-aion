@@ -2,15 +2,16 @@
 
 return [
 
-    'website_name'  => 'Aion server',
-    'aion_version'  => '4.9',
-    'link_facebook' => '#',
-    'link_twitter'  => '#',
-    'link_youtube'  => '#',
-    'languages'     => ['en', 'fr'],
-    'contactMail'   => 'mathieu.letyrant@gmail.com',
-    'forumUrl'      => '#',
+    'website_name'       => 'Aion server',
+    'aion_version'       => '4.9',
+    'link_facebook'      => '#',
+    'link_twitter'       => '#',
+    'link_youtube'       => '#',
+    'languages'          => ['en', 'fr'],
+    'contactMail'        => 'mathieu.letyrant@gmail.com',
+    'forumUrl'           => '#',
     'minimumAccessLevel' => 2, // Minimum accessLevel for access to the back office
+    'enable_weddings'    => false, // Display block with last 5 weddings
 
     'page' => [
         'online_players' => [

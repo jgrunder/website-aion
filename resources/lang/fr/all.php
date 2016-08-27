@@ -51,6 +51,10 @@ return [
         'connect'          => 'Se connecter',
         'missing_password' => 'Mot de passe oublié'
     ],
+    'weddings' => [
+        'title'     => 'Mariage',
+        'sub_title' => 'Ils ont dit OUI !'
+    ],
     'news'                 => [
         'by'               => 'Posté par',
         'next'             => 'Lire la suite'
