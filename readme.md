@@ -57,7 +57,7 @@ MAIL_PASSWORD	= null
 
 8. After having execute the command, a news have been added.
 
-9. Execute : ```gulp --production```
+9. Execute ```npm install``` and then ```gulp --production```
 
 10. After having execute the command, all assets have been created and compile
 
