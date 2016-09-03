@@ -109,7 +109,7 @@ return [
         'points'   => 'Points'
     ],
     'online' => [
-        'no_players_online' => 'Aucun joueurs en ligne',
+        'no_players_online' => 'Aucun joueur en ligne',
         'name'              => 'Nom',
         'faction'           => 'Faction',
         'classe'            => 'Classe',
