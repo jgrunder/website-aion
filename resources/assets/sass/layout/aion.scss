@@ -103,6 +103,12 @@
 		color: #f08033;
 	}
 }
+.quality-unique {
+    color: #f0b71c;
+	&:active, &:hover {
+		color: #f0b71c;
+	}
+}
 .quality-legend {
 	color: #4ccfff;
 	&:active, &:hover {
