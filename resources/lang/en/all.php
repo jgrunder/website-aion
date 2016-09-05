@@ -99,6 +99,8 @@ return [
             'faction' => 'Faction',
             'classe'  => 'Classe',
             'action'  => 'Action',
+            'legion'  => 'Legion',
+            'level'   => 'Level',
             'unlock'  => 'Unlock'
         ]
     ],

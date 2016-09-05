@@ -39,20 +39,26 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>{{ Lang::get('all.my_account.table.name') }}</th>
                             <th>{{ Lang::get('all.my_account.table.faction') }}</th>
+                            <th>{{ Lang::get('all.my_account.table.level') }}</th>
                             <th>{{ Lang::get('all.my_account.table.classe') }}</th>
+                            <th>{{ Lang::get('all.my_account.table.legion') }}</th>
                             <th>{{ Lang::get('all.my_account.table.action') }}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($players as $index => $player)
                             <tr>
-                                <td>{{$index + 1}}</td>
-                                <td>{{$player->name}}</td>
+                                <td class="strong">{{$player->name}}</td>
+                                <td>{{$player->exp}}</td>
                                 <td><span class="{{Lang::get('aion.race_logo.'.$player->race)}}"></span></td>
                                 <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$player->player_class)}}"></span></td>
+                                @if($player->memberOfALegion)
+                                    <td>{{$player->memberOfALegion->legion->name}}</td>
+                                @else
+                                    <td></td>
+                                @endif
                                 <td><a class="btnUnluckPlayer" player-id="{{$player->id}}" account-id="{{Session::get('user.id')}}">{{ Lang::get('all.my_account.table.unlock') }}</a></td>
                             </tr>
                         @endforeach

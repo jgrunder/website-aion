@@ -108,7 +108,7 @@ class UserController extends Controller
         // SEO
         SEOMeta::setTitle(Lang::get('seo.account.title'));
 
-        $players        = Player::where('account_id', '=', Session::get('user.id'))->get();
+        $players        = Player::legion()->where('account_id', '=', Session::get('user.id'))->get();
         $accountLevel   = AccountLevel::where('account_id', Session::get('user.id'))->first();
         $levels         = Config::get('aion.levels');
 
