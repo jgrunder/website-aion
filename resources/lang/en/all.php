@@ -114,7 +114,8 @@ return [
         'faction'           => 'Faction',
         'classe'            => 'Classe',
         'level'             => 'Level',
-        'world'             => 'World'
+        'world'             => 'World',
+        'legion'            => 'Legion'
     ],
     'paypal' => [
         'title'           => 'Paypal (Choose YOUR DESIRES)',

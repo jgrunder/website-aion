@@ -58,6 +58,14 @@ return [
         'FEMALE'	=> "Female"
     ],
 
+    'legion_rank' => [
+        'BRIGADE_GENERAL' => 'Brigade General',
+        'VOLUNTEER'       => 'Volunteer',
+        'CENTURION'       => 'Centurion',
+        'LEGIONARY'       => 'Legionary',
+        'DEPUTY'          => 'Deputy'
+    ],
+
     'rank_name' => [
         1 => "Soldier, rang 9",
         2 => "Soldier, rang 8",

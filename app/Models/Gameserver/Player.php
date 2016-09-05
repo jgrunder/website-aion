@@ -21,6 +21,18 @@ class Player extends Model {
     }
 
     /**
+     * Return legion
+     * @param  [type] $query [description]
+     * @return [type]        [description]
+     */
+    public function scopeLegion($query)
+    {
+        return $query->with(['memberOfALegion' => function($query2){
+            return $query2->with(['legion']);
+        }]);
+    }
+
+    /**
      * Return player level base on the exp
      *
      * @param integer $value 2314763
@@ -58,4 +70,11 @@ class Player extends Model {
         }
     }
 
+    /**
+     * Return Legion Members
+     */
+    public function memberOfALegion()
+    {
+        return $this->belongsTo('App\Models\Gameserver\LegionMember', 'id', 'player_id');
+    }
 }

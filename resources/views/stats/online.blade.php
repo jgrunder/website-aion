@@ -21,6 +21,7 @@
               @endif
               <th>{{Lang::get('all.online.faction')}}</th>
               <th>{{Lang::get('all.online.classe')}}</th>
+              <th>{{Lang::get('all.online.legion')}}</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +36,11 @@
                 @endif
                 <td><span class="{{Lang::get('aion.race_logo.'.$user->race)}}"></span></td>
                 <td><span class="charactericon-class {{Lang::get('aion.class_logo.'.$user->player_class)}}"></span></td>
+                @if($user->memberOfALegion)
+                    <td>{{$user->memberOfALegion->legion->name}}</td>
+                @else
+                    <td></td>
+                @endif
               </tr>
             @endforeach
           </tbody>
