@@ -23,12 +23,12 @@ return [
         'not_access_level'     => "Vous n'avez pas le grade pour accéder à cette page"
     ],
     'language' => [
-        'not_supported' => "La langue séléctionnée n'est pas supportée"
+        'not_supported' => "La langue sélectionnée n'est pas supportée"
     ],
     'paiement' => [
-        'wrong_allopass'        => 'Paramètres allopass invalides',
+        'wrong_allopass'        => 'Paramètres Allopass invalides',
         'success_allopass'      => 'Votre compte a été crédité de',
-        'error_allopass'        => "Une erreur c'est produite. Merci de contacter un administrateur",
-        'already_used_allopass' => 'Le code allopass a déjà été utilisé'
+        'error_allopass'        => "Une erreur s'est produite. Merci de contacter un administrateur",
+        'already_used_allopass' => 'Le code Allopass a déjà été utilisé'
     ]
 ];
