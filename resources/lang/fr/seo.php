@@ -30,7 +30,7 @@ return [
     ],
     'rules'           => [
         'title'       => "Règlement",
-        'description' => "Retrouvez le règlement du serveur et gardez-le en tête pour éviter de futur problème."
+        'description' => "Retrouvez le règlement du serveur et gardez-le en tête pour éviter de futurs problèmes."
     ],
     'team'            => [
         'title'       => "Equipe",
@@ -55,7 +55,7 @@ return [
     ],
     'bg'              => [
         'title'       => "Champs de batailles",
-        'description' => "Venez voir qui est le plus fort sur les champs de batailles."
+        'description' => "Venez voir qui est le plus fort sur les champs de bataille."
     ],
     'lost_password'   => [
         'title'       => "Mot de passe oublié ?",

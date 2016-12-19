@@ -101,7 +101,7 @@ return [
             'action'  => 'Action',
             'legion'  => 'Legion',
             'level'   => 'Level',
-            'unlock'  => 'Débloqué'
+            'unlock'  => 'Débloquer'
         ]
     ],
     'legions' => [
