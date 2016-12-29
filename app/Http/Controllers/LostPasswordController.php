@@ -42,12 +42,12 @@ class LostPasswordController extends Controller
 
                 // We send a beautiful email
                 Mail::send('lostpassword.email_lost_password_1', ['account' => $account, 'link' => url('reset-password', [$token, $account->name])], function($m) use ($account) {
-                    $m->to($account->email)->subject('Mot de passe oublié');
+                    $m->to($account->email)->subject(Lang::get('all.forgot_password.mail1_subject'));
                 });
 
-                $success = 'Email envoyé';
+                $success = Lang::get('all.forgot_password.mail1_sent');
             } else {
-                $errors  = "Désolé mais l'email n'existe pas dans notre base de donnée.";
+                $errors  = Lang::get('all.forgot_password.mail1_error');
             }
 
         }
@@ -79,14 +79,14 @@ class LostPasswordController extends Controller
 
             // We send a beautiful email
             Mail::send('lostpassword.email_lost_password_2', ['account' => $account, 'password' => $token], function($m) use ($account) {
-                $m->to($account->email)->subject('Mot de passe oublié');
+                $m->to($account->email)->subject(Lang::get('all.forgot_password.mail2_subject'));
             });
 
-            $success = "Un email vous été envoyé avec le nouveau mot de passe";
+            $success = Lang::get('all.forgot_password.mail2_confirm');
 
 
         } else {
-            $errors = "Nous sommes désolé mais le token n'est pas bon";
+            $errors = Lang::get('all.forgot_password.mail2_error');
         }
 
         return view('lostpassword.lost_password', [
