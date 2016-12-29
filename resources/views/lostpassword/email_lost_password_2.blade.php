@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mot de passe oublié</title>
+    <title>{{ Lang::get('all.login.missing_password') }}</title>
     <style>
         body {
             font-family: Sans-Serif;
@@ -12,8 +12,12 @@
     </style>
 </head>
 <body>
-    Bonjour <?php echo $account->name; ?>,
+    {{ Lang::get('all.forgot_password.mail_hello') }} <?php echo $account->pseudo; ?>,
     <br> <br>
-    Votre nouveau mot de passe : <?php echo $password; ?>
+    {{ Lang::get('all.forgot_password.mail2_part1') }} <?php echo $password; ?>
+	<br> <br>
+	{{ Lang::get('all.forgot_password.mail2_part2') }}
+	<br> <br>
+	{{ Lang::get('all.forgot_password.mail_ending') }}
 </body>
 </html>
