@@ -51,6 +51,23 @@ return [
         'connect'          => 'Connect',
         'missing_password' => 'Missing Password'
     ],
+    'forgot_password'      => [
+        'intro'		       => 'To get a new password, inform here your email address; you will receive a clickable confirm link, then your new password in a second email.',
+        'submit'    	   => 'Send',
+        'click_here'   	   => 'Ask for a new password',
+        'mail_hello'      => 'Hello',
+		'mail1_subject'	   => 'Aion Server : forgot password',
+        'mail1_part1'	   => 'If you requested a new password in Aion Server website, please click on link below to get your new password:',
+        'mail1_part2'	   => "If you didn't request a new password, we highly recommend you to contact an administrator and change your account email address if possible.",
+		'mail1_sent'	   => "Mail sent",
+        'mail1_error'	   => "We are sorry, this email address does not exist in our database.",
+        'mail2_subject'	   => 'Aion Server : your new password',
+        'mail2_part1'	   => 'Your new password is :',
+        'mail2_part2'	   => 'Change it at your next connection to Aion Server website.',
+		'mail2_confirm'	   => 'An email has been sent to you with your new password.',
+        'mail2_error'	   => "We are sorry, token is not correct. Please try again or contact administrator.",
+		'mail_ending'	   => 'Regards, Aion Server Staff'
+    ],
     'weddings' => [
         'title'     => 'Weddings',
         'sub_title' => 'They said YES !'
