@@ -10,13 +10,13 @@
                     <!-- NEWS -->
             <div class="news">
                 <div class="news_top">
-                    <h1>Mot de passe oublié</h1>
+                    <h1>{{ Lang::get('all.login.missing_password') }}</h1>
                 </div>
                 <div class="news_body center">
 
                     @if($step == 1)
 
-                        <p>Pour récupérer votre mot de passe nous avons besoin de votre email. Une fois celui-ci renseigné et le formulaire envoyé, vous recevrez par e-mail un lien de confirmation sur lequel vous devrez cliquer pour recevoir par la suite un nouveau mot de passe.</p>
+                        <p>{{ Lang::get('all.forgot_password.intro') }}</p>
 
                         <br>
 
@@ -26,9 +26,9 @@
 
                         {!! Form::open() !!}
 
-                        {!! Form::email('email', null, ['placeholder' => 'Votre email', 'class' => 'input', 'required' => 'required']) !!}
+                        {!! Form::email('email', null, ['placeholder' => Lang::get('all.subscribe.email'), 'class' => 'input', 'required' => 'required']) !!}
 
-                        <input type="submit" class="btn" value="Envoyer">
+                        <input type="submit" class="btn" value="{!! Lang::get('all.forgot_password.submit') !!}">
 
                         {!! Form::close() !!}
 
