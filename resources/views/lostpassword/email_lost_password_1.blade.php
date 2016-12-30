@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mot de passe oublié</title>
+    <title>{{ Lang::get('all.login.missing_password') }}</title>
     <style>
         body {
             font-family: Sans-Serif;
@@ -12,9 +12,12 @@
     </style>
 </head>
 <body>
-    Bonjour <?php echo $account->name; ?>,
+    {{ Lang::get('all.forgot_password.mail_hello') }} <?php echo $account->pseudo; ?>,
     <br> <br>
-    Si vous avez fait une demande de mot de passe oublié sur le site de RealAion, merci de cliquer sur ce lien pour recevoir un nouveau mot de passe :
-    <a href="<?php echo $link; ?>">ici</a>
+    {{ Lang::get('all.forgot_password.mail1_part1') }}
+    <a href="<?php echo $link; ?>">{{ Lang::get('all.forgot_password.click_here') }}</a>.<br/>
+	{{ Lang::get('all.forgot_password.mail1_part2') }}
+	<br> <br>
+	{{ Lang::get('all.forgot_password.mail_ending') }}
 </body>
 </html>
