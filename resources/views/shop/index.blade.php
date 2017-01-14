@@ -6,7 +6,12 @@
         <div class="container_left">
             <div class="news">
                 <div class="news_top">
-                    <h2>{!! Lang::get('all.shop.title') !!} @if(isset($top)) ({!! Lang::get('all.shop.best_sales') !!}) @endif</h2>
+                    <h2>{!! Lang::get('all.shop.title') !!} 
+					@if(isset($top)) 
+						({!! Lang::get('all.shop.best_sales') !!}) 
+					@elseif(isset($searchValue))
+						({!! Lang::get('all.shop.search_result') !!} "{{$searchValue}}" )
+					@endif</h2>
                 </div>
                 <div class="news_body shop_container">
 
@@ -52,6 +57,8 @@
         </div>
         <!-- RIGHT SIDEBAR -->
         <div class="container_right">
+            <!-- Search Function -->
+			@include('_modules.shop_search')
 
             <!-- CART -->
             <div class="bloc_with_header bloc_vote">
