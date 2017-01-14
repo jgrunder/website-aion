@@ -43,7 +43,10 @@ return [
         'categories'         => 'Catégories',
         'categories_desc'    => 'Sous-catégories disponibles',
         'summary'            => 'Récapitulatif',
-        'no_characters'      => "Vous n'avez pas de personnage sur le serveur"
+        'no_characters'      => "Vous n'avez pas de personnage sur le serveur",
+        'search_title'       => "Chercher un item",
+        'search_btn'  	     => "Chercher",
+        'search_result'	     => "Résultat de la recherche"
     ],
     'login'                => [
         'username'         => 'Identifiant',
