@@ -43,7 +43,10 @@ return [
         'categories'         => 'Categories',
         'categories_desc'    => 'Sub-categories available',
         'summary'            => 'Summary',
-        'no_characters'      => 'You do not have character on the server'
+        'no_characters'      => 'You do not have character on the server',
+        'search_title'       => "Find an item",
+        'search_btn'  	     => "Search",
+        'search_result'	     => "Search result"
     ],
     'login'                => [
         'username'         => 'Username',
