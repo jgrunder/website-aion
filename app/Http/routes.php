@@ -21,6 +21,7 @@ Route::get('donation', ['as' => 'donation', 'uses' => 'PageController@donation',
 /** Shop */
 Route::group(['prefix' => 'shop', 'middleware' => ['connected']], function() {
     Route::get('', ['as' => 'shop', 'uses' => 'ShopController@index']);
+    Route::get('search', ['as' => 'shop.search', 'uses' => 'ShopController@search']);
     Route::get('category/{id}', ['as' => 'shop.category', 'uses' => 'ShopController@category']);
     Route::get('add/{id}', ['as' => 'shop.add', 'uses' => 'ShopController@addToCart']);
     Route::get('remove/{id}', ['as' => 'shop.remove', 'uses' => 'ShopController@removeToCart']);
