@@ -9,7 +9,7 @@ return [
         'empty_cart'       => "Empty Cart",
         'not_shop_points'  => "You have not enough shop points on your account",
         'success'          => "Successful purchase : Write .shop IG on the character",
-		'no_search_empty'  => "Search field cannot be empty"
+        'no_search_empty'  => "Search field cannot be empty"
     ],
     'vote' => [
         'wait_time' => "You cannot vote now, you have to wait 2H"
