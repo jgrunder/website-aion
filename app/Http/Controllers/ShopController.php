@@ -42,8 +42,9 @@ class ShopController extends Controller {
      */
     public function search(Request $request)
     {
-		if(empty($request->input('search_value')))
+		if(empty($request->input('search_value'))) {
 			return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.no_search_empty'));
+        }
 		
 		$accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
         $searchValue = $request->input('search_value');
