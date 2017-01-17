@@ -12,8 +12,8 @@ use App\Models\Webserver\ShopItem;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller {
@@ -170,9 +170,9 @@ class ShopController extends Controller {
     /**
      * POST /shop/buy
      */
-    public function buy()
+    public function buy(Request $request)
     {
-        $player_id  = Request::input('player_id');
+        $player_id  = $request->input('player_id');
         $player     = Player::where('id', '=', $player_id)->first();
         $total      = Cart::total();
         $account_id = Session::get('user.id');
