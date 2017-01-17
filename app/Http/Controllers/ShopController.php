@@ -13,7 +13,6 @@ use App\Models\Webserver\ShopItem;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
