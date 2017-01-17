@@ -36,6 +36,35 @@ class ShopController extends Controller {
           'count'           => Cart::count()
         ]);
     }
+    
+    /**
+     * POST /shop/search
+     */
+    public function search(Request $request)
+    {
+		if(empty($request->input('search_value'))) {
+			return redirect(route('shop'))->with('error', Lang::get('flashMessage.shop.no_search_empty'));
+        }
+		
+        $accountLevel = AccountLevel::where('account_id', '=', Session::get('user.id'))->first();
+        $searchValue = $request->input('search_value');
+        $searchType  = 'shop_item_name';
+
+        $results = ShopItem::withCategory()->where('name', 'LIKE', '%'.$searchValue.'%')->paginate(30);
+
+        $results->appends(['search_value' => $searchValue, 'search_type' => $searchType]);
+
+        return view('shop.index', [
+			'accountLevel'    => $accountLevel,
+			'categories'      => ShopCategory::with('name')->get(),
+			'items'           => $results,
+			'searchValue'	  => $searchValue,
+			'items_cart'      => Cart::content(),
+			'total'           => Cart::total(),
+			'count'           => Cart::count()
+        ]);
+
+    }
 
     /**
      * GET /shop/category/{id}
