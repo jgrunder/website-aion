@@ -11,7 +11,6 @@ use App\Models\Webserver\ShopItem;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
@@ -51,7 +50,6 @@ class NewsController extends Controller
   public function newsDelete($id)
   {
       News::destroy($id);
-      Cache::forget('news');
 
       return redirect()->back();
   }
@@ -87,9 +85,6 @@ class NewsController extends Controller
 
       }
 
-      // Clean cache
-      Cache::forget('news');
-
       return view('admin.news.add', [
           'error'     => $error,
           'success'   => $success
@@ -116,9 +111,6 @@ class NewsController extends Controller
               'slug'          => Str::slug($request->input('title'), '-'),
               'text'          => $request->input('content')
           ]);
-
-          // Clean cache
-          Cache::forget('news');
 
           return redirect(route('admin.news'));
       }
