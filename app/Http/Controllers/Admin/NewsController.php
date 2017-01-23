@@ -103,7 +103,7 @@ class NewsController extends Controller
   public function newEdit(Request $request, $id)
   {
       if($request->isMethod('get')) {
-          $news = News::find($id)->first();
+          $news = News::find($id);
 
           return view ('admin.news.edit', [
               'news' => $news
