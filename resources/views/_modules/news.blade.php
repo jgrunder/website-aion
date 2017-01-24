@@ -8,7 +8,7 @@
           @if(isset($full))
             {!! $article->text !!}
           @else
-            {!! str_limit($article->text, $limit = 350, $end = '...') !!}
+            {!! str_limit(strip_tags($article->text, '<p><br>'), $limit = 350, $end = '...') !!}
           @endif
         </p>
       </div>
