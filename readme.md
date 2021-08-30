@@ -1,3 +1,6 @@
+# CAUTION #
+This is an outdated repository with no more updates. Please use this new repo : https://github.com/jgrunder/website-aion-laravel
+
 ## Website : Aion private server
 
 This is a of the [website](https://infinit.io/_/yD4R3n4.jpg) and the back-office [website](https://infinit.io/_/JY3ghh5)
